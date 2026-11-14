@@ -1,9 +1,9 @@
 # Phase 1: the offered-traffic estimator
 
-- **Project:** Packet Patrol, CMPS 342. **Date:** 14 Nov 2026. **Status:** measurements done, **the team has to choose a fix** (section 6).
+- **Project:** Packet Patrol, CMPS 342. **Date:** 14 Nov 2026. **Status:** closed. Option C (the drop counter) was chosen and built as v6.1 (sections 6 and 7).
 - **Question (Prof. Maurice, 11 Nov 2026):** is the offered-traffic estimate valid when ingresses drop different shares of their frames?
 - **Short answer:** no. The estimate is wrong at each ingress, the drop shares do differ, and the difference lasts. The total that reaches the sites still comes out right, so deadline success in steady overload does not depend on the error.
-- Every number below is computed from `feedback/phase1/diagnose.csv` and `feedback/phase1/pilot.csv` by `feedback/phase1/build_note.py`.
+- Every number below is computed from the result files in `feedback/phase1/` by `feedback/phase1/build_note.py`.
 
 ## 1. What v6 does
 
@@ -82,6 +82,7 @@ Frozen v6, existing scenarios, seeds 201 to 205. Ingress A carries 40% of the tr
 - Counterexample: 198.9 and 198.9 (truth 200).
 - It also includes one small correction: the "clear rise" test compares arrivals with expected arrivals (audit finding 3).
 - In this pilot the counter is emulated: the ingresses share an object that stands for the sites' counters and read it only when the matching report arrives.
+- The version built afterwards, with the counter in the engine and the reports, gives the same results in 45 of 45 pilot runs (section 7). So the tables below hold for v6.1 as built.
 
 **Deadline success (%), mean of 5 pilot seeds**
 
@@ -127,9 +128,8 @@ Frozen v6, existing scenarios, seeds 201 to 205. Ingress A carries 40% of the tr
   - With v6's own-share estimator it changes success by less than its interval everywhere, but widens the gap between ingresses (one-ingress burst: 28 → 39 points; reports every 1 s: 39 → 47).
 
 **Cost of the counter**
-- Telemetry: 2.6 extra bytes per second per ingress on Beirut with reports every 5 s (+7% on 38.3), and 12.7 with reports every 1 s (+6% on 196.7). These bytes must be added to v6's budget in every comparison.
+- Telemetry (measured on v6.1 as built): 2.6 extra bytes per second per ingress on Beirut with reports every 5 s (+7% on 38.3), and 12.6 with reports every 1 s (+6% on 196.7). Below capacity only the 2 bytes per report remain (+3%). These bytes are counted in v6.1's budget in every comparison.
 - Protocol: one new 2-byte field from ingress to site, and 2 more bytes in the report. This is a design addition the paper has to justify.
-- Work: about half a day to move the counter from the emulation into the engine and the reports, with tests.
 
 ## 5. Other checks of Phase 1
 
@@ -159,30 +159,46 @@ Frozen v6, existing scenarios, seeds 201 to 205. Ingress A carries 40% of the tr
 - "100 answers" is a count, not a time: about 2 s at the largest ingress and 8 s at the smallest. This is one more way ingresses differ.
 - Near-zero predicted risk: 0.005 is added to both the late share and the predicted risk, both start at 0.02, and the factor is clipped to [0.05, 20] (`rules.py` 399–401).
 
-## 6. Decisions for the team
+## 6. Decisions (taken 14 Nov 2026)
 
-1. **Which option?**
-   - A: keep v6, rename the quantity, and report the uneven drops as a limit.
-   - B: lower bound. Not recommended (it loses 4 to 9 points in overload).
-   - C: drop counter. Recommended: it is the only option that makes the estimate correct, and it is the example the feedback itself gives.
-   - If a new protocol field is not acceptable, A is the fallback.
-2. **If C:** accept the new field and count its bytes in v6's telemetry budget.
-3. **The 95% threshold:** agree to disclose the loss at 95% load and to study the threshold in Phase 2.
-4. **The capacity meter:** fix it now, or handle it with the slow-recovery work (Batch C), since it is the same component. Suggested: with Batch C.
+1. **Option C, the drop counter, is chosen.** It is the only option that makes the estimate correct, and it is the example the feedback itself gives. B was rejected (it loses 4 to 9 points in overload). A was the fallback.
+2. **The new field is accepted**, and its bytes are counted in v6.1's telemetry budget.
+3. **The 95% threshold** is disclosed here and studied in Phase 2 with the other caps and margins. Until then it is a known limit of v6.1.
+4. **The capacity meter** is handled with the slow-recovery work (Batch C), since it is the same component. Until then it is a known limit.
 
-## 7. After the choice
+## 7. What was built, and how it was checked
 
-- The chosen option moves into `catsim/` as v6.1 (off by default, so every v6 result still reproduces).
-- The counterexample test must pass on v6.1.
-- This note gets the choice and its reason, and Phase 1 is closed.
+**The v6.1 estimate**
+- Estimate at site s = (A_s ÷ W) ÷ (1 − p), with p = all drops ÷ (all arrivals + all drops), from the last round of reports.
+- Assumptions, stated:
+  - a drop count is lost when the report that carries it is lost;
+  - a count reaches the reports up to W ÷ 4 plus one way of path delay after the drops it counts;
+  - the same share p is applied to every site (the sites the dropped frames would have gone to are not known).
+
+**Built**
+- Engine: an ingress can put its drop count on a frame it sends anyway; each site reports the sum. Off for every other rule (`catsim/engine.py`).
+- Rule `ours_v61` (`catsim/rules_v61.py`): v6 with the new estimate and the corrected rise test.
+- Wrapper `<rule>+adm61` (`catsim/baselines.py`): the common rejection wrapper with the same estimate, as the matched-admission rival.
+- Every change is listed in `CHANGES_v6.1.md`.
+
+**Checked**
+- **The counterexample passes:** v6.1 estimates 198.9 and 198.9 (truth 200). v6 gives 299.6 and 149.8.
+- **v6.1 equals v6 while nothing is dropped** (main scenario, seed 201: 2.8937% missed in both).
+- **The old rules are untouched:** 445 of 445 saved runs of Studies 1 and 2, re-run on the edited code, match exactly.
+- **The built version equals the prototype:** 45 of 45 pilot runs identical.
+- **Every drop is counted once**, and the bytes of the counter are in the byte totals (`tests/test_v61.py`).
+- 69 tests pass: the 51 of v6, 11 for v6.1, 7 for the counterexample and the prototype.
 
 ## Files
 
 | File | What it is |
 |---|---|
 | `feedback/estimator.md` | this note |
+| `catsim/rules_v61.py`, `tests/test_v61.py` | v6.1 and its tests |
+| `CHANGES_v6.1.md` | every change since the v6 freeze |
 | `feedback/phase1/candidates.py` | the three options as prototypes (outside `catsim/`) |
 | `feedback/phase1/test_estimator.py` | the counterexample tests and the harness check |
-| `feedback/phase1/run_phase1.py` | `counter`, `diagnose` (125 runs), `pilot` (270 runs) |
-| `feedback/phase1/diagnose.csv`, `pilot.csv` | every run behind the tables |
+| `feedback/phase1/run_phase1.py` | `counter`, `diagnose` (125 runs), `pilot` (270 runs), `validate` (45 runs) |
+| `feedback/phase1/diagnose.csv`, `pilot.csv`, `validate.csv` | every run behind the tables |
+| `feedback/phase1/repro_after_v61.csv` | the 445 saved runs re-run on the edited code |
 | `feedback/phase1/summarize.py`, `build_note.py` | the tables and this note |

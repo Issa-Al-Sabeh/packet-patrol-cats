@@ -16,6 +16,8 @@ it, the answers to its own frames). Only classes with oracle = True may read the
   oracle_adm    The fresh-state oracle plus fresh-state admission (drop when even the best site's true chance of
                 being late is >= TAU). A reference, not a practical rule.
   <rule>+adm    The common rejection wrapper around any rule (see AdmissionWrapper).
+  <rule>+adm61  The same wrapper with the offered-traffic estimate of ours v6.1 (the aggregate drop counter; see
+                AdmissionWrapper61 and rules_v61.py). The matched-admission rival of ours v6.1.
   <rule>@K=V    Any rule with class parameters overridden (used for tuning on pilot seeds and for frozen values).
 """
 import math
@@ -25,6 +27,7 @@ import numpy as np
 
 from .rules import LSQ, NAN, Rule, Oracle, RULE_CLASSES
 from .rules_v5 import OwnDrops, _offered
+from .rules_v61 import DropEcho
 
 
 # ====================================================================== Prequal (HCL)
@@ -553,15 +556,78 @@ class AdmissionWrapper(Rule):
         return self.inner.diag() if hasattr(self.inner, "diag") else {}
 
 
+class AdmissionWrapper61(AdmissionWrapper):
+    """The common rejection wrapper with the offered-traffic estimate of ours v6.1: the same admission rule (keep the
+    admitted traffic at U = 95% of the configured capacity, drops spread evenly), but the offered traffic comes from
+    the aggregate drop counter instead of this ingress's own drop share:
+        offered at site s = (A_s / W) / (1 - p),    p = all drops / (all arrivals + all drops)   (rules_v61.py).
+    p is one number per round of reports, so the estimate is updated SETTLE seconds after the last report of a round
+    arrived (as ours v6.1 does at its plan). The wrapper sends its own drop counts like ours v6.1 (same ECHO_FRAC), and
+    those bytes are counted. Smoothing: the EWMA of the wrapper (no clear-rise rule, as before)."""
+    uses_drop_echo = True
+    SETTLE = 0.05
+    ECHO_FRAC = 0.25
+
+    def __init__(self, ctx, i):
+        super().__init__(ctx, i)
+        S = self.S
+        self.A_last = np.zeros(S)
+        self.E_last = np.zeros(S)
+        self.fresh = np.zeros(S, dtype=bool)
+        self.dirty = False
+        self.echo = DropEcho(self.ECHO_FRAC * ctx.W)
+        self.echo_out = 0
+
+    def on_report_x(self, now, s, q, g, A, X):
+        self.on_report_e(now, s, q, g, A, X, 0)
+
+    def on_report_e(self, now, s, q, g, A, X, E):
+        if g > self.last_g[s]:
+            self.last_g[s] = g
+            self.A_last[s], self.E_last[s], self.fresh[s] = A, E, True
+            self.own_log.prune(now - 2.0 * self.ctx.W - 5.0)
+            self.dirty, self.last_rx = True, now
+        if self.inner_cls.uses_reports:
+            self.inner.on_report_x(now, s, q, g, A, X)
+
+    def _update(self):
+        W = self.ctx.W
+        A_tot, E_tot = float(self.A_last.sum()), float(self.E_last.sum())
+        p = min(E_tot / (A_tot + E_tot), OwnDrops.MAX) if A_tot + E_tot > 0 else 0.0
+        for s in np.flatnonzero(self.fresh):
+            r = self.A_last[s] / W / (1.0 - p)
+            self.rate_off[s] = r if not self.seen[s] else self.EWMA * r + (1 - self.EWMA) * self.rate_off[s]
+            self.seen[s] = True
+        self.fresh[:] = False
+        total = float(self.rate_off.sum()) if self.seen.all() else 0.0
+        room = self.U * float(self.cap.sum())
+        self.p_drop = 1.0 - room / total if total > room else 0.0
+
+    def choose(self, now):
+        if self.dirty and now >= self.last_rx + self.SETTLE:
+            self._update()
+            self.dirty = False
+        return super().choose(now)
+
+    def on_send(self, now, s):
+        super().on_send(now, s)
+        self.echo_out = self.echo.take(now)
+
+    def on_drop(self, now):
+        super().on_drop(now)
+        self.echo.dropped()
+
+
 _CACHE = {}
 
 
-def make_admission(inner_cls, name):
+def make_admission(inner_cls, name, wrapper=AdmissionWrapper):
     attrs = {"inner_cls": inner_cls, "uses_reports": True, "uses_counter": True,
              "needs_replies": inner_cls.needs_replies, "predicts": inner_cls.predicts,
              "probes_latency": getattr(inner_cls, "probes_latency", False),
              "oracle": getattr(inner_cls, "oracle", False)}
-    return type(f"Adm[{name}]", (AdmissionWrapper,), attrs)
+    tag = "Adm" if wrapper is AdmissionWrapper else "Adm61"
+    return type(f"{tag}[{name}]", (wrapper,), attrs)
 
 
 def _parse(v):
@@ -576,10 +642,14 @@ def _parse(v):
 
 
 def resolve_rule(name):
-    """'rule', 'rule@K=V,K2=V2' (class parameters overridden), and either followed by '+adm' (common wrapper)."""
+    """'rule', 'rule@K=V,K2=V2' (class parameters overridden), and either followed by '+adm' (common wrapper) or
+    '+adm61' (the common wrapper with the v6.1 estimate)."""
     if name in _CACHE:
         return _CACHE[name]
-    if name.endswith("+adm"):
+    if name.endswith("+adm61"):
+        base = resolve_rule(name[:-6])
+        cls = make_admission(base, name[:-6], AdmissionWrapper61)
+    elif name.endswith("+adm"):
         base = resolve_rule(name[:-4])
         cls = make_admission(base, name[:-4])
     elif "@" in name:

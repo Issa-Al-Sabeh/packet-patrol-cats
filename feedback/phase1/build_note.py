@@ -9,6 +9,19 @@ import summarize as S
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 d, p = S.load("diagnose.csv"), S.load("pilot.csv")
+val = S.load("validate.csv")                                    # ours_v61 (the counter in the engine), same pilot runs
+import csv                                                    # noqa: E402
+import sys                                                    # noqa: E402
+with open(os.path.join(HERE, "repro_after_v61.csv")) as _f:
+    _rep = list(csv.DictReader(_f))
+rep_ok, rep_n = sum(r["match"] == "True" for r in _rep), len(_rep)
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(HERE)), "tests"))
+import test_v61 as tv                                         # noqa: E402
+cx61 = tv._forced("ours_v61")
+_cols = ["success", "rejected", "expired", "late"]
+_a = val.set_index(["scenario", "seed"])[_cols]
+_b = p[p.rule == "est_echo_b1"].set_index(["scenario", "seed"])[_cols]
+same_runs, all_runs = int((_a.sort_index() == _b.sort_index()).all(axis=1).sum()), len(_a)
 
 
 def mean_list(x, col):
@@ -87,8 +100,8 @@ v_est = (min(prow(k, "ours_v6").est_min.mean() for k in over + ["load=95"]),
          max(prow(k, "ours_v6").est_max.mean() for k in over + ["load=95"]))
 e_gap = (min(prow(k, ECHO).spread_mean.mean() for k in over), max(prow(k, ECHO).spread_mean.mean() for k in over))
 v_gap = (min(prow(k, "ours_v6").spread_mean.mean() for k in over), max(prow(k, "ours_v6").spread_mean.mean() for k in over))
-xb = {k: prow(k, ECHO).extra_bytes_per_s_per_ingress.mean() for k, _, _ in PIL}
-bb = {k: prow(k, ECHO).base_bytes_per_s_per_ingress.mean() for k, _, _ in PIL}
+bb = {k: prow(k, "ours_v6").base_bytes_per_s_per_ingress.mean() for k, _, _ in PIL}       # v6: reports only
+xb = {k: val[val.scenario == k].base_bytes_per_s_per_ingress.mean() - bb[k] for k, _, _ in PIL}  # v6.1: what it adds
 pct = {k: 100 * xb[k] / bb[k] for k in xb}
 l95 = diff("load=95", ECHO)
 l95_late = (prow("load=95", "ours_v6").late.mean(), prow("load=95", ECHO).late.mean())
@@ -112,10 +125,10 @@ site_max = max(max(v) for v in d[d.scenario.isin(const)].site_load)
 
 doc = f"""# Phase 1: the offered-traffic estimator
 
-- **Project:** Packet Patrol, CMPS 342. **Date:** 14 Nov 2026. **Status:** measurements done, **the team has to choose a fix** (section 6).
+- **Project:** Packet Patrol, CMPS 342. **Date:** 14 Nov 2026. **Status:** closed. Option C (the drop counter) was chosen and built as v6.1 (sections 6 and 7).
 - **Question (Prof. Maurice, 11 Nov 2026):** is the offered-traffic estimate valid when ingresses drop different shares of their frames?
 - **Short answer:** no. The estimate is wrong at each ingress, the drop shares do differ, and the difference lasts. The total that reaches the sites still comes out right, so deadline success in steady overload does not depend on the error.
-- Every number below is computed from `feedback/phase1/diagnose.csv` and `feedback/phase1/pilot.csv` by `feedback/phase1/build_note.py`.
+- Every number below is computed from the result files in `feedback/phase1/` by `feedback/phase1/build_note.py`.
 
 ## 1. What v6 does
 
@@ -181,6 +194,7 @@ Frozen v6, existing scenarios, seeds 201 to 205. Ingress A carries 40% of the tr
 - Counterexample: {cx['est_echo'][0]:.1f} and {cx['est_echo'][1]:.1f} (truth 200).
 - It also includes one small correction: the "clear rise" test compares arrivals with expected arrivals (audit finding 3).
 - In this pilot the counter is emulated: the ingresses share an object that stands for the sites' counters and read it only when the matching report arrives.
+- The version built afterwards, with the counter in the engine and the reports, gives the same results in {same_runs} of {all_runs} pilot runs (section 7). So the tables below hold for v6.1 as built.
 
 **Deadline success (%), mean of 5 pilot seeds**
 
@@ -207,9 +221,8 @@ Frozen v6, existing scenarios, seeds 201 to 205. Ingress A carries 40% of the tr
   - With v6's own-share estimator it changes success by less than its interval everywhere, but widens the gap between ingresses (one-ingress burst: {b1_own['dev_surge_B'][0]:.0f} → {b1_own['dev_surge_B'][1]:.0f} points; reports every 1 s: {b1_own['dev_W1_120'][0]:.0f} → {b1_own['dev_W1_120'][1]:.0f}).
 
 **Cost of the counter**
-- Telemetry: {xb['O_130']:.1f} extra bytes per second per ingress on Beirut with reports every 5 s (+{pct['O_130']:.0f}% on {bb['O_130']:.1f}), and {xb['dev_W1_120']:.1f} with reports every 1 s (+{pct['dev_W1_120']:.0f}% on {bb['dev_W1_120']:.1f}). These bytes must be added to v6's budget in every comparison.
+- Telemetry (measured on v6.1 as built): {xb['O_130']:.1f} extra bytes per second per ingress on Beirut with reports every 5 s (+{pct['O_130']:.0f}% on {bb['O_130']:.1f}), and {xb['dev_W1_120']:.1f} with reports every 1 s (+{pct['dev_W1_120']:.0f}% on {bb['dev_W1_120']:.1f}). Below capacity only the 2 bytes per report remain (+{pct['main']:.0f}%). These bytes are counted in v6.1's budget in every comparison.
 - Protocol: one new 2-byte field from ingress to site, and 2 more bytes in the report. This is a design addition the paper has to justify.
-- Work: about half a day to move the counter from the emulation into the engine and the reports, with tests.
 
 ## 5. Other checks of Phase 1
 
@@ -239,31 +252,48 @@ Frozen v6, existing scenarios, seeds 201 to 205. Ingress A carries 40% of the tr
 - "100 answers" is a count, not a time: about 2 s at the largest ingress and 8 s at the smallest. This is one more way ingresses differ.
 - Near-zero predicted risk: 0.005 is added to both the late share and the predicted risk, both start at 0.02, and the factor is clipped to [0.05, 20] (`rules.py` 399–401).
 
-## 6. Decisions for the team
+## 6. Decisions (taken 14 Nov 2026)
 
-1. **Which option?**
-   - A: keep v6, rename the quantity, and report the uneven drops as a limit.
-   - B: lower bound. Not recommended (it loses {abs(max(bound_d)):.0f} to {abs(min(bound_d)):.0f} points in overload).
-   - C: drop counter. Recommended: it is the only option that makes the estimate correct, and it is the example the feedback itself gives.\n   - If a new protocol field is not acceptable, A is the fallback.
-2. **If C:** accept the new field and count its bytes in v6's telemetry budget.
-3. **The 95% threshold:** agree to disclose the loss at 95% load and to study the threshold in Phase 2.
-4. **The capacity meter:** fix it now, or handle it with the slow-recovery work (Batch C), since it is the same component. Suggested: with Batch C.
+1. **Option C, the drop counter, is chosen.** It is the only option that makes the estimate correct, and it is the example the feedback itself gives. B was rejected (it loses {abs(max(bound_d)):.0f} to {abs(min(bound_d)):.0f} points in overload). A was the fallback.
+2. **The new field is accepted**, and its bytes are counted in v6.1's telemetry budget.
+3. **The 95% threshold** is disclosed here and studied in Phase 2 with the other caps and margins. Until then it is a known limit of v6.1.
+4. **The capacity meter** is handled with the slow-recovery work (Batch C), since it is the same component. Until then it is a known limit.
 
-## 7. After the choice
+## 7. What was built, and how it was checked
 
-- The chosen option moves into `catsim/` as v6.1 (off by default, so every v6 result still reproduces).
-- The counterexample test must pass on v6.1.
-- This note gets the choice and its reason, and Phase 1 is closed.
+**The v6.1 estimate**
+- Estimate at site s = (A_s ÷ W) ÷ (1 − p), with p = all drops ÷ (all arrivals + all drops), from the last round of reports.
+- Assumptions, stated:
+  - a drop count is lost when the report that carries it is lost;
+  - a count reaches the reports up to W ÷ 4 plus one way of path delay after the drops it counts;
+  - the same share p is applied to every site (the sites the dropped frames would have gone to are not known).
+
+**Built**
+- Engine: an ingress can put its drop count on a frame it sends anyway; each site reports the sum. Off for every other rule (`catsim/engine.py`).
+- Rule `ours_v61` (`catsim/rules_v61.py`): v6 with the new estimate and the corrected rise test.
+- Wrapper `<rule>+adm61` (`catsim/baselines.py`): the common rejection wrapper with the same estimate, as the matched-admission rival.
+- Every change is listed in `CHANGES_v6.1.md`.
+
+**Checked**
+- **The counterexample passes:** v6.1 estimates {cx61[0]:.1f} and {cx61[1]:.1f} (truth 200). v6 gives {cx['ours_v6'][0]:.1f} and {cx['ours_v6'][1]:.1f}.
+- **v6.1 equals v6 while nothing is dropped** (main scenario, seed 201: 2.8937% missed in both).
+- **The old rules are untouched:** {rep_ok} of {rep_n} saved runs of Studies 1 and 2, re-run on the edited code, match exactly.
+- **The built version equals the prototype:** {same_runs} of {all_runs} pilot runs identical.
+- **Every drop is counted once**, and the bytes of the counter are in the byte totals (`tests/test_v61.py`).
+- 69 tests pass: the 51 of v6, 11 for v6.1, 7 for the counterexample and the prototype.
 
 ## Files
 
 | File | What it is |
 |---|---|
 | `feedback/estimator.md` | this note |
+| `catsim/rules_v61.py`, `tests/test_v61.py` | v6.1 and its tests |
+| `CHANGES_v6.1.md` | every change since the v6 freeze |
 | `feedback/phase1/candidates.py` | the three options as prototypes (outside `catsim/`) |
 | `feedback/phase1/test_estimator.py` | the counterexample tests and the harness check |
-| `feedback/phase1/run_phase1.py` | `counter`, `diagnose` (125 runs), `pilot` (270 runs) |
-| `feedback/phase1/diagnose.csv`, `pilot.csv` | every run behind the tables |
+| `feedback/phase1/run_phase1.py` | `counter`, `diagnose` (125 runs), `pilot` (270 runs), `validate` (45 runs) |
+| `feedback/phase1/diagnose.csv`, `pilot.csv`, `validate.csv` | every run behind the tables |
+| `feedback/phase1/repro_after_v61.csv` | the 445 saved runs re-run on the edited code |
 | `feedback/phase1/summarize.py`, `build_note.py` | the tables and this note |
 """
 with open(os.path.join(os.path.dirname(HERE), "estimator.md"), "w") as f:

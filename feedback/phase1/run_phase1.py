@@ -3,6 +3,8 @@
     python3 run_phase1.py counter                 the counterexample, simulated (prints the estimates)
     python3 run_phase1.py diagnose  [--workers N] frozen v6 in the existing scenarios, seeds 201-205 -> diagnose.csv
     python3 run_phase1.py pilot     [--workers N] the candidates on pilot seeds 101-105          -> pilot.csv
+    python3 run_phase1.py validate  [--workers N] ours v6.1 (catsim/rules_v61.py, the counter in the engine) on the
+                                                  same pilot runs, against the emulated prototype     -> validate.csv
 
 Which runs may choose a fix. The candidates are compared ONLY on pilot seeds 101-105, on v6's own pilot tests and on
 new development scenarios (dev_*) on the Beirut network. The held-out tests, the large network and the 8-site network
@@ -144,6 +146,20 @@ def execute(jobs, path, workers):
     print(f"{len(rows)} runs -> {os.path.relpath(path, ROOT)}  ({time.time() - t0:.0f} s)")
 
 
+def compare_with_prototype():
+    """ours_v61 (real counter) against est_echo_b1 (emulated counter) on the same runs."""
+    def rows(name, rule):
+        with open(os.path.join(HERE, name)) as f:
+            return {(r["scenario"], int(r["seed"])): r for r in csv.DictReader(f) if r["rule"] == rule}
+    real, proto = rows("validate.csv", "ours_v61"), rows("pilot.csv", "est_echo_b1")
+    assert real.keys() == proto.keys()
+    cols = ("success", "rejected", "expired", "late", "share_by_ingress", "est_by_ingress")
+    same = sum(all(real[k][c] == proto[k][c] for c in cols) for k in real)
+    worst = max(abs(float(real[k]["success"]) - float(proto[k]["success"])) for k in real)
+    print(f"ours_v61 against the emulated prototype: {same} of {len(real)} runs identical; "
+          f"largest difference in success {worst:.4f} points")
+
+
 def counter():
     import test_estimator as te
     for rule in ("ours_v6", "est_bound", "est_echo"):
@@ -153,7 +169,7 @@ def counter():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("what", choices=["counter", "diagnose", "pilot"])
+    ap.add_argument("what", choices=["counter", "diagnose", "pilot", "validate"])
     ap.add_argument("--workers", type=int, default=os.cpu_count() or 2)
     a = ap.parse_args()
     if a.what == "counter":
@@ -161,6 +177,10 @@ def main():
     if a.what == "diagnose":
         jobs = [(net, sc, "ours_v6", sd) for net, sc in scenarios_diagnose() for sd in range(201, 206)]
         return execute(jobs, os.path.join(HERE, "diagnose.csv"), a.workers)
+    if a.what == "validate":
+        jobs = [(net, sc, "ours_v61", sd) for net, sc in scenarios_pilot() for sd in range(101, 106)]
+        execute(jobs, os.path.join(HERE, "validate.csv"), a.workers)
+        return compare_with_prototype()
     jobs = [(net, sc, r, sd) for net, sc in scenarios_pilot() for r in PILOT_RULES for sd in range(101, 106)]
     execute(jobs, os.path.join(HERE, "pilot.csv"), a.workers)
 

@@ -24,6 +24,8 @@ class Rule:
     uses_counter = False     # also needs the 4-byte arrivals counter A in each report
     needs_replies = False    # learns the delay of its own completed frames
     predicts = False         # outputs a predicted deadline-miss risk (for the calibration check)
+    uses_drop_echo = False   # v6.1: tells the sites how many frames it dropped; reports then carry the sum (E)
+    echo_out = 0             # v6.1: drop count to put on the frame being sent now (the engine takes it and resets it)
 
     def __init__(self, ctx, i):
         self.ctx, self.i = ctx, i
@@ -41,6 +43,11 @@ class Rule:
     def on_report_x(self, now, s, q, g, A, X):
         """A report with the discard count X of a deadline-aware site (X = 0 otherwise). Most rules ignore X."""
         self.on_report(now, s, q, g, A)
+
+    def on_report_e(self, now, s, q, g, A, X, E):
+        """v6.1: a report that also carries E, the sum of the drop counts the site received from the ingresses in the
+        window. Only rules with uses_drop_echo get this call; the others never see E."""
+        self.on_report_x(now, s, q, g, A, X)
 
     def on_send(self, now, s):
         pass
@@ -1006,5 +1013,10 @@ RULE_CLASSES.update(V5_RULE_CLASSES)
 from .rules_v6 import V6_RULE_CLASSES  # noqa: E402
 
 RULE_CLASSES.update(V6_RULE_CLASSES)
+
+# v6.1 (ours v6 with the corrected offered-traffic estimate): defined in rules_v61.py, registered here
+from .rules_v61 import V61_RULE_CLASSES  # noqa: E402
+
+RULE_CLASSES.update(V61_RULE_CLASSES)
 
 # the staleness study (Nov 2026) registers its baselines from catsim/baselines.py (imported by engine.py)

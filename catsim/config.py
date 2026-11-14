@@ -67,6 +67,10 @@ class Scenario:
                                       # a rule that receives every report with the counter: S x (62 + 4) / W
     probe_bytes: int = 124            # one probe request + its reply
 
+    # --- v6.1 (Nov 2026). At its default: earlier scenarios keep their names and numbers ---
+    echo_bytes: int = 2               # one drop count: ingress -> site on a frame it sends anyway, and the sum of
+                                      # those counts, site -> ingress, in each report (only for rules that use it)
+
     # --- run length ---
     sim_time: float = 0.0             # seconds of traffic; 0 = automatic
     warmup: float = 20.0              # frames created before max(warmup, 2W) are not counted
@@ -84,7 +88,8 @@ class Scenario:
         return tuple((f.name, getattr(self, f.name)) for f in fields(self)
                      if f.name not in skip and not (f.name in ROUND2_FIELDS and getattr(self, f.name) == ())
                      and not (f.name in V5_FIELDS and getattr(self, f.name) == V5_FIELDS[f.name])
-                     and not (f.name in STUDY_FIELDS and getattr(self, f.name) == STUDY_FIELDS[f.name]))
+                     and not (f.name in STUDY_FIELDS and getattr(self, f.name) == STUDY_FIELDS[f.name])
+                     and not (f.name in V61_FIELDS and getattr(self, f.name) == V61_FIELDS[f.name]))
 
 
 ROUND2_FIELDS = {"servers_known", "cap_events", "load_profile", "surge", "path_event",   # round 2
@@ -93,6 +98,7 @@ V5_FIELDS = {"site_discard": False}       # v5 study: left out of run names whil
 STUDY_FIELDS = {"delay_matrix_ms": (), "report_delay_s": 0.0, "report_noise_sd": 0.0, "report_mode": "periodic",
                 "report_threshold": 0.0, "report_heartbeat": 0.0, "share_profile": (), "budget_bps": 0.0,
                 "probe_bytes": 124}       # staleness study: left out of run names while at these defaults
+V61_FIELDS = {"echo_bytes": 2}            # v6.1: left out of run names while at this default
 
 MAIN = Scenario()
 

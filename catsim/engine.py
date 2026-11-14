@@ -31,6 +31,12 @@ Staleness study (Nov 2026), all off by default (a run with the defaults is event
   * probes of latency-aware probing rules (Prequal HCL) get back the site's requests-in-flight and a server-side
     latency estimate (median time at the site of frames finished in the last 2 s that found a similar number in
     flight). Older probing rules get the queue only, exactly as before.
+v6.1 (Nov 2026), off for every rule except those with uses_drop_echo (a run of any other rule is event-for-event the
+same as before):
+  * aggregate drop counter. Such a rule may put a count of the frames it dropped on a frame it is sending anyway
+    (rule.echo_out, echo_bytes each time). Each site adds up the counts that arrive in a report window and reports the
+    sum E (echo_bytes more per report); the rule receives it through on_report_e. The bytes of both are counted in
+    bytes_per_s. A count is lost with the report that carries it, like every other field of that report.
 Event order: the event heap is ordered by (time, insertion number); at equal times heap events (reports, completions,
 probes, capacity changes) are handled before a new frame that arrives at that same moment, and heap events with
 equal times are handled in the order they were scheduled.
@@ -233,7 +239,9 @@ def run(sc: Scenario, rule: str, seed: int, keep_series=False, guard=False, hook
             setattr(ctx_r, name, _Tripwire(name))
     rules = [cls(ctx_r, i) for i in range(R)]
     uses_reports, needs_replies = cls.uses_reports, cls.needs_replies
-    one_report = sc.report_bytes + (sc.counter_bytes if cls.uses_counter else 0)
+    echo = bool(getattr(cls, "uses_drop_echo", False))   # v6.1: aggregate drop counter (off for every other rule)
+    echo_b = int(sc.echo_bytes) if echo else 0
+    one_report = sc.report_bytes + (sc.counter_bytes if cls.uses_counter else 0) + echo_b
     lat_probes = bool(getattr(cls, "probes_latency", False))
     # ---- telemetry options (staleness study)
     rep_delay = float(sc.report_delay_s)
@@ -271,6 +279,9 @@ def run(sc: Scenario, rule: str, seed: int, keep_series=False, guard=False, hook
     discarded = [False] * nf                           # discarded by a deadline-aware site
     disc_in_window = [0] * S
     rx_x = {}                                          # discards carried by a report in flight (by event number)
+    echo_in_window = [0] * S                           # v6.1: drop counts that reached each site in its window
+    rx_e = {}                                          # v6.1: their sum, carried by a report in flight
+    echo_msgs = 0
     heap = []
     seq = 0
     report_sent_bytes = 0
@@ -372,7 +383,11 @@ def run(sc: Scenario, rule: str, seed: int, keep_series=False, guard=False, hook
             else:
                 r.on_send(t, s)
                 site_of[idx], pred[idx] = s, p
-                heapq.heappush(heap, (t + hop(i, s, t) + j_out[idx], seq, ARR_SITE, s, idx, 0, 0.0, 0)); seq += 1
+                tag = 0
+                if echo and r.echo_out:                # v6.1: this frame carries the ingress's drop count
+                    tag, r.echo_out = int(r.echo_out), 0
+                    echo_msgs += 1
+                heapq.heappush(heap, (t + hop(i, s, t) + j_out[idx], seq, ARR_SITE, s, idx, tag, 0.0, 0)); seq += 1
                 if t >= warm:                          # measurements: age and error of the telemetry it held
                     gi = info_g[i][s]
                     if gi > -1e8:
@@ -398,6 +413,8 @@ def run(sc: Scenario, rule: str, seed: int, keep_series=False, guard=False, hook
             if nsys[s] > maxq[s] and warm <= t <= T:
                 maxq[s] = nsys[s]
             arrived_in_window[s] += 1
+            if q:                                      # v6.1: the drop count this frame carries
+                echo_in_window[s] += q
             if busy[s] < c_l[s]:
                 if discard and created[idx] + D < t:   # arrived after its deadline (only with huge delays)
                     throw_away(s, idx, t)
@@ -436,6 +453,8 @@ def run(sc: Scenario, rule: str, seed: int, keep_series=False, guard=False, hook
             X_now = disc_in_window[s]
             arrived_in_window[s] = 0
             disc_in_window[s] = 0
+            E_now = echo_in_window[s]
+            echo_in_window[s] = 0
             if noise_sd > 0:                           # measurement noise (staleness study)
                 q_now = max(0, int(round(q_now + rng_m.normal(0.0, noise_sd))))
             send = True
@@ -456,6 +475,8 @@ def run(sc: Scenario, rule: str, seed: int, keep_series=False, guard=False, hook
                     if not lost:
                         if X_now:
                             rx_x[seq] = X_now
+                        if E_now:
+                            rx_e[seq] = E_now
                         heapq.heappush(heap, (t + hop(i, s, t) + tj + extra + rep_delay, seq, REPORT_RCV,
                                               i, s, q_now, t, A_now)); seq += 1
             if t + W < T:
@@ -464,7 +485,10 @@ def run(sc: Scenario, rule: str, seed: int, keep_series=False, guard=False, hook
         elif ev == REPORT_RCV:
             if g > info_g[a][b]:
                 info_g[a][b], info_q[a][b] = g, q
-            rules[a].on_report_x(t, b, q, g, A, rx_x.pop(sq, 0))
+            if echo:
+                rules[a].on_report_e(t, b, q, g, A, rx_x.pop(sq, 0), rx_e.pop(sq, 0))
+            else:
+                rules[a].on_report_x(t, b, q, g, A, rx_x.pop(sq, 0))
 
         elif ev == REPLY:
             rules[a].on_reply(t, b, g, q)
@@ -517,6 +541,7 @@ def run(sc: Scenario, rule: str, seed: int, keep_series=False, guard=False, hook
         h, _ = np.histogram(created_a[keep][sites == s], bins=bins)
         swing.append(float(np.std(h / (c[s] * mu))))
     probe_bytes = sum(r.probe_bytes for r in rules)
+    echo_bytes = echo_msgs * echo_b                    # v6.1: drop counts sent ingress -> site (0 for other rules)
     out = {
         "scenario": sc.key, "rule": rule, "seed": seed,
         "frames": int(keep.sum()),
@@ -527,7 +552,7 @@ def run(sc: Scenario, rule: str, seed: int, keep_series=False, guard=False, hook
         "miss_by_site": [float(late_flag[sites == s].mean()) if (sites == s).any() else float("nan")
                          for s in range(S)],
         "swing": float(np.mean(swing)),
-        "bytes_per_s": (report_sent_bytes + probe_bytes) / T,
+        "bytes_per_s": (report_sent_bytes + probe_bytes + echo_bytes) / T,
         "runtime_s": round(time.time() - t_wall, 2),
         # v5 study: the three kinds of miss (they add up to "miss")
         "late": float((late_flag & answered).mean()),
@@ -604,7 +629,9 @@ def run(sc: Scenario, rule: str, seed: int, keep_series=False, guard=False, hook
         "max_queue_max": int(max(maxq)),
         "report_bytes_per_s": report_sent_bytes / T,
         "probe_bytes_per_s": probe_bytes / T,
-        "bytes_per_s_per_ingress": (report_sent_bytes + probe_bytes) / T / R,
+        "bytes_per_s_per_ingress": (report_sent_bytes + probe_bytes + echo_bytes) / T / R,
+        "echo_bytes_per_s": echo_bytes / T,
+        "echo_msgs": int(echo_msgs),
         "report_msgs": int(report_msgs),
         "probe_msgs": int(probe_msgs),
         "msgs_per_s": (report_msgs + probe_msgs) / T,
