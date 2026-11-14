@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+# raw per-run files are large and can be regenerated (see FREEZE.md, "Reproduce")
+results*/runs/
+results*/pilot/runs/
+study_results/runs/
+study_results/pilot_runs/
