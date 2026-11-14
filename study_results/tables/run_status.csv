@@ -1,0 +1,16 @@
+experiment,description,runs_done,runs_planned,status
+grid_core_load,"Main grid: steady, 50 ms telemetry delay, every load",480,480,complete
+grid_core_delay,"Main grid: steady, loads 90/110%, every telemetry delay",720,720,complete
+grid_core_pattern,"Main grid: bursty and shifting, loads 90/110%, 50 ms",480,480,complete
+exp7_admission,"Admission fairness: common rejection wrapper, steady, 50 ms",440,440,complete
+exp8_ablation,"Ablation of v6, steady and bursty, 50 ms",400,400,complete
+exp5_scalability,"1 and 16 ingresses, steady, 50 ms",480,480,complete
+exp6_failures,Core-2 loses half its GPUs 40-70 s; regional sites at half speed 35-70 s,240,240,complete
+exp3_budget,"Low/high budget (W = 10 s / 0.5 s), Prequal at its native rate, threshold telemetry",640,640,complete
+cap_hom,"Homogeneous sites (4 GPUs each), steady, 50 ms",240,240,complete
+deadline_relaxed,"Relaxed deadline 500 ms, steady, 50 ms",240,240,complete
+grid_rest,"Main grid: every remaining (load, delay, pattern) point",4080,4080,complete
+exp6_congestion,Network delay change: paths to Core-2 take twice as long 40-70 s (supplementary),120,120,complete
+supp_lsq_sample,"LSQ-Sample (independent sampling at the same budget) on every main-grid point and the budget, scalability, capacity, deadline and event scenarios (supplementary)",630,630,complete
+exp_telemetry_faults,"Report loss 30% or measurement noise (sd 2 frames), steady, 50 ms, loads 90/130% (supplementary)",480,480,complete
+grid_oracle_wrapped,Reference: fresh-state oracle + the common rejection wrapper on every main-grid point (supplementary),440,440,complete

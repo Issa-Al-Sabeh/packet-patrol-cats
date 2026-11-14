@@ -1,0 +1,824 @@
+test,label,group,family,rule,miss,ci95,dropped,seeds
+main,Main scenario (Beirut),main,beirut,ours_v6,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+main,Main scenario (Beirut),main,beirut,ours_v5,4.277,1.047,0.0,2.9130 3.7652 4.2212 5.0825 4.4375 3.3485 3.0875 7.8927 4.7146 3.3071
+main,Main scenario (Beirut),main,beirut,ours_v2_speed,4.277,1.047,0.0,2.9130 3.7652 4.2212 5.0825 4.4375 3.3485 3.0875 7.8927 4.7146 3.3071
+main,Main scenario (Beirut),main,beirut,v4,3.881,0.72,0.0,3.6268 2.9808 3.9247 5.3917 3.1911 3.7443 3.0550 5.9179 3.8834 3.0939
+main,Main scenario (Beirut),main,beirut,wrr,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+main,Main scenario (Beirut),main,beirut,wrr_speed,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+main,Main scenario (Beirut),main,beirut,wrr_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+main,Main scenario (Beirut),main,beirut,wrr_speed_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+main,Main scenario (Beirut),main,beirut,lsq,4.558,0.846,0.0,3.8969 3.4645 5.1105 6.2033 4.5549 4.3024 3.0941 6.3553 5.3900 3.2102
+main,Main scenario (Beirut),main,beirut,ours_v6_nobal,4.113,0.91,0.0,2.9130 3.7652 4.2212 5.0825 3.5630 3.3485 3.0875 7.1272 4.7146 3.3071
+main,Main scenario (Beirut),main,beirut,ours_v6_noburst,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+main,Main scenario (Beirut),main,beirut,ours_v6_nocal,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+main,Main scenario (Beirut),main,beirut,expected_delay_drop,11.725,3.591,6.275,9.2470 7.1839 8.4230 19.1961 19.1464 10.2271 6.8460 17.4193 12.2540 7.3053
+main,Main scenario (Beirut),main,beirut,v4_nodrop,3.881,0.72,0.0,3.6268 2.9808 3.9247 5.3917 3.1911 3.7443 3.0550 5.9179 3.8834 3.0939
+main,Main scenario (Beirut),main,beirut,oracle,2.957,0.533,0.0,2.3343 2.5755 2.7067 3.8006 2.8387 2.9656 2.2798 4.6764 2.9482 2.4415
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,ours_v6,4.263,0.594,1.497,3.3760 3.1834 4.6852 5.2371 3.5826 4.8735 4.2796 5.4934 4.5003 3.4169
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,ours_v5,4.228,0.775,1.301,4.0190 2.9023 3.9763 4.3352 3.9285 3.9066 3.1592 5.5834 3.9158 6.5560
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,ours_v2_speed,3.684,0.752,0.0,2.9709 2.9677 3.6541 5.1791 3.7784 3.0759 3.0941 5.9437 3.3574 2.8162
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,v4,4.885,0.365,1.874,4.6814 4.5365 5.2201 5.6300 4.9987 4.7891 4.0581 5.5384 5.0977 4.3018
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,wrr,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,wrr_speed,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,wrr_drop,5.092,1.174,2.161,2.9259 7.0990 5.7163 4.6766 5.3707 3.2122 5.3544 6.4518 7.2277 2.8872
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,wrr_speed_drop,5.092,1.174,2.161,2.9259 7.0990 5.7163 4.6766 5.3707 3.2122 5.3544 6.4518 7.2277 2.8872
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,lsq,12.833,0.836,0.0,12.3529 11.9493 12.1802 14.6225 13.7040 12.4530 11.5555 14.8656 12.8125 11.8396
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,ours_v6_nobal,4.497,0.887,1.585,3.9033 3.4972 4.0407 5.5978 3.9742 3.2706 3.1592 6.2974 4.6691 6.5560
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,ours_v6_noburst,4.327,0.931,1.534,3.0416 2.9742 4.6852 5.2371 7.0934 4.8735 4.2796 4.7279 3.3119 3.0422
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,ours_v6_nocal,4.263,0.594,1.497,3.3760 3.1834 4.6852 5.2371 3.5826 4.8735 4.2796 5.4934 4.5003 3.4169
+report_interval=0.2,Report interval W (s): 0.2,sweep,beirut,oracle,2.957,0.533,0.0,2.3343 2.5755 2.7067 3.8006 2.8387 2.9656 2.2798 4.6764 2.9482 2.4415
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,ours_v6,3.418,0.53,0.095,2.8487 2.9612 3.4994 4.3030 3.2368 3.2706 2.9833 5.1203 3.1885 2.7645
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,ours_v5,3.775,0.803,0.063,3.0223 2.8631 3.8796 6.0100 3.2629 3.3550 3.0745 5.6413 3.5717 3.0745
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,ours_v2_speed,3.797,0.686,0.0,2.9580 3.3730 4.0858 5.2564 3.2629 3.4848 3.2374 5.6992 3.7340 2.8743
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,v4,4.356,0.443,0.786,4.0190 4.0855 4.0278 5.7073 4.5093 4.6009 3.6608 4.8951 4.3834 3.6688
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,wrr,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,wrr_speed,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,wrr_drop,3.501,0.764,0.005,2.5915 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.7764 3.5132 2.6612
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,wrr_speed_drop,3.501,0.764,0.005,2.5915 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.7764 3.5132 2.6612
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,lsq,32.173,1.821,0.0,33.7020 29.2849 29.7931 36.7689 32.7395 34.0104 28.9799 34.2275 30.6124 31.6109
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,ours_v6_nobal,3.718,0.69,0.088,3.0223 2.8631 3.8796 5.2693 3.2629 3.3550 3.0745 5.6413 3.5846 3.2231
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,ours_v6_noburst,3.485,0.61,0.044,2.8487 2.9612 3.4994 4.7604 3.2368 3.2706 2.9833 5.3068 3.1885 2.7903
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,ours_v6_nocal,3.418,0.53,0.095,2.8487 2.9612 3.4994 4.3030 3.2368 3.2706 2.9833 5.1203 3.1885 2.7645
+report_interval=0.5,Report interval W (s): 0.5,sweep,beirut,oracle,2.957,0.533,0.0,2.3343 2.5755 2.7067 3.8006 2.8387 2.9656 2.2798 4.6764 2.9482 2.4415
+report_interval=1,Report interval W (s): 1,sweep,beirut,ours_v6,3.591,0.747,0.0,2.6879 2.6605 3.2545 5.3917 3.5891 3.4458 3.0029 5.5834 3.2989 2.9906
+report_interval=1,Report interval W (s): 1,sweep,beirut,ours_v5,3.822,0.687,0.0,2.9837 3.1181 4.0923 5.3594 3.8306 3.5042 3.0485 5.6671 3.4093 3.2037
+report_interval=1,Report interval W (s): 1,sweep,beirut,ours_v2_speed,3.822,0.687,0.0,2.9837 3.1181 4.0923 5.3594 3.8306 3.5042 3.0485 5.6671 3.4093 3.2037
+report_interval=1,Report interval W (s): 1,sweep,beirut,v4,3.98,0.587,0.207,3.2152 3.3076 4.0858 4.6122 4.1504 3.6600 3.3807 5.8665 4.2405 3.2812
+report_interval=1,Report interval W (s): 1,sweep,beirut,wrr,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=1,Report interval W (s): 1,sweep,beirut,wrr_speed,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=1,Report interval W (s): 1,sweep,beirut,wrr_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=1,Report interval W (s): 1,sweep,beirut,wrr_speed_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=1,Report interval W (s): 1,sweep,beirut,lsq,42.765,7.94,0.0,43.7721 32.9324 46.7423 38.5532 50.4894 19.3381 38.0146 58.6903 48.9512 50.1615
+report_interval=1,Report interval W (s): 1,sweep,beirut,ours_v6_nobal,3.799,0.699,0.001,2.9837 2.9546 4.0923 5.3594 3.8306 3.5042 3.0485 5.6671 3.3444 3.2037
+report_interval=1,Report interval W (s): 1,sweep,beirut,ours_v6_noburst,3.591,0.747,0.0,2.6879 2.6605 3.2545 5.3917 3.5891 3.4458 3.0029 5.5834 3.2989 2.9906
+report_interval=1,Report interval W (s): 1,sweep,beirut,ours_v6_nocal,3.626,0.803,0.0,2.6879 2.6605 3.2545 5.3917 3.5891 3.4458 3.0029 5.9372 3.2989 2.9906
+report_interval=1,Report interval W (s): 1,sweep,beirut,oracle,2.957,0.533,0.0,2.3343 2.5755 2.7067 3.8006 2.8387 2.9656 2.2798 4.6764 2.9482 2.4415
+report_interval=2,Report interval W (s): 2,sweep,beirut,ours_v6,3.461,0.694,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 2.6251 5.3712 3.5132 2.7903
+report_interval=2,Report interval W (s): 2,sweep,beirut,ours_v5,3.962,0.717,0.0,3.2602 3.1181 3.6798 5.4690 4.1960 3.8482 3.0745 5.9179 3.9873 3.0681
+report_interval=2,Report interval W (s): 2,sweep,beirut,ours_v2_speed,3.962,0.717,0.0,3.2602 3.1181 3.6798 5.4690 4.1960 3.8482 3.0745 5.9179 3.9873 3.0681
+report_interval=2,Report interval W (s): 2,sweep,beirut,v4,3.642,0.681,0.017,2.9837 3.0592 3.8796 4.7346 3.4064 3.3744 2.7944 5.7442 3.7210 2.7193
+report_interval=2,Report interval W (s): 2,sweep,beirut,wrr,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=2,Report interval W (s): 2,sweep,beirut,wrr_speed,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=2,Report interval W (s): 2,sweep,beirut,wrr_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=2,Report interval W (s): 2,sweep,beirut,wrr_speed_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_interval=2,Report interval W (s): 2,sweep,beirut,lsq,8.257,4.25,0.0,5.5945 5.2621 5.8581 8.5867 24.3540 4.8280 5.4846 9.5716 8.6889 4.3405
+report_interval=2,Report interval W (s): 2,sweep,beirut,ours_v6_nobal,3.986,0.703,0.0,3.2602 3.4057 3.6541 5.4690 4.1960 3.8482 3.0745 5.9179 3.9938 3.0422
+report_interval=2,Report interval W (s): 2,sweep,beirut,ours_v6_noburst,3.461,0.694,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 2.6251 5.3712 3.5132 2.7903
+report_interval=2,Report interval W (s): 2,sweep,beirut,ours_v6_nocal,3.461,0.694,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 2.6251 5.3712 3.5132 2.7903
+report_interval=2,Report interval W (s): 2,sweep,beirut,oracle,2.957,0.533,0.0,2.3343 2.5755 2.7067 3.8006 2.8387 2.9656 2.2798 4.6764 2.9482 2.4415
+report_interval=10,Report interval W (s): 10,sweep,beirut,ours_v6,3.847,0.44,0.0,3.0258 3.5118 4.7529 4.3759 3.6518 3.2911 3.8973 3.8467 4.7963 3.3230
+report_interval=10,Report interval W (s): 10,sweep,beirut,ours_v5,4.645,0.565,0.0,3.5844 3.9175 5.9631 4.8042 4.6784 3.7412 4.8704 5.1042 5.5980 4.1855
+report_interval=10,Report interval W (s): 10,sweep,beirut,ours_v2_speed,4.645,0.565,0.0,3.5844 3.9175 5.9631 4.8042 4.6784 3.7412 4.8704 5.1042 5.5980 4.1855
+report_interval=10,Report interval W (s): 10,sweep,beirut,v4,3.91,0.366,0.0,3.1654 3.4139 4.8502 4.0028 4.1721 3.5959 3.6961 3.9952 4.5337 3.6765
+report_interval=10,Report interval W (s): 10,sweep,beirut,wrr,3.847,0.44,0.0,3.0258 3.5118 4.7529 4.3759 3.6518 3.2911 3.8973 3.8467 4.7963 3.3230
+report_interval=10,Report interval W (s): 10,sweep,beirut,wrr_speed,3.847,0.44,0.0,3.0258 3.5118 4.7529 4.3759 3.6518 3.2911 3.8973 3.8467 4.7963 3.3230
+report_interval=10,Report interval W (s): 10,sweep,beirut,wrr_drop,3.847,0.44,0.0,3.0258 3.5118 4.7529 4.3759 3.6518 3.2911 3.8973 3.8467 4.7963 3.3230
+report_interval=10,Report interval W (s): 10,sweep,beirut,wrr_speed_drop,3.847,0.44,0.0,3.0258 3.5118 4.7529 4.3759 3.6518 3.2911 3.8973 3.8467 4.7963 3.3230
+report_interval=10,Report interval W (s): 10,sweep,beirut,lsq,4.602,0.5,0.0,3.4820 4.6451 6.3201 4.6476 4.5800 4.2147 4.5897 4.4035 4.5431 4.5956
+report_interval=10,Report interval W (s): 10,sweep,beirut,ours_v6_nobal,4.645,0.565,0.0,3.5844 3.9175 5.9631 4.8042 4.6784 3.7412 4.8704 5.1042 5.5980 4.1855
+report_interval=10,Report interval W (s): 10,sweep,beirut,ours_v6_noburst,3.847,0.44,0.0,3.0258 3.5118 4.7529 4.3759 3.6518 3.2911 3.8973 3.8467 4.7963 3.3230
+report_interval=10,Report interval W (s): 10,sweep,beirut,ours_v6_nocal,3.847,0.44,0.0,3.0258 3.5118 4.7529 4.3759 3.6518 3.2911 3.8973 3.8467 4.7963 3.3230
+report_interval=10,Report interval W (s): 10,sweep,beirut,oracle,3.061,0.249,0.0,2.4672 2.9055 3.6632 3.1506 3.1971 2.8692 3.1346 3.1321 3.4132 2.6725
+report_interval=30,Report interval W (s): 30,sweep,beirut,ours_v6,4.369,0.819,0.0,3.9063 3.9537 7.5190 4.6638 3.6763 3.8095 4.1352 4.3455 3.7972 3.8836
+report_interval=30,Report interval W (s): 30,sweep,beirut,ours_v5,5.368,0.586,0.0,4.6957 5.9058 7.1232 6.0375 4.3542 5.0097 5.0021 5.6413 4.7820 5.1315
+report_interval=30,Report interval W (s): 30,sweep,beirut,ours_v2_speed,5.368,0.586,0.0,4.6957 5.9058 7.1232 6.0375 4.3542 5.0097 5.0021 5.6413 4.7820 5.1315
+report_interval=30,Report interval W (s): 30,sweep,beirut,v4,4.023,0.186,0.0,3.7606 4.2397 4.1422 4.4818 3.7604 4.1435 3.9422 4.2093 3.6770 3.8696
+report_interval=30,Report interval W (s): 30,sweep,beirut,wrr,4.029,0.212,0.0,3.9063 3.9537 4.1174 4.6638 3.6763 3.8095 4.1352 4.3455 3.7972 3.8836
+report_interval=30,Report interval W (s): 30,sweep,beirut,wrr_speed,4.427,0.947,0.0,3.9063 3.9537 8.0988 4.6638 3.6763 3.8095 4.1352 4.3455 3.7972 3.8836
+report_interval=30,Report interval W (s): 30,sweep,beirut,wrr_drop,4.029,0.212,0.0,3.9063 3.9537 4.1174 4.6638 3.6763 3.8095 4.1352 4.3455 3.7972 3.8836
+report_interval=30,Report interval W (s): 30,sweep,beirut,wrr_speed_drop,4.427,0.947,0.0,3.9063 3.9537 8.0988 4.6638 3.6763 3.8095 4.1352 4.3455 3.7972 3.8836
+report_interval=30,Report interval W (s): 30,sweep,beirut,lsq,4.154,0.187,0.0,3.9823 4.1869 4.6230 4.3060 3.7059 4.2746 3.9640 4.3842 3.9673 4.1431
+report_interval=30,Report interval W (s): 30,sweep,beirut,ours_v6_nobal,5.221,0.637,0.0,4.8662 5.9058 7.1572 6.0375 4.1859 5.0097 5.0021 4.8208 4.7820 4.4384
+report_interval=30,Report interval W (s): 30,sweep,beirut,ours_v6_noburst,4.369,0.819,0.0,3.9063 3.9537 7.5190 4.6638 3.6763 3.8095 4.1352 4.3455 3.7972 3.8836
+report_interval=30,Report interval W (s): 30,sweep,beirut,ours_v6_nocal,4.369,0.819,0.0,3.9063 3.9537 7.5190 4.6638 3.6763 3.8095 4.1352 4.3455 3.7972 3.8836
+report_interval=30,Report interval W (s): 30,sweep,beirut,oracle,3.274,0.141,0.0,3.1511 3.3041 3.3335 3.4504 2.9734 3.5286 3.2248 3.5606 3.1479 3.0692
+load=50,Load (%): 50,sweep,beirut,ours_v6,0.995,0.071,0.013,1.0611 1.0201 0.9467 1.1724 1.0558 0.9775 0.8761 0.9938 1.0296 0.8213
+load=50,Load (%): 50,sweep,beirut,ours_v5,1.028,0.057,0.0,1.0059 1.0201 0.9576 1.0649 0.8908 1.0104 1.1390 1.1235 1.1055 0.9656
+load=50,Load (%): 50,sweep,beirut,ours_v2_speed,1.028,0.057,0.0,1.0059 1.0201 0.9576 1.0649 0.8908 1.0104 1.1390 1.1235 1.1055 0.9656
+load=50,Load (%): 50,sweep,beirut,v4,0.929,0.041,0.0,0.9285 0.9203 0.9793 1.0111 0.8578 0.9555 0.9528 0.9290 0.9429 0.8102
+load=50,Load (%): 50,sweep,beirut,wrr,0.965,0.067,0.0,1.0722 0.9979 0.9902 1.1079 0.8798 1.0214 0.8761 0.9182 0.9754 0.8102
+load=50,Load (%): 50,sweep,beirut,wrr_speed,0.965,0.067,0.0,1.0722 0.9979 0.9902 1.1079 0.8798 1.0214 0.8761 0.9182 0.9754 0.8102
+load=50,Load (%): 50,sweep,beirut,wrr_drop,0.965,0.067,0.0,1.0722 0.9979 0.9902 1.1079 0.8798 1.0214 0.8761 0.9182 0.9754 0.8102
+load=50,Load (%): 50,sweep,beirut,wrr_speed_drop,0.965,0.067,0.0,1.0722 0.9979 0.9902 1.1079 0.8798 1.0214 0.8761 0.9182 0.9754 0.8102
+load=50,Load (%): 50,sweep,beirut,lsq,1.0,0.057,0.0,1.0722 1.0312 0.9684 1.0649 0.9458 1.0214 1.0623 1.0371 0.9862 0.8102
+load=50,Load (%): 50,sweep,beirut,ours_v6_nobal,1.034,0.058,0.016,1.0059 1.0201 0.9576 1.1186 1.0668 1.0324 1.1390 1.0263 1.1055 0.8657
+load=50,Load (%): 50,sweep,beirut,ours_v6_noburst,0.99,0.055,0.0,1.0611 1.0201 0.9467 1.1402 0.9238 0.9775 0.8761 0.9938 1.0296 0.9323
+load=50,Load (%): 50,sweep,beirut,ours_v6_nocal,0.995,0.071,0.013,1.0611 1.0201 0.9467 1.1724 1.0558 0.9775 0.8761 0.9938 1.0296 0.8213
+load=50,Load (%): 50,sweep,beirut,oracle,0.955,0.066,0.0,0.9616 0.9646 1.0555 1.0218 0.8688 1.0434 0.9199 0.9290 1.0296 0.7547
+load=70,Load (%): 70,sweep,beirut,ours_v6,1.281,0.094,0.0,1.3482 1.1522 1.4494 1.3834 1.2674 1.2557 1.2222 1.3868 1.3459 1.0035
+load=70,Load (%): 70,sweep,beirut,ours_v5,1.298,0.096,0.0,1.3560 1.3090 1.4726 1.4766 1.3222 1.2400 1.1512 1.3167 1.2989 1.0354
+load=70,Load (%): 70,sweep,beirut,ours_v2_speed,1.298,0.096,0.0,1.3560 1.3090 1.4726 1.4766 1.3222 1.2400 1.1512 1.3167 1.2989 1.0354
+load=70,Load (%): 70,sweep,beirut,v4,1.327,0.082,0.0,1.2698 1.3090 1.5269 1.3523 1.2909 1.3656 1.2380 1.4492 1.3615 1.1070
+load=70,Load (%): 70,sweep,beirut,wrr,1.271,0.092,0.0,1.3482 1.1522 1.4029 1.3834 1.2048 1.2557 1.2222 1.3868 1.3459 1.0035
+load=70,Load (%): 70,sweep,beirut,wrr_speed,1.273,0.094,0.0,1.3482 1.1522 1.4261 1.3834 1.2048 1.2557 1.2222 1.3868 1.3459 1.0035
+load=70,Load (%): 70,sweep,beirut,wrr_drop,1.271,0.092,0.0,1.3482 1.1522 1.4029 1.3834 1.2048 1.2557 1.2222 1.3868 1.3459 1.0035
+load=70,Load (%): 70,sweep,beirut,wrr_speed_drop,1.273,0.094,0.0,1.3482 1.1522 1.4261 1.3834 1.2048 1.2557 1.2222 1.3868 1.3459 1.0035
+load=70,Load (%): 70,sweep,beirut,lsq,1.482,0.165,0.0,1.5833 1.2855 1.6819 1.9274 1.3143 1.4362 1.3957 1.6517 1.4163 1.1309
+load=70,Load (%): 70,sweep,beirut,ours_v6_nobal,1.306,0.098,0.0,1.3560 1.3090 1.4726 1.4766 1.4004 1.2400 1.1512 1.3167 1.2989 1.0354
+load=70,Load (%): 70,sweep,beirut,ours_v6_noburst,1.279,0.095,0.0,1.3482 1.1522 1.4494 1.3834 1.2439 1.2557 1.2222 1.3868 1.3459 1.0035
+load=70,Load (%): 70,sweep,beirut,ours_v6_nocal,1.281,0.094,0.0,1.3482 1.1522 1.4494 1.3834 1.2674 1.2557 1.2222 1.3868 1.3459 1.0035
+load=70,Load (%): 70,sweep,beirut,oracle,1.436,0.103,0.0,1.4187 1.3482 1.6432 1.5155 1.4239 1.4205 1.3957 1.5115 1.5728 1.1150
+load=95,Load (%): 95,sweep,beirut,ours_v6,15.399,1.948,4.211,13.4530 13.0118 15.7294 18.3222 19.1982 14.3725 11.4692 12.9283 18.2530 17.2516
+load=95,Load (%): 95,sweep,beirut,ours_v5,15.621,2.262,4.217,11.2041 13.2273 16.7791 19.6163 20.0346 12.1110 13.9111 13.8446 18.2818 17.1993
+load=95,Load (%): 95,sweep,beirut,ours_v2_speed,24.266,7.553,0.0,16.9166 15.4464 23.9719 45.6238 37.6464 17.4552 15.4729 15.1229 29.4870 25.5200
+load=95,Load (%): 95,sweep,beirut,v4,19.662,4.784,0.647,15.6323 14.1301 23.8507 34.4193 26.9628 16.5761 13.9344 15.9225 16.5486 18.6403
+load=95,Load (%): 95,sweep,beirut,wrr,24.574,8.101,0.0,15.1616 14.6718 27.2308 47.3152 37.1387 17.2990 14.5113 15.0878 30.6443 26.6822
+load=95,Load (%): 95,sweep,beirut,wrr_speed,24.574,8.101,0.0,15.1616 14.6718 27.2308 47.3152 37.1387 17.2990 14.5113 15.0878 30.6443 26.6822
+load=95,Load (%): 95,sweep,beirut,wrr_drop,21.524,4.764,0.545,14.5921 15.6969 24.6294 32.0581 31.6239 18.3574 15.4030 16.4303 25.9976 20.4532
+load=95,Load (%): 95,sweep,beirut,wrr_speed_drop,21.524,4.764,0.545,14.5921 15.6969 24.6294 32.0581 31.6239 18.3574 15.4030 16.4303 25.9976 20.4532
+load=95,Load (%): 95,sweep,beirut,lsq,57.219,19.823,0.0,61.7155 18.7081 83.4573 82.0014 83.1209 29.0746 73.8854 20.8020 37.0645 82.3591
+load=95,Load (%): 95,sweep,beirut,ours_v6_nobal,15.962,1.852,4.456,11.3145 14.2233 16.5773 19.6731 19.1174 15.7259 13.3225 15.0295 17.4008 17.2342
+load=95,Load (%): 95,sweep,beirut,ours_v6_noburst,15.337,1.901,4.119,13.4530 13.0118 15.7294 18.3222 19.1982 14.3725 11.4692 12.9283 17.6369 17.2516
+load=95,Load (%): 95,sweep,beirut,ours_v6_nocal,15.47,1.949,4.213,13.1741 13.0118 15.7294 18.3222 19.1982 15.3615 11.4692 12.9283 18.2530 17.2516
+load=95,Load (%): 95,sweep,beirut,oracle,19.281,7.246,0.0,11.3319 11.0432 20.6091 38.0690 33.5564 12.0763 9.8665 11.5683 25.0936 19.5933
+deadline=200,Deadline (ms): 200,sweep,beirut,ours_v6,25.331,1.373,0.0,24.1271 23.9639 25.1595 27.8408 26.3378 24.2245 23.2413 29.1072 25.5861 23.7243
+deadline=200,Deadline (ms): 200,sweep,beirut,ours_v5,27.208,1.439,0.0,24.3907 26.2453 26.7191 29.2644 29.0851 26.4958 25.5211 30.8825 27.8005 25.6750
+deadline=200,Deadline (ms): 200,sweep,beirut,ours_v2_speed,27.208,1.439,0.0,24.3907 26.2453 26.7191 29.2644 29.0851 26.4958 25.5211 30.8825 27.8005 25.6750
+deadline=200,Deadline (ms): 200,sweep,beirut,v4,26.062,1.356,0.0,25.8633 24.7810 25.9780 28.5622 26.2464 25.5419 23.4106 29.7761 26.1965 24.2604
+deadline=200,Deadline (ms): 200,sweep,beirut,wrr,25.331,1.373,0.0,24.1271 23.9639 25.1595 27.8408 26.3378 24.2245 23.2413 29.1072 25.5861 23.7243
+deadline=200,Deadline (ms): 200,sweep,beirut,wrr_speed,25.331,1.373,0.0,24.1271 23.9639 25.1595 27.8408 26.3378 24.2245 23.2413 29.1072 25.5861 23.7243
+deadline=200,Deadline (ms): 200,sweep,beirut,wrr_drop,25.331,1.373,0.0,24.1271 23.9639 25.1595 27.8408 26.3378 24.2245 23.2413 29.1072 25.5861 23.7243
+deadline=200,Deadline (ms): 200,sweep,beirut,wrr_speed_drop,25.331,1.373,0.0,24.1271 23.9639 25.1595 27.8408 26.3378 24.2245 23.2413 29.1072 25.5861 23.7243
+deadline=200,Deadline (ms): 200,sweep,beirut,lsq,27.231,1.632,0.0,26.7250 25.1209 26.7255 29.9085 28.2498 26.3530 24.1597 31.2685 28.7681 25.0355
+deadline=200,Deadline (ms): 200,sweep,beirut,ours_v6_nobal,27.285,1.317,0.0,25.0723 26.4675 26.7191 29.2644 28.6348 26.5152 25.5211 30.9083 27.8005 25.9463
+deadline=200,Deadline (ms): 200,sweep,beirut,ours_v6_noburst,25.331,1.373,0.0,24.1271 23.9639 25.1595 27.8408 26.3378 24.2245 23.2413 29.1072 25.5861 23.7243
+deadline=200,Deadline (ms): 200,sweep,beirut,ours_v6_nocal,25.331,1.373,0.0,24.1271 23.9639 25.1595 27.8408 26.3378 24.2245 23.2413 29.1072 25.5861 23.7243
+deadline=200,Deadline (ms): 200,sweep,beirut,oracle,25.757,1.699,0.0,24.1656 24.6634 24.8695 28.4978 26.7097 25.0811 23.0784 30.7668 26.1965 23.5435
+deadline=500,Deadline (ms): 500,sweep,beirut,ours_v6,0.168,0.216,0.0,0.0129 0.0131 0.0193 0.8310 0.0131 0.0519 0.0195 0.6368 0.0260 0.0581
+deadline=500,Deadline (ms): 500,sweep,beirut,ours_v5,0.124,0.22,0.0,0.0129 0.0131 0.0580 0.0515 0.0196 0.0195 0.0065 0.9970 0.0195 0.0388
+deadline=500,Deadline (ms): 500,sweep,beirut,ours_v2_speed,0.124,0.22,0.0,0.0129 0.0131 0.0580 0.0515 0.0196 0.0195 0.0065 0.9970 0.0195 0.0388
+deadline=500,Deadline (ms): 500,sweep,beirut,v4,0.065,0.04,0.0,0.0257 0.0000 0.1096 0.1868 0.0131 0.0454 0.0326 0.0836 0.0974 0.0517
+deadline=500,Deadline (ms): 500,sweep,beirut,wrr,0.055,0.046,0.0,0.0322 0.0000 0.0451 0.0515 0.0131 0.0065 0.2019 0.1351 0.0390 0.0258
+deadline=500,Deadline (ms): 500,sweep,beirut,wrr_speed,0.055,0.046,0.0,0.0322 0.0000 0.0451 0.0515 0.0131 0.0065 0.2019 0.1351 0.0390 0.0258
+deadline=500,Deadline (ms): 500,sweep,beirut,wrr_drop,0.055,0.046,0.0,0.0322 0.0000 0.0451 0.0515 0.0131 0.0065 0.2019 0.1351 0.0390 0.0258
+deadline=500,Deadline (ms): 500,sweep,beirut,wrr_speed_drop,0.055,0.046,0.0,0.0322 0.0000 0.0451 0.0515 0.0131 0.0065 0.2019 0.1351 0.0390 0.0258
+deadline=500,Deadline (ms): 500,sweep,beirut,lsq,0.166,0.127,0.0,0.0900 0.0458 0.4962 0.2061 0.0326 0.0324 0.0195 0.3667 0.3507 0.0194
+deadline=500,Deadline (ms): 500,sweep,beirut,ours_v6_nobal,0.131,0.218,0.0,0.0129 0.0131 0.0580 0.0515 0.0457 0.0649 0.0065 0.9970 0.0195 0.0388
+deadline=500,Deadline (ms): 500,sweep,beirut,ours_v6_noburst,0.166,0.217,0.0,0.0129 0.0131 0.0193 0.8310 0.0261 0.0195 0.0195 0.6368 0.0260 0.0581
+deadline=500,Deadline (ms): 500,sweep,beirut,ours_v6_nocal,0.168,0.216,0.0,0.0129 0.0131 0.0193 0.8310 0.0131 0.0519 0.0195 0.6368 0.0260 0.0581
+deadline=500,Deadline (ms): 500,sweep,beirut,oracle,0.01,0.007,0.0,0.0129 0.0000 0.0000 0.0064 0.0000 0.0065 0.0130 0.0322 0.0130 0.0194
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,ours_v6,18.287,1.352,0.0,16.0247 20.8720 19.3916 20.2332 18.7092 18.1376 14.9166 16.8789 19.6117 18.0984
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,ours_v5,18.313,1.754,0.545,17.8252 18.3684 17.7225 21.1286 23.2250 16.6191 14.0568 17.8888 17.8064 18.4924
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,ours_v2_speed,17.976,1.332,0.0,17.8252 18.3684 17.7225 21.1286 19.8512 16.6191 14.0568 17.8888 17.8064 18.4924
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,v4,16.984,0.845,0.0,16.3269 17.3095 18.4572 17.6887 16.9277 17.9364 14.3369 15.9977 17.6180 17.2458
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,wrr,18.083,1.2,0.0,16.0247 18.8260 19.3916 20.2332 18.7092 18.1376 14.9166 16.8789 19.6117 18.0984
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,wrr_speed,18.085,1.201,0.0,16.0247 18.8456 19.3916 20.2332 18.7092 18.1376 14.9166 16.8789 19.6117 18.0984
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,wrr_drop,18.083,1.2,0.0,16.0247 18.8260 19.3916 20.2332 18.7092 18.1376 14.9166 16.8789 19.6117 18.0984
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,wrr_speed_drop,18.085,1.201,0.0,16.0247 18.8456 19.3916 20.2332 18.7092 18.1376 14.9166 16.8789 19.6117 18.0984
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,lsq,19.66,1.145,0.0,19.3428 20.3295 20.5774 21.6181 20.5103 18.7670 15.7113 19.5098 19.7545 20.4818
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,ours_v6_nobal,17.871,1.344,0.0,18.8541 18.3684 17.7225 20.2461 20.4516 16.6191 14.0568 16.6924 17.2414 18.4601
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,ours_v6_noburst,18.287,1.352,0.0,16.0247 20.8720 19.3916 20.2332 18.7092 18.1376 14.9166 16.8789 19.6117 18.0984
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,ours_v6_nocal,18.287,1.352,0.0,16.0247 20.8720 19.3916 20.2332 18.7092 18.1376 14.9166 16.8789 19.6117 18.0984
+job_shape=exponential (v=1),Job-size shape: exponential (v=1),sweep,beirut,oracle,12.303,0.547,0.0,11.6906 12.6356 12.9535 12.4839 12.5946 12.5114 10.4221 12.0610 12.9489 12.7309
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,ours_v6,22.534,1.541,0.0,22.0565 20.8720 21.7439 23.8598 18.3699 24.6723 21.1373 22.6425 25.4497 24.5317
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,ours_v5,22.187,1.582,0.124,22.2044 19.6627 21.0092 23.6795 18.3568 22.3491 22.0167 22.2308 24.3327 26.0238
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,ours_v2_speed,22.325,1.605,0.0,22.2044 19.6627 21.0092 23.6795 18.3568 22.3491 23.3976 22.2308 24.3327 26.0238
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,v4,20.909,1.062,0.0,20.3395 19.9765 20.2874 23.1384 18.3895 22.9072 21.5347 19.5420 21.5598 21.4184
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,wrr,22.265,1.638,0.0,22.0565 20.7151 19.7139 23.8598 18.3699 24.0169 21.1373 22.6425 25.4497 24.6932
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,wrr_speed,22.17,1.594,0.0,22.0565 20.7151 19.7139 23.8598 18.3699 23.0629 21.1373 22.6425 25.4497 24.6932
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,wrr_drop,22.265,1.638,0.0,22.0565 20.7151 19.7139 23.8598 18.3699 24.0169 21.1373 22.6425 25.4497 24.6932
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,wrr_speed_drop,22.17,1.594,0.0,22.0565 20.7151 19.7139 23.8598 18.3699 23.0629 21.1373 22.6425 25.4497 24.6932
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,lsq,25.288,3.163,0.0,23.5933 21.9963 22.1757 25.2383 20.3537 33.7638 24.8958 22.6039 32.2488 26.0109
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,ours_v6_nobal,22.079,1.17,0.266,22.2044 19.6627 21.0092 24.4653 20.4907 22.3491 20.6683 22.2308 24.3327 23.3755
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,ours_v6_noburst,22.534,1.541,0.0,22.0565 20.8720 21.7439 23.8598 18.3699 24.6723 21.1373 22.6425 25.4497 24.5317
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,ours_v6_nocal,22.534,1.541,0.0,22.0565 20.8720 21.7439 23.8598 18.3699 24.6723 21.1373 22.6425 25.4497 24.5317
+job_shape=heavy-tailed (v=2),Job-size shape: heavy-tailed (v=2),sweep,beirut,oracle,12.462,1.288,0.0,11.6777 10.8446 11.2780 13.4888 10.2323 12.0182 12.1157 13.0773 16.6050 13.2799
+ingresses=2,Number of ingresses: 2,sweep,beirut,ours_v6,3.64,0.768,0.0,3.0338 3.8586 2.9608 5.6441 4.6832 2.4400 2.6771 3.5685 4.7616 2.7702
+ingresses=2,Number of ingresses: 2,sweep,beirut,ours_v5,4.636,1.065,0.0,3.1436 5.0220 4.1579 7.6342 5.1013 2.9410 3.5328 5.9983 5.4317 3.3930
+ingresses=2,Number of ingresses: 2,sweep,beirut,ours_v2_speed,4.636,1.065,0.0,3.1436 5.0220 4.1579 7.6342 5.1013 2.9410 3.5328 5.9983 5.4317 3.3930
+ingresses=2,Number of ingresses: 2,sweep,beirut,v4,3.704,0.777,0.0,2.7756 3.2316 3.3174 5.7593 5.0756 2.5050 3.0401 4.1855 4.3235 2.8221
+ingresses=2,Number of ingresses: 2,sweep,beirut,wrr,3.64,0.768,0.0,3.0338 3.8586 2.9608 5.6441 4.6832 2.4400 2.6771 3.5685 4.7616 2.7702
+ingresses=2,Number of ingresses: 2,sweep,beirut,wrr_speed,3.64,0.768,0.0,3.0338 3.8586 2.9608 5.6441 4.6832 2.4400 2.6771 3.5685 4.7616 2.7702
+ingresses=2,Number of ingresses: 2,sweep,beirut,wrr_drop,3.64,0.768,0.0,3.0338 3.8586 2.9608 5.6441 4.6832 2.4400 2.6771 3.5685 4.7616 2.7702
+ingresses=2,Number of ingresses: 2,sweep,beirut,wrr_speed_drop,3.64,0.768,0.0,3.0338 3.8586 2.9608 5.6441 4.6832 2.4400 2.6771 3.5685 4.7616 2.7702
+ingresses=2,Number of ingresses: 2,sweep,beirut,lsq,3.763,0.763,0.0,3.0855 3.2898 3.8077 6.1752 4.1943 2.5636 2.8197 4.4526 4.2075 3.0297
+ingresses=2,Number of ingresses: 2,sweep,beirut,ours_v6_nobal,4.597,0.987,0.0,3.1436 5.0220 4.1579 6.8535 4.8569 2.9410 3.5328 5.9983 6.0760 3.3930
+ingresses=2,Number of ingresses: 2,sweep,beirut,ours_v6_noburst,3.64,0.768,0.0,3.0338 3.8586 2.9608 5.6441 4.6832 2.4400 2.6771 3.5685 4.7616 2.7702
+ingresses=2,Number of ingresses: 2,sweep,beirut,ours_v6_nocal,3.64,0.768,0.0,3.0338 3.8586 2.9608 5.6441 4.6832 2.4400 2.6771 3.5685 4.7616 2.7702
+ingresses=2,Number of ingresses: 2,sweep,beirut,oracle,3.179,0.58,0.0,2.5174 3.1476 3.0181 5.2025 3.2615 2.4855 2.7679 3.5748 3.3505 2.4653
+ingresses=8,Number of ingresses: 8,sweep,beirut,ours_v6,4.249,0.605,0.029,3.4621 4.3529 3.7063 5.8872 5.1290 3.9180 3.2984 5.0663 3.9448 3.7226
+ingresses=8,Number of ingresses: 8,sweep,beirut,ours_v5,4.901,0.627,0.0,3.8771 5.6510 4.8259 6.1816 4.9021 4.8751 3.6178 5.6781 5.5124 3.8858
+ingresses=8,Number of ingresses: 8,sweep,beirut,ours_v2_speed,4.901,0.627,0.0,3.8771 5.6510 4.8259 6.1816 4.9021 4.8751 3.6178 5.6781 5.5124 3.8858
+ingresses=8,Number of ingresses: 8,sweep,beirut,v4,4.904,0.762,0.0,4.0003 4.5660 4.8324 7.5766 4.7270 4.4640 3.7090 5.3913 5.2274 4.5455
+ingresses=8,Number of ingresses: 8,sweep,beirut,wrr,4.246,0.603,0.0,3.4621 4.3529 3.7063 5.8872 5.1031 3.9180 3.2984 5.0663 3.9448 3.7226
+ingresses=8,Number of ingresses: 8,sweep,beirut,wrr_speed,4.246,0.603,0.0,3.4621 4.3529 3.7063 5.8872 5.1031 3.9180 3.2984 5.0663 3.9448 3.7226
+ingresses=8,Number of ingresses: 8,sweep,beirut,wrr_drop,4.246,0.603,0.0,3.4621 4.3529 3.7063 5.8872 5.1031 3.9180 3.2984 5.0663 3.9448 3.7226
+ingresses=8,Number of ingresses: 8,sweep,beirut,wrr_speed_drop,4.246,0.603,0.0,3.4621 4.3529 3.7063 5.8872 5.1031 3.9180 3.2984 5.0663 3.9448 3.7226
+ingresses=8,Number of ingresses: 8,sweep,beirut,lsq,14.182,9.348,0.0,7.6569 13.3880 11.2155 51.0207 10.4331 6.9690 9.6343 10.9291 10.4223 10.1554
+ingresses=8,Number of ingresses: 8,sweep,beirut,ours_v6_nobal,4.878,0.629,0.029,3.8771 5.6510 4.8259 6.1816 4.6751 4.8751 3.6178 5.6781 5.5124 3.8858
+ingresses=8,Number of ingresses: 8,sweep,beirut,ours_v6_noburst,4.246,0.603,0.0,3.4621 4.3529 3.7063 5.8872 5.1031 3.9180 3.2984 5.0663 3.9448 3.7226
+ingresses=8,Number of ingresses: 8,sweep,beirut,ours_v6_nocal,4.249,0.605,0.029,3.4621 4.3529 3.7063 5.8872 5.1290 3.9180 3.2984 5.0663 3.9448 3.7226
+ingresses=8,Number of ingresses: 8,sweep,beirut,oracle,3.181,0.503,0.0,2.6063 3.1710 2.8441 4.9594 2.8790 2.9867 2.4966 3.5560 3.3877 2.9193
+ingresses=16,Number of ingresses: 16,sweep,beirut,ours_v6,4.863,0.42,0.0,4.2129 5.1508 4.9429 5.2140 4.9230 5.2769 4.1184 6.0033 4.4179 4.3698
+ingresses=16,Number of ingresses: 16,sweep,beirut,ours_v5,5.5,0.79,0.0,5.2194 5.2737 6.2185 6.5305 5.1818 5.2194 4.5804 7.9318 4.4049 4.4413
+ingresses=16,Number of ingresses: 16,sweep,beirut,ours_v2_speed,5.5,0.79,0.0,5.2194 5.2737 6.2185 6.5305 5.1818 5.2194 4.5804 7.9318 4.4049 4.4413
+ingresses=16,Number of ingresses: 16,sweep,beirut,v4,6.429,0.472,0.0,5.4968 7.1891 6.2887 6.5953 6.8379 6.8358 5.4457 7.3872 6.1733 6.0451
+ingresses=16,Number of ingresses: 16,sweep,beirut,wrr,4.863,0.42,0.0,4.2129 5.1508 4.9429 5.2140 4.9230 5.2769 4.1184 6.0033 4.4179 4.3698
+ingresses=16,Number of ingresses: 16,sweep,beirut,wrr_speed,4.863,0.42,0.0,4.2129 5.1508 4.9429 5.2140 4.9230 5.2769 4.1184 6.0033 4.4179 4.3698
+ingresses=16,Number of ingresses: 16,sweep,beirut,wrr_drop,4.863,0.42,0.0,4.2129 5.1508 4.9429 5.2140 4.9230 5.2769 4.1184 6.0033 4.4179 4.3698
+ingresses=16,Number of ingresses: 16,sweep,beirut,wrr_speed_drop,4.863,0.42,0.0,4.2129 5.1508 4.9429 5.2140 4.9230 5.2769 4.1184 6.0033 4.4179 4.3698
+ingresses=16,Number of ingresses: 16,sweep,beirut,lsq,77.924,6.36,0.0,79.6000 82.8976 72.5493 63.4501 71.5422 76.4901 71.0410 91.8055 79.2548 90.6045
+ingresses=16,Number of ingresses: 16,sweep,beirut,ours_v6_nobal,5.527,0.788,0.0,5.2194 5.2737 6.2568 6.5305 5.4147 5.2194 4.5804 7.9318 4.4049 4.4413
+ingresses=16,Number of ingresses: 16,sweep,beirut,ours_v6_noburst,4.863,0.42,0.0,4.2129 5.1508 4.9429 5.2140 4.9230 5.2769 4.1184 6.0033 4.4179 4.3698
+ingresses=16,Number of ingresses: 16,sweep,beirut,ours_v6_nocal,4.863,0.42,0.0,4.2129 5.1508 4.9429 5.2140 4.9230 5.2769 4.1184 6.0033 4.4179 4.3698
+ingresses=16,Number of ingresses: 16,sweep,beirut,oracle,2.994,0.355,0.0,2.5677 3.2548 3.0550 3.1388 2.8270 3.0984 2.5309 4.1902 2.6038 2.6752
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,ours_v6,3.679,0.54,0.0,3.2837 3.7826 3.2120 5.4949 3.8377 3.4673 3.8632 4.0278 3.0500 2.7749
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,ours_v5,4.361,0.866,0.0,3.4463 4.5056 3.8231 7.5331 4.1220 4.0635 3.6681 4.9113 4.1881 3.3469
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,ours_v2_speed,4.361,0.866,0.0,3.4463 4.5056 3.8231 7.5331 4.1220 4.0635 3.6681 4.9113 4.1881 3.3469
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,v4,3.749,0.715,0.0,3.1927 3.6922 3.4200 6.1721 3.6568 3.2923 3.1738 4.7489 3.4142 2.7288
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,wrr,3.679,0.54,0.0,3.2837 3.7826 3.2120 5.4949 3.8377 3.4673 3.8632 4.0278 3.0500 2.7749
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,wrr_speed,3.679,0.54,0.0,3.2837 3.7826 3.2120 5.4949 3.8377 3.4673 3.8632 4.0278 3.0500 2.7749
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,wrr_drop,3.679,0.54,0.0,3.2837 3.7826 3.2120 5.4949 3.8377 3.4673 3.8632 4.0278 3.0500 2.7749
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,wrr_speed_drop,3.679,0.54,0.0,3.2837 3.7826 3.2120 5.4949 3.8377 3.4673 3.8632 4.0278 3.0500 2.7749
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,lsq,4.839,1.051,0.0,3.4593 5.1252 3.9597 8.3637 5.5950 4.3811 3.9217 5.3271 4.9555 3.3009
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,ours_v6_nobal,4.376,0.865,0.0,3.4463 4.5056 3.8231 7.5331 4.2706 4.0635 3.6681 4.9113 4.1881 3.3469
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,ours_v6_noburst,3.679,0.54,0.0,3.2837 3.7826 3.2120 5.4949 3.8377 3.4673 3.8632 4.0278 3.0500 2.7749
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,ours_v6_nocal,3.679,0.54,0.0,3.2837 3.7826 3.2120 5.4949 3.8377 3.4673 3.8632 4.0278 3.0500 2.7749
+traffic=equal,Traffic split between ingresses: equal,sweep,beirut,oracle,3.13,0.556,0.0,2.7960 3.1177 2.6073 5.1179 2.8492 3.0914 2.7575 3.6835 2.8549 2.4264
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,ours_v6,4.079,0.532,0.0,3.7691 3.2489 4.0868 4.0962 5.2385 5.0184 4.4788 4.1664 3.9384 2.7454
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,ours_v5,4.043,0.582,0.0,4.5654 3.1511 3.4880 4.7275 4.3982 4.7258 4.4262 4.2794 4.4092 2.2573
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,ours_v2_speed,4.043,0.582,0.0,4.5654 3.1511 3.4880 4.7275 4.3982 4.7258 4.4262 4.2794 4.4092 2.2573
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,v4,3.959,0.516,0.0,3.6175 3.1586 3.8623 3.8256 5.4883 4.3058 3.7875 4.3170 4.3420 2.8903
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,wrr,4.039,0.482,0.0,3.7616 3.0684 4.3862 3.9684 5.1930 4.2457 4.1181 4.2266 4.5213 2.9055
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,wrr_speed,4.039,0.482,0.0,3.7616 3.0684 4.3862 3.9684 5.1930 4.2457 4.1181 4.2266 4.5213 2.9055
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,wrr_drop,4.039,0.482,0.0,3.7616 3.0684 4.3862 3.9684 5.1930 4.2457 4.1181 4.2266 4.5213 2.9055
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,wrr_speed_drop,4.039,0.482,0.0,3.7616 3.0684 4.3862 3.9684 5.1930 4.2457 4.1181 4.2266 4.5213 2.9055
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,lsq,5.717,0.886,0.0,5.3921 4.1288 5.9431 6.0053 7.9788 6.8037 6.6281 4.7465 5.5377 4.0037
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,ours_v6_nobal,4.043,0.582,0.0,4.5654 3.1511 3.4880 4.7275 4.3982 4.7258 4.4262 4.2794 4.4092 2.2573
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,ours_v6_noburst,4.079,0.532,0.0,3.7691 3.2489 4.0868 4.0962 5.2385 5.0184 4.4788 4.1664 3.9384 2.7454
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,ours_v6_nocal,4.079,0.532,0.0,3.7691 3.2489 4.0868 4.0962 5.2385 5.0184 4.4788 4.1664 3.9384 2.7454
+sites=equal 4/4/4,Site sizes: equal 4/4/4,sweep,beirut,oracle,3.256,0.344,0.0,2.8591 2.6848 3.6228 3.4799 3.6336 3.5406 3.3591 3.1342 3.8712 2.3717
+report_timing=staggered,Report timing: staggered,sweep,beirut,ours_v6,3.947,0.719,0.547,3.4596 2.8893 4.0278 4.7539 3.2759 3.5432 3.2048 6.3425 4.2795 3.6946
+report_timing=staggered,Report timing: staggered,sweep,beirut,ours_v5,4.225,0.77,0.551,3.3438 2.9612 4.5370 6.2613 4.1634 3.4653 3.4393 5.8343 4.1301 4.1145
+report_timing=staggered,Report timing: staggered,sweep,beirut,ours_v2_speed,4.174,1.002,0.0,3.0095 3.2357 3.6863 6.8603 4.0786 3.9390 2.7358 6.2010 4.9094 3.0875
+report_timing=staggered,Report timing: staggered,sweep,beirut,v4,85.011,0.399,0.0,84.6634 84.1483 85.3064 85.5965 84.9256 86.0091 84.8293 85.3982 84.5509 84.6854
+report_timing=staggered,Report timing: staggered,sweep,beirut,wrr,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_timing=staggered,Report timing: staggered,sweep,beirut,wrr_speed,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+report_timing=staggered,Report timing: staggered,sweep,beirut,wrr_drop,3.863,0.721,0.379,3.0223 2.6932 4.0021 5.4367 3.4586 3.6340 3.0029 5.7571 3.8899 3.7334
+report_timing=staggered,Report timing: staggered,sweep,beirut,wrr_speed_drop,3.863,0.721,0.379,3.0223 2.6932 4.0021 5.4367 3.4586 3.6340 3.0029 5.7571 3.8899 3.7334
+report_timing=staggered,Report timing: staggered,sweep,beirut,lsq,84.822,0.489,0.0,84.9527 83.4096 85.4031 85.6223 84.2600 85.4770 84.5232 85.3467 84.6938 84.5304
+report_timing=staggered,Report timing: staggered,sweep,beirut,ours_v6_nobal,4.231,0.749,0.549,3.3438 2.9612 4.5370 6.1711 4.1634 3.6145 3.4393 5.8343 4.1301 4.1145
+report_timing=staggered,Report timing: staggered,sweep,beirut,ours_v6_noburst,3.947,0.719,0.547,3.4596 2.8893 4.0278 4.7539 3.2759 3.5432 3.2048 6.3425 4.2795 3.6946
+report_timing=staggered,Report timing: staggered,sweep,beirut,ours_v6_nocal,3.988,0.75,0.548,3.4596 2.8893 4.0278 5.1598 3.2759 3.5432 3.2048 6.3425 4.2795 3.6946
+report_timing=staggered,Report timing: staggered,sweep,beirut,oracle,2.957,0.533,0.0,2.3343 2.5755 2.7067 3.8006 2.8387 2.9656 2.2798 4.6764 2.9482 2.4415
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,ours_v6,4.401,0.773,0.0,3.7425 3.3011 4.0343 6.1260 4.5876 3.8806 3.8041 6.5161 4.4029 3.6106
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,ours_v5,4.986,1.124,0.0,3.7682 3.8698 4.9301 8.3741 4.6006 4.2051 4.5922 7.2945 4.4418 3.7786
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,ours_v2_speed,4.986,1.124,0.0,3.7682 3.8698 4.9301 8.3741 4.6006 4.2051 4.5922 7.2945 4.4418 3.7786
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,v4,4.478,0.836,0.0,3.5432 3.7129 4.8656 6.1904 4.3526 4.5750 3.2830 6.7220 4.1172 3.4169
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,wrr,4.401,0.773,0.0,3.7425 3.3011 4.0343 6.1260 4.5876 3.8806 3.8041 6.5161 4.4029 3.6106
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,wrr_speed,4.401,0.773,0.0,3.7425 3.3011 4.0343 6.1260 4.5876 3.8806 3.8041 6.5161 4.4029 3.6106
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,wrr_drop,4.401,0.773,0.0,3.7425 3.3011 4.0343 6.1260 4.5876 3.8806 3.8041 6.5161 4.4029 3.6106
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,wrr_speed_drop,4.401,0.773,0.0,3.7425 3.3011 4.0343 6.1260 4.5876 3.8806 3.8041 6.5161 4.4029 3.6106
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,lsq,6.286,1.237,0.0,5.0736 5.4844 6.4188 9.7913 5.6774 5.9053 4.0776 8.7997 6.2407 5.3934
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,ours_v6_nobal,4.99,1.123,0.0,3.7682 3.8698 4.9301 8.3741 4.6463 4.2051 4.5922 7.2945 4.4418 3.7786
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,ours_v6_noburst,4.401,0.773,0.0,3.7425 3.3011 4.0343 6.1260 4.5876 3.8806 3.8041 6.5161 4.4029 3.6106
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,ours_v6_nocal,4.401,0.773,0.0,3.7425 3.3011 4.0343 6.1260 4.5876 3.8806 3.8041 6.5161 4.4029 3.6106
+jitter_5,"Delay jitter, +5 ms average per trip",stress,beirut,oracle,4.631,0.67,0.0,4.0190 4.1705 4.4532 5.7073 4.3853 4.3478 3.7715 6.8120 4.7081 3.9401
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,ours_v6,9.733,0.982,0.0,8.8290 8.4586 9.1641 11.4275 10.1083 9.4160 8.7741 12.6335 10.0591 8.4550
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,ours_v5,10.468,1.068,0.0,9.1634 9.2757 10.6915 11.9235 10.6434 9.8443 9.3994 13.9328 10.4357 9.3657
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,ours_v2_speed,10.468,1.068,0.0,9.1634 9.2757 10.6915 11.9235 10.6434 9.8443 9.3994 13.9328 10.4357 9.3657
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,v4,10.275,1.037,0.0,8.9062 9.1973 10.1373 12.0587 10.4672 10.0454 9.1519 13.3475 10.5137 8.9200
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,wrr,9.733,0.982,0.0,8.8290 8.4586 9.1641 11.4275 10.1083 9.4160 8.7741 12.6335 10.0591 8.4550
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,wrr_speed,9.733,0.982,0.0,8.8290 8.4586 9.1641 11.4275 10.1083 9.4160 8.7741 12.6335 10.0591 8.4550
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,wrr_drop,9.733,0.982,0.0,8.8290 8.4586 9.1641 11.4275 10.1083 9.4160 8.7741 12.6335 10.0591 8.4550
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,wrr_speed_drop,9.733,0.982,0.0,8.8290 8.4586 9.1641 11.4275 10.1083 9.4160 8.7741 12.6335 10.0591 8.4550
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,lsq,11.648,1.06,0.0,10.3530 10.9753 11.4391 14.2489 11.2764 12.2777 10.1094 13.8299 12.0592 9.9147
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,ours_v6_nobal,10.46,1.068,0.0,9.1634 9.2757 10.6915 11.9235 10.5651 9.8443 9.3994 13.9328 10.4357 9.3657
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,ours_v6_noburst,9.733,0.982,0.0,8.8290 8.4586 9.1641 11.4275 10.1083 9.4160 8.7741 12.6335 10.0591 8.4550
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,ours_v6_nocal,9.733,0.982,0.0,8.8290 8.4586 9.1641 11.4275 10.1083 9.4160 8.7741 12.6335 10.0591 8.4550
+jitter_20,"Delay jitter, +20 ms average per trip",stress,beirut,oracle,12.901,0.902,0.0,12.3786 12.1127 12.7215 14.4357 12.7773 12.3686 11.6858 15.7918 12.7736 11.9623
+loss_10,10% of reports lost,stress,beirut,ours_v6,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_10,10% of reports lost,stress,beirut,ours_v5,3.952,0.888,0.0,2.6879 3.2161 4.4532 5.0825 3.6936 3.1084 2.9638 6.6641 4.5522 3.0939
+loss_10,10% of reports lost,stress,beirut,ours_v2_speed,3.952,0.888,0.0,2.6879 3.2161 4.4532 5.0825 3.6936 3.1084 2.9638 6.6641 4.5522 3.0939
+loss_10,10% of reports lost,stress,beirut,v4,16.577,4.376,0.012,12.4236 10.3151 26.6095 23.4025 23.1924 11.6158 14.3434 19.7736 14.0918 9.9987
+loss_10,10% of reports lost,stress,beirut,wrr,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_10,10% of reports lost,stress,beirut,wrr_speed,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_10,10% of reports lost,stress,beirut,wrr_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_10,10% of reports lost,stress,beirut,wrr_speed_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_10,10% of reports lost,stress,beirut,lsq,25.281,9.87,0.0,17.0214 13.5443 42.3342 44.6792 35.3237 11.3498 14.3304 41.3032 19.0402 13.8871
+loss_10,10% of reports lost,stress,beirut,ours_v6_nobal,3.984,0.886,0.0,2.6879 3.2161 4.4532 5.0825 4.0198 3.1084 2.9638 6.6641 4.5522 3.0939
+loss_10,10% of reports lost,stress,beirut,ours_v6_noburst,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_10,10% of reports lost,stress,beirut,ours_v6_nocal,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_10,10% of reports lost,stress,beirut,oracle,2.957,0.533,0.0,2.3343 2.5755 2.7067 3.8006 2.8387 2.9656 2.2798 4.6764 2.9482 2.4415
+loss_30,30% of reports lost,stress,beirut,ours_v6,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_30,30% of reports lost,stress,beirut,ours_v5,4.088,1.008,0.0,3.0095 3.0984 4.0858 5.4432 3.7458 3.6016 3.0615 7.5518 3.8379 3.4427
+loss_30,30% of reports lost,stress,beirut,ours_v2_speed,4.088,1.008,0.0,3.0095 3.0984 4.0858 5.4432 3.7458 3.6016 3.0615 7.5518 3.8379 3.4427
+loss_30,30% of reports lost,stress,beirut,v4,36.572,3.993,0.475,31.8050 26.4283 37.5846 35.8606 44.5054 33.1798 35.8260 39.6115 44.8601 36.0548
+loss_30,30% of reports lost,stress,beirut,wrr,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_30,30% of reports lost,stress,beirut,wrr_speed,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_30,30% of reports lost,stress,beirut,wrr_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_30,30% of reports lost,stress,beirut,wrr_speed_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_30,30% of reports lost,stress,beirut,lsq,48.4,4.295,0.0,46.4922 42.1951 52.7744 44.7050 58.9533 47.1901 43.5904 43.5032 57.7375 46.8609
+loss_30,30% of reports lost,stress,beirut,ours_v6_nobal,4.064,1.014,0.0,3.0095 3.0984 4.0858 5.4432 3.5043 3.6016 3.0615 7.5518 3.8379 3.4427
+loss_30,30% of reports lost,stress,beirut,ours_v6_noburst,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_30,30% of reports lost,stress,beirut,ours_v6_nocal,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+loss_30,30% of reports lost,stress,beirut,oracle,2.957,0.533,0.0,2.3343 2.5755 2.7067 3.8006 2.8387 2.9656 2.2798 4.6764 2.9482 2.4415
+late_reports,Reports arrive up to 2 s late,stress,beirut,ours_v6,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+late_reports,Reports arrive up to 2 s late,stress,beirut,ours_v5,4.186,0.994,0.0,3.6268 3.4514 3.7185 5.8104 3.5174 3.6275 3.5565 7.5775 3.3379 3.6365
+late_reports,Reports arrive up to 2 s late,stress,beirut,ours_v2_speed,4.186,0.994,0.0,3.6268 3.4514 3.7185 5.8104 3.5174 3.6275 3.5565 7.5775 3.3379 3.6365
+late_reports,Reports arrive up to 2 s late,stress,beirut,v4,27.113,2.52,0.0,27.8117 30.6053 20.8417 30.0180 28.2302 29.1888 23.5474 30.3100 22.4495 28.1294
+late_reports,Reports arrive up to 2 s late,stress,beirut,wrr,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+late_reports,Reports arrive up to 2 s late,stress,beirut,wrr_speed,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+late_reports,Reports arrive up to 2 s late,stress,beirut,wrr_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+late_reports,Reports arrive up to 2 s late,stress,beirut,wrr_speed_drop,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+late_reports,Reports arrive up to 2 s late,stress,beirut,lsq,42.629,15.16,0.0,30.8983 42.2670 22.2788 34.1278 73.1271 35.2109 28.0354 55.1332 22.0729 83.1353
+late_reports,Reports arrive up to 2 s late,stress,beirut,ours_v6_nobal,4.156,1.008,0.0,3.6268 3.4514 3.7185 5.8104 3.2172 3.6275 3.5565 7.5775 3.3379 3.6365
+late_reports,Reports arrive up to 2 s late,stress,beirut,ours_v6_noburst,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+late_reports,Reports arrive up to 2 s late,stress,beirut,ours_v6_nocal,3.503,0.672,0.0,2.8937 2.5755 3.2609 4.9858 3.5761 3.0175 3.0485 5.3712 3.5132 2.7903
+late_reports,Reports arrive up to 2 s late,stress,beirut,oracle,2.957,0.533,0.0,2.3343 2.5755 2.7067 3.8006 2.8387 2.9656 2.2798 4.6764 2.9482 2.4415
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,ours_v6,11.205,1.597,4.436,10.8038 10.7693 10.2917 10.3401 16.3481 7.8726 12.7496 9.7256 12.0773 11.0681
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,ours_v5,17.932,3.59,1.05,16.0967 16.3238 16.6167 17.2311 27.5393 10.3705 17.8481 12.5389 22.8142 21.9426
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,ours_v2_speed,19.597,5.635,0.0,16.1512 17.0639 16.6167 17.2311 37.9073 10.3705 19.5704 12.3108 26.1822 22.5648
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,v4,13.461,3.327,0.353,10.3951 12.5755 10.8574 15.2751 20.2463 6.1395 12.4340 11.6610 21.8480 13.1766
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,wrr,16.25,5.749,0.0,14.3324 13.7435 10.3735 14.6738 34.9752 6.2798 15.6111 11.2325 23.8076 17.4698
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,wrr_speed,16.25,5.749,0.0,14.3324 13.7435 10.3735 14.6738 34.9752 6.2798 15.6111 11.2325 23.8076 17.4698
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,wrr_drop,16.016,5.313,0.115,14.7411 13.7435 10.3735 14.6738 32.9138 6.2798 15.6111 11.2325 23.1204 17.4698
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,wrr_speed_drop,16.016,5.313,0.115,14.7411 13.7435 10.3735 14.6738 32.9138 6.2798 15.6111 11.2325 23.1204 17.4698
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,lsq,34.891,12.368,0.0,17.5613 49.6707 14.9128 41.5469 50.9695 10.0267 46.9087 19.1401 43.7981 54.3726
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,ours_v6_nobal,12.001,1.711,5.238,10.9264 12.1817 10.4826 10.0912 16.3889 9.5145 13.0584 15.0964 12.9618 9.3052
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,ours_v6_noburst,16.719,3.292,1.149,13.4537 17.6750 15.5125 16.6229 24.7024 7.8515 16.8531 13.8937 19.4802 21.1407
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,ours_v6_nocal,11.061,1.558,4.439,10.8038 10.7693 10.2917 10.3401 16.3481 7.8726 12.2967 9.7256 11.0975 11.0681
+load_jump,Load jumps from 60% to 95% halfway,stress,beirut,oracle,13.353,5.5,0.0,8.2221 10.8983 9.1467 11.7432 32.5056 5.7887 12.5918 8.4883 18.3779 15.7691
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,ours_v6,10.641,1.974,0.405,8.1860 8.0403 11.3617 13.1281 9.7298 8.9163 10.8650 16.8854 11.1046 8.1966
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,ours_v5,10.222,2.338,0.0,7.7809 7.2232 9.5701 12.9413 12.1248 8.8579 6.9958 16.7696 12.6697 7.2859
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,ours_v2_speed,10.222,2.338,0.0,7.7809 7.2232 9.5701 12.9413 12.1248 8.8579 6.9958 16.7696 12.6697 7.2859
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,v4,13.08,2.107,0.0,11.9478 10.7661 12.2640 15.0541 14.2913 11.5964 9.7251 19.4841 15.1633 10.5090
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,wrr,11.21,0.621,0.0,10.4752 10.4523 10.8397 12.6836 11.4135 10.9280 10.8129 12.7814 11.2800 10.4315
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,wrr_speed,11.675,2.573,0.0,8.9383 8.8901 12.3155 14.8544 12.8557 10.2855 7.9078 19.9473 11.2085 9.5466
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,wrr_drop,11.21,0.621,0.0,10.4752 10.4523 10.8397 12.6836 11.4135 10.9280 10.8129 12.7814 11.2800 10.4315
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,wrr_speed_drop,11.675,2.573,0.0,8.9383 8.8901 12.3155 14.8544 12.8557 10.2855 7.9078 19.9473 11.2085 9.5466
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,lsq,15.867,2.417,0.0,13.6969 12.5310 16.9943 19.6406 20.0274 13.1149 10.9106 19.9280 17.5661 14.2617
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,ours_v6_nobal,10.804,2.334,0.114,8.2631 8.5763 12.6442 11.8977 10.7087 10.1557 6.6767 18.0111 12.8190 8.2870
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,ours_v6_noburst,10.147,2.174,0.0,8.1860 6.3015 11.4197 13.1281 9.7298 8.7216 8.3833 16.8339 10.5721 8.1966
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,ours_v6_nocal,10.756,1.964,0.304,7.9545 8.2233 11.1426 13.1281 11.1394 8.9163 10.8650 16.8854 11.1046 8.1966
+cap_drop,Hamra loses 1 of its 2 servers halfway (not announced),stress,beirut,oracle,7.009,2.555,0.0,4.0512 4.0463 8.1910 10.1198 7.4458 5.7560 4.2470 15.4445 5.8640 4.9218
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,ours_v6,9.304,2.439,0.0,7.8773 7.6154 8.8484 11.6078 5.9971 7.2161 7.1522 16.5766 13.2541 6.8919
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,ours_v5,9.563,1.728,0.0,9.0091 6.9617 10.6206 13.2891 10.2715 8.7670 6.3249 12.0288 11.6696 6.6852
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,ours_v2_speed,9.563,1.728,0.0,9.0091 6.9617 10.6206 13.2891 10.2715 8.7670 6.3249 12.0288 11.6696 6.6852
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,v4,10.255,1.84,0.0,9.5878 8.9620 12.0191 12.2971 8.1767 8.7541 7.4648 15.7597 11.3449 8.1837
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,wrr,13.852,0.622,0.0,13.1760 13.0801 13.5078 15.3504 13.9454 13.6210 13.4315 15.4445 13.8970 13.0668
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,wrr_speed,9.385,2.253,0.0,7.5172 7.0467 10.1437 12.3229 8.9598 7.4302 6.2077 16.6988 9.9292 7.5959
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,wrr_drop,13.852,0.622,0.0,13.1760 13.0801 13.5078 15.3504 13.9454 13.6210 13.4315 15.4445 13.8970 13.0668
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,wrr_speed_drop,9.385,2.253,0.0,7.5172 7.0467 10.1437 12.3229 8.9598 7.4302 6.2077 16.6988 9.9292 7.5959
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,lsq,12.715,2.147,0.0,13.3046 14.4856 15.2736 15.2216 9.3709 9.9676 8.6503 17.6315 10.4033 12.8407
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,ours_v6_nobal,9.604,2.373,0.082,9.0669 7.0205 9.2866 14.1587 6.7933 8.5464 6.2467 15.9141 11.8579 7.1502
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,ours_v6_noburst,9.568,2.378,0.0,7.8773 7.6154 9.5573 11.6078 5.9971 9.1499 7.1522 16.5766 13.2541 6.8919
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,ours_v6_nocal,9.295,2.428,0.0,7.8773 7.6154 8.8484 11.6078 5.9971 7.2031 7.1522 16.5059 13.2541 6.8919
+server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",real,beirut,oracle,5.66,2.15,0.0,4.7843 4.0136 4.8334 8.2324 4.4114 3.9714 3.3611 13.0387 6.6238 3.3329
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,ours_v6,19.86,2.034,7.834,18.8991 15.9694 20.0812 23.2801 19.8316 18.3842 19.2678 25.5371 20.5987 16.7485
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,ours_v5,19.869,2.094,7.585,16.2755 15.6818 20.5645 21.4120 20.2950 19.5652 19.4502 25.1190 22.9625 17.3686
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,ours_v2_speed,26.016,2.848,0.0,24.3264 22.6762 27.9951 29.1549 25.8614 22.6931 21.4174 33.8351 29.3850 22.8200
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,v4,35.102,2.353,0.0,34.8466 34.5470 35.0003 37.9863 29.0590 34.6853 32.0805 41.5348 36.2946 34.9826
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,wrr,27.097,0.533,0.0,26.6735 26.4087 26.8222 28.1178 27.2253 26.6840 26.6285 28.6183 27.3524 26.4372
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,wrr_speed,27.247,2.472,0.0,27.7538 27.4480 30.4183 31.2742 24.5236 25.6457 22.4010 32.5679 27.5537 22.8846
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,wrr_drop,27.097,0.533,0.0,26.6735 26.4087 26.8222 28.1178 27.2253 26.6840 26.6285 28.6183 27.3524 26.4372
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,wrr_speed_drop,23.22,2.478,1.38,23.5033 20.8916 23.3679 27.8601 24.5106 23.0370 17.9781 27.5505 25.5406 17.9628
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,lsq,59.415,5.224,0.0,64.7740 52.3467 54.4693 48.9951 58.7640 51.1356 64.5779 69.8958 62.4651 66.7226
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,ours_v6_nobal,19.74,1.728,7.724,15.9861 16.5839 20.1134 23.2736 21.1498 18.1246 20.2840 22.9705 19.8844 19.0285
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,ours_v6_noburst,19.891,2.093,7.491,17.4651 15.9694 19.9201 22.5908 20.0600 19.2472 18.7923 25.0611 23.0729 16.7356
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,ours_v6_nocal,19.504,1.397,7.755,18.8991 17.5644 19.1725 23.2801 19.8316 18.4880 19.5284 22.1665 19.3584 16.7485
+shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",real,beirut,oracle,23.448,4.431,0.0,27.7217 19.3489 22.1821 17.6759 26.3247 12.8488 30.7191 31.9568 26.6381 19.0673
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,ours_v6,10.545,2.844,0.0,6.9998 15.8081 13.8922 14.0549 9.9773 14.1175 11.9711 8.3026 5.6050 4.7205
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,ours_v5,12.794,2.873,0.0,16.5024 15.0335 13.3458 14.4607 10.3104 10.5543 13.6394 19.6037 5.9263 8.5640
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,ours_v2_speed,12.794,2.873,0.0,16.5024 15.0335 13.3458 14.4607 10.3104 10.5543 13.6394 19.6037 5.9263 8.5640
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,v4,20.12,2.637,0.0,17.1318 19.5006 23.3009 20.5036 25.9198 18.8733 19.4710 22.3612 21.7323 12.4075
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,wrr,27.6,4.83,0.0,23.9421 27.2467 29.5210 25.6896 38.0394 25.2494 25.5054 29.6542 36.9330 14.2149
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,wrr_speed,10.321,2.451,0.0,5.9760 10.1677 14.3263 14.1300 14.6858 8.2890 11.8434 10.9018 6.0459 6.8405
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,wrr_drop,27.6,4.83,0.0,23.9421 27.2467 29.5210 25.6896 38.0394 25.2494 25.5054 29.6542 36.9330 14.2149
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,wrr_speed_drop,10.321,2.451,0.0,5.9760 10.1677 14.3263 14.1300 14.6858 8.2890 11.8434 10.9018 6.0459 6.8405
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,lsq,17.561,1.883,0.0,16.5099 15.6727 19.5210 19.6994 21.7562 16.9380 15.8563 19.4907 17.5697 12.5982
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,ours_v6_nobal,11.357,3.197,0.0,14.1135 5.9938 10.6886 14.3179 13.8077 19.1434 14.2031 5.7334 6.7035 8.8691
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,ours_v6_noburst,10.545,2.844,0.0,6.9998 15.8081 13.8922 14.0549 9.9773 14.1175 11.9711 8.3026 5.6050 4.7205
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,ours_v6_nocal,10.545,2.844,0.0,6.9998 15.8081 13.8922 14.0549 9.9773 14.1175 11.9711 8.3026 5.6050 4.7205
+wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",real,beirut,oracle,3.585,0.348,0.0,3.3520 2.9556 3.5778 3.7054 3.9061 3.8707 3.7048 3.7068 4.3868 2.6844
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,ours_v6,7.854,1.123,1.427,9.1078 6.4252 8.6077 8.9434 6.5575 8.2290 5.3920 10.6410 7.8581 6.7829
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,ours_v5,8.455,1.576,0.665,12.3271 5.9767 9.9962 9.5148 7.9091 9.8453 6.1389 9.6977 7.7590 5.3893
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,ours_v2_speed,9.088,1.973,0.0,12.6881 5.9767 11.7157 9.8833 8.2929 9.8453 6.1185 12.9653 7.6498 5.7454
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,v4,7.949,1.566,0.114,9.3777 6.0243 9.3890 8.2063 6.6798 9.3982 5.2931 12.2018 7.4483 5.4749
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,wrr,8.485,1.872,0.0,13.0559 6.5407 10.0508 7.8681 7.4541 9.2916 5.9411 11.8863 8.0391 4.7182
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,wrr_speed,8.485,1.872,0.0,13.0559 6.5407 10.0508 7.8681 7.4541 9.2916 5.9411 11.8863 8.0391 4.7182
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,wrr_drop,8.504,1.838,0.025,12.8299 6.5407 10.4739 8.0507 7.4677 9.2916 5.9411 11.6623 8.0596 4.7182
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,wrr_speed_drop,8.504,1.838,0.025,12.8299 6.5407 10.4739 8.0507 7.4677 9.2916 5.9411 11.6623 8.0596 4.7182
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,lsq,24.019,9.506,0.0,38.8236 10.0642 39.5790 36.5579 17.2106 29.3879 11.0808 36.3408 13.7217 7.4231
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,ours_v6_nobal,8.104,1.117,1.411,9.6342 5.9427 8.9966 9.5554 7.1315 9.1300 7.4213 9.9386 7.6258 5.6598
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,ours_v6_noburst,8.101,1.326,0.681,11.5206 6.4150 10.0031 8.9434 7.2435 9.1197 5.5285 8.6288 6.8199 6.7829
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,ours_v6_nocal,7.854,1.123,1.427,9.1078 6.4252 8.6077 8.9434 6.5575 8.2290 5.3920 10.6410 7.8581 6.7829
+rush_hour,Rush hour: load 60% to 95% and back over 5 minutes,real,beirut,oracle,6.788,1.651,0.0,9.4047 4.4545 8.0311 6.2722 6.2587 8.2875 4.1233 10.8208 6.2018 4.0300
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,ours_v6,7.893,1.903,0.612,7.4423 5.7103 6.8564 11.6065 7.0086 4.6184 6.6059 10.4494 12.4875 6.1452
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,ours_v5,9.031,1.961,0.233,8.5711 7.4877 8.1830 11.2960 8.2469 5.0946 6.6876 12.7894 13.7937 8.1583
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,ours_v2_speed,9.081,2.107,0.0,8.5711 7.4877 7.6127 11.2960 8.2469 5.0946 6.6876 13.8603 13.7937 8.1583
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,v4,7.979,1.99,0.053,7.3803 5.8175 8.2450 11.5196 6.0217 5.0445 5.5374 11.3408 12.4438 6.4381
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,wrr,8.46,2.193,0.0,7.6780 5.7103 8.4248 11.6065 7.0086 4.6184 6.6059 13.6746 12.4875 6.7809
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,wrr_speed,8.46,2.193,0.0,7.6780 5.7103 8.4248 11.6065 7.0086 4.6184 6.6059 13.6746 12.4875 6.7809
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,wrr_drop,8.441,2.169,0.009,7.6780 5.7103 8.4248 11.6065 7.0086 4.6184 6.6059 13.4889 12.4875 6.7809
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,wrr_speed_drop,8.441,2.169,0.009,7.6780 5.7103 8.4248 11.6065 7.0086 4.6184 6.6059 13.4889 12.4875 6.7809
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,lsq,19.958,12.88,0.0,56.4128 7.7083 14.5620 49.2144 9.8183 5.1886 7.0836 19.5865 17.9688 12.0411
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,ours_v6_nobal,8.671,2.022,0.605,8.2920 7.4877 8.0900 11.2960 6.8515 5.0946 6.6876 11.2047 14.5375 7.1673
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,ours_v6_noburst,8.312,2.03,0.289,7.6780 5.7103 8.2574 11.6065 7.0086 4.6184 6.6059 12.3623 12.4875 6.7809
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,ours_v6_nocal,7.893,1.903,0.612,7.4423 5.7103 6.8564 11.6065 7.0086 4.6184 6.6059 10.4494 12.4875 6.1452
+ingress_surge,Incident: Ingress D doubles its frames from 50 s to 100 s,real,beirut,oracle,6.782,2.32,0.0,6.2267 4.2607 5.6537 10.5632 4.1235 3.4403 5.0911 13.0184 10.0312 5.4160
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,ours_v6,10.642,0.877,0.054,9.5749 10.2889 9.5379 11.0281 12.2357 10.6165 8.6178 12.6656 10.8514 11.0063
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,ours_v5,11.24,1.031,0.0,10.4559 10.3085 10.0728 11.0667 12.2553 10.8566 9.4059 14.2159 12.7736 10.9870
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,ours_v2_speed,11.24,1.031,0.0,10.4559 10.3085 10.0728 11.0667 12.2553 10.8566 9.4059 14.2159 12.7736 10.9870
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,v4,10.641,1.015,0.0,9.4078 9.6875 9.2093 10.4999 12.0073 11.3238 9.5362 13.5405 11.5137 9.6887
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,wrr,10.605,0.857,0.0,9.5749 10.2889 9.5379 11.0281 12.0726 10.6165 8.6178 12.6656 10.8514 10.7932
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,wrr_speed,10.562,0.833,0.0,9.5749 10.2889 9.5379 11.0281 11.8246 10.6165 8.6178 12.6656 10.8514 10.6188
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,wrr_drop,10.605,0.857,0.0,9.5749 10.2889 9.5379 11.0281 12.0726 10.6165 8.6178 12.6656 10.8514 10.7932
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,wrr_speed_drop,10.6,0.839,0.012,9.5749 10.2889 9.5379 11.0281 11.8246 10.6165 8.6178 12.6656 10.8514 10.9934
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,lsq,12.389,1.027,0.0,11.6134 12.9167 10.4659 13.9139 14.3370 12.4530 10.4482 14.1966 11.6241 11.9171
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,ours_v6_nobal,11.189,1.008,0.0,10.4559 10.3085 10.0728 11.0667 11.7463 10.8566 9.4059 14.2159 12.7736 10.9870
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,ours_v6_noburst,10.642,0.877,0.054,9.5749 10.2889 9.5379 11.0281 12.2357 10.6165 8.6178 12.6656 10.8514 11.0063
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,ours_v6_nocal,10.642,0.877,0.054,9.5749 10.2889 9.5379 11.0281 12.2357 10.6165 8.6178 12.6656 10.8514 11.0063
+mixed_jobs,"Mixed jobs: 80% short (75 ms), 20% long (200 ms)",real,beirut,oracle,7.736,0.546,0.0,6.6877 7.4389 7.3661 8.0843 8.2616 8.0337 6.9502 9.2821 8.0784 7.1761
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,ours_v6,4.78,0.831,0.0,4.1091 3.6345 4.7561 6.4159 4.6006 4.2505 3.9995 7.1851 5.0328 3.8173
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,ours_v5,6.023,1.209,0.0,4.7971 4.6869 6.3285 8.1616 6.0493 4.9124 4.3773 9.3529 6.9225 4.6441
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,ours_v2_speed,6.023,1.209,0.0,4.7971 4.6869 6.3285 8.1616 6.0493 4.9124 4.3773 9.3529 6.9225 4.6441
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,v4,5.11,0.802,0.0,5.0736 4.4189 4.9494 6.0229 4.4636 4.5944 4.6834 7.8991 5.0328 3.9659
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,wrr,4.78,0.831,0.0,4.1091 3.6345 4.7561 6.4159 4.6006 4.2505 3.9995 7.1851 5.0328 3.8173
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,wrr_speed,4.78,0.831,0.0,4.1091 3.6345 4.7561 6.4159 4.6006 4.2505 3.9995 7.1851 5.0328 3.8173
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,wrr_drop,4.78,0.831,0.0,4.1091 3.6345 4.7561 6.4159 4.6006 4.2505 3.9995 7.1851 5.0328 3.8173
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,wrr_speed_drop,4.78,0.831,0.0,4.1091 3.6345 4.7561 6.4159 4.6006 4.2505 3.9995 7.1851 5.0328 3.8173
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,lsq,6.059,1.172,0.0,5.2858 4.9418 6.7281 8.2066 5.9123 5.3212 4.5206 9.2950 6.2731 4.1080
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,ours_v6_nobal,5.951,1.155,0.0,4.7971 4.6869 6.3285 8.1616 5.6904 4.9124 4.3773 8.9862 6.9225 4.6441
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,ours_v6_noburst,4.78,0.831,0.0,4.1091 3.6345 4.7561 6.4159 4.6006 4.2505 3.9995 7.1851 5.0328 3.8173
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,ours_v6_nocal,4.78,0.831,0.0,4.1091 3.6345 4.7561 6.4159 4.6006 4.2505 3.9995 7.1851 5.0328 3.8173
+path_congestion,Congestion: the DC's path delays double from 60 s to 90 s,real,beirut,oracle,4.295,0.685,0.0,3.6718 3.7260 4.1503 5.2435 4.0003 4.0688 3.5044 6.5869 4.4613 3.5331
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,ours_v6,10.707,2.148,0.0,10.0637 9.1907 13.2951 13.5468 8.4508 6.4374 6.4291 14.4603 13.2411 11.9558
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,ours_v5,12.92,2.258,0.0,13.0410 10.5635 15.8214 15.5888 10.5782 10.9929 7.9599 17.8245 15.6763 11.1549
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,ours_v2_speed,12.92,2.258,0.0,13.0410 10.5635 15.8214 15.5888 10.5782 10.9929 7.9599 17.8245 15.6763 11.1549
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,v4,10.588,2.613,0.0,13.0345 9.1973 9.4670 13.9590 10.1344 7.3459 5.7777 16.4351 14.2217 6.3106
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,wrr,11.474,2.513,0.0,12.6358 11.9427 12.6249 14.1330 8.4508 6.4374 5.8820 16.9561 13.7217 11.9558
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,wrr_speed,10.364,2.112,0.0,9.3306 8.8966 12.7538 12.8446 8.4508 6.4374 5.8950 14.4474 12.6307 11.9558
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,wrr_drop,11.474,2.513,0.0,12.6358 11.9427 12.6249 14.1330 8.4508 6.4374 5.8820 16.9561 13.7217 11.9558
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,wrr_speed_drop,10.364,2.112,0.0,9.3306 8.8966 12.7538 12.8446 8.4508 6.4374 5.8950 14.4474 12.6307 11.9558
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,lsq,14.523,7.928,0.0,13.8383 11.4917 14.9449 13.4244 9.7298 7.1836 8.4354 45.1177 13.0398 8.0287
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,ours_v6_nobal,13.874,2.861,0.0,9.0091 12.9952 17.4840 15.9237 12.5359 12.0766 7.9599 21.5297 15.7413 13.4866
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,ours_v6_noburst,10.707,2.148,0.0,10.0637 9.1907 13.2951 13.5468 8.4508 6.4374 6.4291 14.4603 13.2411 11.9558
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,ours_v6_nocal,10.707,2.148,0.0,10.0637 9.1907 13.2951 13.5468 8.4508 6.4374 6.4291 14.4603 13.2411 11.9558
+dc_fail_recover,"Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",heldout,beirut,oracle,5.849,2.247,0.0,4.5656 4.0659 5.2072 9.9266 4.6463 3.7508 3.4653 12.8715 6.5134 3.4750
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,ours_v6,18.649,2.619,0.0,18.1982 15.1981 20.5259 21.8758 20.1971 13.1149 14.5258 24.2699 21.7547 16.8325
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,ours_v5,16.757,3.05,0.195,18.6355 13.6488 15.4025 23.5249 13.9650 12.2842 13.3077 23.7875 19.1051 13.9065
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,ours_v2_speed,16.827,3.017,0.0,18.6355 13.6488 15.4025 23.5249 14.6633 12.2842 13.3077 23.7875 19.1051 13.9065
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,v4,23.656,1.721,0.0,24.5579 23.7286 24.9791 27.3254 22.8139 21.5315 19.3265 26.5277 24.0340 21.7349
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,wrr,26.998,0.54,0.0,26.5642 26.2910 26.6611 28.0147 27.1470 26.5866 26.5373 28.5540 27.2550 26.3661
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,wrr_speed,20.236,2.629,0.0,19.4971 16.9565 19.8621 21.2574 24.4910 15.8923 17.0271 26.6628 23.5535 17.1619
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,wrr_drop,26.998,0.54,0.0,26.5642 26.2910 26.6611 28.0147 27.1470 26.5866 26.5373 28.5540 27.2550 26.3661
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,wrr_speed_drop,20.236,2.629,0.0,19.4971 16.9565 19.8621 21.2574 24.4910 15.8923 17.0271 26.6628 23.5535 17.1619
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,lsq,50.401,10.96,0.0,64.2917 36.3969 49.4619 59.6431 30.1749 22.5049 58.3898 60.5429 66.0757 56.5237
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,ours_v6_nobal,17.649,3.148,0.0,21.1112 13.8646 15.4025 23.5249 19.1595 12.2842 13.3077 23.8647 20.0597 13.9065
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,ours_v6_noburst,18.649,2.619,0.0,18.1982 15.1981 20.5259 21.8758 20.1971 13.1149 14.5258 24.2699 21.7547 16.8325
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,ours_v6_nocal,18.649,2.619,0.0,18.1982 15.1981 20.5259 21.8758 20.1971 13.1149 14.5258 24.2699 21.7547 16.8325
+slow_gpus,Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s,heldout,beirut,oracle,9.541,2.734,0.0,10.2051 6.5564 8.9257 13.6305 7.8113 5.7106 7.3932 17.4000 12.0592 5.7228
+O_100,Load 100% (all the capacity),overload,overload,ours_v6,18.115,1.414,9.152,17.2444 16.0505 18.2745 19.3163 21.1398 15.2627 17.9256 20.4545 19.4119 16.0701
+O_100,Load 100% (all the capacity),overload,overload,ours_v5,18.499,1.195,9.449,17.8148 16.6949 19.3434 18.4370 20.6483 15.7234 20.1011 20.6726 17.7089 17.8459
+O_100,Load 100% (all the capacity),overload,overload,ours_v2_speed,40.858,2.62,0.0,38.3282 39.8340 46.5616 46.5458 44.6653 38.8395 37.9937 39.9880 39.2400 36.5879
+O_100,Load 100% (all the capacity),overload,overload,v4,26.927,1.757,3.29,26.1134 23.4941 30.2012 29.8782 27.7999 25.8254 26.7428 29.9542 25.2218 24.0416
+O_100,Load 100% (all the capacity),overload,overload,wrr,41.048,2.147,0.0,36.8583 38.3322 46.2889 44.3067 44.3727 40.9894 39.8066 40.5385 39.9025 39.0828
+O_100,Load 100% (all the capacity),overload,overload,wrr_speed,41.048,2.147,0.0,36.8583 38.3322 46.2889 44.3067 44.3727 40.9894 39.8066 40.5385 39.9025 39.0828
+O_100,Load 100% (all the capacity),overload,overload,wrr_drop,21.929,2.858,5.151,18.6650 17.9127 25.5331 26.5578 28.6393 17.4290 20.5241 24.1825 20.9451 18.9025
+O_100,Load 100% (all the capacity),overload,overload,wrr_speed_drop,21.522,2.711,5.463,18.6650 17.9127 21.4648 26.5578 28.6393 17.4290 20.5241 24.1825 20.9451 18.9025
+O_100,Load 100% (all the capacity),overload,overload,lsq,40.264,2.53,0.0,38.7231 40.7515 45.1328 44.7764 42.3459 36.5361 36.8621 42.8930 39.7328 34.8896
+O_100,Load 100% (all the capacity),overload,overload,ours_v6_nobal,18.027,1.076,9.284,17.8148 15.9412 18.3291 18.5353 20.6483 15.5808 18.2003 19.6425 17.7308 17.8459
+O_100,Load 100% (all the capacity),overload,overload,ours_v6_noburst,18.11,1.411,9.147,17.2444 16.0505 18.2745 19.3163 21.1398 15.2627 17.9256 20.4545 19.3571 16.0701
+O_100,Load 100% (all the capacity),overload,overload,ours_v6_nocal,18.377,1.541,9.362,16.9647 16.4109 19.2071 19.7368 21.1398 14.9665 18.8980 21.1794 19.1929 16.0701
+O_100,Load 100% (all the capacity),overload,overload,expected_delay_drop,21.206,1.728,5.947,20.5737 17.8417 24.3060 24.1167 23.7575 20.8292 18.0465 22.7382 20.3921 19.4612
+O_100,Load 100% (all the capacity),overload,overload,v4_nodrop,40.583,2.007,0.0,36.6828 40.0907 45.3509 44.5361 42.0035 37.9620 39.8176 41.5958 39.5466 38.2475
+O_100,Load 100% (all the capacity),overload,overload,oracle,31.998,2.617,0.0,27.5614 28.5075 37.9451 36.6610 36.1111 31.1671 31.1542 31.6928 30.4567 28.7271
+O_110,Load 110%,overload,overload,ours_v6,25.154,0.946,17.455,27.5052 22.5267 24.8207 26.2498 25.6469 25.3805 24.6083 25.7692 24.8338 24.1944
+O_110,Load 110%,overload,overload,ours_v5,25.262,0.911,17.458,27.5052 23.9042 26.5420 26.2748 25.3035 25.5396 24.0445 25.3161 24.7138 23.4766
+O_110,Load 110%,overload,overload,ours_v2_speed,78.781,1.303,0.0,78.3444 77.6587 81.4265 75.4183 78.5579 77.4595 81.4789 78.6518 79.0660 79.7510
+O_110,Load 110%,overload,overload,v4,33.945,1.755,10.804,33.7670 29.6949 34.4017 36.6878 36.7536 31.5627 32.4968 35.1339 36.7882 32.1654
+O_110,Load 110%,overload,overload,wrr,79.154,1.43,0.0,79.1985 77.2679 82.4999 76.2373 78.6973 77.7678 81.9080 80.5536 79.2510 78.1548
+O_110,Load 110%,overload,overload,wrr_speed,79.154,1.43,0.0,79.1985 77.2679 82.4999 76.2373 78.6973 77.7678 81.9080 80.5536 79.2510 78.1548
+O_110,Load 110%,overload,overload,wrr_drop,28.246,2.122,13.76,27.2768 23.2680 30.4199 30.0454 33.4395 27.7828 24.5834 28.7315 29.9635 26.9451
+O_110,Load 110%,overload,overload,wrr_speed_drop,28.194,2.094,13.902,27.2768 23.2680 29.9006 30.0454 33.4395 27.7828 24.5834 28.7315 29.9635 26.9451
+O_110,Load 110%,overload,overload,lsq,76.83,1.192,0.0,78.1160 75.0438 80.4669 75.3933 77.7816 75.2561 77.4524 76.5359 76.2562 76.0014
+O_110,Load 110%,overload,overload,ours_v6_nobal,25.068,0.936,17.353,27.5052 22.4165 24.8207 25.8603 25.1742 25.5396 24.6233 25.7692 24.7388 24.2295
+O_110,Load 110%,overload,overload,ours_v6_noburst,25.154,0.946,17.455,27.5052 22.5267 24.8207 26.2498 25.6469 25.3805 24.6083 25.7692 24.8338 24.1944
+O_110,Load 110%,overload,overload,ours_v6_nocal,25.396,0.931,17.586,27.5052 23.3933 26.5420 25.8103 26.0699 25.3805 24.3638 25.3161 26.0237 23.5569
+O_110,Load 110%,overload,overload,expected_delay_drop,35.828,1.423,10.716,39.2194 35.0348 36.3852 35.1546 37.8284 35.8351 37.4214 34.9995 34.1183 32.2859
+O_110,Load 110%,overload,overload,v4_nodrop,78.065,1.446,0.0,78.7466 76.9123 81.5749 76.1674 77.3089 77.3252 81.3791 78.6369 76.7362 75.8609
+O_110,Load 110%,overload,overload,oracle,70.567,1.298,0.0,71.7003 68.4767 73.5866 70.1294 69.7054 69.7304 73.2113 71.0246 69.8915 68.2110
+O_130,Load 130%,overload,overload,ours_v6,35.357,0.88,29.816,34.0843 32.9438 35.7720 36.4000 35.4802 36.5835 34.6647 36.5221 36.4163 34.7071
+O_130,Load 130%,overload,overload,ours_v5,35.409,1.031,29.793,33.8260 33.1478 37.8612 36.0042 34.8797 36.5245 34.6647 36.2808 36.4163 34.4853
+O_130,Load 130%,overload,overload,ours_v2_speed,95.095,0.314,0.0,95.0116 94.4966 95.5943 95.2926 95.2087 94.8382 94.8833 95.8514 95.2740 94.4964
+O_130,Load 130%,overload,overload,v4,40.525,1.496,23.981,38.3485 40.1725 40.3167 42.4421 42.3098 38.2816 41.6705 42.7638 42.1197 36.8275
+O_130,Load 130%,overload,overload,wrr,95.522,0.37,0.0,95.3250 94.9556 96.0197 95.6968 95.5174 94.7750 95.8363 96.3008 95.8832 94.9102
+O_130,Load 130%,overload,overload,wrr_speed,95.522,0.37,0.0,95.3250 94.9556 96.0197 95.6968 95.5174 94.7750 95.8363 96.3008 95.8832 94.9102
+O_130,Load 130%,overload,overload,wrr_drop,37.99,1.256,26.921,37.7345 35.3831 37.9244 39.4863 40.8212 37.3336 37.6509 38.5278 39.6827 35.3556
+O_130,Load 130%,overload,overload,wrr_speed_drop,37.99,1.256,26.921,37.7345 35.3831 37.9244 39.4863 40.8212 37.3336 37.6509 38.5278 39.6827 35.3556
+O_130,Load 130%,overload,overload,lsq,94.846,0.23,0.0,94.6390 94.5476 94.9078 94.5811 94.6293 94.7750 95.0485 95.6350 94.9059 94.7865
+O_130,Load 130%,overload,overload,ours_v6_nobal,35.357,0.88,29.816,34.0843 32.9438 35.7720 36.4000 35.4802 36.5835 34.6647 36.5221 36.4163 34.7071
+O_130,Load 130%,overload,overload,ours_v6_noburst,35.357,0.88,29.816,34.0843 32.9438 35.7720 36.4000 35.4802 36.5835 34.6647 36.5221 36.4163 34.7071
+O_130,Load 130%,overload,overload,ours_v6_nocal,35.409,1.031,29.793,33.8260 33.1478 37.8612 36.0042 34.8797 36.5245 34.6647 36.2808 36.4163 34.4853
+O_130,Load 130%,overload,overload,expected_delay_drop,55.351,1.646,22.13,55.4478 51.7190 54.8564 56.1811 53.2330 54.8795 58.2532 58.0767 57.9733 52.8905
+O_130,Load 130%,overload,overload,v4_nodrop,96.012,0.306,0.0,95.9771 95.7758 96.3609 96.2189 95.6189 95.8621 96.2514 96.6420 96.2598 95.1576
+O_130,Load 130%,overload,overload,oracle,90.067,0.415,0.0,89.9809 89.2695 90.7379 90.6232 89.6224 89.3814 90.2241 90.8913 90.3067 89.6284
+O_150,Load 150%,overload,overload,ours_v6,43.561,0.63,39.027,43.7972 44.0111 43.7800 44.0060 42.7453 42.9586 41.8049 44.6829 44.5667 43.2616
+O_150,Load 150%,overload,overload,ours_v5,43.434,0.561,39.029,43.7972 44.0111 43.7800 42.7330 43.2137 42.9328 42.2086 44.3695 44.5667 42.7248
+O_150,Load 150%,overload,overload,ours_v2_speed,98.108,0.135,0.0,97.9281 98.0683 98.2286 98.0468 98.2911 97.9141 98.3151 98.3273 98.1723 97.7864
+O_150,Load 150%,overload,overload,v4,49.193,1.292,33.859,50.4432 45.2843 49.0252 49.9491 50.6459 51.1920 47.2411 50.3316 49.4185 48.3986
+O_150,Load 150%,overload,overload,wrr,98.256,0.095,0.0,98.3804 98.2769 98.3850 98.3706 98.2545 98.1201 98.2299 98.3929 98.0024 98.1504
+O_150,Load 150%,overload,overload,wrr_speed,98.256,0.095,0.0,98.3804 98.2769 98.3850 98.3706 98.2545 98.1201 98.2299 98.3929 98.0024 98.1504
+O_150,Load 150%,overload,overload,wrr_drop,45.351,1.073,36.628,44.3261 45.1855 44.8676 45.4972 45.0653 44.1469 44.1712 49.3440 45.5858 45.3208
+O_150,Load 150%,overload,overload,wrr_speed_drop,45.351,1.073,36.628,44.3261 45.1855 44.8676 45.4972 45.0653 44.1469 44.1712 49.3440 45.5858 45.3208
+O_150,Load 150%,overload,overload,lsq,97.915,0.114,0.0,97.7859 97.9147 98.0358 98.1378 97.8117 97.6639 98.1521 97.8535 97.9729 97.8195
+O_150,Load 150%,overload,overload,ours_v6_nobal,43.561,0.63,39.027,43.7972 44.0111 43.7800 44.0060 42.7453 42.9586 41.8049 44.6829 44.5667 43.2616
+O_150,Load 150%,overload,overload,ours_v6_noburst,43.561,0.63,39.027,43.7972 44.0111 43.7800 44.0060 42.7453 42.9586 41.8049 44.6829 44.5667 43.2616
+O_150,Load 150%,overload,overload,ours_v6_nocal,43.434,0.561,39.029,43.7972 44.0111 43.7800 42.7330 43.2137 42.9328 42.2086 44.3695 44.5667 42.7248
+O_150,Load 150%,overload,overload,expected_delay_drop,67.22,0.867,31.865,66.2192 66.3313 69.0492 68.4913 66.7142 65.6390 68.4862 67.8608 67.4704 65.9423
+O_150,Load 150%,overload,overload,v4_nodrop,98.568,0.107,0.0,98.4498 98.5147 98.6978 98.7088 98.4374 98.6020 98.6854 98.7682 98.5157 98.3012
+O_150,Load 150%,overload,overload,oracle,93.851,0.174,0.0,93.7297 93.5941 93.9837 93.8714 93.9254 93.9041 94.1935 94.2019 93.5938 93.5098
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,ours_v6,18.324,1.005,12.273,16.6263 19.2228 17.1308 19.6769 15.5379 18.7574 19.2964 19.0329 18.4534 19.5019
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,ours_v5,19.28,1.312,10.717,19.2242 17.4452 18.1589 17.6530 17.9310 19.9481 18.4610 20.6720 23.5061 19.7956
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,ours_v2_speed,25.641,0.391,0.0,26.4746 25.2229 25.1439 25.2633 25.6351 25.9785 25.2030 25.4900 26.6477 25.3466
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,v4,16.343,0.969,5.564,16.8802 15.8507 14.6810 15.1911 18.3554 15.7746 15.2900 18.5604 17.2820 15.5604
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,wrr,25.344,0.292,0.0,25.5535 25.1993 24.5565 25.1627 25.2107 25.8960 25.0735 25.7816 25.7721 25.2291
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,wrr_speed,25.362,0.265,0.0,25.5535 25.1993 24.7444 25.1627 25.2107 25.8960 25.0735 25.7816 25.7721 25.2291
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,wrr_drop,25.427,0.823,4.438,25.9727 24.6442 22.6765 24.9911 26.0301 26.5209 26.1737 26.3007 25.9023 25.0529
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,wrr_speed_drop,25.533,0.775,4.523,26.5809 24.6442 23.1289 24.9911 26.0301 26.5209 26.1737 26.3007 25.9023 25.0529
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,lsq,25.685,0.266,0.0,26.2384 25.5832 25.6022 24.9497 25.5231 25.5070 25.5501 25.7816 26.1626 25.9516
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,ours_v6_nobal,18.726,1.106,12.442,17.4824 21.6146 17.9062 19.6177 15.7206 19.0344 18.4198 19.1437 18.7315 19.5900
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,ours_v6_noburst,19.152,0.783,10.766,18.4566 18.1834 18.8051 19.2508 18.3436 19.3822 19.1317 21.4011 20.5952 17.9746
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,ours_v6_nocal,18.324,1.005,12.273,16.6263 19.2228 17.1308 19.6769 15.5379 18.7574 19.2964 19.0329 18.4534 19.5019
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,expected_delay_drop,20.768,1.403,7.693,19.6611 20.8055 17.0603 22.7660 19.3929 20.9090 23.6969 21.0744 22.7015 19.6076
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,v4_nodrop,25.481,0.353,0.0,26.2561 24.9867 24.7503 25.2219 25.3935 25.9726 25.0382 25.8399 25.8904 25.4641
+O_burst,"Burst: 85% load, 140% from 60 s to 80 s",overload,overload,oracle,23.577,0.414,0.0,24.0007 23.1264 22.4885 23.5353 23.1536 24.2219 23.1674 23.9442 24.2575 23.8722
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,ours_v6,17.309,0.833,11.685,18.8503 17.4716 19.1204 17.3589 16.5385 16.4938 16.2112 16.7649 15.7772 18.5023
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,ours_v5,19.083,0.772,11.396,19.9544 20.4361 19.6041 19.8280 18.8256 18.9064 18.2161 19.7284 16.7206 18.6131
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,ours_v2_speed,43.241,1.497,0.0,42.5167 46.7305 41.2474 44.4594 42.9322 43.0058 41.5498 46.7802 41.2339 41.9500
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,v4,19.804,0.847,7.183,21.0260 19.7318 19.6280 21.4971 20.4295 17.8182 19.3685 20.8213 18.1971 19.5207
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,wrr,42.817,1.443,0.0,42.2148 46.6067 41.3161 43.5215 42.9263 41.9534 40.5727 45.9848 41.3807 41.6954
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,wrr_speed,42.856,1.432,0.0,42.2148 46.6067 41.3161 43.5215 42.9263 42.3451 40.5727 45.9848 41.3807 41.6954
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,wrr_drop,23.567,0.668,7.917,23.6872 25.2365 24.5813 23.9842 23.2097 22.2219 22.8288 23.1868 22.6146 24.1216
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,wrr_speed_drop,23.622,0.615,7.916,23.6872 25.2365 24.5813 23.9842 23.2097 22.7690 22.8288 23.1868 22.6146 24.1216
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,lsq,42.14,1.379,0.0,42.0845 45.6991 40.6533 42.7784 42.0798 41.3495 41.1221 45.1717 40.1767 40.2846
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,ours_v6_nobal,17.379,0.708,11.689,19.0930 17.5041 18.5770 17.6465 17.2988 16.0393 16.4310 17.9167 17.0111 16.2678
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,ours_v6_noburst,18.753,0.46,11.376,19.5045 19.4077 19.1771 19.3486 18.2285 18.2965 19.1161 18.5147 17.5891 18.3466
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,ours_v6_nocal,17.349,0.849,11.718,18.8503 17.4716 19.5145 17.2869 16.5385 16.8495 15.9825 16.7649 15.9958 18.2327
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,expected_delay_drop,23.359,1.268,7.717,22.6393 26.1353 21.2343 24.0321 21.0711 24.0187 22.2674 26.0207 23.7886 22.3873
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,v4_nodrop,42.856,1.381,0.0,41.9573 47.1873 41.6505 43.0750 42.9115 42.4826 41.2944 45.2012 41.1231 41.6804
+O_rush,Rush hour: load 60% to 120% and back over 5 minutes,overload,overload,oracle,38.802,1.426,0.0,38.3725 42.9291 37.5840 39.0927 38.6075 38.0759 37.1065 41.7369 37.0081 37.5049
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,ours_v6,18.659,1.442,12.084,18.2032 16.8974 22.5815 21.7591 18.1248 16.2071 18.9376 17.7752 18.4700 17.6358
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,ours_v5,22.362,1.306,12.413,20.4897 19.4564 25.0181 24.7188 21.6309 21.8298 23.1113 21.4628 24.0852 21.8158
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,ours_v2_speed,43.554,1.004,0.0,43.3555 43.0833 44.1873 45.0960 43.5729 41.1844 42.0886 46.1508 43.6625 43.1541
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,v4,21.051,0.973,7.423,20.1934 19.5302 21.6393 21.1548 22.0494 19.7672 20.9537 21.4238 24.0234 19.7764
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,wrr,43.33,0.904,0.0,44.1717 43.4181 43.9420 44.6036 42.4475 41.0206 42.7002 45.4156 43.1229 42.4574
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,wrr_speed,43.33,0.904,0.0,44.1717 43.4181 43.9420 44.6036 42.4475 41.0206 42.7002 45.4156 43.1229 42.4574
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,wrr_drop,30.356,1.534,6.761,30.0609 27.4682 31.7368 33.1785 28.6377 28.3736 28.3724 33.1718 32.4265 30.1309
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,wrr_speed_drop,30.356,1.534,6.761,30.0609 27.4682 31.7368 33.1785 28.6377 28.3736 28.3724 33.1718 32.4265 30.1309
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,lsq,43.173,0.951,0.0,42.8915 43.3216 43.9922 44.7770 43.0979 41.1958 41.5166 45.3431 43.4714 42.1203
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,ours_v6_nobal,19.57,1.08,12.276,18.5666 18.3783 21.6616 21.3562 19.0183 16.8004 19.3623 20.7108 19.2344 20.6079
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,ours_v6_noburst,22.46,1.292,12.978,21.2221 19.8252 25.1185 25.7595 22.4227 21.7281 23.0037 21.1620 21.8256 22.5294
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,ours_v6_nocal,18.77,1.401,12.106,18.2032 17.3003 22.5815 21.7591 18.1248 16.2071 18.9376 18.2264 18.7286 17.6358
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,expected_delay_drop,23.312,1.6,10.363,21.6806 21.6353 24.7115 26.1456 25.0184 18.8856 21.9504 24.6212 25.1869 23.2878
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,v4_nodrop,44.353,0.87,0.0,44.8259 44.6550 44.7059 45.8121 43.1205 42.7385 42.7342 46.2623 44.7586 43.9126
+O_surge,Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%),overload,overload,oracle,39.832,1.081,0.0,40.1800 39.2646 40.1115 41.4760 39.5238 37.1835 38.2490 42.5412 40.3294 39.4629
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,ours_v6,25.623,1.426,16.539,25.8633 23.2972 25.2175 27.1966 24.7651 27.1317 25.8924 27.9107 27.3719 21.5864
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,ours_v5,26.854,1.05,16.856,28.5062 23.9051 27.6922 26.4043 27.7082 25.8793 25.7426 28.2066 28.2486 26.2498
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,ours_v2_speed,30.62,0.998,0.0,30.4868 28.3109 31.3398 31.3515 31.8846 29.5003 29.5271 32.5228 31.9501 29.3244
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,v4,28.545,0.656,0.0,27.9596 28.1279 28.7362 30.0696 28.0606 28.5983 27.2668 30.0913 28.6382 27.8969
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,wrr,28.693,0.571,0.0,28.6348 28.0429 28.6073 30.1147 28.4782 28.3258 27.8075 30.0592 28.8201 28.0390
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,wrr_speed,30.168,1.043,0.0,29.6765 28.7292 29.4387 31.0165 31.1603 29.6431 28.1462 32.0790 32.5541 29.2404
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,wrr_drop,28.693,0.571,0.0,28.6348 28.0429 28.6073 30.1147 28.4782 28.3258 27.8075 30.0592 28.8201 28.0390
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,wrr_speed_drop,26.42,1.255,13.202,26.1527 25.9053 25.6944 27.5122 27.3166 23.7638 24.0685 28.3160 29.3461 26.1271
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,lsq,29.159,0.836,0.0,29.3936 28.3305 30.6631 30.7331 28.6152 28.5269 27.3580 30.6381 28.9759 28.3555
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,ours_v6_nobal,26.882,0.841,17.355,26.1784 27.2911 29.0391 26.3592 25.0522 25.8793 27.2473 27.2996 28.2226 26.2498
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,ours_v6_noburst,25.604,1.409,16.521,25.8633 23.2972 25.2175 27.1966 24.7651 27.1317 25.8924 27.7177 27.3719 21.5864
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,ours_v6_nocal,25.701,1.396,16.613,25.8633 23.2972 25.2175 26.8037 25.8483 27.1317 25.8924 27.9107 27.4628 21.5864
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,expected_delay_drop,33.775,1.29,5.718,36.6407 31.3178 31.9392 35.5707 34.3840 32.7969 31.6701 34.9029 34.9373 33.5939
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,v4_nodrop,28.545,0.656,0.0,27.9596 28.1279 28.7362 30.0696 28.0606 28.5983 27.2668 30.0913 28.6382 27.8969
+O_dc_half,DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works),overload,overload,oracle,35.44,1.152,0.0,36.6407 33.7234 35.4579 36.9557 34.5080 33.3030 33.6894 38.0162 35.4309 36.6748
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,ours_v6,35.045,0.67,29.052,33.6354 34.2612 34.7654 36.2189 36.3598 35.1972 34.9231 36.1185 34.8635 34.1098
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,ours_v5,34.728,0.652,28.978,34.0504 33.3263 35.0434 35.6253 36.2921 35.3110 34.4741 34.9576 34.5801 33.6234
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,ours_v2_speed,95.227,0.404,0.0,95.6257 94.9896 95.2616 95.2968 95.2256 94.9688 95.1967 96.3174 95.3332 94.0526
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,v4,35.163,0.553,24.627,35.3038 34.7202 34.3990 34.5937 36.9053 35.2183 35.3890 35.4860 35.4474 34.1695
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,wrr,95.522,0.37,0.0,95.3250 94.9556 96.0197 95.6968 95.5174 94.7750 95.8363 96.3008 95.8832 94.9102
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,wrr_speed,95.522,0.37,0.0,95.3250 94.9556 96.0197 95.6968 95.5174 94.7750 95.8363 96.3008 95.8832 94.9102
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,wrr_drop,37.268,1.454,26.883,35.5452 34.5799 37.3178 39.1284 41.4936 37.4810 37.3163 37.0340 37.8126 34.9674
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,wrr_speed_drop,37.268,1.454,26.883,35.5452 34.5799 37.3178 39.1284 41.4936 37.4810 37.3163 37.0340 37.8126 34.9674
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,lsq,89.428,1.647,0.0,87.7239 91.2541 92.5828 91.1537 91.3816 88.9895 89.1058 89.9634 85.1957 86.9278
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,ours_v6_nobal,34.739,0.666,28.978,34.0504 33.3263 35.0434 35.6253 36.3936 35.3110 34.4741 34.9576 34.5801 33.6234
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,ours_v6_noburst,35.045,0.67,29.052,33.6354 34.2612 34.7654 36.2189 36.3598 35.1972 34.9231 36.1185 34.8635 34.1098
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,ours_v6_nocal,35.08,0.658,29.054,33.6354 34.2612 34.7654 36.0926 36.3598 35.5554 34.9231 36.1185 34.8635 34.2293
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,expected_delay_drop,51.584,0.839,22.266,50.9803 49.7939 53.1084 51.4989 52.1250 51.0071 51.6498 53.4662 52.0669 50.1429
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,v4_nodrop,95.355,0.341,0.0,95.3758 94.6666 95.7881 95.6674 95.5428 94.8888 95.1671 96.1010 95.6082 94.7395
+O_130_W1,"Load 130%, reports every 1 s",overload,overload,oracle,90.077,0.41,0.0,89.5109 89.4990 90.4431 90.1684 89.7831 89.3519 90.3808 91.0328 90.7722 89.8289
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,ours_v6,35.928,0.525,31.003,34.8533 36.3241 36.5954 35.9984 36.2095 35.5820 34.8881 37.1694 36.1753 35.4862
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,ours_v5,35.859,0.524,30.98,34.8533 36.3241 36.5954 35.9376 35.5806 35.5820 34.8881 37.1694 36.1753 35.4862
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,ours_v2_speed,95.163,0.317,0.0,94.4977 95.4865 95.4180 95.3870 95.2126 95.5351 94.4115 95.7362 94.9521 94.9936
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,v4,45.51,1.609,23.528,40.4566 45.6097 48.3871 46.8198 44.7948 45.9838 47.1121 46.8347 45.8001 43.3023
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,wrr,95.468,0.256,0.0,95.0454 95.6051 95.6536 95.8033 94.8920 95.7176 95.3849 96.0389 95.3092 95.2295
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,wrr_speed,95.468,0.256,0.0,95.0454 95.6051 95.6536 95.8033 94.8920 95.7176 95.3849 96.0389 95.3092 95.2295
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,wrr_drop,37.814,1.335,26.917,36.5517 36.7104 40.7938 37.6333 37.7755 38.8850 35.9566 40.6827 37.9421 35.2136
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,wrr_speed_drop,37.814,1.335,26.917,36.5517 36.7104 40.7938 37.6333 37.7755 38.8850 35.9566 40.6827 37.9421 35.2136
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,lsq,94.993,0.298,0.0,94.3508 94.9603 95.6808 95.3110 95.1077 94.4950 94.9243 95.3731 94.6074 95.1192
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,ours_v6_nobal,35.928,0.525,31.003,34.8533 36.3241 36.5954 35.9984 36.2095 35.5820 34.8881 37.1694 36.1753 35.4862
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,ours_v6_noburst,35.928,0.525,31.003,34.8533 36.3241 36.5954 35.9984 36.2095 35.5820 34.8881 37.1694 36.1753 35.4862
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,ours_v6_nocal,35.859,0.524,30.98,34.8533 36.3241 36.5954 35.9376 35.5806 35.5820 34.8881 37.1694 36.1753 35.4862
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,expected_delay_drop,53.219,1.51,23.543,53.1873 50.7923 55.1256 56.7448 50.7784 53.1920 50.5389 54.8962 52.4516 54.4825
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,v4_nodrop,95.927,0.248,0.0,95.8778 95.8454 96.5477 96.2288 95.4869 95.7511 96.0389 96.2567 95.7924 95.4409
+O_130_W10,"Load 130%, reports every 10 s",overload,overload,oracle,90.005,0.385,0.0,89.0443 89.7260 90.3649 90.8165 90.0182 89.7533 90.4597 90.4739 89.4395 89.9504
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,ours_v6,36.342,1.055,30.737,34.9481 33.8532 37.0104 37.4232 35.6620 37.2071 35.2366 38.5861 37.7491 35.7438
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,ours_v5,36.049,1.039,30.727,34.3722 35.5361 36.9598 37.0063 34.8163 35.2520 35.4738 38.6818 37.7279 34.6602
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,ours_v2_speed,100.0,0.0,0.0,100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,v4,44.438,2.457,24.469,40.7707 40.1343 44.0401 46.6484 47.2407 43.2918 51.1923 44.7986 45.4622 40.8038
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,wrr,100.0,0.0,0.0,100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,wrr_speed,100.0,0.0,0.0,100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,wrr_drop,47.946,3.923,26.921,45.3568 42.7266 43.1303 51.9242 60.9464 44.2272 44.7456 50.0166 47.8612 48.5217
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,wrr_speed_drop,47.946,3.923,26.921,45.3568 42.7266 43.1303 51.9242 60.9464 44.2272 44.7456 50.0166 47.8612 48.5217
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,lsq,100.0,0.0,0.0,100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,ours_v6_nobal,36.209,1.073,30.781,34.9397 33.8532 36.8966 37.0063 35.3745 37.1355 35.4738 38.6818 37.7279 34.9972
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,ours_v6_noburst,36.342,1.055,30.737,34.9481 33.8532 37.0104 37.4232 35.6620 37.2071 35.2366 38.5861 37.7491 35.7438
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,ours_v6_nocal,36.431,0.933,30.752,35.1387 35.5361 37.0104 37.6253 34.8163 36.8700 35.2366 38.5861 37.7491 35.7438
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,expected_delay_drop,50.466,1.957,29.861,49.8793 47.0316 51.3647 52.4800 47.3506 49.3342 55.0426 51.3274 53.3996 47.4508
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,v4_nodrop,100.0,0.0,0.0,100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000
+O_130_nodiscard,"Load 130%, sites serve every frame (no discard)",overload,overload,oracle,100.0,0.0,0.0,100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000 100.0000
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,ours_v6,2.847,0.162,0.0,2.6652 2.9306 2.9728 2.7060 2.3184 3.0195 3.0269 3.0028 2.8499 2.9818
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,ours_v5,2.638,0.24,0.0,2.6622 2.4462 2.4512 2.1606 2.2727 2.7546 2.9389 3.3001 2.5788 2.8118
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,ours_v2_speed,2.638,0.24,0.0,2.6622 2.4462 2.4512 2.1606 2.2727 2.7546 2.9389 3.3001 2.5788 2.8118
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,v4,3.9,0.208,0.0,3.9401 3.4482 4.1095 3.6312 3.7990 4.0010 4.2219 4.1312 4.2206 3.4980
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,wrr,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,wrr_speed,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,wrr_drop,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,wrr_speed_drop,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,lsq,61.365,14.542,0.0,66.9520 38.4173 72.5932 89.1005 72.1911 23.2562 82.8880 46.2556 62.5595 59.4389
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,ours_v6_nobal,2.622,0.255,0.0,2.6622 2.4462 2.4512 2.1606 2.1174 2.7546 2.9389 3.3001 2.5788 2.8118
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,ours_v6_noburst,2.847,0.162,0.0,2.6652 2.9306 2.9728 2.7060 2.3184 3.0195 3.0269 3.0028 2.8499 2.9818
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,ours_v6_nocal,2.847,0.162,0.0,2.6652 2.9306 2.9728 2.7060 2.3184 3.0195 3.0269 3.0028 2.8499 2.9818
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,expected_delay_drop,23.859,1.294,15.21,24.9461 24.3478 23.3847 24.8184 20.2200 23.0454 26.0229 25.0296 21.5852 25.1875
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,v4_nodrop,3.9,0.208,0.0,3.9401 3.4482 4.1095 3.6312 3.7990 4.0010 4.2219 4.1312 4.2206 3.4980
+L:main,"Large network: 6 sites, 12 ingresses",L_main,large,oracle,2.447,0.189,0.0,2.5620 2.2597 2.4995 2.0521 2.1600 2.7546 2.4173 2.8967 2.2926 2.5719
+L:report_interval=1,Reports every 1 s,L_sweep,large,ours_v6,2.713,0.185,0.0,2.8838 2.6177 3.0995 2.4288 2.3093 2.7095 2.6205 3.0968 2.6059 2.7601
+L:report_interval=1,Reports every 1 s,L_sweep,large,ours_v5,2.581,0.163,0.0,2.5468 2.5365 2.5899 2.2239 2.2636 2.5860 2.5780 2.9118 2.6390 2.9302
+L:report_interval=1,Reports every 1 s,L_sweep,large,ours_v2_speed,2.581,0.163,0.0,2.5468 2.5365 2.5899 2.2239 2.2636 2.5860 2.5780 2.9118 2.6390 2.9302
+L:report_interval=1,Reports every 1 s,L_sweep,large,v4,6.583,0.227,0.005,6.2654 6.5383 7.1095 6.0750 6.4039 6.6653 6.8545 6.6214 6.9139 6.3796
+L:report_interval=1,Reports every 1 s,L_sweep,large,wrr,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:report_interval=1,Reports every 1 s,L_sweep,large,wrr_speed,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:report_interval=1,Reports every 1 s,L_sweep,large,wrr_drop,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:report_interval=1,Reports every 1 s,L_sweep,large,wrr_speed_drop,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:report_interval=1,Reports every 1 s,L_sweep,large,lsq,72.494,0.539,0.0,72.0426 72.3063 74.3178 71.9783 72.1576 72.7941 72.4243 72.5894 72.8144 71.5179
+L:report_interval=1,Reports every 1 s,L_sweep,large,ours_v6_nobal,2.581,0.163,0.0,2.5468 2.5365 2.5899 2.2239 2.2636 2.5860 2.5780 2.9118 2.6390 2.9302
+L:report_interval=1,Reports every 1 s,L_sweep,large,ours_v6_noburst,2.713,0.185,0.0,2.8838 2.6177 3.0995 2.4288 2.3093 2.7095 2.6205 3.0968 2.6059 2.7601
+L:report_interval=1,Reports every 1 s,L_sweep,large,ours_v6_nocal,2.713,0.185,0.0,2.8838 2.6177 3.0995 2.4288 2.3093 2.7095 2.6205 3.0968 2.6059 2.7601
+L:report_interval=1,Reports every 1 s,L_sweep,large,oracle,2.447,0.189,0.0,2.5620 2.2597 2.4995 2.0521 2.1600 2.7546 2.4173 2.8967 2.2926 2.5719
+L:report_interval=10,Reports every 10 s,L_sweep,large,ours_v6,2.892,0.153,0.0,2.9800 3.0392 2.8879 2.9259 2.4820 3.0349 2.8401 3.1825 2.5769 2.9721
+L:report_interval=10,Reports every 10 s,L_sweep,large,ours_v5,2.614,0.177,0.0,2.8626 2.5889 2.2973 2.2837 2.5537 2.4401 2.7397 2.9098 2.4939 2.9699
+L:report_interval=10,Reports every 10 s,L_sweep,large,ours_v2_speed,2.614,0.177,0.0,2.8626 2.5889 2.2973 2.2837 2.5537 2.4401 2.7397 2.9098 2.4939 2.9699
+L:report_interval=10,Reports every 10 s,L_sweep,large,v4,3.457,0.182,0.0,3.6929 3.5175 3.6544 3.4462 3.1948 3.5360 3.1698 3.8521 3.0420 3.4641
+L:report_interval=10,Reports every 10 s,L_sweep,large,wrr,2.876,0.165,0.0,3.3256 2.9050 2.8163 2.6712 2.7167 3.0545 2.9667 2.8531 2.4830 2.9721
+L:report_interval=10,Reports every 10 s,L_sweep,large,wrr_speed,2.876,0.165,0.0,3.3256 2.9050 2.8163 2.6712 2.7167 3.0545 2.9667 2.8531 2.4830 2.9721
+L:report_interval=10,Reports every 10 s,L_sweep,large,wrr_drop,2.876,0.165,0.0,3.3256 2.9050 2.8163 2.6712 2.7167 3.0545 2.9667 2.8531 2.4830 2.9721
+L:report_interval=10,Reports every 10 s,L_sweep,large,wrr_speed_drop,2.876,0.165,0.0,3.3256 2.9050 2.8163 2.6712 2.7167 3.0545 2.9667 2.8531 2.4830 2.9721
+L:report_interval=10,Reports every 10 s,L_sweep,large,lsq,8.504,0.704,0.0,8.0010 9.6911 8.1448 7.8591 7.6893 8.3902 9.8389 10.0883 7.3943 7.9387
+L:report_interval=10,Reports every 10 s,L_sweep,large,ours_v6_nobal,2.605,0.18,0.0,2.8626 2.5889 2.2973 2.2837 2.4602 2.4401 2.7397 2.9098 2.4939 2.9699
+L:report_interval=10,Reports every 10 s,L_sweep,large,ours_v6_noburst,2.892,0.153,0.0,2.9800 3.0392 2.8879 2.9259 2.4820 3.0349 2.8401 3.1825 2.5769 2.9721
+L:report_interval=10,Reports every 10 s,L_sweep,large,ours_v6_nocal,2.892,0.153,0.0,2.9800 3.0392 2.8879 2.9259 2.4820 3.0349 2.8401 3.1825 2.5769 2.9721
+L:report_interval=10,Reports every 10 s,L_sweep,large,oracle,2.545,0.195,0.0,2.9691 2.3097 2.4797 2.3294 2.2538 2.6733 2.5760 2.9338 2.2231 2.7063
+L:load=70,Load 70%,L_sweep,large,ours_v6,1.184,0.112,0.0,1.3737 1.0478 1.1726 1.0651 1.0442 1.2460 1.2415 1.3615 0.9307 1.3591
+L:load=70,Load 70%,L_sweep,large,ours_v5,1.205,0.122,0.0,1.3955 1.0698 1.2164 1.0905 1.0294 1.2642 1.2268 1.3287 0.9489 1.4843
+L:load=70,Load 70%,L_sweep,large,ours_v2_speed,1.205,0.122,0.0,1.3955 1.0698 1.2164 1.0905 1.0294 1.2642 1.2268 1.3287 0.9489 1.4843
+L:load=70,Load 70%,L_sweep,large,v4,1.798,0.142,0.0,1.9043 1.5643 1.7242 1.7063 1.5001 1.8180 1.8641 2.1514 1.7227 2.0257
+L:load=70,Load 70%,L_sweep,large,wrr,1.318,0.108,0.0,1.4936 1.1577 1.2968 1.1484 1.1655 1.4719 1.4110 1.4889 1.1497 1.3922
+L:load=70,Load 70%,L_sweep,large,wrr_speed,1.318,0.108,0.0,1.4936 1.1577 1.2968 1.1484 1.1655 1.4719 1.4110 1.4889 1.1497 1.3922
+L:load=70,Load 70%,L_sweep,large,wrr_drop,1.318,0.108,0.0,1.4936 1.1577 1.2968 1.1484 1.1655 1.4719 1.4110 1.4889 1.1497 1.3922
+L:load=70,Load 70%,L_sweep,large,wrr_speed_drop,1.318,0.108,0.0,1.4936 1.1577 1.2968 1.1484 1.1655 1.4719 1.4110 1.4889 1.1497 1.3922
+L:load=70,Load 70%,L_sweep,large,lsq,4.941,0.615,0.0,4.5535 3.9200 5.5963 6.2602 3.9560 5.9531 4.5277 5.5952 4.1060 4.9464
+L:load=70,Load 70%,L_sweep,large,ours_v6_nobal,1.216,0.13,0.0,1.3955 1.0698 1.2164 1.1267 1.0074 1.2533 1.2268 1.4234 0.9489 1.4917
+L:load=70,Load 70%,L_sweep,large,ours_v6_noburst,1.192,0.108,0.0,1.3737 1.0478 1.1726 1.1013 1.0846 1.2460 1.2415 1.3615 0.9307 1.3591
+L:load=70,Load 70%,L_sweep,large,ours_v6_nocal,1.184,0.112,0.0,1.3737 1.0478 1.1726 1.0651 1.0442 1.2460 1.2415 1.3615 0.9307 1.3591
+L:load=70,Load 70%,L_sweep,large,oracle,1.714,0.139,0.0,1.9152 1.5057 1.7096 1.4817 1.5184 1.8180 1.8457 1.9876 1.5110 1.8489
+L:load=95,Load 95%,L_sweep,large,ours_v6,11.471,0.988,3.391,13.8618 9.6773 11.7736 11.6919 12.5680 12.1609 11.2372 12.1776 10.0332 9.5260
+L:load=95,Load 95%,L_sweep,large,ours_v5,11.691,1.378,3.605,15.2440 9.9034 13.1430 12.6931 13.4387 10.6748 9.2244 11.7066 11.2111 9.6702
+L:load=95,Load 95%,L_sweep,large,ours_v2_speed,20.656,3.695,0.0,21.1457 19.4246 21.6746 19.2119 26.8078 18.4098 16.4820 30.5790 20.9039 11.9177
+L:load=95,Load 95%,L_sweep,large,v4,16.964,1.337,0.196,17.4835 16.0311 19.4468 16.9672 18.0362 15.6859 16.4549 19.9856 15.8684 13.6809
+L:load=95,Load 95%,L_sweep,large,wrr,17.277,2.532,0.0,19.3308 15.8562 20.4719 15.3066 20.2117 14.6583 15.3225 23.7558 16.0143 11.8388
+L:load=95,Load 95%,L_sweep,large,wrr_speed,17.277,2.532,0.0,19.3308 15.8562 20.4719 15.3066 20.2117 14.6583 15.3225 23.7558 16.0143 11.8388
+L:load=95,Load 95%,L_sweep,large,wrr_drop,14.683,1.491,0.475,16.3800 14.2846 16.2855 14.4722 16.8895 13.7764 12.1637 17.8208 13.0589 11.6973
+L:load=95,Load 95%,L_sweep,large,wrr_speed_drop,14.683,1.491,0.475,16.3800 14.2846 16.2855 14.4722 16.8895 13.7764 12.1637 17.8208 13.0589 11.6973
+L:load=95,Load 95%,L_sweep,large,lsq,95.126,0.434,0.0,95.2153 95.9014 96.0665 94.9104 94.7756 95.2613 94.3624 95.0605 95.5264 94.1826
+L:load=95,Load 95%,L_sweep,large,ours_v6_nobal,11.779,1.307,3.596,15.2629 10.1160 12.1314 12.6931 13.8326 10.6748 9.8312 12.1000 11.5596 9.5886
+L:load=95,Load 95%,L_sweep,large,ours_v6_noburst,11.487,0.995,3.423,13.8618 9.6773 11.7736 11.6919 12.5680 12.1609 11.2372 12.3381 10.0332 9.5260
+L:load=95,Load 95%,L_sweep,large,ours_v6_nocal,11.402,1.061,3.298,13.8618 9.6773 12.3601 11.4846 13.3851 11.1036 11.2372 11.4952 9.8522 9.5587
+L:load=95,Load 95%,L_sweep,large,oracle,8.257,1.353,0.0,9.0636 6.3161 9.3737 7.2644 9.6584 7.3602 7.2793 12.4344 7.5155 6.3017
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,ours_v6,7.116,0.789,0.177,6.2805 6.9054 8.6592 5.9515 5.2218 8.2608 7.7583 7.3857 6.6759 8.0588
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,ours_v5,6.379,0.501,0.0,6.3018 6.1742 7.3748 5.8761 5.6635 5.7681 6.0417 7.0490 5.9469 7.5972
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,ours_v2_speed,6.379,0.501,0.0,6.3018 6.1742 7.3748 5.8761 5.6635 5.7681 6.0417 7.0490 5.9469 7.5972
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,v4,9.238,0.53,0.0,8.6756 9.5472 9.8441 7.6450 8.5791 9.7721 9.1444 9.5241 10.0771 9.5740
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,wrr,12.85,0.181,0.0,12.8829 12.5530 12.9074 12.6654 12.7285 13.2041 12.8750 13.2427 12.9662 12.4708
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,wrr_speed,7.25,0.293,0.0,7.0637 7.1491 7.3055 6.7440 6.7451 7.4149 7.1730 8.1561 7.1880 7.5578
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,wrr_drop,12.85,0.181,0.0,12.8829 12.5530 12.9074 12.6654 12.7285 13.2041 12.8750 13.2427 12.9662 12.4708
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,wrr_speed_drop,7.25,0.293,0.0,7.0637 7.1491 7.3055 6.7440 6.7451 7.4149 7.1730 8.1561 7.1880 7.5578
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,lsq,69.679,5.804,0.0,71.0287 65.0609 76.6455 82.8627 69.7782 62.3175 79.9460 57.3539 67.7502 64.0421
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,ours_v6_nobal,6.539,0.777,0.0,6.3079 6.1170 7.8512 6.0328 4.6460 5.5152 6.1023 7.8073 7.2664 7.7400
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,ours_v6_noburst,6.777,0.616,0.0,6.2805 6.9054 6.8080 5.9515 5.2218 6.6081 7.7583 7.3857 6.6759 8.1711
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,ours_v6_nocal,7.087,0.789,0.177,6.2805 6.9054 8.6592 5.9515 5.2218 8.4204 7.3125 7.3857 6.6759 8.0588
+L:L_server_fail,"Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",L_real,large,oracle,3.14,0.325,0.0,3.2450 2.9066 3.0542 2.5102 2.7297 3.2002 3.1391 4.1706 2.9614 3.4859
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,ours_v6,7.42,0.611,0.051,6.3352 8.5151 7.5346 6.6988 7.2538 8.5649 6.8151 6.9004 8.6311 6.9535
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,ours_v5,6.943,0.734,0.0,5.2394 7.5132 7.2090 5.7225 5.8433 7.4871 6.7180 7.6253 7.6701 8.4049
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,ours_v2_speed,6.943,0.734,0.0,5.2394 7.5132 7.2090 5.7225 5.8433 7.4871 6.7180 7.6253 7.6701 8.4049
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,v4,11.894,0.326,0.0,11.4288 11.4819 12.1536 11.9301 11.4794 12.4454 11.8407 11.8839 12.7824 11.5173
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,wrr,15.162,0.351,0.0,14.7710 14.8338 15.7325 15.0339 14.5077 15.5613 14.7433 15.8118 15.7227 14.9060
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,wrr_speed,8.188,0.851,0.0,8.0594 7.6726 8.1738 6.9610 6.7451 7.5714 7.6006 8.8993 10.5019 9.6954
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,wrr_drop,15.162,0.351,0.0,14.7710 14.8338 15.7325 15.0339 14.5077 15.5613 14.7433 15.8118 15.7227 14.9060
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,wrr_speed_drop,8.188,0.851,0.0,8.0594 7.6726 8.1738 6.9610 6.7451 7.5714 7.6006 8.8993 10.5019 9.6954
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,lsq,67.8,7.642,0.0,67.2070 65.7139 73.8023 89.5555 70.2839 57.4013 78.5357 57.5541 62.3305 55.6129
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,ours_v6_nobal,6.521,0.724,0.0,5.3729 6.0839 8.6260 5.6893 5.8220 6.6020 5.6262 7.3433 6.7934 7.2480
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,ours_v6_noburst,7.019,0.654,0.0,6.3352 6.7248 7.5346 6.3312 5.7458 8.3782 6.8151 6.6760 8.6311 7.0142
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,ours_v6_nocal,7.499,0.633,0.051,7.8955 8.5151 7.5346 6.6988 7.2538 8.5649 6.8151 7.0066 8.6311 6.0729
+L:L_two_failures,"Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",L_real,large,oracle,3.379,0.349,0.0,3.2602 3.1112 3.3286 2.6307 2.8820 3.7120 3.5789 4.3708 3.2385 3.6772
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,ours_v6,8.18,0.61,0.0,7.8074 8.3496 6.7416 8.0880 7.2295 7.9116 8.2497 8.9053 9.7397 8.7815
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,ours_v5,9.232,1.014,0.0,7.4826 9.3726 9.8230 7.2171 10.6751 8.1374 7.8978 10.4856 10.8815 10.3422
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,ours_v2_speed,9.232,1.014,0.0,7.4826 9.3726 9.8230 7.2171 10.6751 8.1374 7.8978 10.4856 10.8815 10.3422
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,v4,10.552,1.131,0.0,9.4648 12.9622 10.4833 11.8005 7.1046 10.2357 10.8368 10.9800 11.7069 9.9414
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,wrr,19.928,1.36,0.0,19.0056 22.6899 20.5204 19.1984 16.2503 22.2416 20.8365 19.1968 20.8532 18.4891
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,wrr_speed,8.313,0.855,0.0,7.9046 9.4178 6.8562 9.4862 7.8967 8.8238 6.0477 9.4877 9.2637 7.9495
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,wrr_drop,19.928,1.36,0.0,19.0056 22.6899 20.5204 19.1984 16.2503 22.2416 20.8365 19.1968 20.8532 18.4891
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,wrr_speed_drop,8.313,0.855,0.0,7.9046 9.4178 6.8562 9.4862 7.8967 8.8238 6.0477 9.4877 9.2637 7.9495
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,lsq,74.626,4.986,0.0,72.7863 72.6734 74.3540 89.4079 72.2459 64.0847 83.3520 71.0273 72.3354 73.9957
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,ours_v6_nobal,8.98,0.843,0.0,7.4826 9.3726 10.2723 8.2808 8.0246 8.3542 7.8978 8.8902 10.8815 10.3422
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,ours_v6_noburst,8.18,0.61,0.0,7.8074 8.3496 6.7416 8.0880 7.2295 7.9116 8.2497 8.9053 9.7397 8.7815
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,ours_v6_nocal,8.18,0.61,0.0,7.8074 8.3496 6.7416 8.0880 7.2295 7.9116 8.2497 8.9053 9.7397 8.7815
+L:L_dc_fail,"DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",L_real,large,oracle,3.04,0.314,0.0,3.1114 2.7922 2.7829 2.3987 2.6078 3.2122 3.2392 3.9067 2.9072 3.4403
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,ours_v6,8.297,0.536,0.0,8.4570 9.9744 8.6019 8.2176 7.2051 8.2307 7.8281 8.7233 8.1310 7.5972
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,ours_v5,7.825,0.506,0.0,7.2519 7.8080 8.1798 7.7957 7.0314 8.6070 7.1760 9.2117 7.1760 8.0102
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,ours_v2_speed,7.825,0.506,0.0,7.2519 7.8080 8.1798 7.7957 7.0314 8.6070 7.1760 9.2117 7.1760 8.0102
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,v4,10.786,0.674,0.0,10.0871 11.3254 11.4542 9.4079 9.3285 11.6416 11.2462 11.6928 11.5322 10.1479
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,wrr,13.887,0.185,0.0,13.8299 13.5881 14.0441 13.6055 13.5968 14.2277 13.9395 14.1861 14.1622 13.6945
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,wrr_speed,9.002,0.637,0.0,8.6058 8.7257 10.4441 7.8981 7.9942 8.8388 9.0807 10.5857 9.0378 8.8118
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,wrr_drop,13.887,0.185,0.0,13.8299 13.5881 14.0441 13.6055 13.5968 14.2277 13.9395 14.1861 14.1622 13.6945
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,wrr_speed_drop,9.002,0.637,0.0,8.6058 8.7257 10.4441 7.8981 7.9942 8.8388 9.0807 10.5857 9.0378 8.8118
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,lsq,73.271,3.973,0.0,73.7000 71.1689 75.7741 86.1142 75.3778 67.1674 75.8485 67.6878 70.0307 69.8357
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,ours_v6_nobal,7.847,0.577,0.0,7.6162 7.8080 8.9939 7.4220 6.4221 7.9086 7.7037 9.3178 7.6610 7.6215
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,ours_v6_noburst,8.236,0.605,0.0,8.6452 9.7096 8.4662 7.7414 6.5288 8.3150 7.9828 8.7173 8.6582 7.5942
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,ours_v6_nocal,8.261,0.545,0.0,8.4570 9.9744 8.6019 7.7294 7.1807 8.2307 7.8281 8.7233 8.1310 7.7521
+L:L_shared_gpus,"Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",L_real,large,oracle,3.273,0.317,0.0,3.5971 3.0089 3.2623 2.6849 2.7845 3.2845 3.4333 4.2555 3.1632 3.2581
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,ours_v6,6.108,2.131,0.0,4.1086 3.6503 12.3082 5.4076 3.2479 9.3592 8.4978 5.0818 3.8509 5.5671
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,ours_v5,5.197,1.208,0.0,4.6686 2.4234 6.9916 6.4416 5.4420 6.8415 5.7141 6.7901 2.8991 3.7539
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,ours_v2_speed,5.197,1.208,0.0,4.6686 2.4234 6.9916 6.4416 5.4420 6.8415 5.7141 6.7901 2.8991 3.7539
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,v4,17.807,1.96,0.0,15.8948 13.2298 17.9129 19.9128 18.7660 15.5997 23.1197 19.0283 18.4201 16.1876
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,wrr,40.34,0.931,0.0,39.1702 40.2239 37.0653 41.0643 40.8098 40.9782 40.9888 41.3367 40.8754 40.8838
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,wrr_speed,5.798,1.102,0.0,3.9029 4.9074 5.5276 5.3680 6.0769 9.2014 7.2743 4.1427 6.0328 5.5436
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,wrr_drop,40.34,0.931,0.0,39.1702 40.2239 37.0653 41.0643 40.8098 40.9782 40.9888 41.3367 40.8754 40.8838
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,wrr_speed_drop,5.798,1.102,0.0,3.9029 4.9074 5.5276 5.3680 6.0769 9.2014 7.2743 4.1427 6.0328 5.5436
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,lsq,80.975,9.082,0.0,66.0550 71.0228 89.3936 88.8379 91.2736 54.9397 91.0288 80.5222 87.2273 89.4534
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,ours_v6_nobal,6.203,0.759,0.0,4.9081 5.1192 6.5260 6.2863 6.4060 5.9485 6.8876 6.5137 8.4459 4.9929
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,ours_v6_noburst,6.108,2.131,0.0,4.1086 3.6503 12.3082 5.4076 3.2479 9.3592 8.4978 5.0818 3.8509 5.5671
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,ours_v6_nocal,6.108,2.131,0.0,4.1086 3.6503 12.3082 5.4076 3.2479 9.3592 8.4978 5.0818 3.8509 5.5671
+L:L_wrong_weights,"Wrong weights: rules are told the DC has 12 servers, only 9 work",L_real,large,oracle,2.564,0.237,0.0,2.6817 2.1814 2.4891 2.3685 2.2639 2.7124 2.8570 3.2668 2.2556 2.5653
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,ours_v6,9.221,1.24,0.0,8.2688 11.3766 10.6522 7.1056 7.2843 11.9547 7.8160 10.0397 8.2184 9.4890
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,ours_v5,7.951,0.489,0.0,7.7103 8.0548 7.1034 8.4677 6.7847 8.4956 8.2406 9.0267 7.4893 8.1347
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,ours_v2_speed,7.951,0.489,0.0,7.7103 8.0548 7.1034 8.4677 6.7847 8.4956 8.2406 9.0267 7.4893 8.1347
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,v4,15.325,0.435,0.0,14.6192 15.8116 15.6511 14.9164 14.0629 15.6787 15.2922 15.6571 15.9758 15.5801
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,wrr,19.379,0.186,0.0,19.3364 19.1274 19.5737 19.1894 19.0470 19.6977 19.4201 19.6579 19.6692 19.0751
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,wrr_speed,10.32,0.966,0.0,8.9124 9.4449 10.9386 11.2882 8.2866 10.6060 11.1431 12.9394 9.6041 10.0386
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,wrr_drop,19.379,0.186,0.0,19.3364 19.1274 19.5737 19.1894 19.0470 19.6977 19.4201 19.6579 19.6692 19.0751
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,wrr_speed_drop,10.32,0.966,0.0,8.9124 9.4449 10.9386 11.2882 8.2866 10.6060 11.1431 12.9394 9.6041 10.0386
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,lsq,76.779,3.31,0.0,77.5977 74.8608 74.3691 88.2808 78.2659 75.0008 78.4356 72.1284 72.2510 76.6040
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,ours_v6_nobal,7.91,0.412,0.0,7.7619 8.0548 7.2602 8.4677 7.5158 7.1921 8.1890 9.0267 7.5014 8.1347
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,ours_v6_noburst,9.217,1.243,0.0,8.2688 11.3766 10.7697 7.1056 7.2843 11.9547 7.8160 9.8941 8.2093 9.4890
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,ours_v6_nocal,9.274,1.206,0.0,8.2688 11.3766 10.6522 7.1930 7.2843 11.9547 8.2618 10.0397 8.2184 9.4890
+L:L_slow_gpus,Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s,L_real,large,oracle,4.316,0.292,0.0,4.6717 4.1282 4.1487 3.6914 3.9818 4.0762 4.4615 5.1412 4.3321 4.5274
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,ours_v6,2.811,0.173,0.0,2.6257 2.5816 2.7467 2.8296 2.3458 2.9623 3.1058 2.8148 3.0487 3.0456
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,ours_v5,2.493,0.237,0.0,2.5286 2.2145 2.2794 2.1214 2.0930 2.5529 2.8722 3.1241 2.5155 2.6235
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,ours_v2_speed,2.493,0.237,0.0,2.5286 2.2145 2.2794 2.1214 2.0930 2.5529 2.8722 3.1241 2.5155 2.6235
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,v4,24.619,2.307,0.011,22.0290 26.8783 24.3344 21.8834 20.6495 23.7077 28.4887 24.1196 23.1337 30.9629
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,wrr,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,wrr_speed,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,wrr_drop,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,wrr_speed_drop,2.842,0.189,0.0,2.8018 2.4853 2.9819 2.6729 2.5804 3.1339 2.8844 3.2000 3.1301 2.5537
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,lsq,75.991,3.214,0.0,76.0222 76.3623 74.9601 76.6852 83.1465 74.6997 77.5196 65.7375 80.1892 74.5878
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,ours_v6_nobal,2.542,0.222,0.0,2.5286 2.2145 2.6593 2.1214 2.2087 2.5529 2.8722 3.1241 2.5155 2.6235
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,ours_v6_noburst,2.811,0.173,0.0,2.6257 2.5816 2.7467 2.8296 2.3458 2.9623 3.1058 2.8148 3.0487 3.0456
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,ours_v6_nocal,2.811,0.173,0.0,2.6257 2.5816 2.7467 2.8296 2.3458 2.9623 3.1058 2.8148 3.0487 3.0456
+L:L_loss_30,Lost reports: 30% of reports never arrive,L_real,large,oracle,2.447,0.189,0.0,2.5620 2.2597 2.4995 2.0521 2.1600 2.7546 2.4173 2.8967 2.2926 2.5719
+L:L_O_130,Large network: load 130%,L_overload,overload,ours_v6,33.5,0.213,30.426,33.5920 33.8349 33.1576 33.2849 34.0458 33.2595 33.2243 33.7653 33.4103 33.4209
+L:L_O_130,Large network: load 130%,L_overload,overload,ours_v5,33.523,0.184,30.446,33.2670 33.7717 33.2048 33.3694 34.0379 33.4217 33.5237 33.7002 33.5957 33.3379
+L:L_O_130,Large network: load 130%,L_overload,overload,ours_v2_speed,93.575,0.168,0.0,93.4739 93.4009 93.8850 93.4790 93.6250 93.3430 93.7398 94.0194 93.4008 93.3829
+L:L_O_130,Large network: load 130%,L_overload,overload,v4,42.365,1.143,23.24,40.9475 41.8478 42.1856 42.0300 41.6234 42.2668 43.5039 46.3676 40.7434 42.1304
+L:L_O_130,Large network: load 130%,L_overload,overload,wrr,95.046,0.113,0.0,95.1187 94.8739 95.1949 95.1765 95.0067 94.9691 94.8443 95.3035 95.1054 94.8655
+L:L_O_130,Large network: load 130%,L_overload,overload,wrr_speed,95.046,0.113,0.0,95.1187 94.8739 95.1949 95.1765 95.0067 94.9691 94.8443 95.3035 95.1054 94.8655
+L:L_O_130,Large network: load 130%,L_overload,overload,wrr_drop,34.351,0.652,26.919,34.4292 33.8388 33.5195 33.5265 36.5395 33.9934 33.9401 35.1283 34.0238 34.5678
+L:L_O_130,Large network: load 130%,L_overload,overload,wrr_speed_drop,34.351,0.652,26.919,34.4292 33.8388 33.5195 33.5265 36.5395 33.9934 33.9401 35.1283 34.0238 34.5678
+L:L_O_130,Large network: load 130%,L_overload,overload,lsq,91.268,0.396,0.0,92.1324 90.7470 91.9122 91.6891 91.4561 91.6080 90.7892 90.7194 90.9584 90.6647
+L:L_O_130,Large network: load 130%,L_overload,overload,ours_v6_nobal,33.557,0.154,30.453,33.5645 33.5881 33.3209 33.3694 34.0379 33.4217 33.6288 33.7002 33.5957 33.3379
+L:L_O_130,Large network: load 130%,L_overload,overload,ours_v6_noburst,33.5,0.213,30.426,33.5920 33.8349 33.1576 33.2849 34.0458 33.2595 33.2243 33.7653 33.4103 33.4209
+L:L_O_130,Large network: load 130%,L_overload,overload,ours_v6_nocal,33.472,0.214,30.414,33.2926 33.8290 33.1852 33.2849 34.0458 33.2595 33.2243 33.7653 33.4103 33.4209
+L:L_O_130,Large network: load 130%,L_overload,overload,expected_delay_drop,57.317,0.983,25.597,57.0019 58.3457 54.3704 56.7833 57.9495 58.9578 57.5749 58.7175 57.4613 56.0041
+L:L_O_130,Large network: load 130%,L_overload,overload,v4_nodrop,95.363,0.286,0.0,95.1561 95.3853 95.7299 95.5341 94.5993 95.5270 95.5384 95.8676 94.7996 95.4893
+L:L_O_130,Large network: load 130%,L_overload,overload,oracle,85.623,0.202,0.0,85.4211 85.8480 85.7224 86.1976 85.3566 85.2675 85.8338 85.5514 85.6061 85.4295
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,ours_v6,18.929,0.838,13.653,18.5572 20.3728 16.7504 17.4675 19.0227 20.4883 19.1305 18.7418 18.9870 19.7759
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,ours_v5,17.83,0.276,10.827,18.0564 17.0827 17.4354 17.6794 17.8403 18.0551 18.1861 18.3333 17.5686 18.0646
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,ours_v2_speed,24.053,0.392,0.0,24.3288 24.2213 23.4313 23.4038 23.6033 24.9592 23.6268 24.5367 23.8178 24.6005
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,v4,15.531,0.445,5.258,15.6755 16.2862 15.1486 14.3549 15.3460 15.7049 16.5726 15.2961 15.1863 15.7407
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,wrr,24.21,0.351,0.0,24.0962 24.3855 23.5721 23.5029 24.0939 25.1168 23.9985 24.7670 24.2034 24.3659
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,wrr_speed,24.214,0.35,0.0,24.0962 24.3855 23.5721 23.5029 24.0939 25.1168 24.0315 24.7670 24.2034 24.3659
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,wrr_drop,24.614,0.413,4.315,24.3343 24.6893 23.8179 24.0588 24.0746 25.6532 24.4280 24.8794 25.2031 25.0035
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,wrr_speed_drop,24.805,0.484,4.479,24.3343 24.6893 24.3151 24.0588 24.0746 25.6532 24.4280 25.8772 25.2031 25.4202
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,lsq,28.472,0.603,0.0,28.8443 28.7841 27.2840 27.9200 28.5809 28.2025 28.8114 30.3646 28.2217 27.7028
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,ours_v6_nobal,18.972,0.673,13.903,18.9239 19.3628 17.4878 17.3354 18.7939 20.1593 19.8822 19.6327 18.7612 19.3812
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,ours_v6_noburst,17.891,0.513,10.819,18.0975 17.4659 17.1122 17.2143 17.1292 18.4008 19.2847 18.2703 18.4114 17.5237
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,ours_v6_nocal,18.904,0.839,13.634,18.5572 20.3783 16.7504 17.4675 19.0227 20.4883 19.1305 18.7418 18.7226 19.7759
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,expected_delay_drop,28.048,1.55,12.57,28.1820 28.1053 27.8226 25.5477 24.3034 31.3711 30.2294 29.0652 26.3351 29.5189
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,v4_nodrop,24.682,0.323,0.0,24.8050 24.8481 24.2571 24.2212 24.0719 25.5979 24.8493 24.9616 24.4237 24.7826
+L:L_O_burst,"Large network: burst, 85% load, 140% from 60 s to 80 s",L_overload,overload,oracle,21.968,0.279,0.0,21.8330 21.9905 21.5753 21.3205 21.6300 22.6035 21.9720 22.2067 22.3416 22.2075

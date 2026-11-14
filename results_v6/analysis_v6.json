@@ -1,0 +1,1739 @@
+{
+ "tests": [
+  {
+   "id": "main",
+   "label": "Main scenario (Beirut)",
+   "group": "main",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 3.503,
+    "ours_v5": 4.277,
+    "ours_v2_speed": 4.277,
+    "v4": 3.881,
+    "wrr": 3.503,
+    "wrr_speed": 3.503,
+    "wrr_drop": 3.503,
+    "wrr_speed_drop": 3.503,
+    "lsq": 4.558,
+    "ours_v6_nobal": 4.113,
+    "ours_v6_noburst": 3.503,
+    "ours_v6_nocal": 3.503,
+    "expected_delay_drop": 11.725,
+    "v4_nodrop": 3.881,
+    "oracle": 2.957
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "report_interval=0.2",
+   "label": "Report interval W (s): 0.2",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 4.263,
+    "ours_v5": 4.228,
+    "ours_v2_speed": 3.684,
+    "v4": 4.885,
+    "wrr": 3.503,
+    "wrr_speed": 3.503,
+    "wrr_drop": 5.092,
+    "wrr_speed_drop": 5.092,
+    "lsq": 12.834,
+    "ours_v6_nobal": 4.497,
+    "ours_v6_noburst": 4.327,
+    "ours_v6_nocal": 4.263,
+    "oracle": 2.957
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "report_interval=0.5",
+   "label": "Report interval W (s): 0.5",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 3.418,
+    "ours_v5": 3.775,
+    "ours_v2_speed": 3.797,
+    "v4": 4.356,
+    "wrr": 3.503,
+    "wrr_speed": 3.503,
+    "wrr_drop": 3.501,
+    "wrr_speed_drop": 3.501,
+    "lsq": 32.173,
+    "ours_v6_nobal": 3.718,
+    "ours_v6_noburst": 3.485,
+    "ours_v6_nocal": 3.418,
+    "oracle": 2.957
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "report_interval=1",
+   "label": "Report interval W (s): 1",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 3.591,
+    "ours_v5": 3.822,
+    "ours_v2_speed": 3.822,
+    "v4": 3.98,
+    "wrr": 3.503,
+    "wrr_speed": 3.503,
+    "wrr_drop": 3.503,
+    "wrr_speed_drop": 3.503,
+    "lsq": 42.765,
+    "ours_v6_nobal": 3.799,
+    "ours_v6_noburst": 3.591,
+    "ours_v6_nocal": 3.626,
+    "oracle": 2.957
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "report_interval=2",
+   "label": "Report interval W (s): 2",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 3.461,
+    "ours_v5": 3.962,
+    "ours_v2_speed": 3.962,
+    "v4": 3.642,
+    "wrr": 3.503,
+    "wrr_speed": 3.503,
+    "wrr_drop": 3.503,
+    "wrr_speed_drop": 3.503,
+    "lsq": 8.257,
+    "ours_v6_nobal": 3.986,
+    "ours_v6_noburst": 3.461,
+    "ours_v6_nocal": 3.461,
+    "oracle": 2.957
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "report_interval=10",
+   "label": "Report interval W (s): 10",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 3.847,
+    "ours_v5": 4.645,
+    "ours_v2_speed": 4.645,
+    "v4": 3.91,
+    "wrr": 3.847,
+    "wrr_speed": 3.847,
+    "wrr_drop": 3.847,
+    "wrr_speed_drop": 3.847,
+    "lsq": 4.602,
+    "ours_v6_nobal": 4.645,
+    "ours_v6_noburst": 3.847,
+    "ours_v6_nocal": 3.847,
+    "oracle": 3.061
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "report_interval=30",
+   "label": "Report interval W (s): 30",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 4.369,
+    "ours_v5": 5.368,
+    "ours_v2_speed": 5.368,
+    "v4": 4.023,
+    "wrr": 4.029,
+    "wrr_speed": 4.427,
+    "wrr_drop": 4.029,
+    "wrr_speed_drop": 4.427,
+    "lsq": 4.154,
+    "ours_v6_nobal": 5.221,
+    "ours_v6_noburst": 4.369,
+    "ours_v6_nocal": 4.369,
+    "oracle": 3.274
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "load=50",
+   "label": "Load (%): 50",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 0.995,
+    "ours_v5": 1.028,
+    "ours_v2_speed": 1.028,
+    "v4": 0.929,
+    "wrr": 0.965,
+    "wrr_speed": 0.965,
+    "wrr_drop": 0.965,
+    "wrr_speed_drop": 0.965,
+    "lsq": 1.0,
+    "ours_v6_nobal": 1.034,
+    "ours_v6_noburst": 0.99,
+    "ours_v6_nocal": 0.995,
+    "oracle": 0.955
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "load=70",
+   "label": "Load (%): 70",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 1.281,
+    "ours_v5": 1.298,
+    "ours_v2_speed": 1.298,
+    "v4": 1.327,
+    "wrr": 1.271,
+    "wrr_speed": 1.273,
+    "wrr_drop": 1.271,
+    "wrr_speed_drop": 1.273,
+    "lsq": 1.482,
+    "ours_v6_nobal": 1.306,
+    "ours_v6_noburst": 1.279,
+    "ours_v6_nocal": 1.281,
+    "oracle": 1.437
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "load=95",
+   "label": "Load (%): 95",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 15.399,
+    "ours_v5": 15.621,
+    "ours_v2_speed": 24.266,
+    "v4": 19.662,
+    "wrr": 24.574,
+    "wrr_speed": 24.574,
+    "wrr_drop": 21.524,
+    "wrr_speed_drop": 21.524,
+    "lsq": 57.219,
+    "ours_v6_nobal": 15.962,
+    "ours_v6_noburst": 15.337,
+    "ours_v6_nocal": 15.47,
+    "oracle": 19.281
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "deadline=200",
+   "label": "Deadline (ms): 200",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 25.331,
+    "ours_v5": 27.208,
+    "ours_v2_speed": 27.208,
+    "v4": 26.062,
+    "wrr": 25.331,
+    "wrr_speed": 25.331,
+    "wrr_drop": 25.331,
+    "wrr_speed_drop": 25.331,
+    "lsq": 27.231,
+    "ours_v6_nobal": 27.285,
+    "ours_v6_noburst": 25.331,
+    "ours_v6_nocal": 25.331,
+    "oracle": 25.757
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "deadline=500",
+   "label": "Deadline (ms): 500",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 0.168,
+    "ours_v5": 0.124,
+    "ours_v2_speed": 0.124,
+    "v4": 0.065,
+    "wrr": 0.055,
+    "wrr_speed": 0.055,
+    "wrr_drop": 0.055,
+    "wrr_speed_drop": 0.055,
+    "lsq": 0.166,
+    "ours_v6_nobal": 0.131,
+    "ours_v6_noburst": 0.166,
+    "ours_v6_nocal": 0.168,
+    "oracle": 0.01
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "job_shape=exponential (v=1)",
+   "label": "Job-size shape: exponential (v=1)",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 18.287,
+    "ours_v5": 18.313,
+    "ours_v2_speed": 17.976,
+    "v4": 16.984,
+    "wrr": 18.083,
+    "wrr_speed": 18.085,
+    "wrr_drop": 18.083,
+    "wrr_speed_drop": 18.085,
+    "lsq": 19.66,
+    "ours_v6_nobal": 17.871,
+    "ours_v6_noburst": 18.287,
+    "ours_v6_nocal": 18.287,
+    "oracle": 12.303
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "job_shape=heavy-tailed (v=2)",
+   "label": "Job-size shape: heavy-tailed (v=2)",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 22.534,
+    "ours_v5": 22.187,
+    "ours_v2_speed": 22.325,
+    "v4": 20.909,
+    "wrr": 22.265,
+    "wrr_speed": 22.17,
+    "wrr_drop": 22.265,
+    "wrr_speed_drop": 22.17,
+    "lsq": 25.288,
+    "ours_v6_nobal": 22.079,
+    "ours_v6_noburst": 22.534,
+    "ours_v6_nocal": 22.534,
+    "oracle": 12.462
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "ingresses=2",
+   "label": "Number of ingresses: 2",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 3.64,
+    "ours_v5": 4.636,
+    "ours_v2_speed": 4.636,
+    "v4": 3.704,
+    "wrr": 3.64,
+    "wrr_speed": 3.64,
+    "wrr_drop": 3.64,
+    "wrr_speed_drop": 3.64,
+    "lsq": 3.763,
+    "ours_v6_nobal": 4.598,
+    "ours_v6_noburst": 3.64,
+    "ours_v6_nocal": 3.64,
+    "oracle": 3.179
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "ingresses=8",
+   "label": "Number of ingresses: 8",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 4.249,
+    "ours_v5": 4.901,
+    "ours_v2_speed": 4.901,
+    "v4": 4.904,
+    "wrr": 4.246,
+    "wrr_speed": 4.246,
+    "wrr_drop": 4.246,
+    "wrr_speed_drop": 4.246,
+    "lsq": 14.182,
+    "ours_v6_nobal": 4.878,
+    "ours_v6_noburst": 4.246,
+    "ours_v6_nocal": 4.249,
+    "oracle": 3.181
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "ingresses=16",
+   "label": "Number of ingresses: 16",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 4.863,
+    "ours_v5": 5.5,
+    "ours_v2_speed": 5.5,
+    "v4": 6.429,
+    "wrr": 4.863,
+    "wrr_speed": 4.863,
+    "wrr_drop": 4.863,
+    "wrr_speed_drop": 4.863,
+    "lsq": 77.924,
+    "ours_v6_nobal": 5.527,
+    "ours_v6_noburst": 4.863,
+    "ours_v6_nocal": 4.863,
+    "oracle": 2.994
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "traffic=equal",
+   "label": "Traffic split between ingresses: equal",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 3.679,
+    "ours_v5": 4.361,
+    "ours_v2_speed": 4.361,
+    "v4": 3.749,
+    "wrr": 3.679,
+    "wrr_speed": 3.679,
+    "wrr_drop": 3.679,
+    "wrr_speed_drop": 3.679,
+    "lsq": 4.839,
+    "ours_v6_nobal": 4.376,
+    "ours_v6_noburst": 3.679,
+    "ours_v6_nocal": 3.679,
+    "oracle": 3.13
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "sites=equal 4/4/4",
+   "label": "Site sizes: equal 4/4/4",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 4.079,
+    "ours_v5": 4.043,
+    "ours_v2_speed": 4.043,
+    "v4": 3.959,
+    "wrr": 4.039,
+    "wrr_speed": 4.039,
+    "wrr_drop": 4.039,
+    "wrr_speed_drop": 4.039,
+    "lsq": 5.717,
+    "ours_v6_nobal": 4.043,
+    "ours_v6_noburst": 4.079,
+    "ours_v6_nocal": 4.079,
+    "oracle": 3.256
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "report_timing=staggered",
+   "label": "Report timing: staggered",
+   "group": "sweep",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 3.947,
+    "ours_v5": 4.225,
+    "ours_v2_speed": 4.174,
+    "v4": 85.011,
+    "wrr": 3.503,
+    "wrr_speed": 3.503,
+    "wrr_drop": 3.863,
+    "wrr_speed_drop": 3.863,
+    "lsq": 84.822,
+    "ours_v6_nobal": 4.231,
+    "ours_v6_noburst": 3.947,
+    "ours_v6_nocal": 3.988,
+    "oracle": 2.957
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "jitter_5",
+   "label": "Delay jitter, +5 ms average per trip",
+   "group": "stress",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 4.401,
+    "ours_v5": 4.986,
+    "ours_v2_speed": 4.986,
+    "v4": 4.478,
+    "wrr": 4.401,
+    "wrr_speed": 4.401,
+    "wrr_drop": 4.401,
+    "wrr_speed_drop": 4.401,
+    "lsq": 6.286,
+    "ours_v6_nobal": 4.99,
+    "ours_v6_noburst": 4.401,
+    "ours_v6_nocal": 4.401,
+    "oracle": 4.631
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "jitter_20",
+   "label": "Delay jitter, +20 ms average per trip",
+   "group": "stress",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 9.733,
+    "ours_v5": 10.468,
+    "ours_v2_speed": 10.468,
+    "v4": 10.275,
+    "wrr": 9.733,
+    "wrr_speed": 9.733,
+    "wrr_drop": 9.733,
+    "wrr_speed_drop": 9.733,
+    "lsq": 11.648,
+    "ours_v6_nobal": 10.46,
+    "ours_v6_noburst": 9.733,
+    "ours_v6_nocal": 9.733,
+    "oracle": 12.901
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "loss_10",
+   "label": "10% of reports lost",
+   "group": "stress",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 3.503,
+    "ours_v5": 3.952,
+    "ours_v2_speed": 3.952,
+    "v4": 16.577,
+    "wrr": 3.503,
+    "wrr_speed": 3.503,
+    "wrr_drop": 3.503,
+    "wrr_speed_drop": 3.503,
+    "lsq": 25.281,
+    "ours_v6_nobal": 3.984,
+    "ours_v6_noburst": 3.503,
+    "ours_v6_nocal": 3.503,
+    "oracle": 2.957
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "loss_30",
+   "label": "30% of reports lost",
+   "group": "stress",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 3.503,
+    "ours_v5": 4.088,
+    "ours_v2_speed": 4.088,
+    "v4": 36.572,
+    "wrr": 3.503,
+    "wrr_speed": 3.503,
+    "wrr_drop": 3.503,
+    "wrr_speed_drop": 3.503,
+    "lsq": 48.4,
+    "ours_v6_nobal": 4.064,
+    "ours_v6_noburst": 3.503,
+    "ours_v6_nocal": 3.503,
+    "oracle": 2.957
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "late_reports",
+   "label": "Reports arrive up to 2 s late",
+   "group": "stress",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 3.503,
+    "ours_v5": 4.186,
+    "ours_v2_speed": 4.186,
+    "v4": 27.113,
+    "wrr": 3.503,
+    "wrr_speed": 3.503,
+    "wrr_drop": 3.503,
+    "wrr_speed_drop": 3.503,
+    "lsq": 42.629,
+    "ours_v6_nobal": 4.156,
+    "ours_v6_noburst": 3.503,
+    "ours_v6_nocal": 3.503,
+    "oracle": 2.957
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "load_jump",
+   "label": "Load jumps from 60% to 95% halfway",
+   "group": "stress",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 11.205,
+    "ours_v5": 17.932,
+    "ours_v2_speed": 19.597,
+    "v4": 13.461,
+    "wrr": 16.25,
+    "wrr_speed": 16.25,
+    "wrr_drop": 16.016,
+    "wrr_speed_drop": 16.016,
+    "lsq": 34.891,
+    "ours_v6_nobal": 12.001,
+    "ours_v6_noburst": 16.719,
+    "ours_v6_nocal": 11.061,
+    "oracle": 13.353
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "cap_drop",
+   "label": "Hamra loses 1 of its 2 servers halfway (not announced)",
+   "group": "stress",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 10.641,
+    "ours_v5": 10.222,
+    "ours_v2_speed": 10.222,
+    "v4": 13.08,
+    "wrr": 11.21,
+    "wrr_speed": 11.675,
+    "wrr_drop": 11.21,
+    "wrr_speed_drop": 11.675,
+    "lsq": 15.867,
+    "ours_v6_nobal": 10.804,
+    "ours_v6_noburst": 10.147,
+    "ours_v6_nocal": 10.756,
+    "oracle": 7.009
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "server_fail_recover",
+   "label": "Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",
+   "group": "real",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 9.304,
+    "ours_v5": 9.563,
+    "ours_v2_speed": 9.563,
+    "v4": 10.255,
+    "wrr": 13.852,
+    "wrr_speed": 9.385,
+    "wrr_drop": 13.852,
+    "wrr_speed_drop": 9.385,
+    "lsq": 12.715,
+    "ours_v6_nobal": 9.604,
+    "ours_v6_noburst": 9.568,
+    "ours_v6_nocal": 9.295,
+    "oracle": 5.66
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "shared_gpus",
+   "label": "Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",
+   "group": "real",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 19.86,
+    "ours_v5": 19.869,
+    "ours_v2_speed": 26.016,
+    "v4": 35.102,
+    "wrr": 27.097,
+    "wrr_speed": 27.247,
+    "wrr_drop": 27.097,
+    "wrr_speed_drop": 23.22,
+    "lsq": 59.415,
+    "ours_v6_nobal": 19.74,
+    "ours_v6_noburst": 19.891,
+    "ours_v6_nocal": 19.504,
+    "oracle": 23.448
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "wrong_weights",
+   "label": "Wrong weights: rules are told the DC has 8 servers, only 6 work",
+   "group": "real",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 10.545,
+    "ours_v5": 12.794,
+    "ours_v2_speed": 12.794,
+    "v4": 20.12,
+    "wrr": 27.6,
+    "wrr_speed": 10.321,
+    "wrr_drop": 27.6,
+    "wrr_speed_drop": 10.321,
+    "lsq": 17.561,
+    "ours_v6_nobal": 11.357,
+    "ours_v6_noburst": 10.545,
+    "ours_v6_nocal": 10.545,
+    "oracle": 3.585
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "rush_hour",
+   "label": "Rush hour: load 60% to 95% and back over 5 minutes",
+   "group": "real",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 7.854,
+    "ours_v5": 8.455,
+    "ours_v2_speed": 9.088,
+    "v4": 7.949,
+    "wrr": 8.485,
+    "wrr_speed": 8.485,
+    "wrr_drop": 8.504,
+    "wrr_speed_drop": 8.504,
+    "lsq": 24.019,
+    "ours_v6_nobal": 8.104,
+    "ours_v6_noburst": 8.101,
+    "ours_v6_nocal": 7.854,
+    "oracle": 6.788
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "ingress_surge",
+   "label": "Incident: Ingress D doubles its frames from 50 s to 100 s",
+   "group": "real",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 7.893,
+    "ours_v5": 9.031,
+    "ours_v2_speed": 9.081,
+    "v4": 7.979,
+    "wrr": 8.46,
+    "wrr_speed": 8.46,
+    "wrr_drop": 8.441,
+    "wrr_speed_drop": 8.441,
+    "lsq": 19.958,
+    "ours_v6_nobal": 8.671,
+    "ours_v6_noburst": 8.312,
+    "ours_v6_nocal": 7.893,
+    "oracle": 6.782
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "mixed_jobs",
+   "label": "Mixed jobs: 80% short (75 ms), 20% long (200 ms)",
+   "group": "real",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 10.642,
+    "ours_v5": 11.24,
+    "ours_v2_speed": 11.24,
+    "v4": 10.641,
+    "wrr": 10.605,
+    "wrr_speed": 10.562,
+    "wrr_drop": 10.605,
+    "wrr_speed_drop": 10.6,
+    "lsq": 12.389,
+    "ours_v6_nobal": 11.189,
+    "ours_v6_noburst": 10.642,
+    "ours_v6_nocal": 10.642,
+    "oracle": 7.736
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "path_congestion",
+   "label": "Congestion: the DC's path delays double from 60 s to 90 s",
+   "group": "real",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 4.78,
+    "ours_v5": 6.023,
+    "ours_v2_speed": 6.023,
+    "v4": 5.11,
+    "wrr": 4.78,
+    "wrr_speed": 4.78,
+    "wrr_drop": 4.78,
+    "wrr_speed_drop": 4.78,
+    "lsq": 6.059,
+    "ours_v6_nobal": 5.951,
+    "ours_v6_noburst": 4.78,
+    "ours_v6_nocal": 4.78,
+    "oracle": 4.295
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "dc_fail_recover",
+   "label": "Held out - DC failure: the DC loses 1 of its 8 servers at 50 s, gets it back at 110 s",
+   "group": "heldout",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 10.707,
+    "ours_v5": 12.92,
+    "ours_v2_speed": 12.92,
+    "v4": 10.588,
+    "wrr": 11.474,
+    "wrr_speed": 10.364,
+    "wrr_drop": 11.474,
+    "wrr_speed_drop": 10.364,
+    "lsq": 14.523,
+    "ours_v6_nobal": 13.874,
+    "ours_v6_noburst": 10.707,
+    "ours_v6_nocal": 10.707,
+    "oracle": 5.849
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "slow_gpus",
+   "label": "Held out - Slow GPUs: Jdeideh's GPUs run at 70% speed from 40 s to 110 s",
+   "group": "heldout",
+   "family": "beirut",
+   "miss": {
+    "ours_v6": 18.649,
+    "ours_v5": 16.757,
+    "ours_v2_speed": 16.827,
+    "v4": 23.656,
+    "wrr": 26.998,
+    "wrr_speed": 20.236,
+    "wrr_drop": 26.998,
+    "wrr_speed_drop": 20.236,
+    "lsq": 50.401,
+    "ours_v6_nobal": 17.649,
+    "ours_v6_noburst": 18.649,
+    "ours_v6_nocal": 18.649,
+    "oracle": 9.541
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "O_100",
+   "label": "Load 100% (all the capacity)",
+   "group": "overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 18.115,
+    "ours_v5": 18.499,
+    "ours_v2_speed": 40.858,
+    "v4": 26.927,
+    "wrr": 41.048,
+    "wrr_speed": 41.048,
+    "wrr_drop": 21.929,
+    "wrr_speed_drop": 21.522,
+    "lsq": 40.264,
+    "ours_v6_nobal": 18.027,
+    "ours_v6_noburst": 18.11,
+    "ours_v6_nocal": 18.377,
+    "expected_delay_drop": 21.206,
+    "v4_nodrop": 40.583,
+    "oracle": 31.998
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "O_110",
+   "label": "Load 110%",
+   "group": "overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 25.154,
+    "ours_v5": 25.262,
+    "ours_v2_speed": 78.781,
+    "v4": 33.945,
+    "wrr": 79.154,
+    "wrr_speed": 79.154,
+    "wrr_drop": 28.246,
+    "wrr_speed_drop": 28.194,
+    "lsq": 76.83,
+    "ours_v6_nobal": 25.068,
+    "ours_v6_noburst": 25.154,
+    "ours_v6_nocal": 25.396,
+    "expected_delay_drop": 35.828,
+    "v4_nodrop": 78.065,
+    "oracle": 70.567
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "O_130",
+   "label": "Load 130%",
+   "group": "overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 35.357,
+    "ours_v5": 35.409,
+    "ours_v2_speed": 95.095,
+    "v4": 40.525,
+    "wrr": 95.522,
+    "wrr_speed": 95.522,
+    "wrr_drop": 37.99,
+    "wrr_speed_drop": 37.99,
+    "lsq": 94.846,
+    "ours_v6_nobal": 35.357,
+    "ours_v6_noburst": 35.357,
+    "ours_v6_nocal": 35.409,
+    "expected_delay_drop": 55.351,
+    "v4_nodrop": 96.012,
+    "oracle": 90.067
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "O_150",
+   "label": "Load 150%",
+   "group": "overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 43.561,
+    "ours_v5": 43.434,
+    "ours_v2_speed": 98.108,
+    "v4": 49.193,
+    "wrr": 98.256,
+    "wrr_speed": 98.256,
+    "wrr_drop": 45.351,
+    "wrr_speed_drop": 45.351,
+    "lsq": 97.915,
+    "ours_v6_nobal": 43.561,
+    "ours_v6_noburst": 43.561,
+    "ours_v6_nocal": 43.434,
+    "expected_delay_drop": 67.22,
+    "v4_nodrop": 98.568,
+    "oracle": 93.851
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "O_burst",
+   "label": "Burst: 85% load, 140% from 60 s to 80 s",
+   "group": "overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 18.324,
+    "ours_v5": 19.28,
+    "ours_v2_speed": 25.641,
+    "v4": 16.343,
+    "wrr": 25.343,
+    "wrr_speed": 25.362,
+    "wrr_drop": 25.427,
+    "wrr_speed_drop": 25.533,
+    "lsq": 25.685,
+    "ours_v6_nobal": 18.726,
+    "ours_v6_noburst": 19.152,
+    "ours_v6_nocal": 18.324,
+    "expected_delay_drop": 20.768,
+    "v4_nodrop": 25.481,
+    "oracle": 23.577
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "O_rush",
+   "label": "Rush hour: load 60% to 120% and back over 5 minutes",
+   "group": "overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 17.309,
+    "ours_v5": 19.083,
+    "ours_v2_speed": 43.241,
+    "v4": 19.804,
+    "wrr": 42.817,
+    "wrr_speed": 42.856,
+    "wrr_drop": 23.567,
+    "wrr_speed_drop": 23.622,
+    "lsq": 42.14,
+    "ours_v6_nobal": 17.379,
+    "ours_v6_noburst": 18.753,
+    "ours_v6_nocal": 17.349,
+    "expected_delay_drop": 23.359,
+    "v4_nodrop": 42.856,
+    "oracle": 38.802
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "O_surge",
+   "label": "Incident: Ingress A doubles its frames from 50 s to 100 s (load 119%)",
+   "group": "overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 18.659,
+    "ours_v5": 22.362,
+    "ours_v2_speed": 43.554,
+    "v4": 21.051,
+    "wrr": 43.33,
+    "wrr_speed": 43.33,
+    "wrr_drop": 30.356,
+    "wrr_speed_drop": 30.356,
+    "lsq": 43.173,
+    "ours_v6_nobal": 19.57,
+    "ours_v6_noburst": 22.46,
+    "ours_v6_nocal": 18.77,
+    "expected_delay_drop": 23.312,
+    "v4_nodrop": 44.353,
+    "oracle": 39.832
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "O_dc_half",
+   "label": "DC failure: the DC loses 4 of its 8 servers from 50 s to 110 s (119% of what works)",
+   "group": "overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 25.623,
+    "ours_v5": 26.854,
+    "ours_v2_speed": 30.62,
+    "v4": 28.545,
+    "wrr": 28.693,
+    "wrr_speed": 30.168,
+    "wrr_drop": 28.693,
+    "wrr_speed_drop": 26.42,
+    "lsq": 29.159,
+    "ours_v6_nobal": 26.882,
+    "ours_v6_noburst": 25.604,
+    "ours_v6_nocal": 25.701,
+    "expected_delay_drop": 33.775,
+    "v4_nodrop": 28.545,
+    "oracle": 35.44
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "O_130_W1",
+   "label": "Load 130%, reports every 1 s",
+   "group": "overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 35.045,
+    "ours_v5": 34.728,
+    "ours_v2_speed": 95.227,
+    "v4": 35.163,
+    "wrr": 95.522,
+    "wrr_speed": 95.522,
+    "wrr_drop": 37.268,
+    "wrr_speed_drop": 37.268,
+    "lsq": 89.428,
+    "ours_v6_nobal": 34.739,
+    "ours_v6_noburst": 35.045,
+    "ours_v6_nocal": 35.08,
+    "expected_delay_drop": 51.584,
+    "v4_nodrop": 95.355,
+    "oracle": 90.077
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "O_130_W10",
+   "label": "Load 130%, reports every 10 s",
+   "group": "overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 35.928,
+    "ours_v5": 35.859,
+    "ours_v2_speed": 95.163,
+    "v4": 45.51,
+    "wrr": 95.468,
+    "wrr_speed": 95.468,
+    "wrr_drop": 37.814,
+    "wrr_speed_drop": 37.814,
+    "lsq": 94.993,
+    "ours_v6_nobal": 35.928,
+    "ours_v6_noburst": 35.928,
+    "ours_v6_nocal": 35.859,
+    "expected_delay_drop": 53.219,
+    "v4_nodrop": 95.927,
+    "oracle": 90.005
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "O_130_nodiscard",
+   "label": "Load 130%, sites serve every frame (no discard)",
+   "group": "overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 36.342,
+    "ours_v5": 36.049,
+    "ours_v2_speed": 100.0,
+    "v4": 44.438,
+    "wrr": 100.0,
+    "wrr_speed": 100.0,
+    "wrr_drop": 47.946,
+    "wrr_speed_drop": 47.946,
+    "lsq": 100.0,
+    "ours_v6_nobal": 36.209,
+    "ours_v6_noburst": 36.342,
+    "ours_v6_nocal": 36.431,
+    "expected_delay_drop": 50.466,
+    "v4_nodrop": 100.0,
+    "oracle": 100.0
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:main",
+   "label": "Large network: 6 sites, 12 ingresses",
+   "group": "L_main",
+   "family": "large",
+   "miss": {
+    "ours_v6": 2.847,
+    "ours_v5": 2.638,
+    "ours_v2_speed": 2.638,
+    "v4": 3.9,
+    "wrr": 2.842,
+    "wrr_speed": 2.842,
+    "wrr_drop": 2.842,
+    "wrr_speed_drop": 2.842,
+    "lsq": 61.365,
+    "ours_v6_nobal": 2.622,
+    "ours_v6_noburst": 2.847,
+    "ours_v6_nocal": 2.847,
+    "expected_delay_drop": 23.859,
+    "v4_nodrop": 3.9,
+    "oracle": 2.447
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:report_interval=1",
+   "label": "Reports every 1 s",
+   "group": "L_sweep",
+   "family": "large",
+   "miss": {
+    "ours_v6": 2.713,
+    "ours_v5": 2.581,
+    "ours_v2_speed": 2.581,
+    "v4": 6.583,
+    "wrr": 2.842,
+    "wrr_speed": 2.842,
+    "wrr_drop": 2.842,
+    "wrr_speed_drop": 2.842,
+    "lsq": 72.494,
+    "ours_v6_nobal": 2.581,
+    "ours_v6_noburst": 2.713,
+    "ours_v6_nocal": 2.713,
+    "oracle": 2.447
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:report_interval=10",
+   "label": "Reports every 10 s",
+   "group": "L_sweep",
+   "family": "large",
+   "miss": {
+    "ours_v6": 2.892,
+    "ours_v5": 2.614,
+    "ours_v2_speed": 2.614,
+    "v4": 3.457,
+    "wrr": 2.876,
+    "wrr_speed": 2.876,
+    "wrr_drop": 2.876,
+    "wrr_speed_drop": 2.876,
+    "lsq": 8.504,
+    "ours_v6_nobal": 2.605,
+    "ours_v6_noburst": 2.892,
+    "ours_v6_nocal": 2.892,
+    "oracle": 2.545
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:load=70",
+   "label": "Load 70%",
+   "group": "L_sweep",
+   "family": "large",
+   "miss": {
+    "ours_v6": 1.184,
+    "ours_v5": 1.205,
+    "ours_v2_speed": 1.205,
+    "v4": 1.798,
+    "wrr": 1.318,
+    "wrr_speed": 1.318,
+    "wrr_drop": 1.318,
+    "wrr_speed_drop": 1.318,
+    "lsq": 4.941,
+    "ours_v6_nobal": 1.216,
+    "ours_v6_noburst": 1.192,
+    "ours_v6_nocal": 1.184,
+    "oracle": 1.714
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:load=95",
+   "label": "Load 95%",
+   "group": "L_sweep",
+   "family": "large",
+   "miss": {
+    "ours_v6": 11.471,
+    "ours_v5": 11.691,
+    "ours_v2_speed": 20.656,
+    "v4": 16.964,
+    "wrr": 17.277,
+    "wrr_speed": 17.277,
+    "wrr_drop": 14.683,
+    "wrr_speed_drop": 14.683,
+    "lsq": 95.126,
+    "ours_v6_nobal": 11.779,
+    "ours_v6_noburst": 11.487,
+    "ours_v6_nocal": 11.402,
+    "oracle": 8.257
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:L_server_fail",
+   "label": "Server failure: Jdeideh loses 2 of its 4 servers at 50 s, gets them back at 100 s",
+   "group": "L_real",
+   "family": "large",
+   "miss": {
+    "ours_v6": 7.116,
+    "ours_v5": 6.379,
+    "ours_v2_speed": 6.379,
+    "v4": 9.238,
+    "wrr": 12.85,
+    "wrr_speed": 7.25,
+    "wrr_drop": 12.85,
+    "wrr_speed_drop": 7.25,
+    "lsq": 69.679,
+    "ours_v6_nobal": 6.539,
+    "ours_v6_noburst": 6.777,
+    "ours_v6_nocal": 7.087,
+    "oracle": 3.14
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:L_two_failures",
+   "label": "Two failures: Hamra edge loses 1 of 2 servers at 50 s, Baabda 1 of 4 at 70 s; both back at 120 s",
+   "group": "L_real",
+   "family": "large",
+   "miss": {
+    "ours_v6": 7.42,
+    "ours_v5": 6.943,
+    "ours_v2_speed": 6.943,
+    "v4": 11.894,
+    "wrr": 15.162,
+    "wrr_speed": 8.188,
+    "wrr_drop": 15.162,
+    "wrr_speed_drop": 8.188,
+    "lsq": 67.8,
+    "ours_v6_nobal": 6.521,
+    "ours_v6_noburst": 7.019,
+    "ours_v6_nocal": 7.499,
+    "oracle": 3.379
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:L_dc_fail",
+   "label": "DC failure: the DC loses 2 of its 12 servers at 50 s, gets them back at 110 s",
+   "group": "L_real",
+   "family": "large",
+   "miss": {
+    "ours_v6": 8.18,
+    "ours_v5": 9.231,
+    "ours_v2_speed": 9.231,
+    "v4": 10.552,
+    "wrr": 19.928,
+    "wrr_speed": 8.313,
+    "wrr_drop": 19.928,
+    "wrr_speed_drop": 8.313,
+    "lsq": 74.626,
+    "ours_v6_nobal": 8.98,
+    "ours_v6_noburst": 8.18,
+    "ours_v6_nocal": 8.18,
+    "oracle": 3.04
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:L_shared_gpus",
+   "label": "Shared GPUs: another app takes 2 of Baabda's 4 GPUs, 20 s on, 20 s off",
+   "group": "L_real",
+   "family": "large",
+   "miss": {
+    "ours_v6": 8.297,
+    "ours_v5": 7.825,
+    "ours_v2_speed": 7.825,
+    "v4": 10.786,
+    "wrr": 13.887,
+    "wrr_speed": 9.002,
+    "wrr_drop": 13.887,
+    "wrr_speed_drop": 9.002,
+    "lsq": 73.271,
+    "ours_v6_nobal": 7.847,
+    "ours_v6_noburst": 8.236,
+    "ours_v6_nocal": 8.261,
+    "oracle": 3.273
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:L_wrong_weights",
+   "label": "Wrong weights: rules are told the DC has 12 servers, only 9 work",
+   "group": "L_real",
+   "family": "large",
+   "miss": {
+    "ours_v6": 6.108,
+    "ours_v5": 5.197,
+    "ours_v2_speed": 5.197,
+    "v4": 17.807,
+    "wrr": 40.34,
+    "wrr_speed": 5.798,
+    "wrr_drop": 40.34,
+    "wrr_speed_drop": 5.798,
+    "lsq": 80.975,
+    "ours_v6_nobal": 6.203,
+    "ours_v6_noburst": 6.108,
+    "ours_v6_nocal": 6.108,
+    "oracle": 2.564
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:L_slow_gpus",
+   "label": "Slow GPUs: Jounieh's GPUs run at 70% speed from 40 s to 110 s",
+   "group": "L_real",
+   "family": "large",
+   "miss": {
+    "ours_v6": 9.221,
+    "ours_v5": 7.951,
+    "ours_v2_speed": 7.951,
+    "v4": 15.325,
+    "wrr": 19.379,
+    "wrr_speed": 10.32,
+    "wrr_drop": 19.379,
+    "wrr_speed_drop": 10.32,
+    "lsq": 76.779,
+    "ours_v6_nobal": 7.91,
+    "ours_v6_noburst": 9.217,
+    "ours_v6_nocal": 9.274,
+    "oracle": 4.316
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:L_loss_30",
+   "label": "Lost reports: 30% of reports never arrive",
+   "group": "L_real",
+   "family": "large",
+   "miss": {
+    "ours_v6": 2.811,
+    "ours_v5": 2.493,
+    "ours_v2_speed": 2.493,
+    "v4": 24.619,
+    "wrr": 2.842,
+    "wrr_speed": 2.842,
+    "wrr_drop": 2.842,
+    "wrr_speed_drop": 2.842,
+    "lsq": 75.991,
+    "ours_v6_nobal": 2.542,
+    "ours_v6_noburst": 2.811,
+    "ours_v6_nocal": 2.811,
+    "oracle": 2.447
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:L_O_130",
+   "label": "Large network: load 130%",
+   "group": "L_overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 33.5,
+    "ours_v5": 33.523,
+    "ours_v2_speed": 93.575,
+    "v4": 42.365,
+    "wrr": 95.046,
+    "wrr_speed": 95.046,
+    "wrr_drop": 34.351,
+    "wrr_speed_drop": 34.351,
+    "lsq": 91.268,
+    "ours_v6_nobal": 33.557,
+    "ours_v6_noburst": 33.5,
+    "ours_v6_nocal": 33.472,
+    "expected_delay_drop": 57.317,
+    "v4_nodrop": 95.363,
+    "oracle": 85.623
+   },
+   "dropped_v6": null
+  },
+  {
+   "id": "L:L_O_burst",
+   "label": "Large network: burst, 85% load, 140% from 60 s to 80 s",
+   "group": "L_overload",
+   "family": "overload",
+   "miss": {
+    "ours_v6": 18.929,
+    "ours_v5": 17.83,
+    "ours_v2_speed": 24.053,
+    "v4": 15.531,
+    "wrr": 24.21,
+    "wrr_speed": 24.214,
+    "wrr_drop": 24.614,
+    "wrr_speed_drop": 24.805,
+    "lsq": 28.472,
+    "ours_v6_nobal": 18.972,
+    "ours_v6_noburst": 17.891,
+    "ours_v6_nocal": 18.904,
+    "expected_delay_drop": 28.048,
+    "v4_nodrop": 24.682,
+    "oracle": 21.968
+   },
+   "dropped_v6": null
+  }
+ ],
+ "h2h": {
+  "ours_v5": {
+   "beirut": [
+    20,
+    15,
+    1
+   ],
+   "large": [
+    1,
+    6,
+    5
+   ],
+   "overload": [
+    2,
+    10,
+    1
+   ]
+  },
+  "ours_v2_speed": {
+   "beirut": [
+    24,
+    10,
+    2
+   ],
+   "large": [
+    2,
+    5,
+    5
+   ],
+   "overload": [
+    13,
+    0,
+    0
+   ]
+  },
+  "v4": {
+   "beirut": [
+    18,
+    15,
+    3
+   ],
+   "large": [
+    12,
+    0,
+    0
+   ],
+   "overload": [
+    10,
+    1,
+    2
+   ]
+  },
+  "wrr": {
+   "beirut": [
+    6,
+    28,
+    2
+   ],
+   "large": [
+    8,
+    4,
+    0
+   ],
+   "overload": [
+    13,
+    0,
+    0
+   ]
+  },
+  "wrr_speed": {
+   "beirut": [
+    4,
+    29,
+    3
+   ],
+   "large": [
+    3,
+    9,
+    0
+   ],
+   "overload": [
+    13,
+    0,
+    0
+   ]
+  },
+  "wrr_drop": {
+   "beirut": [
+    6,
+    30,
+    0
+   ],
+   "large": [
+    8,
+    4,
+    0
+   ],
+   "overload": [
+    13,
+    0,
+    0
+   ]
+  },
+  "wrr_speed_drop": {
+   "beirut": [
+    4,
+    31,
+    1
+   ],
+   "large": [
+    3,
+    9,
+    0
+   ],
+   "overload": [
+    12,
+    1,
+    0
+   ]
+  },
+  "lsq": {
+   "beirut": [
+    30,
+    6,
+    0
+   ],
+   "large": [
+    12,
+    0,
+    0
+   ],
+   "overload": [
+    13,
+    0,
+    0
+   ]
+  },
+  "expected_delay_drop": {
+   "beirut": [
+    1,
+    0,
+    0
+   ],
+   "large": [
+    1,
+    0,
+    0
+   ],
+   "overload": [
+    13,
+    0,
+    0
+   ]
+  },
+  "v4_nodrop": {
+   "beirut": [
+    1,
+    0,
+    0
+   ],
+   "large": [
+    1,
+    0,
+    0
+   ],
+   "overload": [
+    13,
+    0,
+    0
+   ]
+  },
+  "oracle": {
+   "beirut": [
+    2,
+    7,
+    27
+   ],
+   "large": [
+    1,
+    0,
+    11
+   ],
+   "overload": [
+    13,
+    0,
+    0
+   ]
+  },
+  "ours_v6_nobal": {
+   "beirut": [
+    20,
+    16,
+    0
+   ],
+   "large": [
+    0,
+    8,
+    4
+   ],
+   "overload": [
+    1,
+    12,
+    0
+   ]
+  },
+  "ours_v6_noburst": {
+   "beirut": [
+    1,
+    35,
+    0
+   ],
+   "large": [
+    0,
+    12,
+    0
+   ],
+   "overload": [
+    2,
+    10,
+    1
+   ]
+  },
+  "ours_v6_nocal": {
+   "beirut": [
+    0,
+    36,
+    0
+   ],
+   "large": [
+    0,
+    12,
+    0
+   ],
+   "overload": [
+    0,
+    13,
+    0
+   ]
+  }
+ },
+ "gaps": {
+  "ours_v6": {
+   "avg": 0.309,
+   "worst": 3.398,
+   "worst_test": "Large network: burst, 85% load, 140% from 60 s to 80 s",
+   "near": 52,
+   "n": 61,
+   "best": 30
+  },
+  "ours_v5": {
+   "avg": 0.754,
+   "worst": 6.728,
+   "worst_test": "Load jumps from 60% to 95% halfway",
+   "near": 31,
+   "n": 61,
+   "best": 15
+  },
+  "ours_v2_speed": {
+   "avg": 9.298,
+   "worst": 63.951,
+   "worst_test": "Load 130%, sites serve every frame (no discard)",
+   "near": 21,
+   "n": 61,
+   "best": 10
+  },
+  "v4": {
+   "avg": 5.454,
+   "worst": 81.508,
+   "worst_test": "Report timing: staggered",
+   "near": 22,
+   "n": 61,
+   "best": 7
+  },
+  "wrr": {
+   "avg": 10.728,
+   "worst": 63.951,
+   "worst_test": "Load 130%, sites serve every frame (no discard)",
+   "near": 29,
+   "n": 61,
+   "best": 18
+  },
+  "wrr_speed": {
+   "avg": 9.091,
+   "worst": 63.951,
+   "worst_test": "Load 130%, sites serve every frame (no discard)",
+   "near": 33,
+   "n": 61,
+   "best": 20
+  },
+  "wrr_drop": {
+   "avg": 3.436,
+   "worst": 35.143,
+   "worst_test": "Wrong weights: rules are told the DC has 12 servers, only 9 work",
+   "near": 28,
+   "n": 61,
+   "best": 16
+  },
+  "wrr_speed_drop": {
+   "avg": 1.669,
+   "worst": 11.897,
+   "worst_test": "Load 130%, sites serve every frame (no discard)",
+   "near": 32,
+   "n": 61,
+   "best": 17
+  },
+  "lsq": {
+   "avg": 28.779,
+   "worst": 83.655,
+   "worst_test": "Load 95%",
+   "near": 5,
+   "n": 61,
+   "best": 0
+  }
+ },
+ "ablation": {
+  "ours_v6_nobal": {
+   "beirut": [
+    0.507,
+    0.146
+   ],
+   "large": [
+    -0.243,
+    0.236
+   ],
+   "overload": [
+    0.164,
+    0.161
+   ]
+  },
+  "ours_v6_noburst": {
+   "beirut": [
+    0.168,
+    0.114
+   ],
+   "large": [
+    -0.065,
+    0.059
+   ],
+   "overload": [
+    0.385,
+    0.223
+   ]
+  },
+  "ours_v6_nocal": {
+   "beirut": [
+    -0.007,
+    0.025
+   ],
+   "large": [
+    -0.0,
+    0.043
+   ],
+   "overload": [
+    0.051,
+    0.073
+   ]
+  }
+ },
+ "fam_titles": {
+  "beirut": "Beirut, 36 tests",
+  "large": "Large network, 12 tests",
+  "overload": "Overload, 13 tests"
+ }
+}

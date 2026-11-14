@@ -1,0 +1,53 @@
+load,alias,algorithm,delay_1000_minus_0_pp,ci95,verdict,n_pairs
+0.6,nearest,A Nearest site,0.0,0.0,no change,30
+0.6,wrr,B Capacity WRR,0.0,0.0,no change,30
+0.6,wrr_speed,C Dynamic WRR (measured speeds),0.0,0.0,no change,30
+0.6,wpow2_stale,D Weighted power-of-two,-0.06823695994929295,0.7336197070718287,no change,30
+0.6,dahlin_li,E Dahlin (Basic LI),-0.028323477141106442,0.0951228306665499,no change,30
+0.6,lsq,F LSQ (shared periodic reports),-0.2926785276709666,0.2971112090044335,no change,30
+0.6,prequal_hcl,G Prequal (HCL),0.0,0.0,no change,30
+0.6,liyanage26,H Liyanage et al. 2026,0.0,0.0,no change,30
+0.6,cats_lb,I CATS-draft load sharing,0.07182060797680047,0.23819324216083937,no change,30
+0.6,expected_delay_drop,J Expected delay + drop,0.3151520508972415,0.45314221829633144,no change,30
+0.6,ours_v6,K Staleness-Aware CATS (ours v6),-0.0388081066556893,0.2915168315776731,no change,30
+0.6,oracle,L Fresh-state oracle,0.0,0.0,no change,30
+0.6,lsq_sample,"F2 LSQ-Sample (own random samples, supplementary)",0.0,0.0,no change,30
+0.9,nearest,A Nearest site,0.0,0.0,no change,30
+0.9,wrr,B Capacity WRR,0.0,0.0,no change,30
+0.9,wrr_speed,C Dynamic WRR (measured speeds),0.0,0.0,no change,30
+0.9,wpow2_stale,D Weighted power-of-two,-0.17981619335998905,0.583891880799377,no change,30
+0.9,dahlin_li,E Dahlin (Basic LI),-0.4211302488662161,0.1816099467130343,degrades,30
+0.9,lsq,F LSQ (shared periodic reports),-25.333464898635707,7.000607255126245,degrades,30
+0.9,prequal_hcl,G Prequal (HCL),0.0,0.0,no change,30
+0.9,liyanage26,H Liyanage et al. 2026,0.0,0.0,no change,30
+0.9,cats_lb,I CATS-draft load sharing,-1.9952417183252407,0.9507852404093657,degrades,30
+0.9,expected_delay_drop,J Expected delay + drop,1.6256210660862072,0.4974034897367919,improves,30
+0.9,ours_v6,K Staleness-Aware CATS (ours v6),-0.9841310291245738,0.410797303516296,degrades,30
+0.9,oracle,L Fresh-state oracle,0.0,0.0,no change,30
+0.9,lsq_sample,"F2 LSQ-Sample (own random samples, supplementary)",0.0,0.0,no change,30
+1.1,nearest,A Nearest site,0.0,0.0,no change,30
+1.1,wrr,B Capacity WRR,0.0,0.0,no change,30
+1.1,wrr_speed,C Dynamic WRR (measured speeds),0.0,0.0,no change,30
+1.1,wpow2_stale,D Weighted power-of-two,-0.013948310721795209,0.4595857437649779,no change,30
+1.1,dahlin_li,E Dahlin (Basic LI),0.05486914581727878,0.26913110168341586,no change,30
+1.1,lsq,F LSQ (shared periodic reports),0.7585069588642497,3.907450055018927,no change,30
+1.1,prequal_hcl,G Prequal (HCL),0.0,0.0,no change,30
+1.1,liyanage26,H Liyanage et al. 2026,0.0,0.0,no change,30
+1.1,cats_lb,I CATS-draft load sharing,-1.6698684059606053,0.8080349288077272,degrades,30
+1.1,expected_delay_drop,J Expected delay + drop,11.98834617076491,2.06119317932842,improves,30
+1.1,ours_v6,K Staleness-Aware CATS (ours v6),-0.8734927020678086,0.34795258312882826,degrades,30
+1.1,oracle,L Fresh-state oracle,0.0,0.0,no change,30
+1.1,lsq_sample,"F2 LSQ-Sample (own random samples, supplementary)",0.0,0.0,no change,30
+1.3,nearest,A Nearest site,0.0,0.0,no change,30
+1.3,wrr,B Capacity WRR,0.0,0.0,no change,30
+1.3,wrr_speed,C Dynamic WRR (measured speeds),0.0,0.0,no change,30
+1.3,wpow2_stale,D Weighted power-of-two,0.011831898774610631,0.468338898715473,no change,30
+1.3,dahlin_li,E Dahlin (Basic LI),0.00614000625868556,0.10657949926008088,no change,30
+1.3,lsq,F LSQ (shared periodic reports),2.332459147061171,0.9976049540317581,improves,30
+1.3,prequal_hcl,G Prequal (HCL),0.0,0.0,no change,30
+1.3,liyanage26,H Liyanage et al. 2026,0.0,0.0,no change,30
+1.3,cats_lb,I CATS-draft load sharing,-0.2545059103984285,0.5806669329868029,no change,30
+1.3,expected_delay_drop,J Expected delay + drop,18.21699781842492,1.1570455668931807,improves,30
+1.3,ours_v6,K Staleness-Aware CATS (ours v6),-0.6176853353151159,0.3176789010352101,degrades,30
+1.3,oracle,L Fresh-state oracle,0.0,0.0,no change,30
+1.3,lsq_sample,"F2 LSQ-Sample (own random samples, supplementary)",0.0,0.0,no change,30

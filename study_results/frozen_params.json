@@ -1,0 +1,10 @@
+{
+ "prequal_hcl": "MAX_AGE=1.0,Q_RIF=0.84",
+ "liyanage26": "WINDOW_N=40",
+ "cats_lb": "THETA=0.25,TABLE=100,HOLD=2.0,SMOOTH=0.3",
+ "dahlin_li": "PHASE_AGE=True",
+ "oracle_adm": "TAU=0.5",
+ "_threshold": 2.0,
+ "_frozen_at": "2026-11-03 17:06",
+ "_decision_rule": "per tunable baseline: the candidate with the highest mean deadline success over the 4 pilot scenarios x 5 pilot seeds; within 0.1 points the earlier candidate (paper default first); threshold telemetry: the threshold whose realized bytes are closest to the medium budget (264 B/s per ingress)"
+}

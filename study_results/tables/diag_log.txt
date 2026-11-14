@@ -1,0 +1,29 @@
+      budget  success_pct  probes_per_query  fallback_share_pct  planned_uses_per_probe  bytes_per_s_per_ingress
+  low (10 s)       81.533             0.006             100.000                1826.184                   53.320
+medium (2 s)       39.646             0.030              18.120                 395.133                  264.120
+high (0.5 s)       51.139             0.118               0.303                 100.794                 1056.418
+ ingresses       budget       rule  success_pct  arrival_cv_per_0.1s  bytes_per_s_per_ingress  aoi_mean_s
+         1   low (10 s)        wrr       95.549                0.253                    0.000         NaN
+         1   low (10 s)        lsq       95.417                0.265                   44.640       5.075
+         1   low (10 s) lsq_sample       18.072                2.843                   53.320       3.904
+         1 medium (2 s)        wrr       95.549                0.253                    0.000         NaN
+         1 medium (2 s)        lsq       96.080                0.291                  243.040       1.055
+         1 medium (2 s) lsq_sample       22.446                2.444                  264.120       0.792
+         1 high (0.5 s)        wrr       95.549                0.253                    0.000         NaN
+         1 high (0.5 s)        lsq       96.274                0.369                  987.040       0.305
+         1 high (0.5 s) lsq_sample       32.522                1.835                 1056.480       0.248
+         4   low (10 s)        wrr       94.647                0.414                    0.000         NaN
+         4   low (10 s)        lsq       93.836                0.433                   44.640       5.075
+         4   low (10 s) lsq_sample       29.570                1.527                   53.320       3.681
+         4 medium (2 s)        wrr       94.647                0.414                    0.000         NaN
+         4 medium (2 s)        lsq       87.890                0.507                  243.040       1.055
+         4 medium (2 s) lsq_sample       42.988                1.386                  264.120       0.828
+         4 high (0.5 s)        wrr       94.647                0.414                    0.000         NaN
+         4 high (0.5 s)        lsq       49.259                0.989                  987.040       0.309
+         4 high (0.5 s) lsq_sample       62.873                1.100                 1056.418       0.275
+      window  drop_share_pct  offered_estimate_over_capacity
+  5 s before           0.061                           0.778
+during (5 s)          37.868                           1.109
+ 0-2 s after          38.490                           1.340
+ 2-5 s after          22.901                           1.179
+5-10 s after           7.436                           0.961

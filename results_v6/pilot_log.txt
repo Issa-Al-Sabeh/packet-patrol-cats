@@ -1,0 +1,25 @@
+Pilot of v6: spare seeds 101-105: 495 runs
+    97 of 495 runs already on disk; running the other 398
+    81/398 runs  ( 34%)  elapsed 0m20s  about 0m38s left
+    160/398 runs  ( 52%)  elapsed 0m40s  about 0m37s left
+    224/398 runs  ( 65%)  elapsed 1m02s  about 0m33s left
+    230/398 runs  ( 66%)  elapsed 1m22s  about 0m41s left
+    236/398 runs  ( 68%)  elapsed 1m43s  about 0m49s left
+    242/398 runs  ( 69%)  elapsed 2m04s  about 0m56s left
+    327/398 runs  ( 87%)  elapsed 2m24s  about 0m22s left
+    398/398 runs  (100%)  elapsed 2m38s  about 0m00s left
+  main                   v6 G=2%   5.10  v6 G=5%   4.41  v6 G=10%   4.44  v6 G=25%   4.44  Ours v5   5.69  RR + speeds   4.44  Round-robin   4.44  v4 (ported)   4.71  RR + speeds + drop   4.44
+  load=95                v6 G=2%  16.75  v6 G=5%  16.94  v6 G=10%  16.43  v6 G=25%  16.57  Ours v5  17.12  RR + speeds  30.64  Round-robin  30.64  v4 (ported)  25.85  RR + speeds + drop  25.04
+  server_fail_recover    v6 G=2%  12.15  v6 G=5%  12.07  v6 G=10%  12.07  v6 G=25%  11.98  Ours v5  11.58  RR + speeds  12.02  Round-robin  14.60  v4 (ported)  11.54  RR + speeds + drop  12.02
+  shared_gpus            v6 G=2%  21.33  v6 G=5%  21.21  v6 G=10%  20.54  v6 G=25%  20.44  Ours v5  21.19  RR + speeds  31.55  Round-robin  27.93  v4 (ported)  41.29  RR + speeds + drop  26.78
+  wrong_weights          v6 G=2%  13.89  v6 G=5%  12.97  v6 G=10%  14.66  v6 G=25%  13.66  Ours v5  13.84  RR + speeds  12.42  Round-robin  31.17  v4 (ported)  19.60  RR + speeds + drop  12.42
+  report_interval=0.2    v6 G=2%   5.31  v6 G=5%   4.75  v6 G=10%   4.92  v6 G=25%   4.40  Ours v5   4.67  RR + speeds   4.44  Round-robin   4.44  v4 (ported)   5.67  RR + speeds + drop   5.33
+  O_130                  v6 G=2%  36.41  v6 G=5%  36.41  v6 G=10%  36.41  v6 G=25%  36.41  Ours v5  36.36  RR + speeds  95.53  Round-robin  95.53  v4 (ported)  41.14  RR + speeds + drop  38.98
+  O_burst                v6 G=2%  18.46  v6 G=5%  18.45  v6 G=10%  18.48  v6 G=25%  18.50  Ours v5  19.45  RR + speeds  25.63  Round-robin  25.63  v4 (ported)  17.09  RR + speeds + drop  25.91
+  report_interval=30     v6 G=2%   5.59  v6 G=5%   4.61  v6 G=10%   4.18  v6 G=25%   4.18  Ours v5   5.57  RR + speeds   4.18  Round-robin   4.18  v4 (ported)   4.12  RR + speeds + drop   4.18
+  ingresses=2            v6 G=2%   4.99  v6 G=5%   4.41  v6 G=10%   4.31  v6 G=25%   4.31  Ours v5   5.57  RR + speeds   4.31  Round-robin   4.31  v4 (ported)   4.40  RR + speeds + drop   4.31
+  deadline=200           v6 G=2%  28.19  v6 G=5%  28.19  v6 G=10%  28.19  v6 G=25%  28.19  Ours v5  29.69  RR + speeds  28.19  Round-robin  28.19  v4 (ported)  28.09  RR + speeds + drop  28.19
+
+  average regret: v6 G=2% 0.546, v6 G=5% 0.205, v6 G=10% 0.225, v6 G=25% 0.082
+  decision rule 1 -> v6 G=25%
+  decision rule 2 -> never clearly worse than v5 or RR + speeds

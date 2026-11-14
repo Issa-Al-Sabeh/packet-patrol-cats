@@ -1,0 +1,105 @@
+Study: 10110 runs in 15 experiments, seeds 201-210, 2 worker(s)
+
+[1/15] grid_core_load: Main grid: steady, 50 ms telemetry delay, every load (480 runs)
+    all 480 runs already on disk
+    elapsed 0m00s
+
+[2/15] grid_core_delay: Main grid: steady, loads 90/110%, every telemetry delay (720 runs)
+    all 720 runs already on disk
+    elapsed 0m00s
+
+[3/15] grid_core_pattern: Main grid: bursty and shifting, loads 90/110%, 50 ms (480 runs)
+    all 480 runs already on disk
+    elapsed 0m00s
+
+[4/15] exp7_admission: Admission fairness: common rejection wrapper, steady, 50 ms (440 runs)
+    all 440 runs already on disk
+    elapsed 0m00s
+
+[5/15] exp8_ablation: Ablation of v6, steady and bursty, 50 ms (400 runs)
+    all 400 runs already on disk
+    elapsed 0m00s
+
+[6/15] exp5_scalability: 1 and 16 ingresses, steady, 50 ms (480 runs)
+    all 480 runs already on disk
+    elapsed 0m00s
+
+[7/15] exp6_failures: Core-2 loses half its GPUs 40-70 s; regional sites at half speed 35-70 s (240 runs)
+    all 240 runs already on disk
+    elapsed 0m00s
+
+[8/15] exp3_budget: Low/high budget (W = 10 s / 0.5 s), Prequal at its native rate, threshold telemetry (640 runs)
+    all 640 runs already on disk
+    elapsed 0m00s
+
+[9/15] cap_hom: Homogeneous sites (4 GPUs each), steady, 50 ms (240 runs)
+    all 240 runs already on disk
+    elapsed 0m00s
+
+[10/15] deadline_relaxed: Relaxed deadline 500 ms, steady, 50 ms (240 runs)
+    all 240 runs already on disk
+    elapsed 0m00s
+
+[11/15] grid_rest: Main grid: every remaining (load, delay, pattern) point (4080 runs)
+    all 4080 runs already on disk
+    elapsed 0m00s
+
+[12/15] exp6_congestion: Network delay change: paths to Core-2 take twice as long 40-70 s (supplementary) (120 runs)
+    114 of 120 runs already on disk; running the other 6
+    6/6 runs  (100%)  elapsed 0m03s  about 0m00s left
+    elapsed 0m04s
+
+[13/15] supp_lsq_sample: LSQ-Sample (independent sampling at the same budget) on every main-grid point and the budget, scalability, capacity, deadline and event scenarios (supplementary) (630 runs)
+    33/630 runs  (  7%)  elapsed 0m20s  about 4m17s left
+    80/630 runs  ( 17%)  elapsed 0m40s  about 3m19s left
+    121/630 runs  ( 25%)  elapsed 1m00s  about 2m58s left
+    157/630 runs  ( 33%)  elapsed 1m21s  about 2m47s left
+    211/630 runs  ( 43%)  elapsed 1m41s  about 2m15s left
+    259/630 runs  ( 51%)  elapsed 2m02s  about 1m56s left
+    307/630 runs  ( 60%)  elapsed 2m22s  about 1m36s left
+    359/630 runs  ( 67%)  elapsed 2m42s  about 1m19s left
+    413/630 runs  ( 75%)  elapsed 3m02s  about 1m01s left
+    468/630 runs  ( 83%)  elapsed 3m22s  about 0m42s left
+    538/630 runs  ( 91%)  elapsed 3m42s  about 0m21s left
+    609/630 runs  ( 98%)  elapsed 4m02s  about 0m04s left
+    630/630 runs  (100%)  elapsed 4m08s  about 0m00s left
+    elapsed 4m12s
+
+[14/15] exp_telemetry_faults: Report loss 30% or measurement noise (sd 2 frames), steady, 50 ms, loads 90/130% (supplementary) (480 runs)
+    3/480 runs  (  3%)  elapsed 0m20s  about 11m17s left
+    7/480 runs  (  7%)  elapsed 0m41s  about 9m23s left
+    11/480 runs  ( 11%)  elapsed 1m03s  about 8m43s left
+    15/480 runs  ( 15%)  elapsed 1m24s  about 8m09s left
+    19/480 runs  ( 19%)  elapsed 1m48s  about 7m49s left
+    24/480 runs  ( 22%)  elapsed 2m10s  about 7m32s left
+    28/480 runs  ( 25%)  elapsed 2m33s  about 7m36s left
+    32/480 runs  ( 28%)  elapsed 2m56s  about 7m36s left
+    37/480 runs  ( 31%)  elapsed 3m17s  about 7m14s left
+    45/480 runs  ( 36%)  elapsed 3m38s  about 6m32s left
+    59/480 runs  ( 43%)  elapsed 4m01s  about 5m24s left
+    80/480 runs  ( 50%)  elapsed 4m21s  about 4m23s left
+    131/480 runs  ( 58%)  elapsed 4m44s  about 3m30s left
+    143/480 runs  ( 59%)  elapsed 5m05s  about 3m29s left
+    167/480 runs  ( 63%)  elapsed 5m28s  about 3m14s left
+    217/480 runs  ( 70%)  elapsed 5m48s  about 2m27s left
+    239/480 runs  ( 73%)  elapsed 6m11s  about 2m14s left
+    263/480 runs  ( 77%)  elapsed 6m33s  about 1m57s left
+    305/480 runs  ( 82%)  elapsed 6m54s  about 1m30s left
+    339/480 runs  ( 86%)  elapsed 7m16s  about 1m13s left
+    365/480 runs  ( 88%)  elapsed 7m37s  about 1m00s left
+    417/480 runs  ( 94%)  elapsed 7m57s  about 0m32s left
+    443/480 runs  ( 96%)  elapsed 8m19s  about 0m19s left
+    467/480 runs  ( 99%)  elapsed 8m40s  about 0m07s left
+    480/480 runs  (100%)  elapsed 8m46s  about 0m00s left
+    elapsed 12m59s
+
+[15/15] grid_oracle_wrapped: Reference: fresh-state oracle + the common rejection wrapper on every main-grid point (supplementary) (440 runs)
+    50/440 runs  ( 15%)  elapsed 0m20s  about 1m53s left
+    105/440 runs  ( 32%)  elapsed 0m40s  about 1m26s left
+    162/440 runs  ( 47%)  elapsed 1m00s  about 1m08s left
+    214/440 runs  ( 60%)  elapsed 1m20s  about 0m53s left
+    273/440 runs  ( 73%)  elapsed 1m40s  about 0m37s left
+    330/440 runs  ( 85%)  elapsed 2m00s  about 0m22s left
+    403/440 runs  ( 95%)  elapsed 2m21s  about 0m07s left
+    440/440 runs  (100%)  elapsed 2m31s  about 0m00s left
+    elapsed 15m31s

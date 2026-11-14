@@ -1,0 +1,461 @@
+Study: 8440 runs in 11 experiments, seeds 201-210, 2 worker(s)
+
+[1/11] grid_core_load: Main grid: steady, 50 ms telemetry delay, every load (480 runs)
+    3/480 runs  (  3%)  elapsed 0m23s  about 11m28s left
+    7/480 runs  (  8%)  elapsed 0m48s  about 9m30s left
+    11/480 runs  ( 12%)  elapsed 1m10s  about 8m34s left
+    16/480 runs  ( 17%)  elapsed 1m32s  about 7m39s left
+    20/480 runs  ( 21%)  elapsed 1m52s  about 7m15s left
+    25/480 runs  ( 24%)  elapsed 2m15s  about 7m02s left
+    31/480 runs  ( 29%)  elapsed 2m38s  about 6m32s left
+    43/480 runs  ( 35%)  elapsed 3m04s  about 5m37s left
+    51/480 runs  ( 39%)  elapsed 3m26s  about 5m18s left
+    69/480 runs  ( 47%)  elapsed 3m47s  about 4m16s left
+    117/480 runs  ( 56%)  elapsed 4m08s  about 3m14s left
+    137/480 runs  ( 60%)  elapsed 4m29s  about 3m03s left
+    161/480 runs  ( 64%)  elapsed 4m52s  about 2m48s left
+    184/480 runs  ( 67%)  elapsed 5m12s  about 2m32s left
+    233/480 runs  ( 74%)  elapsed 5m35s  about 1m56s left
+    249/480 runs  ( 76%)  elapsed 5m56s  about 1m49s left
+    269/480 runs  ( 79%)  elapsed 6m17s  about 1m38s left
+    331/480 runs  ( 87%)  elapsed 6m37s  about 1m01s left
+    350/480 runs  ( 89%)  elapsed 6m57s  about 0m52s left
+    374/480 runs  ( 92%)  elapsed 7m18s  about 0m40s left
+    437/480 runs  ( 97%)  elapsed 7m38s  about 0m15s left
+    467/480 runs  ( 99%)  elapsed 8m00s  about 0m04s left
+    480/480 runs  (100%)  elapsed 8m06s  about 0m00s left
+    elapsed 8m06s
+
+[2/11] grid_core_delay: Main grid: steady, loads 90/110%, every telemetry delay (720 runs)
+    5/720 runs  (  3%)  elapsed 0m28s  about 15m12s left
+    11/720 runs  (  7%)  elapsed 0m56s  about 12m58s left
+    15/720 runs  (  9%)  elapsed 1m16s  about 12m39s left
+    19/720 runs  ( 12%)  elapsed 1m37s  about 12m24s left
+    25/720 runs  ( 15%)  elapsed 2m04s  about 11m29s left
+    30/720 runs  ( 18%)  elapsed 2m25s  about 10m46s left
+    33/720 runs  ( 20%)  elapsed 2m47s  about 11m17s left
+    39/720 runs  ( 23%)  elapsed 3m10s  about 10m43s left
+    45/720 runs  ( 26%)  elapsed 3m34s  about 10m15s left
+    51/720 runs  ( 29%)  elapsed 3m58s  about 9m48s left
+    57/720 runs  ( 32%)  elapsed 4m21s  about 9m20s left
+    68/720 runs  ( 36%)  elapsed 4m42s  about 8m27s left
+    86/720 runs  ( 41%)  elapsed 5m03s  about 7m12s left
+    106/720 runs  ( 47%)  elapsed 5m24s  about 6m13s left
+    149/720 runs  ( 53%)  elapsed 5m44s  about 5m09s left
+    177/720 runs  ( 55%)  elapsed 6m04s  about 4m55s left
+    203/720 runs  ( 58%)  elapsed 6m27s  about 4m45s left
+    249/720 runs  ( 62%)  elapsed 6m47s  about 4m11s left
+    277/720 runs  ( 64%)  elapsed 7m08s  about 3m57s left
+    303/720 runs  ( 67%)  elapsed 7m29s  about 3m43s left
+    350/720 runs  ( 71%)  elapsed 7m49s  about 3m10s left
+    377/720 runs  ( 74%)  elapsed 8m09s  about 2m56s left
+    403/720 runs  ( 76%)  elapsed 8m30s  about 2m41s left
+    449/720 runs  ( 80%)  elapsed 8m50s  about 2m15s left
+    479/720 runs  ( 82%)  elapsed 9m11s  about 2m01s left
+    506/720 runs  ( 84%)  elapsed 9m31s  about 1m49s left
+    562/720 runs  ( 88%)  elapsed 9m52s  about 1m19s left
+    587/720 runs  ( 90%)  elapsed 10m13s  about 1m07s left
+    609/720 runs  ( 92%)  elapsed 10m34s  about 0m57s left
+    672/720 runs  ( 96%)  elapsed 10m54s  about 0m24s left
+    689/720 runs  ( 98%)  elapsed 11m15s  about 0m16s left
+    709/720 runs  ( 99%)  elapsed 11m35s  about 0m05s left
+    720/720 runs  (100%)  elapsed 11m38s  about 0m00s left
+    elapsed 19m45s
+
+[3/11] grid_core_pattern: Main grid: bursty and shifting, loads 90/110%, 50 ms (480 runs)
+    5/480 runs  (  5%)  elapsed 0m28s  about 9m49s left
+    11/480 runs  ( 10%)  elapsed 0m57s  about 8m32s left
+    17/480 runs  ( 16%)  elapsed 1m25s  about 7m40s left
+    23/480 runs  ( 21%)  elapsed 1m51s  about 7m09s left
+    29/480 runs  ( 25%)  elapsed 2m15s  about 6m44s left
+    35/480 runs  ( 30%)  elapsed 2m39s  about 6m20s left
+    42/480 runs  ( 34%)  elapsed 3m00s  about 5m45s left
+    60/480 runs  ( 43%)  elapsed 3m20s  about 4m31s left
+    88/480 runs  ( 51%)  elapsed 3m40s  about 3m31s left
+    133/480 runs  ( 57%)  elapsed 4m01s  about 2m59s left
+    161/480 runs  ( 61%)  elapsed 4m24s  about 2m47s left
+    195/480 runs  ( 66%)  elapsed 4m44s  about 2m27s left
+    235/480 runs  ( 71%)  elapsed 5m05s  about 2m02s left
+    261/480 runs  ( 75%)  elapsed 5m26s  about 1m49s left
+    294/480 runs  ( 79%)  elapsed 5m47s  about 1m31s left
+    339/480 runs  ( 84%)  elapsed 6m09s  about 1m09s left
+    367/480 runs  ( 87%)  elapsed 6m32s  about 0m57s left
+    431/480 runs  ( 94%)  elapsed 6m53s  about 0m24s left
+    461/480 runs  ( 98%)  elapsed 7m17s  about 0m09s left
+    480/480 runs  (100%)  elapsed 7m34s  about 0m00s left
+    elapsed 27m20s
+
+[4/11] exp7_admission: Admission fairness: common rejection wrapper, steady, 50 ms (440 runs)
+    41/440 runs  ( 12%)  elapsed 0m20s  about 2m23s left
+    69/440 runs  ( 21%)  elapsed 0m41s  about 2m37s left
+    114/440 runs  ( 34%)  elapsed 1m01s  about 1m58s left
+    155/440 runs  ( 45%)  elapsed 1m22s  about 1m41s left
+    181/440 runs  ( 52%)  elapsed 1m43s  about 1m37s left
+    239/440 runs  ( 66%)  elapsed 2m03s  about 1m04s left
+    278/440 runs  ( 74%)  elapsed 2m23s  about 0m51s left
+    299/440 runs  ( 78%)  elapsed 2m44s  about 0m46s left
+    368/440 runs  ( 90%)  elapsed 3m04s  about 0m20s left
+    405/440 runs  ( 95%)  elapsed 3m25s  about 0m10s left
+    440/440 runs  (100%)  elapsed 3m34s  about 0m00s left
+    elapsed 30m54s
+
+[5/11] exp8_ablation: Ablation of v6, steady and bursty, 50 ms (400 runs)
+    11/400 runs  (  4%)  elapsed 0m20s  about 9m09s left
+    24/400 runs  (  8%)  elapsed 0m41s  about 7m52s left
+    37/400 runs  ( 12%)  elapsed 1m02s  about 7m20s left
+    50/400 runs  ( 17%)  elapsed 1m23s  about 6m55s left
+    62/400 runs  ( 21%)  elapsed 1m43s  about 6m38s left
+    75/400 runs  ( 25%)  elapsed 2m05s  about 6m17s left
+    87/400 runs  ( 29%)  elapsed 2m26s  about 5m58s left
+    99/400 runs  ( 33%)  elapsed 2m47s  about 5m40s left
+    111/400 runs  ( 36%)  elapsed 3m08s  about 5m28s left
+    123/400 runs  ( 40%)  elapsed 3m29s  about 5m16s left
+    135/400 runs  ( 43%)  elapsed 3m49s  about 5m01s left
+    148/400 runs  ( 47%)  elapsed 4m10s  about 4m44s left
+    160/400 runs  ( 50%)  elapsed 4m31s  about 4m28s left
+    173/400 runs  ( 54%)  elapsed 4m51s  about 4m09s left
+    185/400 runs  ( 57%)  elapsed 5m12s  about 3m53s left
+    197/400 runs  ( 61%)  elapsed 5m33s  about 3m36s left
+    209/400 runs  ( 64%)  elapsed 5m53s  about 3m22s left
+    223/400 runs  ( 67%)  elapsed 6m16s  about 3m06s left
+    237/400 runs  ( 70%)  elapsed 6m38s  about 2m50s left
+    251/400 runs  ( 73%)  elapsed 7m00s  about 2m33s left
+    264/400 runs  ( 76%)  elapsed 7m20s  about 2m16s left
+    277/400 runs  ( 79%)  elapsed 7m43s  about 2m00s left
+    290/400 runs  ( 82%)  elapsed 8m03s  about 1m43s left
+    303/400 runs  ( 85%)  elapsed 8m25s  about 1m28s left
+    317/400 runs  ( 87%)  elapsed 8m45s  about 1m16s left
+    330/400 runs  ( 89%)  elapsed 9m06s  about 1m06s left
+    343/400 runs  ( 91%)  elapsed 9m27s  about 0m54s left
+    355/400 runs  ( 93%)  elapsed 9m48s  about 0m43s left
+    368/400 runs  ( 95%)  elapsed 10m09s  about 0m31s left
+    381/400 runs  ( 97%)  elapsed 10m30s  about 0m18s left
+    394/400 runs  ( 99%)  elapsed 10m51s  about 0m06s left
+    400/400 runs  (100%)  elapsed 11m01s  about 0m00s left
+    elapsed 41m56s
+
+[6/11] exp5_scalability: 1 and 16 ingresses, steady, 50 ms (480 runs)
+    3/480 runs  (  3%)  elapsed 0m36s  about 17m44s left
+    7/480 runs  (  8%)  elapsed 1m12s  about 14m20s left
+    11/480 runs  ( 12%)  elapsed 1m37s  about 11m55s left
+    17/480 runs  ( 17%)  elapsed 1m58s  about 9m35s left
+    21/480 runs  ( 20%)  elapsed 2m20s  about 9m05s left
+    25/480 runs  ( 24%)  elapsed 2m49s  about 9m11s left
+    29/480 runs  ( 27%)  elapsed 3m18s  about 9m08s left
+    37/480 runs  ( 32%)  elapsed 3m42s  about 8m02s left
+    49/480 runs  ( 38%)  elapsed 4m04s  about 6m33s left
+    64/480 runs  ( 45%)  elapsed 4m25s  about 5m27s left
+    86/480 runs  ( 51%)  elapsed 4m45s  about 4m34s left
+    117/480 runs  ( 56%)  elapsed 5m06s  about 3m59s left
+    133/480 runs  ( 59%)  elapsed 5m27s  about 3m49s left
+    141/480 runs  ( 60%)  elapsed 5m48s  about 3m50s left
+    161/480 runs  ( 63%)  elapsed 6m15s  about 3m35s left
+    165/480 runs  ( 64%)  elapsed 6m38s  about 3m42s left
+    169/480 runs  ( 65%)  elapsed 6m59s  about 3m47s left
+    231/480 runs  ( 73%)  elapsed 7m22s  about 2m41s left
+    246/480 runs  ( 75%)  elapsed 7m42s  about 2m32s left
+    288/480 runs  ( 80%)  elapsed 8m02s  about 1m57s left
+    319/480 runs  ( 84%)  elapsed 8m23s  about 1m35s left
+    337/480 runs  ( 86%)  elapsed 8m45s  about 1m24s left
+    356/480 runs  ( 88%)  elapsed 9m06s  about 1m12s left
+    363/480 runs  ( 89%)  elapsed 9m30s  about 1m09s left
+    367/480 runs  ( 90%)  elapsed 9m51s  about 1m08s left
+    391/480 runs  ( 92%)  elapsed 10m12s  about 0m52s left
+    441/480 runs  ( 97%)  elapsed 10m32s  about 0m22s left
+    480/480 runs  (100%)  elapsed 10m49s  about 0m00s left
+    elapsed 52m46s
+
+[7/11] exp6_failures: Core-2 loses half its GPUs 40-70 s; regional sites at half speed 35-70 s (240 runs)
+    5/240 runs  (  8%)  elapsed 0m25s  about 4m40s left
+    11/240 runs  ( 18%)  elapsed 0m49s  about 3m39s left
+    17/240 runs  ( 28%)  elapsed 1m14s  about 3m08s left
+    31/240 runs  ( 43%)  elapsed 1m35s  about 2m08s left
+    81/240 runs  ( 60%)  elapsed 1m55s  about 1m16s left
+    103/240 runs  ( 66%)  elapsed 2m15s  about 1m10s left
+    127/240 runs  ( 72%)  elapsed 2m36s  about 1m01s left
+    184/240 runs  ( 86%)  elapsed 2m56s  about 0m28s left
+    207/240 runs  ( 92%)  elapsed 3m17s  about 0m17s left
+    232/240 runs  ( 98%)  elapsed 3m37s  about 0m04s left
+    240/240 runs  (100%)  elapsed 3m39s  about 0m00s left
+    elapsed 56m26s
+
+[8/11] exp3_budget: Low/high budget (W = 10 s / 0.5 s), Prequal at its native rate, threshold telemetry (640 runs)
+    5/640 runs  (  4%)  elapsed 0m27s  about 12m33s left
+    11/640 runs  (  8%)  elapsed 0m59s  about 11m48s left
+    15/640 runs  ( 11%)  elapsed 1m29s  about 12m37s left
+    19/640 runs  ( 13%)  elapsed 1m59s  about 12m54s left
+    23/640 runs  ( 16%)  elapsed 2m23s  about 12m21s left
+    27/640 runs  ( 19%)  elapsed 2m47s  about 11m52s left
+    31/640 runs  ( 22%)  elapsed 3m08s  about 11m25s left
+    37/640 runs  ( 25%)  elapsed 3m32s  about 10m53s left
+    42/640 runs  ( 27%)  elapsed 3m55s  about 10m37s left
+    45/640 runs  ( 28%)  elapsed 4m19s  about 10m53s left
+    49/640 runs  ( 30%)  elapsed 4m48s  about 11m00s left
+    53/640 runs  ( 32%)  elapsed 5m09s  about 10m47s left
+    58/640 runs  ( 35%)  elapsed 5m31s  about 10m22s left
+    67/640 runs  ( 38%)  elapsed 5m51s  about 9m29s left
+    80/640 runs  ( 43%)  elapsed 6m12s  about 8m18s left
+    95/640 runs  ( 47%)  elapsed 6m32s  about 7m13s left
+    112/640 runs  ( 52%)  elapsed 6m52s  about 6m26s left
+    154/640 runs  ( 57%)  elapsed 7m12s  about 5m24s left
+    174/640 runs  ( 59%)  elapsed 7m33s  about 5m11s left
+    186/640 runs  ( 61%)  elapsed 7m54s  about 5m09s left
+    223/640 runs  ( 64%)  elapsed 8m14s  about 4m32s left
+    269/640 runs  ( 69%)  elapsed 8m34s  about 3m48s left
+    279/640 runs  ( 70%)  elapsed 8m56s  about 3m46s left
+    301/640 runs  ( 73%)  elapsed 9m24s  about 3m32s left
+    305/640 runs  ( 73%)  elapsed 9m47s  about 3m36s left
+    309/640 runs  ( 74%)  elapsed 10m09s  about 3m39s left
+    323/640 runs  ( 75%)  elapsed 10m39s  about 3m33s left
+    327/640 runs  ( 75%)  elapsed 11m11s  about 3m38s left
+    341/640 runs  ( 77%)  elapsed 11m31s  about 3m27s left
+    371/640 runs  ( 80%)  elapsed 11m53s  about 2m57s left
+    375/640 runs  ( 80%)  elapsed 12m16s  about 2m58s left
+    379/640 runs  ( 81%)  elapsed 12m37s  about 2m58s left
+    432/640 runs  ( 85%)  elapsed 12m57s  about 2m19s left
+    452/640 runs  ( 86%)  elapsed 13m17s  about 2m06s left
+    509/640 runs  ( 90%)  elapsed 13m37s  about 1m26s left
+    537/640 runs  ( 92%)  elapsed 13m59s  about 1m08s left
+    561/640 runs  ( 94%)  elapsed 14m28s  about 0m53s left
+    565/640 runs  ( 95%)  elapsed 14m53s  about 0m51s left
+    569/640 runs  ( 95%)  elapsed 15m17s  about 0m50s left
+    583/640 runs  ( 96%)  elapsed 15m41s  about 0m40s left
+    587/640 runs  ( 96%)  elapsed 16m02s  about 0m38s left
+    616/640 runs  ( 98%)  elapsed 16m22s  about 0m17s left
+    633/640 runs  ( 99%)  elapsed 16m44s  about 0m05s left
+    637/640 runs  (100%)  elapsed 17m05s  about 0m02s left
+    640/640 runs  (100%)  elapsed 17m18s  about 0m00s left
+    elapsed 1h13m
+
+[9/11] cap_hom: Homogeneous sites (4 GPUs each), steady, 50 ms (240 runs)
+    3/240 runs  (  6%)  elapsed 0m24s  about 6m34s left
+    7/240 runs  ( 14%)  elapsed 0m46s  about 4m50s left
+    12/240 runs  ( 22%)  elapsed 1m06s  about 3m51s left
+    17/240 runs  ( 29%)  elapsed 1m31s  about 3m40s left
+    26/240 runs  ( 39%)  elapsed 1m52s  about 2m54s left
+    55/240 runs  ( 54%)  elapsed 2m12s  about 1m51s left
+    91/240 runs  ( 65%)  elapsed 2m35s  about 1m23s left
+    102/240 runs  ( 68%)  elapsed 2m55s  about 1m21s left
+    125/240 runs  ( 75%)  elapsed 3m15s  about 1m04s left
+    168/240 runs  ( 85%)  elapsed 3m35s  about 0m37s left
+    196/240 runs  ( 91%)  elapsed 3m55s  about 0m23s left
+    221/240 runs  ( 96%)  elapsed 4m16s  about 0m10s left
+    240/240 runs  (100%)  elapsed 4m31s  about 0m00s left
+    elapsed 1h18m
+
+[10/11] deadline_relaxed: Relaxed deadline 500 ms, steady, 50 ms (240 runs)
+    3/240 runs  (  6%)  elapsed 0m22s  about 5m54s left
+    7/240 runs  ( 14%)  elapsed 0m44s  about 4m40s left
+    11/240 runs  ( 21%)  elapsed 1m06s  about 4m07s left
+    17/240 runs  ( 29%)  elapsed 1m30s  about 3m39s left
+    27/240 runs  ( 40%)  elapsed 1m51s  about 2m45s left
+    53/240 runs  ( 54%)  elapsed 2m11s  about 1m52s left
+    92/240 runs  ( 65%)  elapsed 2m31s  about 1m20s left
+    103/240 runs  ( 69%)  elapsed 2m51s  about 1m18s left
+    125/240 runs  ( 75%)  elapsed 3m12s  about 1m03s left
+    166/240 runs  ( 85%)  elapsed 3m32s  about 0m37s left
+    197/240 runs  ( 91%)  elapsed 3m53s  about 0m22s left
+    223/240 runs  ( 97%)  elapsed 4m16s  about 0m09s left
+    240/240 runs  (100%)  elapsed 4m33s  about 0m00s left
+    elapsed 1h22m
+
+[11/11] grid_rest: Main grid: every remaining (load, delay, pattern) point (4080 runs)
+    3/4080 runs  (  0%)  elapsed 0m26s  about 1h50m left
+    7/4080 runs  (  1%)  elapsed 0m50s  about 1h31m left
+    11/4080 runs  (  1%)  elapsed 1m15s  about 1h25m left
+    15/4080 runs  (  2%)  elapsed 1m37s  about 1h20m left
+    19/4080 runs  (  3%)  elapsed 2m03s  about 1h19m left
+    23/4080 runs  (  3%)  elapsed 2m26s  about 1h18m left
+    27/4080 runs  (  4%)  elapsed 2m53s  about 1h18m left
+    31/4080 runs  (  4%)  elapsed 3m20s  about 1h18m left
+    35/4080 runs  (  5%)  elapsed 3m44s  about 1h17m left
+    39/4080 runs  (  5%)  elapsed 4m07s  about 1h16m left
+    43/4080 runs  (  6%)  elapsed 4m30s  about 1h14m left
+    47/4080 runs  (  6%)  elapsed 4m54s  about 1h14m left
+    51/4080 runs  (  7%)  elapsed 5m17s  about 1h13m left
+    55/4080 runs  (  7%)  elapsed 5m42s  about 1h13m left
+    59/4080 runs  (  8%)  elapsed 6m08s  about 1h12m left
+    63/4080 runs  (  8%)  elapsed 6m34s  about 1h12m left
+    67/4080 runs  (  9%)  elapsed 7m03s  about 1h12m left
+    71/4080 runs  (  9%)  elapsed 7m31s  about 1h12m left
+    75/4080 runs  ( 10%)  elapsed 7m57s  about 1h12m left
+    79/4080 runs  ( 10%)  elapsed 8m19s  about 1h11m left
+    83/4080 runs  ( 11%)  elapsed 8m41s  about 1h10m left
+    87/4080 runs  ( 11%)  elapsed 9m06s  about 1h10m left
+    91/4080 runs  ( 12%)  elapsed 9m35s  about 1h10m left
+    95/4080 runs  ( 13%)  elapsed 9m59s  about 1h09m left
+    99/4080 runs  ( 13%)  elapsed 10m21s  about 1h09m left
+    103/4080 runs  ( 14%)  elapsed 10m45s  about 1h08m left
+    107/4080 runs  ( 14%)  elapsed 11m16s  about 1h08m left
+    111/4080 runs  ( 15%)  elapsed 11m38s  about 1h08m left
+    116/4080 runs  ( 15%)  elapsed 12m00s  about 1h07m left
+    121/4080 runs  ( 16%)  elapsed 12m30s  about 1h07m left
+    125/4080 runs  ( 16%)  elapsed 12m55s  about 1h07m left
+    129/4080 runs  ( 17%)  elapsed 13m18s  about 1h06m left
+    133/4080 runs  ( 17%)  elapsed 13m39s  about 1h06m left
+    137/4080 runs  ( 17%)  elapsed 14m03s  about 1h06m left
+    141/4080 runs  ( 18%)  elapsed 14m32s  about 1h06m left
+    143/4080 runs  ( 18%)  elapsed 14m56s  about 1h07m left
+    145/4080 runs  ( 18%)  elapsed 15m16s  about 1h07m left
+    149/4080 runs  ( 19%)  elapsed 15m43s  about 1h07m left
+    153/4080 runs  ( 19%)  elapsed 16m08s  about 1h07m left
+    156/4080 runs  ( 20%)  elapsed 16m29s  about 1h07m left
+    159/4080 runs  ( 20%)  elapsed 16m51s  about 1h07m left
+    163/4080 runs  ( 20%)  elapsed 17m13s  about 1h07m left
+    167/4080 runs  ( 21%)  elapsed 17m34s  about 1h06m left
+    171/4080 runs  ( 21%)  elapsed 17m59s  about 1h06m left
+    177/4080 runs  ( 22%)  elapsed 18m28s  about 1h06m left
+    183/4080 runs  ( 22%)  elapsed 18m52s  about 1h05m left
+    187/4080 runs  ( 23%)  elapsed 19m25s  about 1h06m left
+    190/4080 runs  ( 23%)  elapsed 19m45s  about 1h06m left
+    193/4080 runs  ( 23%)  elapsed 20m11s  about 1h06m left
+    199/4080 runs  ( 24%)  elapsed 20m41s  about 1h06m left
+    203/4080 runs  ( 24%)  elapsed 21m07s  about 1h06m left
+    205/4080 runs  ( 24%)  elapsed 21m28s  about 1h06m left
+    208/4080 runs  ( 25%)  elapsed 21m53s  about 1h06m left
+    210/4080 runs  ( 25%)  elapsed 22m13s  about 1h07m left
+    212/4080 runs  ( 25%)  elapsed 22m33s  about 1h07m left
+    217/4080 runs  ( 25%)  elapsed 22m57s  about 1h07m left
+    223/4080 runs  ( 26%)  elapsed 23m23s  about 1h06m left
+    228/4080 runs  ( 26%)  elapsed 23m44s  about 1h05m left
+    238/4080 runs  ( 27%)  elapsed 24m07s  about 1h04m left
+    252/4080 runs  ( 28%)  elapsed 24m28s  about 1h02m left
+    266/4080 runs  ( 29%)  elapsed 24m49s  about 1h00m left
+    280/4080 runs  ( 30%)  elapsed 25m11s  about 58m56s left
+    294/4080 runs  ( 31%)  elapsed 25m31s  about 57m11s left
+    307/4080 runs  ( 32%)  elapsed 25m52s  about 55m42s left
+    318/4080 runs  ( 32%)  elapsed 26m13s  about 54m36s left
+    332/4080 runs  ( 33%)  elapsed 26m34s  about 53m03s left
+    343/4080 runs  ( 34%)  elapsed 26m57s  about 52m09s left
+    350/4080 runs  ( 34%)  elapsed 27m20s  about 51m54s left
+    355/4080 runs  ( 35%)  elapsed 27m42s  about 51m53s left
+    362/4080 runs  ( 35%)  elapsed 28m03s  about 51m34s left
+    369/4080 runs  ( 36%)  elapsed 28m27s  about 51m20s left
+    377/4080 runs  ( 36%)  elapsed 28m51s  about 50m59s left
+    384/4080 runs  ( 37%)  elapsed 29m12s  about 50m39s left
+    391/4080 runs  ( 37%)  elapsed 29m37s  about 50m27s left
+    399/4080 runs  ( 37%)  elapsed 30m06s  about 50m13s left
+    407/4080 runs  ( 38%)  elapsed 30m30s  about 49m50s left
+    415/4080 runs  ( 38%)  elapsed 30m54s  about 49m29s left
+    423/4080 runs  ( 39%)  elapsed 31m20s  about 49m09s left
+    429/4080 runs  ( 39%)  elapsed 31m40s  about 48m55s left
+    436/4080 runs  ( 40%)  elapsed 32m01s  about 48m34s left
+    442/4080 runs  ( 40%)  elapsed 32m21s  about 48m21s left
+    447/4080 runs  ( 40%)  elapsed 32m42s  about 48m15s left
+    458/4080 runs  ( 41%)  elapsed 33m04s  about 47m32s left
+    472/4080 runs  ( 42%)  elapsed 33m26s  about 46m32s left
+    480/4080 runs  ( 42%)  elapsed 33m47s  about 46m11s left
+    488/4080 runs  ( 43%)  elapsed 34m10s  about 45m52s left
+    496/4080 runs  ( 43%)  elapsed 34m33s  about 45m32s left
+    507/4080 runs  ( 44%)  elapsed 34m54s  about 44m52s left
+    523/4080 runs  ( 45%)  elapsed 35m15s  about 43m57s left
+    541/4080 runs  ( 45%)  elapsed 35m36s  about 42m55s left
+    559/4080 runs  ( 46%)  elapsed 35m57s  about 41m56s left
+    577/4080 runs  ( 47%)  elapsed 36m18s  about 41m09s left
+    599/4080 runs  ( 48%)  elapsed 36m39s  about 40m26s left
+    622/4080 runs  ( 48%)  elapsed 37m01s  about 39m44s left
+    636/4080 runs  ( 49%)  elapsed 37m22s  about 39m25s left
+    664/4080 runs  ( 50%)  elapsed 37m43s  about 38m27s left
+    707/4080 runs  ( 51%)  elapsed 38m03s  about 37m15s left
+    735/4080 runs  ( 51%)  elapsed 38m25s  about 36m47s left
+    749/4080 runs  ( 51%)  elapsed 38m45s  about 36m42s left
+    769/4080 runs  ( 52%)  elapsed 39m07s  about 36m27s left
+    825/4080 runs  ( 53%)  elapsed 39m27s  about 35m11s left
+    839/4080 runs  ( 53%)  elapsed 39m49s  about 35m06s left
+    863/4080 runs  ( 54%)  elapsed 40m11s  about 34m46s left
+    898/4080 runs  ( 54%)  elapsed 40m31s  about 34m06s left
+    933/4080 runs  ( 55%)  elapsed 40m51s  about 33m26s left
+    946/4080 runs  ( 55%)  elapsed 41m12s  about 33m21s left
+    967/4080 runs  ( 56%)  elapsed 41m33s  about 33m05s left
+    1018/4080 runs  ( 57%)  elapsed 41m53s  about 32m01s left
+    1037/4080 runs  ( 57%)  elapsed 42m14s  about 31m47s left
+    1061/4080 runs  ( 58%)  elapsed 42m36s  about 31m27s left
+    1080/4080 runs  ( 58%)  elapsed 42m56s  about 31m13s left
+    1131/4080 runs  ( 59%)  elapsed 43m18s  about 30m12s left
+    1146/4080 runs  ( 59%)  elapsed 43m39s  about 30m04s left
+    1167/4080 runs  ( 60%)  elapsed 43m59s  about 29m47s left
+    1218/4080 runs  ( 61%)  elapsed 44m19s  about 28m47s left
+    1239/4080 runs  ( 61%)  elapsed 44m43s  about 28m32s left
+    1263/4080 runs  ( 62%)  elapsed 45m04s  about 28m11s left
+    1297/4080 runs  ( 62%)  elapsed 45m24s  about 27m36s left
+    1333/4080 runs  ( 63%)  elapsed 45m44s  about 26m58s left
+    1347/4080 runs  ( 63%)  elapsed 46m04s  about 26m51s left
+    1367/4080 runs  ( 64%)  elapsed 46m24s  about 26m35s left
+    1417/4080 runs  ( 65%)  elapsed 46m45s  about 25m39s left
+    1435/4080 runs  ( 65%)  elapsed 47m11s  about 25m30s left
+    1449/4080 runs  ( 65%)  elapsed 47m31s  about 25m22s left
+    1469/4080 runs  ( 66%)  elapsed 47m54s  about 25m08s left
+    1528/4080 runs  ( 67%)  elapsed 48m14s  about 24m01s left
+    1541/4080 runs  ( 67%)  elapsed 48m35s  about 23m55s left
+    1564/4080 runs  ( 67%)  elapsed 48m55s  about 23m35s left
+    1603/4080 runs  ( 68%)  elapsed 49m16s  about 22m56s left
+    1635/4080 runs  ( 69%)  elapsed 49m38s  about 22m26s left
+    1652/4080 runs  ( 69%)  elapsed 49m58s  about 22m14s left
+    1669/4080 runs  ( 70%)  elapsed 50m19s  about 22m02s left
+    1727/4080 runs  ( 71%)  elapsed 50m39s  about 21m00s left
+    1741/4080 runs  ( 71%)  elapsed 51m00s  about 20m52s left
+    1765/4080 runs  ( 71%)  elapsed 51m22s  about 20m32s left
+    1812/4080 runs  ( 72%)  elapsed 51m42s  about 19m50s left
+    1838/4080 runs  ( 73%)  elapsed 52m03s  about 19m32s left
+    1863/4080 runs  ( 73%)  elapsed 52m24s  about 19m15s left
+    1907/4080 runs  ( 74%)  elapsed 52m44s  about 18m40s left
+    1937/4080 runs  ( 74%)  elapsed 53m06s  about 18m18s left
+    1962/4080 runs  ( 75%)  elapsed 53m26s  about 18m01s left
+    1987/4080 runs  ( 75%)  elapsed 53m46s  about 17m44s left
+    2033/4080 runs  ( 76%)  elapsed 54m07s  about 17m07s left
+    2050/4080 runs  ( 76%)  elapsed 54m28s  about 16m58s left
+    2069/4080 runs  ( 77%)  elapsed 54m48s  about 16m46s left
+    2131/4080 runs  ( 78%)  elapsed 55m11s  about 15m55s left
+    2145/4080 runs  ( 78%)  elapsed 55m31s  about 15m48s left
+    2167/4080 runs  ( 78%)  elapsed 55m53s  about 15m34s left
+    2221/4080 runs  ( 79%)  elapsed 56m13s  about 14m51s left
+    2240/4080 runs  ( 79%)  elapsed 56m33s  about 14m39s left
+    2265/4080 runs  ( 80%)  elapsed 56m57s  about 14m22s left
+    2311/4080 runs  ( 81%)  elapsed 57m17s  about 13m46s left
+    2337/4080 runs  ( 81%)  elapsed 57m37s  about 13m28s left
+    2361/4080 runs  ( 81%)  elapsed 57m59s  about 13m12s left
+    2380/4080 runs  ( 82%)  elapsed 58m19s  about 13m00s left
+    2433/4080 runs  ( 82%)  elapsed 58m40s  about 12m27s left
+    2460/4080 runs  ( 83%)  elapsed 59m00s  about 12m12s left
+    2475/4080 runs  ( 83%)  elapsed 59m21s  about 12m06s left
+    2533/4080 runs  ( 84%)  elapsed 59m42s  about 11m29s left
+    2561/4080 runs  ( 84%)  elapsed 1h00m  about 11m14s left
+    2601/4080 runs  ( 85%)  elapsed 1h00m  about 10m50s left
+    2639/4080 runs  ( 85%)  elapsed 1h00m  about 10m27s left
+    2666/4080 runs  ( 86%)  elapsed 1h01m  about 10m12s left
+    2721/4080 runs  ( 86%)  elapsed 1h01m  about 9m38s left
+    2745/4080 runs  ( 87%)  elapsed 1h01m  about 9m25s left
+    2767/4080 runs  ( 87%)  elapsed 1h02m  about 9m13s left
+    2820/4080 runs  ( 88%)  elapsed 1h02m  about 8m41s left
+    2845/4080 runs  ( 88%)  elapsed 1h02m  about 8m27s left
+    2867/4080 runs  ( 88%)  elapsed 1h03m  about 8m15s left
+    2928/4080 runs  ( 89%)  elapsed 1h03m  about 7m38s left
+    2945/4080 runs  ( 89%)  elapsed 1h03m  about 7m29s left
+    2967/4080 runs  ( 90%)  elapsed 1h04m  about 7m17s left
+    3028/4080 runs  ( 90%)  elapsed 1h04m  about 6m50s left
+    3061/4080 runs  ( 91%)  elapsed 1h04m  about 6m38s left
+    3102/4080 runs  ( 91%)  elapsed 1h05m  about 6m23s left
+    3146/4080 runs  ( 91%)  elapsed 1h05m  about 6m06s left
+    3169/4080 runs  ( 92%)  elapsed 1h05m  about 5m58s left
+    3235/4080 runs  ( 92%)  elapsed 1h06m  about 5m31s left
+    3265/4080 runs  ( 93%)  elapsed 1h06m  about 5m20s left
+    3331/4080 runs  ( 93%)  elapsed 1h06m  about 4m54s left
+    3363/4080 runs  ( 93%)  elapsed 1h07m  about 4m42s left
+    3417/4080 runs  ( 94%)  elapsed 1h07m  about 4m21s left
+    3456/4080 runs  ( 94%)  elapsed 1h07m  about 4m06s left
+    3491/4080 runs  ( 95%)  elapsed 1h08m  about 3m52s left
+    3542/4080 runs  ( 95%)  elapsed 1h08m  about 3m32s left
+    3569/4080 runs  ( 95%)  elapsed 1h09m  about 3m22s left
+    3639/4080 runs  ( 96%)  elapsed 1h09m  about 2m54s left
+    3667/4080 runs  ( 96%)  elapsed 1h09m  about 2m43s left
+    3733/4080 runs  ( 97%)  elapsed 1h10m  about 2m17s left
+    3763/4080 runs  ( 97%)  elapsed 1h10m  about 2m05s left
+    3817/4080 runs  ( 98%)  elapsed 1h10m  about 1m44s left
+    3849/4080 runs  ( 98%)  elapsed 1h11m  about 1m31s left
+    3879/4080 runs  ( 98%)  elapsed 1h11m  about 1m20s left
+    3939/4080 runs  ( 99%)  elapsed 1h11m  about 0m56s left
+    3967/4080 runs  ( 99%)  elapsed 1h12m  about 0m45s left
+    4035/4080 runs  (100%)  elapsed 1h12m  about 0m17s left
+    4065/4080 runs  (100%)  elapsed 1h12m  about 0m05s left
+    4080/4080 runs  (100%)  elapsed 1h13m  about 0m00s left
+    elapsed 2h35m

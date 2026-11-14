@@ -1,0 +1,72 @@
+Pilot: 450 runs on seeds (101, 102, 103, 104, 105)
+    9/450 runs  (  3%)  elapsed 0m22s  about 13m48s left
+    18/450 runs  (  5%)  elapsed 0m42s  about 12m56s left
+    31/450 runs  (  9%)  elapsed 1m03s  about 10m42s left
+    67/450 runs  ( 19%)  elapsed 1m23s  about 5m45s left
+    97/450 runs  ( 28%)  elapsed 1m43s  about 4m24s left
+    116/450 runs  ( 33%)  elapsed 2m06s  about 4m18s left
+    124/450 runs  ( 34%)  elapsed 2m28s  about 4m43s left
+    132/450 runs  ( 36%)  elapsed 2m51s  about 5m04s left
+    140/450 runs  ( 38%)  elapsed 3m11s  about 5m18s left
+    150/450 runs  ( 40%)  elapsed 3m32s  about 5m24s left
+    158/450 runs  ( 41%)  elapsed 3m54s  about 5m33s left
+    167/450 runs  ( 43%)  elapsed 4m17s  about 5m40s left
+    180/450 runs  ( 46%)  elapsed 4m39s  about 5m32s left
+    203/450 runs  ( 50%)  elapsed 4m59s  about 4m56s left
+    229/450 runs  ( 56%)  elapsed 5m20s  about 4m16s left
+    306/450 runs  ( 71%)  elapsed 5m40s  about 2m19s left
+    360/450 runs  ( 82%)  elapsed 6m00s  about 1m19s left
+    363/450 runs  ( 82%)  elapsed 6m24s  about 1m21s left
+    372/450 runs  ( 84%)  elapsed 6m46s  about 1m15s left
+    381/450 runs  ( 86%)  elapsed 7m13s  about 1m09s left
+    396/450 runs  ( 89%)  elapsed 7m34s  about 0m55s left
+    420/450 runs  ( 94%)  elapsed 7m54s  about 0m30s left
+    450/450 runs  (100%)  elapsed 8m14s  about 0m00s left
+rule,candidate,mean_success_pct,L90_d50_steady_W2_R4_het_D300,L130_d50_steady_W2_R4_het_D300,L90_d50_bursty_W2_R4_het_D300,L90_d1000_steady_W2_R4_het_D300
+prequal_hcl,"MAX_AGE=1.0,Q_RIF=0.84",36.209,39.769,24.928,40.371,39.769
+prequal_hcl,"MAX_AGE=1.0,Q_RIF=0.75",35.765,39.331,24.477,39.921,39.331
+prequal_hcl,"MAX_AGE=4.0,Q_RIF=0.84",33.192,37.277,21.176,37.037,37.277
+prequal_hcl,"MAX_AGE=4.0,Q_RIF=0.75",33.513,37.592,21.341,37.528,37.592
+liyanage26,"WINDOW_N=20",32.519,33.045,21.462,42.523,33.045
+liyanage26,"WINDOW_N=20,PROBE=False",10.269,12.118,6.329,10.512,12.118
+liyanage26,"WINDOW_N=10",27.020,26.694,17.941,36.752,26.694
+liyanage26,"WINDOW_N=40",36.730,40.293,25.723,40.611,40.293
+cats_lb,"THETA=0.25,TABLE=100",13.892,13.282,10.479,18.008,13.799
+cats_lb,"THETA=0.25,TABLE=100,HOLD=6.0,HYST=0.2",31.491,38.673,15.077,48.392,23.821
+cats_lb,"THETA=0.25,TABLE=100,SLA_QUEUE=False",40.427,38.515,20.917,58.996,43.282
+cats_lb,"THETA=0.25,TABLE=100,HOLD=2.0,SMOOTH=0.3",63.000,81.735,23.840,65.794,80.632
+dahlin_li,"PHASE_AGE=True",60.541,81.997,11.312,67.302,81.552
+dahlin_li,"PHASE_AGE=False",60.396,81.883,11.382,67.316,81.004
+oracle_adm,"TAU=0.8",72.986,92.879,31.972,74.214,92.879
+oracle_adm,"TAU=0.5",75.774,92.879,40.771,76.566,92.879
+oracle_adm,"TAU=0.95",71.641,92.879,27.553,73.253,92.879
+threshold_telemetry,0.5,bytes_per_s_per_ingress=608.1,target=264.0
+threshold_telemetry,1.0,bytes_per_s_per_ingress=421.7,target=264.0
+threshold_telemetry,2.0,bytes_per_s_per_ingress=291.9,target=264.0
+timescale_check,wrr,94.99,L90_d50_steady_W2_R4_het_D300
+timescale_check,ours_v6,95.10,L90_d50_steady_W2_R4_het_D300
+timescale_check,oracle,92.88,L90_d50_steady_W2_R4_het_D300
+timescale_check,lsq,86.29,L90_d50_steady_W2_R4_het_D300
+timescale_check,wrr,3.89,L130_d50_steady_W2_R4_het_D300
+timescale_check,ours_v6,65.74,L130_d50_steady_W2_R4_het_D300
+timescale_check,oracle,25.88,L130_d50_steady_W2_R4_het_D300
+timescale_check,lsq,5.31,L130_d50_steady_W2_R4_het_D300
+timescale_check,wrr,68.70,L90_d50_bursty_W2_R4_het_D300
+timescale_check,ours_v6,73.60,L90_d50_bursty_W2_R4_het_D300
+timescale_check,oracle,72.08,L90_d50_bursty_W2_R4_het_D300
+timescale_check,lsq,68.05,L90_d50_bursty_W2_R4_het_D300
+timescale_check,wrr,94.99,L90_d1000_steady_W2_R4_het_D300
+timescale_check,ours_v6,94.99,L90_d1000_steady_W2_R4_het_D300
+timescale_check,oracle,92.88,L90_d1000_steady_W2_R4_het_D300
+timescale_check,lsq,52.76,L90_d1000_steady_W2_R4_het_D300
+
+FROZEN: {
+ "prequal_hcl": "MAX_AGE=1.0,Q_RIF=0.84",
+ "liyanage26": "WINDOW_N=40",
+ "cats_lb": "THETA=0.25,TABLE=100,HOLD=2.0,SMOOTH=0.3",
+ "dahlin_li": "PHASE_AGE=True",
+ "oracle_adm": "TAU=0.5",
+ "_threshold": 2.0,
+ "_frozen_at": "2026-11-03 17:06",
+ "_decision_rule": "per tunable baseline: the candidate with the highest mean deadline success over the 4 pilot scenarios x 5 pilot seeds; within 0.1 points the earlier candidate (paper default first); threshold telemetry: the threshold whose realized bytes are closest to the medium budget (264 B/s per ingress)"
+}

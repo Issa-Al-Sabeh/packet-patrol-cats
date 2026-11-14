@@ -1,0 +1,25 @@
+rival,regime,v6_minus_rival_pp_mean,v6_better,same,v6_worse,n_scenarios
+A Nearest site,below,82.99522194023487,24,0,0,24
+A Nearest site,overload,64.94666139671484,24,0,0,24
+B Capacity WRR,below,-0.08499722236189396,8,8,8,24
+B Capacity WRR,overload,48.43519915950856,24,0,0,24
+C Dynamic WRR (measured speeds),below,-0.08499722236189396,8,8,8,24
+C Dynamic WRR (measured speeds),overload,48.43519915950856,24,0,0,24
+D Weighted power-of-two,below,32.60264394544553,24,0,0,24
+D Weighted power-of-two,overload,45.09529432483246,24,0,0,24
+E Dahlin (Basic LI),below,5.541298222883532,20,4,0,24
+E Dahlin (Basic LI),overload,39.59455654746067,24,0,0,24
+F LSQ (shared periodic reports),below,5.876040557269399,20,1,3,24
+F LSQ (shared periodic reports),overload,42.75199966196863,24,0,0,24
+G Prequal (HCL),below,39.08693821347402,24,0,0,24
+G Prequal (HCL),overload,38.989936057312995,24,0,0,24
+H Liyanage et al. 2026,below,31.863097316982905,24,0,0,24
+H Liyanage et al. 2026,overload,41.59634704948178,24,0,0,24
+I CATS-draft load sharing,below,4.787110900067436,20,4,0,24
+I CATS-draft load sharing,overload,32.4768021140845,24,0,0,24
+J Expected delay + drop,below,0.249873937670651,14,1,9,24
+J Expected delay + drop,overload,9.955916547935601,19,0,5,24
+L Fresh-state oracle,below,0.7237452304375415,18,2,4,24
+L Fresh-state oracle,overload,26.61015433164844,20,0,4,24
+"F2 LSQ-Sample (own random samples, supplementary)",below,35.37846845332358,24,0,0,24
+"F2 LSQ-Sample (own random samples, supplementary)",overload,37.591887633816185,24,0,0,24

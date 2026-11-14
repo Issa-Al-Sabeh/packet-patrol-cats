@@ -1,0 +1,223 @@
+v6 study: 8230 runs on fresh seeds 201-210, 2 worker(s)
+
+[1/6] Beirut main scenario: 150 runs
+    57/150 runs  ( 69%)  elapsed 0m20s  about 0m09s left
+    150/150 runs  (100%)  elapsed 0m37s  about 0m00s left
+
+[2/6] Beirut: the other 35 tests: 4550 runs
+    5/4550 runs  (  1%)  elapsed 0m22s  about 28m38s left
+    13/4550 runs  (  3%)  elapsed 0m46s  about 23m00s left
+    24/4550 runs  (  6%)  elapsed 1m06s  about 18m20s left
+    47/4550 runs  ( 10%)  elapsed 1m29s  about 13m31s left
+    59/4550 runs  ( 12%)  elapsed 1m50s  about 13m51s left
+    85/4550 runs  ( 15%)  elapsed 2m10s  about 12m44s left
+    118/4550 runs  ( 17%)  elapsed 2m31s  about 12m07s left
+    159/4550 runs  ( 20%)  elapsed 2m51s  about 11m30s left
+    204/4550 runs  ( 22%)  elapsed 3m11s  about 11m05s left
+    257/4550 runs  ( 25%)  elapsed 3m31s  about 10m33s left
+    307/4550 runs  ( 28%)  elapsed 3m51s  about 10m08s left
+    367/4550 runs  ( 31%)  elapsed 4m12s  about 9m30s left
+    415/4550 runs  ( 33%)  elapsed 4m32s  about 9m13s left
+    475/4550 runs  ( 36%)  elapsed 4m53s  about 8m45s left
+    501/4550 runs  ( 37%)  elapsed 5m13s  about 8m52s left
+    557/4550 runs  ( 40%)  elapsed 5m33s  about 8m27s left
+    619/4550 runs  ( 43%)  elapsed 5m54s  about 7m58s left
+    697/4550 runs  ( 46%)  elapsed 6m14s  about 7m15s left
+    772/4550 runs  ( 49%)  elapsed 6m34s  about 6m43s left
+    863/4550 runs  ( 52%)  elapsed 6m54s  about 6m14s left
+    992/4550 runs  ( 56%)  elapsed 7m14s  about 5m41s left
+    1141/4550 runs  ( 60%)  elapsed 7m35s  about 5m04s left
+    1218/4550 runs  ( 61%)  elapsed 7m55s  about 5m01s left
+    1278/4550 runs  ( 62%)  elapsed 8m15s  about 5m01s left
+    1355/4550 runs  ( 63%)  elapsed 8m36s  about 4m59s left
+    1423/4550 runs  ( 64%)  elapsed 8m56s  about 4m57s left
+    1443/4550 runs  ( 65%)  elapsed 9m16s  about 5m05s left
+    1527/4550 runs  ( 66%)  elapsed 9m37s  about 5m01s left
+    1603/4550 runs  ( 67%)  elapsed 9m57s  about 4m58s left
+    1648/4550 runs  ( 67%)  elapsed 10m17s  about 5m01s left
+    1655/4550 runs  ( 67%)  elapsed 10m40s  about 5m10s left
+    1695/4550 runs  ( 68%)  elapsed 11m00s  about 5m14s left
+    1725/4550 runs  ( 68%)  elapsed 11m26s  about 5m21s left
+    1731/4550 runs  ( 68%)  elapsed 11m46s  about 5m29s left
+    1737/4550 runs  ( 68%)  elapsed 12m07s  about 5m37s left
+    1743/4550 runs  ( 68%)  elapsed 12m27s  about 5m46s left
+    1749/4550 runs  ( 68%)  elapsed 12m48s  about 5m54s left
+    1761/4550 runs  ( 69%)  elapsed 13m08s  about 6m01s left
+    1825/4550 runs  ( 69%)  elapsed 13m28s  about 5m58s left
+    1835/4550 runs  ( 69%)  elapsed 13m49s  about 6m05s left
+    1846/4550 runs  ( 70%)  elapsed 14m09s  about 6m11s left
+    1871/4550 runs  ( 70%)  elapsed 14m29s  about 6m15s left
+    1931/4550 runs  ( 71%)  elapsed 14m49s  about 6m11s left
+    1950/4550 runs  ( 71%)  elapsed 15m09s  about 6m15s left
+    2031/4550 runs  ( 72%)  elapsed 15m30s  about 6m06s left
+    2106/4550 runs  ( 73%)  elapsed 15m50s  about 5m58s left
+    2201/4550 runs  ( 74%)  elapsed 16m10s  about 5m46s left
+    2291/4550 runs  ( 75%)  elapsed 16m30s  about 5m34s left
+    2368/4550 runs  ( 76%)  elapsed 16m50s  about 5m25s left
+    2457/4550 runs  ( 77%)  elapsed 17m10s  about 5m13s left
+    2552/4550 runs  ( 78%)  elapsed 17m30s  about 4m59s left
+    2633/4550 runs  ( 79%)  elapsed 17m51s  about 4m49s left
+    2708/4550 runs  ( 80%)  elapsed 18m11s  about 4m39s left
+    2796/4550 runs  ( 81%)  elapsed 18m32s  about 4m26s left
+    2894/4550 runs  ( 82%)  elapsed 18m52s  about 4m11s left
+    2986/4550 runs  ( 83%)  elapsed 19m12s  about 3m58s left
+    3057/4550 runs  ( 84%)  elapsed 19m32s  about 3m48s left
+    3139/4550 runs  ( 85%)  elapsed 19m53s  about 3m36s left
+    3231/4550 runs  ( 86%)  elapsed 20m13s  about 3m21s left
+    3326/4550 runs  ( 87%)  elapsed 20m34s  about 3m06s left
+    3422/4550 runs  ( 88%)  elapsed 20m54s  about 2m51s left
+    3519/4550 runs  ( 89%)  elapsed 21m14s  about 2m35s left
+    3607/4550 runs  ( 90%)  elapsed 21m34s  about 2m21s left
+    3708/4550 runs  ( 91%)  elapsed 21m54s  about 2m04s left
+    3806/4550 runs  ( 92%)  elapsed 22m14s  about 1m48s left
+    3900/4550 runs  ( 94%)  elapsed 22m34s  about 1m33s left
+    4012/4550 runs  ( 95%)  elapsed 22m55s  about 1m14s left
+    4130/4550 runs  ( 96%)  elapsed 23m15s  about 0m56s left
+    4233/4550 runs  ( 97%)  elapsed 23m35s  about 0m41s left
+    4333/4550 runs  ( 98%)  elapsed 23m55s  about 0m26s left
+    4432/4550 runs  ( 99%)  elapsed 24m15s  about 0m12s left
+    4538/4550 runs  (100%)  elapsed 24m36s  about 0m01s left
+    4550/4550 runs  (100%)  elapsed 24m39s  about 0m00s left
+
+[3/6] Beirut: 11 overload tests: 1650 runs
+    19/1650 runs  (  6%)  elapsed 0m20s  about 5m32s left
+    36/1650 runs  ( 10%)  elapsed 0m40s  about 5m47s left
+    54/1650 runs  ( 15%)  elapsed 1m02s  about 6m08s left
+    72/1650 runs  ( 18%)  elapsed 1m24s  about 6m13s left
+    97/1650 runs  ( 23%)  elapsed 1m45s  about 5m50s left
+    141/1650 runs  ( 30%)  elapsed 2m07s  about 4m50s left
+    166/1650 runs  ( 34%)  elapsed 2m28s  about 4m47s left
+    214/1650 runs  ( 41%)  elapsed 2m48s  about 4m07s left
+    263/1650 runs  ( 46%)  elapsed 3m09s  about 3m40s left
+    294/1650 runs  ( 49%)  elapsed 3m29s  about 3m35s left
+    333/1650 runs  ( 53%)  elapsed 3m49s  about 3m24s left
+    379/1650 runs  ( 57%)  elapsed 4m10s  about 3m11s left
+    408/1650 runs  ( 59%)  elapsed 4m31s  about 3m09s left
+    434/1650 runs  ( 61%)  elapsed 4m52s  about 3m07s left
+    469/1650 runs  ( 63%)  elapsed 5m12s  about 3m01s left
+    533/1650 runs  ( 67%)  elapsed 5m32s  about 2m46s left
+    619/1650 runs  ( 70%)  elapsed 5m52s  about 2m28s left
+    703/1650 runs  ( 74%)  elapsed 6m12s  about 2m12s left
+    766/1650 runs  ( 76%)  elapsed 6m32s  about 2m03s left
+    851/1650 runs  ( 79%)  elapsed 6m54s  about 1m51s left
+    913/1650 runs  ( 81%)  elapsed 7m15s  about 1m43s left
+    932/1650 runs  ( 81%)  elapsed 7m35s  about 1m43s left
+    1007/1650 runs  ( 84%)  elapsed 7m55s  about 1m31s left
+    1058/1650 runs  ( 86%)  elapsed 8m15s  about 1m23s left
+    1125/1650 runs  ( 88%)  elapsed 8m35s  about 1m13s left
+    1203/1650 runs  ( 90%)  elapsed 8m55s  about 1m00s left
+    1273/1650 runs  ( 92%)  elapsed 9m15s  about 0m50s left
+    1357/1650 runs  ( 94%)  elapsed 9m35s  about 0m38s left
+    1455/1650 runs  ( 96%)  elapsed 9m56s  about 0m25s left
+    1551/1650 runs  ( 98%)  elapsed 10m16s  about 0m13s left
+    1650/1650 runs  (100%)  elapsed 10m35s  about 0m00s left
+
+[4/6] Large network: main scenario: 150 runs
+    5/150 runs  ( 11%)  elapsed 0m21s  about 2m48s left
+    13/150 runs  ( 27%)  elapsed 0m41s  about 1m53s left
+    28/150 runs  ( 48%)  elapsed 1m01s  about 1m07s left
+    55/150 runs  ( 68%)  elapsed 1m22s  about 0m38s left
+    100/150 runs  ( 83%)  elapsed 1m42s  about 0m20s left
+    120/150 runs  ( 90%)  elapsed 2m02s  about 0m13s left
+    133/150 runs  ( 94%)  elapsed 2m24s  about 0m08s left
+    150/150 runs  (100%)  elapsed 2m38s  about 0m00s left
+
+[5/6] Large network: the other 11 tests: 1430 runs
+    3/1430 runs  (  1%)  elapsed 0m22s  about 31m14s left
+    7/1430 runs  (  3%)  elapsed 0m44s  about 25m27s left
+    11/1430 runs  (  4%)  elapsed 1m05s  about 23m42s left
+    16/1430 runs  (  6%)  elapsed 1m25s  about 21m24s left
+    19/1430 runs  (  7%)  elapsed 1m45s  about 22m10s left
+    37/1430 runs  ( 12%)  elapsed 2m07s  about 16m03s left
+    52/1430 runs  ( 15%)  elapsed 2m27s  about 14m18s left
+    66/1430 runs  ( 17%)  elapsed 2m48s  about 13m25s left
+    79/1430 runs  ( 20%)  elapsed 3m09s  about 12m58s left
+    93/1430 runs  ( 22%)  elapsed 3m31s  about 12m24s left
+    107/1430 runs  ( 25%)  elapsed 3m52s  about 11m51s left
+    121/1430 runs  ( 27%)  elapsed 4m12s  about 11m18s left
+    138/1430 runs  ( 30%)  elapsed 4m35s  about 10m43s left
+    154/1430 runs  ( 33%)  elapsed 4m55s  about 10m11s left
+    171/1430 runs  ( 35%)  elapsed 5m15s  about 9m35s left
+    186/1430 runs  ( 38%)  elapsed 5m36s  about 9m11s left
+    202/1430 runs  ( 40%)  elapsed 5m57s  about 8m49s left
+    218/1430 runs  ( 43%)  elapsed 6m19s  about 8m31s left
+    259/1430 runs  ( 47%)  elapsed 6m40s  about 7m29s left
+    305/1430 runs  ( 52%)  elapsed 7m00s  about 6m35s left
+    337/1430 runs  ( 54%)  elapsed 7m21s  about 6m14s left
+    383/1430 runs  ( 57%)  elapsed 7m41s  about 5m53s left
+    409/1430 runs  ( 58%)  elapsed 8m03s  about 5m49s left
+    425/1430 runs  ( 59%)  elapsed 8m25s  about 5m52s left
+    439/1430 runs  ( 60%)  elapsed 8m47s  about 5m57s left
+    494/1430 runs  ( 62%)  elapsed 9m08s  about 5m33s left
+    511/1430 runs  ( 63%)  elapsed 9m28s  about 5m34s left
+    524/1430 runs  ( 64%)  elapsed 9m48s  about 5m37s left
+    532/1430 runs  ( 64%)  elapsed 10m09s  about 5m44s left
+    535/1430 runs  ( 64%)  elapsed 10m31s  about 5m54s left
+    539/1430 runs  ( 64%)  elapsed 10m54s  about 6m04s left
+    588/1430 runs  ( 66%)  elapsed 11m15s  about 5m44s left
+    603/1430 runs  ( 67%)  elapsed 11m41s  about 5m47s left
+    607/1430 runs  ( 67%)  elapsed 12m05s  about 5m56s left
+    611/1430 runs  ( 67%)  elapsed 12m28s  about 6m05s left
+    615/1430 runs  ( 67%)  elapsed 12m52s  about 6m14s left
+    619/1430 runs  ( 68%)  elapsed 13m15s  about 6m22s left
+    623/1430 runs  ( 68%)  elapsed 13m40s  about 6m31s left
+    627/1430 runs  ( 68%)  elapsed 14m04s  about 6m40s left
+    634/1430 runs  ( 68%)  elapsed 14m26s  about 6m44s left
+    673/1430 runs  ( 70%)  elapsed 14m46s  about 6m24s left
+    706/1430 runs  ( 71%)  elapsed 15m07s  about 6m08s left
+    719/1430 runs  ( 72%)  elapsed 15m29s  about 6m07s left
+    731/1430 runs  ( 72%)  elapsed 15m50s  about 6m06s left
+    754/1430 runs  ( 73%)  elapsed 16m10s  about 5m56s left
+    801/1430 runs  ( 75%)  elapsed 16m32s  about 5m29s left
+    813/1430 runs  ( 76%)  elapsed 16m54s  about 5m27s left
+    825/1430 runs  ( 76%)  elapsed 17m14s  about 5m25s left
+    836/1430 runs  ( 77%)  elapsed 17m34s  about 5m23s left
+    881/1430 runs  ( 78%)  elapsed 17m55s  about 4m56s left
+    907/1430 runs  ( 79%)  elapsed 18m16s  about 4m43s left
+    919/1430 runs  ( 80%)  elapsed 18m37s  about 4m39s left
+    932/1430 runs  ( 81%)  elapsed 18m58s  about 4m35s left
+    962/1430 runs  ( 82%)  elapsed 19m18s  about 4m18s left
+    1003/1430 runs  ( 83%)  elapsed 19m39s  about 3m54s left
+    1015/1430 runs  ( 84%)  elapsed 20m00s  about 3m49s left
+    1027/1430 runs  ( 84%)  elapsed 20m21s  about 3m45s left
+    1040/1430 runs  ( 85%)  elapsed 20m42s  about 3m39s left
+    1092/1430 runs  ( 87%)  elapsed 21m02s  about 3m06s left
+    1111/1430 runs  ( 88%)  elapsed 21m24s  about 2m56s left
+    1125/1430 runs  ( 89%)  elapsed 21m46s  about 2m49s left
+    1139/1430 runs  ( 89%)  elapsed 22m08s  about 2m42s left
+    1196/1430 runs  ( 91%)  elapsed 22m29s  about 2m06s left
+    1211/1430 runs  ( 92%)  elapsed 22m49s  about 1m58s left
+    1225/1430 runs  ( 93%)  elapsed 23m10s  about 1m50s left
+    1238/1430 runs  ( 93%)  elapsed 23m32s  about 1m43s left
+    1292/1430 runs  ( 95%)  elapsed 23m52s  about 1m12s left
+    1311/1430 runs  ( 96%)  elapsed 24m14s  about 1m02s left
+    1323/1430 runs  ( 96%)  elapsed 24m34s  about 0m56s left
+    1336/1430 runs  ( 97%)  elapsed 24m55s  about 0m49s left
+    1384/1430 runs  ( 98%)  elapsed 25m15s  about 0m24s left
+    1410/1430 runs  ( 99%)  elapsed 25m36s  about 0m10s left
+    1421/1430 runs  (100%)  elapsed 25m56s  about 0m04s left
+    1430/1430 runs  (100%)  elapsed 26m10s  about 0m00s left
+
+[6/6] Large network: 2 overload tests: 300 runs
+    3/300 runs  (  4%)  elapsed 0m20s  about 8m07s left
+    7/300 runs  ( 10%)  elapsed 0m41s  about 6m32s left
+    13/300 runs  ( 16%)  elapsed 1m07s  about 5m46s left
+    19/300 runs  ( 22%)  elapsed 1m32s  about 5m36s left
+    33/300 runs  ( 34%)  elapsed 1m53s  about 3m42s left
+    47/300 runs  ( 43%)  elapsed 2m14s  about 2m54s left
+    61/300 runs  ( 51%)  elapsed 2m36s  about 2m30s left
+    69/300 runs  ( 55%)  elapsed 2m59s  about 2m28s left
+    77/300 runs  ( 59%)  elapsed 3m22s  about 2m22s left
+    98/300 runs  ( 66%)  elapsed 3m43s  about 1m56s left
+    115/300 runs  ( 69%)  elapsed 4m03s  about 1m47s left
+    161/300 runs  ( 79%)  elapsed 4m25s  about 1m11s left
+    174/300 runs  ( 81%)  elapsed 4m46s  about 1m05s left
+    187/300 runs  ( 84%)  elapsed 5m08s  about 0m58s left
+    207/300 runs  ( 88%)  elapsed 5m30s  about 0m46s left
+    254/300 runs  ( 94%)  elapsed 5m51s  about 0m22s left
+    271/300 runs  ( 96%)  elapsed 6m11s  about 0m14s left
+    285/300 runs  ( 98%)  elapsed 6m33s  about 0m08s left
+    300/300 runs  (100%)  elapsed 6m43s  about 0m00s left
+823 test x rule rows -> results_v6/tables/summary_v6.csv
+
+Done in 1h11m

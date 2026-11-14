@@ -1,0 +1,41 @@
+pattern,load,ablation,alias,v6_minus_ablation_pp,ci95,verdict,n_seeds
+steady,0.6,v6 without A (balance),ours_v6_nobal,0.0030957512831079727,0.04085080002605362,same,10
+steady,0.6,v6 without B (burst re-plan),ours_v6_noburst,-0.0013373845133230588,0.027012212781000182,same,10
+steady,0.6,v6 without C (corrected risk),ours_v6_nocal,0.0,0.0,same,10
+steady,0.6,v6 without staleness (no ageing),ours_v6_noage,-0.018191296915573217,0.028764422315088446,same,10
+steady,0.6,v6 without admission (no drop),ours_v6_nodrop,0.0,0.0,same,10
+steady,0.9,v6 without A (balance),ours_v6_nobal,-0.0006902042975596601,0.2388768943755789,same,10
+steady,0.9,v6 without B (burst re-plan),ours_v6_noburst,0.0,0.0,same,10
+steady,0.9,v6 without C (corrected risk),ours_v6_nocal,-0.02099094765382432,0.047484822589020856,same,10
+steady,0.9,v6 without staleness (no ageing),ours_v6_noage,-0.09958985320031104,0.17412020377535992,same,10
+steady,0.9,v6 without admission (no drop),ours_v6_nodrop,0.0,0.0,same,10
+steady,1.1,v6 without A (balance),ours_v6_nobal,0.10073469878772982,0.22228303851661863,same,10
+steady,1.1,v6 without B (burst re-plan),ours_v6_noburst,0.0,0.0,same,10
+steady,1.1,v6 without C (corrected risk),ours_v6_nocal,0.0,0.0,same,10
+steady,1.1,v6 without staleness (no ageing),ours_v6_noage,-0.028364982595657295,0.2853802265091833,same,10
+steady,1.1,v6 without admission (no drop),ours_v6_nodrop,61.30071551094094,0.7715797744215472,better,10
+steady,1.3,v6 without A (balance),ours_v6_nobal,0.0,0.0,same,10
+steady,1.3,v6 without B (burst re-plan),ours_v6_noburst,0.0,0.0,same,10
+steady,1.3,v6 without C (corrected risk),ours_v6_nocal,0.0,0.0,same,10
+steady,1.3,v6 without staleness (no ageing),ours_v6_noage,-0.019524417841361698,0.16289167657710452,same,10
+steady,1.3,v6 without admission (no drop),ours_v6_nodrop,61.34271279593129,0.3647720607971297,better,10
+bursty,0.6,v6 without A (balance),ours_v6_nobal,0.34817658956630737,0.6686021698636146,same,10
+bursty,0.6,v6 without B (burst re-plan),ours_v6_noburst,1.350747700697545,1.151789938889648,better,10
+bursty,0.6,v6 without C (corrected risk),ours_v6_nocal,0.05837381183532386,0.43462825089643214,same,10
+bursty,0.6,v6 without staleness (no ageing),ours_v6_noage,1.071016049079752,0.8305236498121473,better,10
+bursty,0.6,v6 without admission (no drop),ours_v6_nodrop,0.6563891333294947,0.9955667271144936,same,10
+bursty,0.9,v6 without A (balance),ours_v6_nobal,-0.05002758891464225,0.5239163348180469,same,10
+bursty,0.9,v6 without B (burst re-plan),ours_v6_noburst,6.290020588001987,1.199233111082961,better,10
+bursty,0.9,v6 without C (corrected risk),ours_v6_nocal,0.3978604086340368,0.4806442724203127,same,10
+bursty,0.9,v6 without staleness (no ageing),ours_v6_noage,3.1023000953672466,0.598123205976887,better,10
+bursty,0.9,v6 without admission (no drop),ours_v6_nodrop,4.615775739595264,0.7993208095583016,better,10
+bursty,1.1,v6 without A (balance),ours_v6_nobal,-0.17034033208211455,0.3239852162516475,same,10
+bursty,1.1,v6 without B (burst re-plan),ours_v6_noburst,2.4029417068055965,0.4455440277152918,better,10
+bursty,1.1,v6 without C (corrected risk),ours_v6_nocal,-0.05762624739629203,0.3051323250126918,same,10
+bursty,1.1,v6 without staleness (no ageing),ours_v6_noage,2.464142107159853,0.5496006129827812,better,10
+bursty,1.1,v6 without admission (no drop),ours_v6_nodrop,3.3158338572750994,1.159989531607308,better,10
+bursty,1.3,v6 without A (balance),ours_v6_nobal,0.010169273162590997,0.5593073537072933,same,10
+bursty,1.3,v6 without B (burst re-plan),ours_v6_noburst,2.25316676227789,0.8483186363262165,better,10
+bursty,1.3,v6 without C (corrected risk),ours_v6_nocal,0.18009538134037015,0.6962738628433117,same,10
+bursty,1.3,v6 without staleness (no ageing),ours_v6_noage,1.2993446854191717,0.7275500929775068,better,10
+bursty,1.3,v6 without admission (no drop),ours_v6_nodrop,42.28588470175116,0.9786794350292375,better,10

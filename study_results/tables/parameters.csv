@@ -1,0 +1,41 @@
+item,value
+prequal_hcl,"MAX_AGE=1.0,Q_RIF=0.84"
+liyanage26,WINDOW_N=40
+cats_lb,"THETA=0.25,TABLE=100,HOLD=2.0,SMOOTH=0.3"
+dahlin_li,PHASE_AGE=True
+oracle_adm,TAU=0.5
+_threshold,2.0
+_frozen_at,2026-11-03 17:06
+_decision_rule,per tunable baseline: the candidate with the highest mean deadline success over the 4 pilot scenarios x 5 pilot seeds; within 0.1 points the earlier candidate (paper default first); threshold telemetry: the threshold whose realized bytes are closest to the medium budget (264 B/s per ingress)
+run as: nearest,nearest
+run as: wrr,wrr
+run as: wrr_speed,wrr_speed
+run as: wpow2_stale,wpow2_stale
+run as: dahlin_li,dahlin_li@PHASE_AGE=True
+run as: lsq,lsq
+run as: prequal_hcl,"prequal_hcl@MAX_AGE=1.0,Q_RIF=0.84"
+run as: liyanage26,liyanage26@WINDOW_N=40
+run as: cats_lb,"cats_lb@THETA=0.25,TABLE=100,HOLD=2.0,SMOOTH=0.3"
+run as: expected_delay_drop,expected_delay_drop
+run as: ours_v6,ours_v6
+run as: oracle,oracle
+run as: ours_v6_nobal,ours_v6_nobal
+run as: ours_v6_noburst,ours_v6_noburst
+run as: ours_v6_nocal,ours_v6_nocal
+run as: ours_v6_noage,ours_v6_noage
+run as: ours_v6_nodrop,ours_v6_nodrop
+run as: oracle_adm,oracle_adm@TAU=0.5
+run as: prequal_native,"prequal_hcl@MAX_AGE=1.0,Q_RIF=0.84,R_PROBE=3.0"
+seeds_final,201 202 203 204 205 206 207 208 209 210
+seeds_pilot,101 102 103 104 105
+servers (GPUs per site),"(1, 2, 2, 3, 4, 5, 7, 8)"
+servers homogeneous,"(4, 4, 4, 4, 4, 4, 4, 4)"
+delay matrix 4 ingresses (ms),"[[8.0, 20.0, 22.0, 18.0, 25.0, 35.0, 50.0, 60.0], [20.0, 8.0, 18.0, 20.0, 35.0, 25.0, 50.0, 60.0], [22.0, 18.0, 8.0, 22.0, 25.0, 35.0, 60.0, 50.0], [18.0, 20.0, 22.0, 8.0, 35.0, 25.0, 60.0, 50.0]]"
+service,"100 ms mean per frame, gamma, SCV 0.25"
+deadline strict / relaxed,300 ms / 500 ms
+report interval (low/medium/high budget),"{""low"": 10.0, ""medium"": 2.0, ""high"": 0.5}"
+telemetry delays (s),"[0.0, 0.05, 0.2, 1.0]"
+loads,"[0.6, 0.9, 1.1, 1.3]"
+sim time / warm-up (s),100.0 / 20.0
+bursts,"x2.0 for 5.0 s at (30.0, 55.0, 80.0)"
+shifting,ingress shares rotate every 20.0 s

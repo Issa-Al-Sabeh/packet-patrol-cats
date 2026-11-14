@@ -1,0 +1,131 @@
+{
+  "_comment": "Every parameter of the staleness study. Edit and re-run: changed scenarios get new run files; finished runs of unchanged scenarios are reused. Rule parameters are frozen separately in study_results/frozen_params.json (pilot).",
+  "seeds_final": [
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210
+  ],
+  "seeds_pilot": [
+    101,
+    102,
+    103,
+    104,
+    105
+  ],
+  "servers_heterogeneous": [
+    1,
+    2,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8
+  ],
+  "servers_homogeneous": [
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4,
+    4
+  ],
+  "site_names": [
+    "Edge-1",
+    "Edge-2",
+    "Edge-3",
+    "Edge-4",
+    "Regional-1",
+    "Regional-2",
+    "Core-1",
+    "Core-2"
+  ],
+  "service_rate_per_gpu": 10.0,
+  "job_shape": "gamma",
+  "job_scv": 0.25,
+  "deadline_ms_strict": 300.0,
+  "deadline_ms_relaxed": 500.0,
+  "rtt_ms": {
+    "own_edge": 8.0,
+    "other_edge_base": 18.0,
+    "other_edge_step": 2.0,
+    "near_regional": 25.0,
+    "far_regional": 35.0,
+    "near_core": 50.0,
+    "far_core": 60.0
+  },
+  "ingresses_default": 4,
+  "traffic_split": "unequal",
+  "loads": [
+    0.6,
+    0.9,
+    1.1,
+    1.3
+  ],
+  "telemetry_delays_s": [
+    0.0,
+    0.05,
+    0.2,
+    1.0
+  ],
+  "patterns": [
+    "steady",
+    "bursty",
+    "shifting"
+  ],
+  "report_interval_s": {
+    "low": 10.0,
+    "medium": 2.0,
+    "high": 0.5
+  },
+  "report_bytes": 62,
+  "counter_bytes": 4,
+  "probe_bytes": 124,
+  "sim_time_s": 100.0,
+  "warmup_s": 20.0,
+  "bursts_start_s": [
+    30.0,
+    55.0,
+    80.0
+  ],
+  "burst_len_s": 5.0,
+  "burst_factor": 2.0,
+  "shift_every_s": 20.0,
+  "deadline_aware_sites": true,
+  "failure_event": {
+    "site": 7,
+    "gpus_left": 4,
+    "start_s": 40.0,
+    "end_s": 70.0
+  },
+  "slowdown_event": {
+    "sites": [
+      4,
+      5
+    ],
+    "speed": 0.5,
+    "start_s": 35.0,
+    "end_s": 70.0
+  },
+  "congestion_event": {
+    "site": 7,
+    "factor": 2.0,
+    "start_s": 40.0,
+    "end_s": 70.0,
+    "_note": "every path to Core-2 takes twice as long (round trip 50/60 -> 100/120 ms); not announced to any rule"
+  },
+  "telemetry_faults": {
+    "report_loss": 0.3,
+    "report_noise_sd": 2.0,
+    "_note": "supplementary robustness test: 30% of reports lost (each report to each ingress independently), or the reported frames = true + Normal(0, 2) (rounded, >= 0)"
+  }
+}
