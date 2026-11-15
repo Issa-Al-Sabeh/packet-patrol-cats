@@ -48,7 +48,7 @@ class SplitV6(SplitDrop):
     allow_drop = True         # ablation: False = never drop (no admission control)
     TIE_TOL = 1e-9            # "exactly one miss": equal up to floating-point noise (relative)
     # hooks added for v6.1 (Nov 2026); at these defaults ours v6 is unchanged
-    DROP_FROM = None          # dropping is allowed above this share of the measured capacity (None = U_LIMIT, as v6)
+    DROP_FROM = None          # overload threshold, as a share of the measured capacity (None = U_LIMIT, as v6)
     trace = None              # diagnostics only: called with the cost curves and the greedy result of each plan
                               # (see _after_greedy)
 

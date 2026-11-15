@@ -122,7 +122,7 @@ Frozen v6, existing scenarios, seeds 201 to 205. Ingress A carries 40% of the tr
   - It is worse in each of the 5 seeds. 95% is v6's own overload threshold.
   - With the correct estimate, all four ingresses sit right at the threshold and switch dropping on and off together. They reject as much on average (5.0% against 5.0%), but in bunches: drops occur in 16 of 26 five-second windows, against 22 for v6. Late frames rise from 11.6% to 15.0%.
   - In v6 an ingress that has started dropping over-estimates the traffic, stays in overload mode and sheds steadily. So part of v6's result at 95% load came from its estimation error.
-  - This belongs to the threshold, not to the estimator. It goes to Phase 2 (sensitivity of every cap and margin).
+  - This belongs to the threshold, not to the estimator. It went to Phase 2, where it was settled: v6.1 drops from 90% of the measured capacity, which recovers the loss (`feedback/cost.md`, sections 5 and 7).
 - **The rise-test correction matters only with the counter.**
   - With the counter, it is what makes the one-ingress burst neutral: -1.8 ± 1.3 points without it, +0.0 ± 0.7 with it.
   - With v6's own-share estimator it changes success by less than its interval everywhere, but widens the gap between ingresses (one-ingress burst: 28 → 39 points; reports every 1 s: 39 → 47).
@@ -163,7 +163,7 @@ Frozen v6, existing scenarios, seeds 201 to 205. Ingress A carries 40% of the tr
 
 1. **Option C, the drop counter, is chosen.** It is the only option that makes the estimate correct, and it is the example the feedback itself gives. B was rejected (it loses 4 to 9 points in overload). A was the fallback.
 2. **The new field is accepted**, and its bytes are counted in v6.1's telemetry budget.
-3. **The 95% threshold** is disclosed here and studied in Phase 2 with the other caps and margins. Until then it is a known limit of v6.1.
+3. **The 95% threshold** is disclosed here and studied in Phase 2 with the other caps and margins. *Update, 15 Nov 2026:* Phase 2 moved it to 90% for v6.1. Every v6.1 number in this note is with the threshold still at 95%, as in v6.
 4. **The capacity meter** is handled with the slow-recovery work (Batch C), since it is the same component. Until then it is a known limit.
 
 ## 7. What was built, and how it was checked
@@ -185,7 +185,7 @@ Frozen v6, existing scenarios, seeds 201 to 205. Ingress A carries 40% of the tr
 - **The counterexample passes:** v6.1 estimates 198.9 and 198.9 (truth 200). v6 gives 299.6 and 149.8.
 - **v6.1 equals v6 while nothing is dropped** (main scenario, seed 201: 2.8937% missed in both).
 - **The old rules are untouched:** 445 of 445 saved runs of Studies 1 and 2, re-run on the edited code, match exactly.
-- **The built version equals the prototype:** 45 of 45 pilot runs identical.
+- **The built version equals the prototype:** 45 of 45 pilot runs identical. The comparison is with the threshold at 95% (`ours_v61@DROP_FROM=0.95`), as the prototype had it.
 - **Every drop is counted once**, and the bytes of the counter are in the byte totals (`tests/test_v61.py`).
 - 69 tests pass: the 51 of v6, 11 for v6.1, 7 for the counterexample and the prototype.
 

@@ -1,5 +1,7 @@
 # Baseline implementation and verification report
 
+> **Updated for v6.1 (15 Nov 2026).** The label of every baseline (exact, adapted, ours, reference), its full reference, the LSQ diagnostic and the new static baseline are in `feedback/baselines.md`. Three things changed here: the "fresh-state oracle" is now called **fresh-state greedy selection** (the run name `oracle` is unchanged), and the sections on ours v6.1, the wrapper `+adm61` and the deadline-aware static split are new. Everything else describes the baselines as they were frozen with v6.
+
 Staleness-aware CATS study, November 2026. This report lists, for every algorithm in the comparison:
 - the source (paper or specification);
 - what was implemented exactly, and every adaptation;
@@ -30,9 +32,12 @@ Staleness-aware CATS study, November 2026. This report lists, for every algorith
 | I CATS-draft load sharing | `cats_lb` | `baselines.py` `CatsLB` | reports |
 | J Expected delay + drop | `expected_delay_drop` | `rules_v5.py` `ExpectedDelayDrop` | reports + counter |
 | K Staleness-Aware CATS (ours v6) | `ours_v6` | `rules_v6.py` `SplitV6` | reports + counter + own answers |
-| L Fresh-state oracle | `oracle` | `rules.py` `Oracle` | none (reads true state) |
-| Oracle + fresh-state admission | `oracle_adm` | `baselines.py` `OracleAdm` | none (reads true state) |
+| K′ Ours v6.1 | `ours_v61` | `rules_v61.py` `SplitV61` | reports + counter + drop counter + own answers |
+| L Fresh-state greedy selection (was "fresh-state oracle") | `oracle` | `rules.py` `Oracle` | none (reads true state) |
+| Fresh-state greedy + fresh-state admission | `oracle_adm` | `baselines.py` `OracleAdm` | none (reads true state) |
 | Common rejection wrapper | `<rule>+adm` | `baselines.py` `AdmissionWrapper` | reports + counter |
+| Common rejection wrapper, v6.1 estimate | `<rule>+adm61` | `baselines.py` `AdmissionWrapper61` | reports + counter + drop counter |
+| M Deadline-aware static split | `static_deadline` | `baselines.py` `StaticDeadline` | none |
 
 **Parameters.** Any rule can be run with class parameters overridden: `rule@K=V,K2=V2`, for example `prequal_hcl@MAX_AGE=1.0,Q_RIF=0.84`. The frozen values are in `study_results/frozen_params.json`. Every run file name records the exact rule string.
 
@@ -86,6 +91,7 @@ Staleness-aware CATS study, November 2026. This report lists, for every algorith
   1. Sites have several GPUs, so the local count is divided by the site's GPUs.
   2. Ties go to the larger site.
   3. Updates come from the periodic CATS reports (push), not LSQ's sampled pulls. Delayed reports are supported (they arrive late and older ones are ignored).
+- **Diagnostic (v6.1 study).** Its collapse with frequent reports comes from the shared, synchronised reports, not from LSQ: with the same information at each ingress's own moment it goes from 49% to 85% on time (`feedback/baselines.md`, section 3). In the paper it is "LSQ adapted to shared periodic reports".
 - **Why a second LSQ.** In the paper, each dispatcher refreshes its view on its own (LSQ-Sample: it samples d random queues at arrivals; LSQ-Update: a server sends its queue to one random dispatcher), so dispatchers rarely hold the same picture. With the shared CATS reports, all four ingresses get the same numbers at the same moment and can pile onto the same site. `lsq_sample` (below) tests the paper's own update style at the same byte budget.
 - **LED** (Zhou, Shroff, Wierman 2020) is a theoretical framework for local-estimation policies such as LSQ: conditions for throughput and heavy-traffic delay optimality. It is discussed, not implemented as a separate algorithm.
 - **Verified.** Known answer in `test_lsq_local_view`.
@@ -177,7 +183,16 @@ Staleness-aware CATS study, November 2026. This report lists, for every algorith
   - `nodrop`: the drop option is never available, i.e. no admission control.
   - v6 has no hysteresis and no adaptive telemetry, so those ablations do not apply.
 
-## L. Fresh-state oracle and oracle + admission
+## K′. Ours v6.1
+- **Implementation.** `SplitV61`: ours v6 with three changes, all from the feedback of 11 Nov 2026.
+  1. The offered-traffic estimate comes from an aggregate drop counter in the reports instead of the ingress's own drop share (`feedback/estimator.md`).
+  2. The clear-rise test compares arrivals with expected arrivals.
+  3. Overload mode (dropping allowed, plan used without the balance rule) starts at 90% of the measured capacity instead of 95% (`feedback/cost.md`).
+- **Telemetry.** The reports with the counter, plus 2 bytes per report for the drop counter and 2 bytes for each drop count an ingress sends. All counted.
+- **Verified.** `tests/test_v61.py`: the counterexample of the feedback, equality with v6 while nothing is dropped, every drop counted once, bytes, guard.
+
+## L. Fresh-state greedy selection (formerly "fresh-state oracle"), alone and with admission
+- **Naming.** Below, "oracle" is the run name. It is a per-frame greedy rule on the true state, not an optimum.
 - **Oracle.** Reads the true frames in the system, the working GPUs and their speed. Sends each frame where its true chance of being late is lowest. It is greedy per frame and ignores frames already in flight to a site, so it is **not an upper bound** (it is below round-robin at 90% load).
 - **Oracle + admission.** Also drops when that lowest chance is ≥ τ. τ = 0.5 won the pilot among {0.5, 0.8, 0.95}. Both are references, not practical rules.
 - **Where they are used.**
@@ -193,6 +208,17 @@ Staleness-aware CATS study, November 2026. This report lists, for every algorith
 - **Verified.**
   - Below capacity, wrapped and unwrapped rules make identical routing decisions frame by frame (`test_admission_wrapper_does_not_change_routing_below_capacity`).
   - At 130% load it rejects about 1 − 0.95/1.3 ≈ 27% (`test_admission_wrapper_drops_in_overload`).
+
+## Common rejection wrapper with the v6.1 estimate (`+adm61`)
+- **Rule.** The same admission rule as `+adm` (keep the admitted traffic at 95% of the configured capacity). The offered traffic comes from the aggregate drop counter, as in ours v6.1, and the wrapper sends its own drop counts.
+- **Why.** `+adm` uses v6's estimate, which is wrong when ingresses drop different shares. `+adm61` is the matched-admission rival of v6.1: same telemetry, same bytes, same chance to drop.
+- **Verified.** `test_wrapper61_matches_the_wrapper_in_what_it_admits`, and the guard and conservation tests of `tests/test_v61.py`.
+
+## M. Deadline-aware static split
+- **Source.** Ours; added on the feedback of 11 Nov 2026 as a stronger static baseline than capacity round-robin.
+- **Implementation.** No telemetry. For a design load, the shares minimise the long-run number of late frames given the configured GPUs, the deadline and this ingress's round trips (M/M/c long-run queue × the late table). Best split of 100 pieces, found exactly. Smooth weighted round-robin on the shares. Used with `+adm61`.
+- **Frozen.** DESIGN_LOAD = 0.95, the best of {0.70, 0.85, 0.95} on pilot seeds 101–105 (Beirut). At 0.95 its shares on Beirut are the capacity shares, so there it equals capacity round-robin (`feedback/baselines.md`, section 6).
+- **Verified.** `test_static_deadline_split`.
 
 ## Engine verification (`tests/test_simulator.py`, 51 tests, all passing)
 - **Determinism.** Same seed, same results.

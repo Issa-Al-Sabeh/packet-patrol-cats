@@ -79,7 +79,7 @@ def main():
     json.dump(out, open(os.path.join(HERE, "results_v6", "analysis_v6.json"), "w"), indent=1)
     names = {"ours_v5": "v5", "ours_v2_speed": "v2+speeds", "v4": "v4", "wrr": "RR", "wrr_speed": "RR+speeds",
              "wrr_drop": "RR+drop", "wrr_speed_drop": "RR+speeds+drop", "lsq": "LSQ", "expected_delay_drop": "ED+drop",
-             "v4_nodrop": "v4 no drop", "oracle": "Oracle", "ours_v6_nobal": "v6 w/o A", "ours_v6_noburst": "v6 w/o B",
+             "v4_nodrop": "v4 no drop", "oracle": "Fresh-state greedy", "ours_v6_nobal": "v6 w/o A", "ours_v6_noburst": "v6 w/o B",
              "ours_v6_nocal": "v6 w/o C", "ours_v6": "v6"}
     print("v6 vs each rule (lower / same / higher), Beirut | Large | Overload")
     for rv, res in out["h2h"].items():

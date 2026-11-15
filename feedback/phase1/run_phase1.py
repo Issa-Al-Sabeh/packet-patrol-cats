@@ -61,6 +61,8 @@ def scenarios_pilot():
         + [("dev", sc) for sc in dev]
 
 
+# ours v6.1 as it was when Phase 1 closed: dropping allowed from 95%, as in v6 (Phase 2 moved the default to 90%)
+V61_PHASE1 = "ours_v61@DROP_FROM=0.95"
 PILOT_RULES = ["ours_v6", "est_own_b1", "est_bound", "est_bound_b1", "est_echo", "est_echo_b1"]
 
 
@@ -151,7 +153,7 @@ def compare_with_prototype():
     def rows(name, rule):
         with open(os.path.join(HERE, name)) as f:
             return {(r["scenario"], int(r["seed"])): r for r in csv.DictReader(f) if r["rule"] == rule}
-    real, proto = rows("validate.csv", "ours_v61"), rows("pilot.csv", "est_echo_b1")
+    real, proto = rows("validate.csv", V61_PHASE1), rows("pilot.csv", "est_echo_b1")
     assert real.keys() == proto.keys()
     cols = ("success", "rejected", "expired", "late", "share_by_ingress", "est_by_ingress")
     same = sum(all(real[k][c] == proto[k][c] for c in cols) for k in real)
@@ -178,7 +180,7 @@ def main():
         jobs = [(net, sc, "ours_v6", sd) for net, sc in scenarios_diagnose() for sd in range(201, 206)]
         return execute(jobs, os.path.join(HERE, "diagnose.csv"), a.workers)
     if a.what == "validate":
-        jobs = [(net, sc, "ours_v61", sd) for net, sc in scenarios_pilot() for sd in range(101, 106)]
+        jobs = [(net, sc, V61_PHASE1, sd) for net, sc in scenarios_pilot() for sd in range(101, 106)]
         execute(jobs, os.path.join(HERE, "validate.csv"), a.workers)
         return compare_with_prototype()
     jobs = [(net, sc, r, sd) for net, sc in scenarios_pilot() for r in PILOT_RULES for sd in range(101, 106)]

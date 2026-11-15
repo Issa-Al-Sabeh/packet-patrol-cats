@@ -1,5 +1,5 @@
-"""Writes feedback/cost.md from sens.csv, greedy.csv and planner.csv, so every number in the note comes from the
-result files (python3 build_cost_note.py)."""
+"""Writes feedback/cost.md from sens.csv, sens_final.csv, greedy.csv and planner.csv, so every number in the note
+comes from the result files (python3 build_cost_note.py)."""
 import csv
 import os
 
@@ -11,6 +11,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 s = pd.read_csv(os.path.join(HERE, "sens.csv"))
 g = pd.read_csv(os.path.join(HERE, "greedy.csv"))
 p = pd.read_csv(os.path.join(HERE, "planner.csv"))
+sf = pd.read_csv(os.path.join(HERE, "sens_final.csv"))
 rep_path = os.path.join(HERE, "repro_after_hooks.csv")
 if os.path.exists(rep_path):
     with open(rep_path) as f:
@@ -45,20 +46,25 @@ def cell(m, h):
     return f"**{txt}**" if abs(m) > h and h > 0 else txt
 
 
-def table(variants, heads):
-    out = ["| Scenario | v6.1 success (%) | " + " | ".join(heads) + " |", "|---|---|" + "---|" * len(heads)]
+def table(variants, heads, frame=s, base="base", first="Start: dropping from 95% (%)"):
+    out = [f"| Scenario | {first} | " + " | ".join(heads) + " |", "|---|---|" + "---|" * len(heads)]
     for sc in ORDER:
-        base = s[(s.variant == "base") & (s.scenario == sc)].success.mean()
-        out.append(f"| {LAB[sc]} | {base:.1f} | " + " | ".join(cell(*diff(s, sc, v)) for v in variants) + " |")
+        b = frame[(frame.variant == base) & (frame.scenario == sc)].success.mean()
+        out.append(f"| {LAB[sc]} | {b:.1f} | " + " | ".join(cell(*diff(frame, sc, v, base)) for v in variants) + " |")
     return "\n".join(out)
 
 
-def n_sig(variant):
-    return sum(abs(m) > h and h > 0 for m, h in (diff(s, sc, variant) for sc in ORDER))
+def n_sig(variant, frame=s, base="base"):
+    return sum(abs(m) > h and h > 0 for m, h in (diff(frame, sc, variant, base) for sc in ORDER))
 
 
-def sig_list(variant):
-    return [(LAB[sc], *diff(s, sc, variant)) for sc in ORDER if abs(diff(s, sc, variant)[0]) > diff(s, sc, variant)[1] > 0]
+def sig_list(variant, frame=s, base="base"):
+    return [(LAB[sc], *diff(frame, sc, variant, base)) for sc in ORDER
+            if abs(diff(frame, sc, variant, base)[0]) > diff(frame, sc, variant, base)[1] > 0]
+
+
+def listing(items):
+    return "; ".join(f"{lab} ({m:+.1f} ± {h:.1f})" for lab, m, h in items) if items else "none"
 
 
 pen = ["penalty cap 0.90", "penalty cap 0.98", "no penalty", "constant penalty 5", "constant penalty 19"]
@@ -72,6 +78,26 @@ d85_main, d85_w30 = diff(s, "main", "drop from 85%"), diff(s, "report_interval=3
 v6_95 = diff(s, "load=95", "v6 (frozen)")
 d90_95 = diff(s, "load=95", "drop from 90%")
 succ = {v: s[(s.variant == v) & (s.scenario == "load=95")].success.mean() for v in ("base", "drop from 90%", "v6 (frozen)")}
+
+# ---- the same checks at the frozen threshold (dropping from 90%)
+FZ = "v6.1 (frozen)"
+assert set(ORDER) == set(sf.scenario)
+for sc in ORDER:                                   # the frozen runs are the "drop from 90%" runs of the first table
+    a = sf[(sf.variant == FZ) & (sf.scenario == sc)].sort_values("seed").success.values
+    b = s[(s.variant == "drop from 90%") & (s.scenario == sc)].sort_values("seed").success.values
+    assert np.array_equal(a, b), sc
+fin = ["penalty cap 0.90", "penalty cap 0.98", "no penalty", "constant penalty 19", "best plan on the grid"]
+t_fin = table(fin, ["Cap 0.90 (κ ≤ 9)", "Cap 0.98 (κ ≤ 49)", "No penalty (κ = 0)", "Constant κ = 19", "Best plan instead of greedy"],
+              frame=sf, base=FZ, first="v6.1 as frozen (%)")
+f_nopen = sig_list("no penalty", sf, FZ)
+f_k19 = sig_list("constant penalty 19", sf, FZ)
+f_plan = sig_list("best plan on the grid", sf, FZ)
+f_caps = sig_list("penalty cap 0.90", sf, FZ) + sig_list("penalty cap 0.98", sf, FZ)
+f_np = sorted(((LAB[sc], *diff(sf, sc, "no penalty", FZ)) for sc in ORDER), key=lambda r: r[1])[:2]
+n_fin_sig = len(f_caps) + len(f_nopen) + len(f_k19) + len(f_plan)
+mean_fz = sf[sf.variant == FZ].groupby("scenario").success.mean().mean()
+mean_95 = s[s.variant == "base"].groupby("scenario").success.mean().mean()
+mean_v6 = s[s.variant == "v6 (frozen)"].groupby("scenario").success.mean().mean()
 
 # ---- greedy
 G = g[["plans", "fallback", "compared", "optimal", "nonconvex", "nonconvex_cap", "nonconvex_and_gap", "convex_and_gap",
@@ -90,13 +116,14 @@ pl_rng = (min(m for m, _ in pl_d.values()), max(m for m, _ in pl_d.values()))
 
 doc = rf"""# Phase 2: the cost and the planner of v6.1
 
-- **Project:** Packet Patrol, CMPS 342. **Date:** 15 Nov 2026. **Status:** checks done, **two decisions for the team** (section 7).
+- **Project:** Packet Patrol, CMPS 342. **Date:** 15 Nov 2026. **Status:** done. The two open points were decided on 15 Nov 2026 (section 7) and checked again at the frozen settings (section 8).
 - **Questions (Prof. Maurice, 11 Nov 2026):** is κ defined in overload, are the units consistent, is the greedy allocation optimal?
 - **Short answers:**
   - κ is not defined in overload. v6 caps it, so it is a constant 19 there. Results do not depend on the cap or on the formula.
   - The units are consistent, and the drop test uses the incremental cost.
   - Greedy is optimal in {100 * G.optimal / G.compared:.1f}% of {int(G.compared):,} plans. Where it is not, the cost curves are not convex. Replacing it by the best plan changes success in none of {len(pl_d)} scenarios.
   - The setting that does matter is the overload threshold, not κ.
+  - **Decided:** v6.1 is in overload mode, and may drop, from 90% of the measured capacity (v6: 95%). The penalty keeps its formula and cap and is called an "externality-inspired backlog penalty".
 - All runs: pilot seeds 101 to 105, Beirut network, v6's 11 pilot tests and the 5 development scenarios of Phase 1. The held-out tests and the other networks took no part.
 - Every number below is computed from the result files in `feedback/phase2/` by `feedback/phase2/build_cost_note.py`.
 
@@ -127,7 +154,8 @@ C_s(x) = x \cdot \min\{{1,\; k\, r_s(x)\}} \;+\; \kappa \cdot \frac{{\max\{{0,\;
 \quad \text{{s.t.}} \quad \sum_s x_s + x_{{drop}} = T,\;\; 0 \le x_s \le 0.95\, cap_s,\;\; x_{{drop}} \ge 0
 ```
 
-- x_drop must be 0 unless T is above 95% of the measured capacity and the ingress has 100 answers to calibrate with.
+- **Overload** = T above the overload threshold (`DROP_FROM`): 90% of the measured capacity in v6.1 as frozen. It was 95% in v6 and in the runs of sections 5 and 6.
+- The threshold switches two things. In overload, x_drop may be positive (once the ingress has 100 answers to calibrate with), and the plan is used as it is. Below it, x_drop = 0 and the balance rule of the last line applies.
 - C_s is evaluated on 13 traffic levels (0 to 120% of cap_s) and interpolated linearly between them.
 - Below overload, the plan is kept only if its cost is at least 25% below the cost of sharing by capacity. Otherwise the capacity split is used.
 
@@ -163,7 +191,7 @@ Each one is part of the algorithm. "Checked" refers to section 5.
 |---|---|---|---|
 | `RHO_MAX` | 0.95 | cap on ρ in κ, so κ ≤ 19 | yes: no effect |
 | `U_LIMIT` | 0.95 | no site is planned above this share of its capacity | yes: matters |
-| `DROP_FROM` | = `U_LIMIT` | dropping is allowed only when T is above this share of the measured capacity | yes: matters |
+| `DROP_FROM` | 0.90 (v6: 0.95, = `U_LIMIT`) | the overload threshold: when T is above this share of the measured capacity, dropping is allowed and the balance rule (`GAIN`) is off | yes: matters. Changed in v6.1 (section 7) |
 | `U_MAX` | 0.95 | when measured capacity cannot carry T at this load, sites measured below their told size get part back | no |
 | `DROP_COST` | 1 | a dropped frame is one miss | by definition |
 | `LATE_SAFE` | 0.5 | risk tolerance in n_s,safe; a site whose empty queue is already above it gets no traffic | no |
@@ -183,7 +211,8 @@ Each one is part of the algorithm. "Checked" refers to section 5.
 
 ## 5. Sensitivity, one setting at a time
 
-- Each column changes one setting of v6.1. The numbers are the change in deadline success, in points, with its 95% interval (5 paired seeds).
+- The starting point is v6.1 as it stood at the start of this phase: the corrected estimate of Phase 1, dropping from 95% as in v6.
+- Each column changes one setting. The numbers are the change in deadline success, in points, with its 95% interval (5 paired seeds).
 - **Bold** = the change is outside its interval.
 
 **The backlog penalty**
@@ -200,8 +229,9 @@ Each one is part of the algorithm. "Checked" refers to section 5.
 {t_thr}
 
 - **Dropping from 90% instead of 95%** (the site limit stays at 95%): {'; '.join(f'{lab} {m:+.1f} ± {h:.1f}' for lab, m, h in d90)}. No scenario gets worse.
-  - It recovers the loss of Phase 1 at 95% load: {succ['drop from 90%']:.1f}% against {succ['base']:.1f}% for v6.1 and {succ['v6 (frozen)']:.1f}% for the frozen v6.
+  - It recovers the loss of Phase 1 at 95% load: {succ['drop from 90%']:.1f}% against {succ['base']:.1f}% with dropping from 95% and {succ['v6 (frozen)']:.1f}% for the frozen v6.
   - Between 90% and 95% a frame is then dropped only when every site would cost more than one miss for it.
+  - The same threshold also switches off the balance rule, so between 90% and 95% the plan is used as it is. The check does not separate the two effects.
 - **Dropping from 85% is too early.** It starts dropping at the normal load: {'; '.join(f'{lab} {m:+.1f} ± {h:.1f}' for lab, m, h in d85 if m < 0)}, and the main scenario and 30-second reports also go down ({d85_main[0]:+.1f} ± {d85_main[1]:.1f} and {d85_w30[0]:+.1f} ± {d85_w30[1]:.1f}).
 - **Moving the site limit is mixed.** At 90% it helps in steady overload and hurts in the burst and with very frequent reports. At 100% it is clearly worse.
 
@@ -223,27 +253,46 @@ Each one is part of the algorithm. "Checked" refers to section 5.
 
 **Conclusion:** greedy is not optimal in general, the paper should say so, and the measured cost is nil. No change to the planner is proposed.
 
-## 7. Decisions for the team
+## 7. Decisions (taken on 15 Nov 2026)
 
-1. **The overload threshold.** Recommended: allow dropping from 90% of the measured capacity in v6.1 (`DROP_FROM = 0.90`), keep the site limit at 95%, and report the table above as the sensitivity check.
+1. **The overload threshold: v6.1 is in overload mode from 90% of the measured capacity** (`DROP_FROM = 0.90` in `catsim/rules_v61.py`): it may drop, and it uses its plan without the balance rule. The site limit stays at 95%.
    - Reason: better in {len(d90)} scenarios, worse in none, and it removes the one loss that the corrected estimate caused.
-   - It is a setting chosen on pilot seeds, to be stated as such.
-2. **The backlog penalty.** Recommended: keep the formula and the cap as they are, call the term an "externality-inspired backlog penalty", and report that a constant gives the same results.
-   - Alternative: replace the formula by a constant (κ = 19). Simpler to present, same results on these seeds, but one more change to v6.
+   - Chosen on pilot seeds 101 to 105 on the Beirut network, among 85%, 90% and 95%. To be stated as such in the paper, with the table of section 5 as the sensitivity check.
+   - Mean success over the 16 scenarios: {mean_fz:.1f}% (v6.1 as frozen), {mean_95:.1f}% (dropping from 95%), {mean_v6:.1f}% (frozen v6). These are pilot numbers, not results.
+2. **The backlog penalty: the formula and the cap stay as in v6.** In the paper the term is an "externality-inspired backlog penalty", not a derived conversion, and the note that a constant gives the same results goes with it.
+   - Reason: the choice has no measurable effect (sections 5 and 8), so the option that changes v6 least is taken.
+   - Rejected: replacing the formula by a constant. Same results, one more change to defend.
+3. **The planner stays greedy.** The paper says it is not optimal in general and gives the measured gap (section 6).
+
+## 8. The same checks at the frozen settings
+
+- Sections 5 and 6 were run before the threshold moved. They are repeated here around v6.1 as frozen (dropping from 90%). Same scenarios, same seeds.
+
+{t_fin}
+
+- **The cap:** changes outside their interval: {listing(f_caps)}.
+- **No penalty:** {listing(f_nopen)}.
+- **Constant κ = 19:** {listing(f_k19)}.
+- **Best plan instead of greedy:** {listing(f_plan)}.
+- **Conclusion:** {"none of the five changes is outside its interval in any of the 16 scenarios." if n_fin_sig == 0 else f"{n_fin_sig} changes are outside their interval (listed above)."}
+  - Without the penalty, the two largest changes are {f_np[0][0]} ({f_np[0][1]:+.1f} ± {f_np[0][2]:.1f}) and {f_np[1][0]} ({f_np[1][1]:+.1f} ± {f_np[1][2]:.1f}). Both are inside their intervals.
+  - **So at the frozen settings the backlog penalty has no measurable effect on the pilot seeds.** At the old threshold it mattered in {len(nopen)} scenarios (section 5). It is kept, as decided, and Batch A measures it again on the evaluation seeds ("v6.1 without the backlog penalty").
+  - The paper must not present the penalty as a source of the gain unless Batch A shows it.
 
 ## What was changed in the code
 
 - Three hooks in `catsim/rules_v6.py`, all neutral: the penalty as a method (`_kappa`), the drop threshold as a setting (`DROP_FROM`, off), and a diagnostic hook after the greedy loop (`_after_greedy`).
 - `KAPPA` in `catsim/rules_v61.py` for the constant-penalty check (off).
-- Old results are untouched: {rep_txt} saved runs, re-run on the edited code, match exactly. All 69 tests pass.
+- `DROP_FROM = 0.90` in `catsim/rules_v61.py` (decision 1). The runs of sections 5 and 6 name their threshold in the rule string, so re-running them gives the same numbers.
+- Old results are untouched: {rep_txt} saved runs, re-run on the edited code, match exactly. All 72 tests pass.
 
 ## Files
 
 | File | What it is |
 |---|---|
 | `feedback/cost.md` | this note |
-| `feedback/phase2/run_phase2.py` | `sens` ({len(s)} runs), `greedy` ({len(g)} runs), `planner` ({len(p)} runs) |
-| `feedback/phase2/sens.csv`, `greedy.csv`, `planner.csv` | every run behind the tables |
+| `feedback/phase2/run_phase2.py` | `sens` ({len(s)} runs), `greedy` ({len(g)} runs), `planner` ({len(p)} runs), `final` ({len(sf)} runs) |
+| `feedback/phase2/sens.csv`, `greedy.csv`, `planner.csv`, `sens_final.csv` | every run behind the tables |
 | `feedback/phase2/planner_opt.py` | the best-plan-on-the-grid planner (diagnostic only) |
 | `feedback/phase2/repro_after_hooks.csv` | the 445 saved runs re-run on the edited code |
 | `feedback/phase2/build_cost_note.py` | builds this note |

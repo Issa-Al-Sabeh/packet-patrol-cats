@@ -48,7 +48,7 @@ LABELS_V5 = {
 SHORT_V5 = {"ours_v5": "Ours v5", "ours_v5_raw": "v5 raw", "ours_v2_speed": "Ours v2 + speeds", "v4": "v4",
             "v4_nodrop": "v4 no drop", "wrr": "Round-robin", "wrr_speed": "RR + speeds", "wrr_drop": "RR + drop",
             "wrr_speed_drop": "RR + speeds + drop", "lsq": "LSQ-style", "expected_delay_drop": "Exp. delay + drop",
-            "oracle": "Oracle"}
+            "oracle": "Fresh-state greedy"}
 DESCRIBE_V5 = {
     "ours_v5": "Ours v2 + measured speeds, with DROP as one more option in the plan, costing exactly one miss, "
                "available only in overload (offered traffic above 95% of the measured capacity; never below it, "

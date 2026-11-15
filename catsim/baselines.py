@@ -25,6 +25,7 @@ from collections import deque
 
 import numpy as np
 
+from .queueing import stationary
 from .rules import LSQ, NAN, Rule, Oracle, RULE_CLASSES
 from .rules_v5 import OwnDrops, _offered
 from .rules_v61 import DropEcho
@@ -617,6 +618,79 @@ class AdmissionWrapper61(AdmissionWrapper):
         super().on_drop(now)
         self.echo.dropped()
 
+
+# ====================================================================== deadline-aware static split (v6.1 study)
+def static_shares(c, mu, late, design_load, pieces=100, u_max=0.95):
+    """The split of design_load x capacity over the sites with the fewest late frames in the long run.
+    Late share of a site that receives x frames/s: sum_n pi_n(x) late[n], with pi the long-run M/M/c distribution of
+    frames at the site and late[n] the chance of missing the deadline behind n frames (the table every rule is given;
+    it knows the round trip to the site). No site above u_max of its capacity. The total is cut into `pieces` equal
+    pieces and the best split is found exactly (a dynamic programme over the sites), so nothing depends on a greedy
+    order. Returns the shares (they add up to 1)."""
+    c = np.asarray(c, float)
+    S, total = len(c), design_load * float((c * mu).sum())
+    step = total / pieces
+    x = np.arange(pieces + 1) * step
+    cost = np.full((S, pieces + 1), np.inf)
+    for s in range(S):
+        lt = np.asarray(late[s], float)
+        for k in range(pieces + 1):
+            if x[k] > u_max * c[s] * mu + 1e-9:
+                break
+            pi = stationary(int(round(c[s])), mu, x[k])
+            cost[s, k] = x[k] * float(pi[:len(lt)] @ lt + pi[len(lt):].sum() * lt[-1])
+    best, picks = cost[0].copy(), []
+    for s in range(1, S):
+        new, arg = np.full(pieces + 1, np.inf), np.zeros(pieces + 1, dtype=int)
+        for k in range(pieces + 1):
+            if not np.isfinite(cost[s, k]):
+                break
+            cand = best[:pieces + 1 - k] + cost[s, k]
+            better = cand < new[k:]
+            new[k:][better] = cand[better]
+            arg[k:][better] = k
+        best = new
+        picks.append(arg)
+    if not np.isfinite(best[pieces]):                         # the design load does not fit under the limits
+        return c / c.sum()
+    n, ks = pieces, [0] * S
+    for s in range(S - 1, 0, -1):
+        ks[s] = int(picks[s - 1][n])
+        n -= ks[s]
+    ks[0] = n
+    return np.array(ks, float) / pieces
+
+
+class StaticDeadline(Rule):
+    """Deadline-aware static split. Added for the v6.1 study as a stronger static baseline than capacity round-robin
+    (feedback of 11 Nov 2026). It uses NO telemetry: its shares are computed once, at the start, from what an operator
+    knows in advance (the configured GPUs of every site, the service rate, the deadline and this ingress's round trip
+    to every site), for a design load DESIGN_LOAD (share of the total capacity). The shares minimise the long-run
+    number of late frames at that load (static_shares); frames are then sent by smooth weighted round-robin on them.
+    Unlike capacity round-robin it sends less to a site whose round trip leaves little time before the deadline.
+    It does not react to anything: failures, slowdowns, bursts and wrong configured sizes are not seen.
+    Admission is added by the common wrapper: static_deadline+adm61.
+    DESIGN_LOAD is the only parameter. 0.95 won the pilot (seeds 101-105, Beirut) among 0.70, 0.85 and 0.95; on the
+    Beirut network its shares at 0.95 are the capacity shares, so there it sends exactly like capacity round-robin
+    (feedback/baselines.md)."""
+    uses_reports = False
+    DESIGN_LOAD = 0.95
+    PIECES = 100
+    U_MAX = 0.95
+
+    def __init__(self, ctx, i):
+        super().__init__(ctx, i)
+        self.w = static_shares(self.c, ctx.mu, ctx.late[i], self.DESIGN_LOAD, self.PIECES, self.U_MAX)
+        self.cur = np.zeros(self.S)
+
+    def choose(self, now):
+        self.cur += self.w
+        s = int(np.argmax(self.cur))
+        self.cur[s] -= 1.0
+        return s, NAN
+
+
+RULE_CLASSES["static_deadline"] = StaticDeadline
 
 _CACHE = {}
 

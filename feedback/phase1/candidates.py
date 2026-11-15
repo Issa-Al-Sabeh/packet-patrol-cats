@@ -211,7 +211,7 @@ def forced(base):
 def register(name, kind):
     """Register '_rec_<name>' or '_forced_<name>' (name = ours_v6 or a candidate) and return the new rule name."""
     from catsim.baselines import resolve_rule
-    new = f"_{kind}_{name}"
+    new = f"_{kind}_{name}".replace("@", "_at_").replace("=", "_").replace(",", "_")
     if new not in RULE_CLASSES:
         RULE_CLASSES[new] = {"rec": recording, "forced": forced}[kind](resolve_rule(name))
     return new

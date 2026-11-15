@@ -129,15 +129,15 @@ LABELS = {
     "lsq_sample": "F2 LSQ-Sample (own random samples, supplementary)",
     "prequal_hcl": "G Prequal (HCL)", "liyanage26": "H Liyanage et al. 2026", "cats_lb": "I CATS-draft load sharing",
     "expected_delay_drop": "J Expected delay + drop", "ours_v6": "K Staleness-Aware CATS (ours v6)",
-    "oracle": "L Fresh-state oracle", "oracle_adm": "Oracle + fresh-state admission",
-    "oracle+adm": "L+ Fresh-state oracle + common wrapper",
+    "oracle": "L Fresh-state greedy selection", "oracle_adm": "Fresh-state greedy + fresh-state admission",
+    "oracle+adm": "L+ Fresh-state greedy + common wrapper",
     "ours_v6_nobal": "v6 without A (balance)", "ours_v6_noburst": "v6 without B (burst re-plan)",
     "ours_v6_nocal": "v6 without C (corrected risk)", "ours_v6_noage": "v6 without staleness (no ageing)",
     "ours_v6_nodrop": "v6 without admission (no drop)", "prequal_native": "Prequal, native 3 probes/query",
 }
 SHORT = {"nearest": "Nearest", "wrr": "WRR", "wrr_speed": "DWRR", "wpow2_stale": "W-Po2", "dahlin_li": "Dahlin LI",
          "lsq": "LSQ", "prequal_hcl": "Prequal", "liyanage26": "Liyanage", "cats_lb": "CATS-LB",
-         "expected_delay_drop": "ED+drop", "ours_v6": "SA-CATS (v6)", "oracle": "Oracle", "oracle_adm": "Oracle + τ-drop",
+         "expected_delay_drop": "ED+drop", "ours_v6": "SA-CATS (v6)", "oracle": "Fresh greedy", "oracle_adm": "Fresh greedy + τ-drop",
          "prequal_native": "Prequal native", "lsq_sample": "LSQ-Sample"}
 ADM_RULES = ["nearest", "wrr", "wrr_speed", "wpow2_stale", "dahlin_li", "lsq", "prequal_hcl", "liyanage26",
              "cats_lb", "oracle"]                          # the common rejection wrapper is applied to these
@@ -251,7 +251,7 @@ def experiments(frozen=None):
               f"{tf['report_noise_sd']:g} frames), steady, 50 ms, loads 90/130% (supplementary)",
               [(make(L, 0.05, "steady", extra=x, tag=t), r) for x, t in faults for L in (0.9, 1.3) for r in MAIN_RULES]))
     have = {(sc.key, r) for _, _, lst in E for sc, r in lst}
-    E.append(("grid_oracle_wrapped", "Reference: fresh-state oracle + the common rejection wrapper on every main-grid "
+    E.append(("grid_oracle_wrapped", "Reference: fresh-state greedy selection + the common rejection wrapper on every main-grid "
               "point (supplementary)",
               [(sc, r) for sc, r in grid(LOADS, DELAYS, PATTERNS, rules=["oracle+adm"]) if (sc.key, r) not in have]))
     return E

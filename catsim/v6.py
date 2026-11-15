@@ -42,7 +42,7 @@ SHORT_V6 = {"ours_v6": "Ours v6", "ours_v6_nobal": "v6 without A (balance)", "ou
             "ours_v6_nocal": "v6 without C (corrected risk)", "ours_v5": "Ours v5", "ours_v2_speed": "Ours v2 + speeds",
             "v4": "v4 (ported)", "v4_nodrop": "v4 no drop", "wrr": "Round-robin", "wrr_speed": "RR + speeds",
             "wrr_drop": "RR + drop", "wrr_speed_drop": "RR + speeds + drop", "lsq": "LSQ-style",
-            "expected_delay_drop": "Exp. delay + drop", "oracle": "Oracle",
+            "expected_delay_drop": "Exp. delay + drop", "oracle": "Fresh-state greedy",
             "ours_v6_g02": "v6 G=2%", "ours_v6_g05": "v6 G=5%", "ours_v6_g10": "v6 G=10%", "ours_v6_g25": "v6 G=25%"}
 
 

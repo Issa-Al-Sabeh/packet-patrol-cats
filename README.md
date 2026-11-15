@@ -1,5 +1,11 @@
 # CATS site-selection study (Packet Patrol, CMPS 342)
 
+> **Revision in progress (v6.1), after the feedback of 11 Nov 2026.**
+> - `FREEZE_v6.1.md`: what v6.1 is, its parameters, and the evaluation set fixed before any result (seeds 301 to 310).
+> - `CHANGES_v6.1.md`: every change since the v6 freeze (tag `v6-frozen`).
+> - `feedback/audit.md`, `estimator.md`, `cost.md`, `baselines.md`: the checks, one note per question of the feedback.
+> - Everything below describes the frozen v6 study and is unchanged.
+
 One command runs every test of the study, in order, and writes one final report.
 
 ```

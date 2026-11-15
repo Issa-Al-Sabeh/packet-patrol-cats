@@ -18,7 +18,20 @@ What v6.1 does instead (option C of that note, "add information"):
   2. THE CLEAR-RISE TEST COMPARES LIKE WITH LIKE (audit finding 3). v6 compared the count of frames that reached the
      site, A_s, with its estimate of the OFFERED frames. v6.1 compares A_s with the arrivals that estimate implies,
      estimate x W x (1 - p).
-While nothing is dropped anywhere, p = 0 and v6.1 decides exactly like v6 (tested).
+  3. OVERLOAD MODE STARTS AT 90% OF THE MEASURED CAPACITY (v6: 95%). Phase 2 (feedback/cost.md): with the corrected
+     estimate every ingress sits at the same side of the threshold, and at 95% load they switched dropping on and off
+     together. The threshold is v6's own overload switch, so it moves two things: between 90% and 95% a frame may be
+     dropped (only when every site would cost more than one miss for it), and the plan is used as it is, without the
+     balance rule A. No site is planned above 95% of its capacity, as before. Chosen on pilot seeds 101-105 among
+     85%, 90% and 95% (90%: better in two of 16 pilot scenarios, worse in none; 85% starts dropping at the normal
+     load).
+While nothing is dropped anywhere, p = 0; while the offered traffic is also below 90% of the measured capacity, v6.1
+decides exactly like v6 (tested).
+
+Named, not changed (Phase 2): the term kappa x (frames left above the safe queue level) of the cost is an
+EXTERNALITY-INSPIRED BACKLOG PENALTY. kappa = rho / (1 - rho) counts the later frames one leftover frame delays and
+charges each as late, which is an upper bound and not a derived conversion; rho is capped at 0.95 (kappa <= 19), and
+the cap is part of the algorithm. A constant penalty gives the same results on the pilot seeds (feedback/cost.md).
 
 Limits (stated, not hidden):
   * the counts travel on frames, so an ingress that sends nothing reports nothing (its share is capped at 90%, so it
@@ -60,6 +73,7 @@ class SplitV61(SplitV6):
     ECHO_FRAC = 0.25          # a drop count travels at most every ECHO_FRAC x W seconds
     like_rise = True          # change 2 (False = v6's test, for the ablation)
     KAPPA = None              # sensitivity checks only: a constant backlog penalty (None = v6's rho / (1 - rho))
+    DROP_FROM = 0.90          # change 3: overload mode (may drop, no balance rule) above this share of capacity
 
     def __init__(self, ctx, i):
         super().__init__(ctx, i)

@@ -3,6 +3,7 @@
     python3 run_phase2.py sens   [--workers N]   one-at-a-time sensitivity of the caps and of the backlog penalty -> sens.csv
     python3 run_phase2.py greedy [--workers N]   the greedy plan against the best plan on the same grid          -> greedy.csv
     python3 run_phase2.py planner [--workers N]  ours v6.1 run with the best plan on the grid instead of greedy  -> planner.csv
+    python3 run_phase2.py final  [--workers N]   the penalty and planner checks again, at the frozen threshold   -> sens_final.csv
 
 Runs: pilot seeds 101-105 only, Beirut network only. Scenarios: the 11 pilot tests of v6, the 5 development scenarios
 of Phase 1 and, for the greedy check, two 2-site instances. The held-out tests, the large network and the 8-site
@@ -25,18 +26,33 @@ sys.path.insert(0, os.path.join(os.path.dirname(HERE), "phase1"))
 sys.path.insert(0, HERE)
 
 SEEDS = (101, 102, 103, 104, 105)
+# Every rule string pins the drop threshold: these runs describe v6.1 as it was during Phase 2 (dropping from 95%,
+# as in v6). The default of ours_v61 became 90% afterwards, as a result of this check.
+P2 = "DROP_FROM=0.95"
 VARIANTS = [                                   # (label, rule string); every one differs from the base in ONE setting
-    ("base", "ours_v61"),
-    ("penalty cap 0.90", "ours_v61@RHO_MAX=0.9"),          # kappa <= 9
-    ("penalty cap 0.98", "ours_v61@RHO_MAX=0.98"),         # kappa <= 49
-    ("no penalty", "ours_v61@KAPPA=0"),
-    ("constant penalty 5", "ours_v61@KAPPA=5"),
-    ("constant penalty 19", "ours_v61@KAPPA=19"),
+    ("base", f"ours_v61@{P2}"),
+    ("penalty cap 0.90", f"ours_v61@RHO_MAX=0.9,{P2}"),          # kappa <= 9
+    ("penalty cap 0.98", f"ours_v61@RHO_MAX=0.98,{P2}"),         # kappa <= 49
+    ("no penalty", f"ours_v61@KAPPA=0,{P2}"),
+    ("constant penalty 5", f"ours_v61@KAPPA=5,{P2}"),
+    ("constant penalty 19", f"ours_v61@KAPPA=19,{P2}"),
     ("drop from 85%", "ours_v61@DROP_FROM=0.85"),
     ("drop from 90%", "ours_v61@DROP_FROM=0.9"),
-    ("limit 90%", "ours_v61@U_LIMIT=0.9"),                 # site limit and drop threshold together
-    ("limit 100%", "ours_v61@U_LIMIT=1.0"),
+    ("limit 90%", "ours_v61@U_LIMIT=0.9,DROP_FROM=0.9"),         # site limit and drop threshold together
+    ("limit 100%", "ours_v61@U_LIMIT=1.0,DROP_FROM=1.0"),
     ("v6 (frozen)", "ours_v6"),
+]
+
+# The same checks around v6.1 as frozen (dropping from 90%), to confirm that the conclusions on the penalty and on
+# the planner still hold after the threshold was moved.
+F = "DROP_FROM=0.9"
+VARIANTS_FINAL = [
+    ("v6.1 (frozen)", f"ours_v61@{F}"),
+    ("penalty cap 0.90", f"ours_v61@RHO_MAX=0.9,{F}"),
+    ("penalty cap 0.98", f"ours_v61@RHO_MAX=0.98,{F}"),
+    ("no penalty", f"ours_v61@KAPPA=0,{F}"),
+    ("constant penalty 19", f"ours_v61@KAPPA=19,{F}"),
+    ("best plan on the grid", f"ours_v61_gridopt@{F}"),
 ]
 
 
@@ -115,7 +131,7 @@ def greedy_job(job):
     from catsim.baselines import resolve_rule
     from catsim.engine import run
     from catsim.rules import RULE_CLASSES
-    base = resolve_rule("ours_v61")
+    base = resolve_rule(f"ours_v61@{P2}")
     res = []
 
     class Traced(base):
@@ -164,7 +180,7 @@ def execute(fn, jobs, path, workers, key):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("what", choices=["sens", "greedy", "planner"])
+    ap.add_argument("what", choices=["sens", "greedy", "planner", "final"])
     ap.add_argument("--workers", type=int, default=os.cpu_count() or 2)
     a = ap.parse_args()
     if a.what == "sens":
@@ -172,9 +188,14 @@ def main():
         jobs = [(net, sc, lab, rule, sd) for net, sc in scenarios() for lab, rule in VARIANTS for sd in SEEDS]
         return execute(sens_job, jobs, os.path.join(HERE, "sens.csv"), a.workers,
                        lambda r: (r["net"], r["scenario"], order[r["variant"]], r["seed"]))
+    if a.what == "final":
+        order = {lab: k for k, (lab, _) in enumerate(VARIANTS_FINAL)}
+        jobs = [(net, sc, lab, rule, sd) for net, sc in scenarios() for lab, rule in VARIANTS_FINAL for sd in SEEDS]
+        return execute(sens_job, jobs, os.path.join(HERE, "sens_final.csv"), a.workers,
+                       lambda r: (r["net"], r["scenario"], order[r["variant"]], r["seed"]))
     if a.what == "planner":
-        jobs = [(net, sc, "best plan on the grid", "ours_v61_gridopt", sd) for net, sc in scenarios(two_sites=True)
-                for sd in SEEDS] + [(net, sc, "base", "ours_v61", sd) for net, sc in scenarios(two_sites=True)
+        jobs = [(net, sc, "best plan on the grid", f"ours_v61_gridopt@{P2}", sd) for net, sc in scenarios(two_sites=True)
+                for sd in SEEDS] + [(net, sc, "base", f"ours_v61@{P2}", sd) for net, sc in scenarios(two_sites=True)
                                     if net == "dev2" for sd in SEEDS]
         return execute(sens_job, jobs, os.path.join(HERE, "planner.csv"), a.workers,
                        lambda r: (r["net"], r["scenario"], r["variant"], r["seed"]))

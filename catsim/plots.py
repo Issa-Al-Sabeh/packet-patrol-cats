@@ -35,7 +35,7 @@ SHORT = {"ours": "Ours v1", "ours_v2": "Ours v2", "ours_v2_check": "Ours v2 + ch
          "lsq": "LSQ-style", "timeout_sed": "CATS timeout+SED", "power_of_two": "Power of two",
          "wpow2_stale": "Weighted power of two", "prequal": "Prequal-style", "nearest": "Nearest site",
          "cap_random": "Capacity-weighted random", "wrr": "Weighted round-robin",
-         "wrr_speed": "Round-robin + speeds", "oracle": "Oracle",
+         "wrr_speed": "Round-robin + speeds", "oracle": "Fresh-state greedy",
          "ours_no_counting": "no counting", "ours_no_ageing": "no ageing", "ours_exp_late": "exponential late(n)",
          "ours_no_ties": "no random near-ties"}
 

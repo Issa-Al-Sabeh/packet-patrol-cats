@@ -200,7 +200,7 @@ LABELS = {
     "cap_random": "Capacity-weighted random",
     "wrr": "Weighted round-robin",
     "wrr_speed": "Round-robin + measured speeds",
-    "oracle": "Oracle (true queues)",
+    "oracle": "Fresh-state greedy (true queues)",
     "ours_no_counting": "Ours v1 without counting the others",
     "ours_no_ageing": "Ours v1 without ageing the report",
     "ours_exp_late": "Ours v1 with exponential late(n)",

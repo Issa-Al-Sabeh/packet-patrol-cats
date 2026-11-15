@@ -11,7 +11,7 @@ import pytest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from catsim import study as st                                         # noqa: E402
-from catsim.baselines import resolve_rule                              # noqa: E402
+from catsim.baselines import resolve_rule, static_shares                # noqa: E402
 from catsim.config import MAIN, Scenario                               # noqa: E402
 from catsim.engine import run                                          # noqa: E402
 from catsim.experiments import settings_code                           # noqa: E402
@@ -72,6 +72,15 @@ def test_v61_equals_v6_while_nothing_is_dropped():
     for k in ("miss", "late", "p99_ms", "share", "mean_ms"):
         assert a[k] == b[k], k
     assert round(b["miss"] * 100, 4) == 2.8937
+
+
+def test_drop_threshold_of_v61():
+    """v6.1 is in overload mode (may drop) from 90% of the measured capacity; v6 keeps 95% (its site limit)."""
+    assert resolve_rule("ours_v61").DROP_FROM == 0.90
+    assert resolve_rule("ours_v6").DROP_FROM is None and resolve_rule("ours_v6").U_LIMIT == 0.95
+    sc = replace(MAIN, key="t92", load=0.93, site_discard=True, sim_time=80.0, warmup=20.0)
+    old, new = run(sc, "ours_v61@DROP_FROM=0.95", 5), run(sc, "ours_v61", 5)
+    assert new["rejected"] >= old["rejected"]                      # between the two thresholds only v6.1 may drop
 
 
 def test_other_rules_and_run_names_are_untouched():
@@ -141,3 +150,42 @@ def test_ingresses_drop_alike_with_the_counter():
         p = [dropped[keep & (ing == i)].mean() for i in range(OVER.ingresses)]
         spread[rule] = max(p) - min(p)
     assert spread["ours_v61"] < 0.05 < spread["ours_v6"], spread
+
+
+def test_static_deadline_split():
+    """The static split: shares add up to 1, follow capacity at a high design load, and move away from the small
+    site at a low one (pooling); it reads nothing but configuration, and with the wrapper it conserves requests."""
+    box = {}
+    run(replace(MAIN, sim_time=30.0, warmup=10.0), "static_deadline", 3, guard=True, hook=lambda d: box.update(d))
+    ctx, r = box["ctx_rules"], box["rules"][0]
+    cap = np.array(MAIN.servers, float) / sum(MAIN.servers)
+    hi = static_shares(r.c, ctx.mu, ctx.late[0], 0.95)
+    lo = static_shares(r.c, ctx.mu, ctx.late[0], 0.70)
+    assert abs(hi.sum() - 1) < 1e-9 and abs(lo.sum() - 1) < 1e-9
+    assert np.abs(hi - cap).max() <= 0.011                             # within one 1% piece of the capacity shares
+    assert lo[0] < cap[0] and lo[2] > cap[2]
+    assert np.array_equal(r.w, hi)
+    o = run(OVER, "static_deadline+adm61", 5, guard=True)
+    c = o["counts"]
+    assert c["success"] + c["late"] + c["expired"] + c["rejected"] == c["frames"]
+    assert abs(o["rejected"] - (1 - 0.95 / 1.3)) < 0.04
+
+
+def test_evaluation_set_of_the_freeze():
+    """The evaluation set fixed at the v6.1 freeze: sizes, seeds, unique scenario names, and every rule name known.
+    The new network executes with the guard on and conserves requests (30 s on seed 1; its results are not read)."""
+    from catsim import v61
+    assert v61.EVAL_SEEDS == tuple(range(301, 311)) and v61.FIRST_SEEDS == (301, 302, 303, 304, 305)
+    for batch, n_sc, n_runs in (("A", 22, 770), ("B", 14, 280)):
+        scs = {"A": v61.batch_a, "B": v61.batch_b}[batch]()
+        keys = [sc.key for _, sc in scs]
+        assert len(scs) == n_sc and len(set(keys)) == n_sc
+        assert len(v61.plan(batch)) == n_runs
+        for rule, _ in {"A": v61.BATCH_A_RULES, "B": v61.BATCH_B_RULES}[batch]:
+            resolve_rule(rule)
+    new = v61.new_network()
+    assert {sc.servers for sc in new.values()} == {(2, 3, 5, 6, 8)}
+    for key, rule in (("N_130", "ours_v61"), ("N_fail", "static_deadline+adm61"), ("N_surge", "ours_v61@allow_drop=False")):
+        o = run(replace(new[key], sim_time=30.0, warmup=10.0), rule, 1, guard=True)
+        c = o["counts"]
+        assert c["success"] + c["late"] + c["expired"] + c["rejected"] == c["frames"]
