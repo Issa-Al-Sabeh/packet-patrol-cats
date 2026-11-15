@@ -1,0 +1,101 @@
+net,scenario,label,variant,rule,seed,success,rejected,expired,late,runtime_s
+dev,dev_115,Dev: load 115%,best plan on the grid,ours_v61_gridopt,101,69.64395189813723,22.664465927847203,0.16977128035840602,7.521810893657157,0.74
+dev,dev_115,Dev: load 115%,best plan on the grid,ours_v61_gridopt,102,69.33257435605522,21.834827569849626,0.09961576775295289,8.732982306342203,0.74
+dev,dev_115,Dev: load 115%,best plan on the grid,ours_v61_gridopt,103,71.52384128042681,23.58405182679941,0.07145238889153528,4.820654503882246,0.77
+dev,dev_115,Dev: load 115%,best plan on the grid,ours_v61_gridopt,104,71.81615519612959,20.46672674666793,0.0758905279134848,7.641227529289001,0.85
+dev,dev_115,Dev: load 115%,best plan on the grid,ours_v61_gridopt,105,71.84619058992119,22.240267494626224,0.06687365655600669,5.846668258896584,0.72
+dev,dev_W1_120,"Dev: load 120%, reports every 1 s",best plan on the grid,ours_v61_gridopt,101,69.5211369602607,23.897890830089615,0.11315289218792432,6.467819317461753,2.64
+dev,dev_W1_120,"Dev: load 120%, reports every 1 s",best plan on the grid,ours_v61_gridopt,102,67.5027213352685,23.984034833091435,0.10431785195936139,8.408925979680697,2.62
+dev,dev_W1_120,"Dev: load 120%, reports every 1 s",best plan on the grid,ours_v61_gridopt,103,70.11682349197692,23.38742670121369,0.059093595163416515,6.4366562116459844,2.02
+dev,dev_W1_120,"Dev: load 120%, reports every 1 s",best plan on the grid,ours_v61_gridopt,104,70.25464556090847,22.633631566873134,0.08258774948382656,7.029135122734573,2.39
+dev,dev_W1_120,"Dev: load 120%, reports every 1 s",best plan on the grid,ours_v61_gridopt,105,67.99070742039812,23.73707465949984,0.10476927982508086,8.167448640276955,2.66
+dev,dev_loss_120,"Dev: load 120%, 30% of reports lost",best plan on the grid,ours_v61_gridopt,101,66.71041911831267,26.15189644247307,0.15841404906309406,6.979270390151172,0.9
+dev,dev_loss_120,"Dev: load 120%, 30% of reports lost",best plan on the grid,ours_v61_gridopt,102,64.92198838896952,26.319847605224965,0.22677793904208998,8.531386066763426,0.92
+dev,dev_loss_120,"Dev: load 120%, 30% of reports lost",best plan on the grid,ours_v61_gridopt,103,68.58039001772808,24.069275876176192,0.15909814082458293,7.191235965271149,0.9
+dev,dev_loss_120,"Dev: load 120%, 30% of reports lost",best plan on the grid,ours_v61_gridopt,104,70.59417297545309,22.8401009405827,0.09635237439779766,6.4693737095664146,0.84
+dev,dev_loss_120,"Dev: load 120%, 30% of reports lost",best plan on the grid,ours_v61_gridopt,105,67.5716303010978,24.56156333986243,0.24142486220562112,7.625381496834145,0.99
+dev,dev_stagger_125,"Dev: load 125%, sites report at different moments",best plan on the grid,ours_v61_gridopt,101,65.20928215137715,29.52504879635654,0.06072435480373021,5.204944697462589,1.52
+dev,dev_stagger_125,"Dev: load 125%, sites report at different moments",best plan on the grid,ours_v61_gridopt,102,67.24070107959264,28.07815026880546,0.05244984483587569,4.62869880676603,1.59
+dev,dev_stagger_125,"Dev: load 125%, sites report at different moments",best plan on the grid,ours_v61_gridopt,103,67.05594191488431,28.342737173599264,0.04811267112802344,4.5532082403884,1.62
+dev,dev_stagger_125,"Dev: load 125%, sites report at different moments",best plan on the grid,ours_v61_gridopt,104,66.87453665343858,28.267410928437485,0.02616545288038027,4.831886965243556,1.63
+dev,dev_stagger_125,"Dev: load 125%, sites report at different moments",best plan on the grid,ours_v61_gridopt,105,66.43169877408056,28.432574430823117,0.06129597197898424,5.074430823117338,1.63
+dev,dev_surge_B,"Dev: load 95%, Ingress B (30% of traffic) doubles 50-100 s",best plan on the grid,ours_v61_gridopt,101,76.59033078880407,15.334683491717296,0.23887417562444827,7.836111543854182,0.92
+dev,dev_surge_B,"Dev: load 95%, Ingress B (30% of traffic) doubles 50-100 s",best plan on the grid,ours_v61_gridopt,102,71.29015808261092,17.623661397246305,0.24987251402345742,10.836308006119328,0.87
+dev,dev_surge_B,"Dev: load 95%, Ingress B (30% of traffic) doubles 50-100 s",best plan on the grid,ours_v61_gridopt,103,73.42711392796414,16.664090276704282,0.3555418148090895,9.553253980522491,0.88
+dev,dev_surge_B,"Dev: load 95%, Ingress B (30% of traffic) doubles 50-100 s",best plan on the grid,ours_v61_gridopt,104,76.77656436002277,15.75487811189897,0.19667719062160344,7.271880337456653,0.65
+dev,dev_surge_B,"Dev: load 95%, Ingress B (30% of traffic) doubles 50-100 s",best plan on the grid,ours_v61_gridopt,105,73.71854613233924,17.58827793310552,0.39867453660557106,8.294501397949674,0.74
+dev2,dev2_115,"Dev, 2 sites (4 and 8 servers): load 115%",base,ours_v61,101,70.52719200887903,21.681465038845726,0.14428412874583796,7.647058823529412,0.56
+dev2,dev2_115,"Dev, 2 sites (4 and 8 servers): load 115%",base,ours_v61,102,70.01150874116293,22.376281032498493,0.038362470543102975,7.573847755795474,0.68
+dev2,dev2_115,"Dev, 2 sites (4 and 8 servers): load 115%",base,ours_v61,103,69.0056201658227,22.230259863112792,0.0723387680151355,8.691781203049358,0.7
+dev2,dev2_115,"Dev, 2 sites (4 and 8 servers): load 115%",base,ours_v61,104,73.10868109796921,20.068065164025885,0.03905378263780406,6.7841999553671055,0.68
+dev2,dev2_115,"Dev, 2 sites (4 and 8 servers): load 115%",base,ours_v61,105,68.97107897664071,22.352614015572858,0.13904338153503892,8.53726362625139,0.54
+dev2,dev2_115,"Dev, 2 sites (4 and 8 servers): load 115%",best plan on the grid,ours_v61_gridopt,101,71.03218645948945,21.453940066592676,0.1220865704772475,7.391786903440621,0.54
+dev2,dev2_115,"Dev, 2 sites (4 and 8 servers): load 115%",best plan on the grid,ours_v61_gridopt,102,68.48249027237354,23.30794103140242,0.10960705869457993,8.099961637529457,0.6
+dev2,dev2_115,"Dev, 2 sites (4 and 8 servers): load 115%",best plan on the grid,ours_v61_gridopt,103,69.0056201658227,22.230259863112792,0.0723387680151355,8.691781203049358,0.57
+dev2,dev2_115,"Dev, 2 sites (4 and 8 servers): load 115%",best plan on the grid,ours_v61_gridopt,104,71.30104887301941,21.328944432046416,0.10042401249721045,7.2695826824369565,0.61
+dev2,dev2_115,"Dev, 2 sites (4 and 8 servers): load 115%",best plan on the grid,ours_v61_gridopt,105,69.35483870967742,22.235817575083423,0.11123470522803114,8.298109010011123,0.67
+dev2,dev2_85,"Dev, 2 sites (4 and 8 servers): load 85%",base,ours_v61,101,96.9687807090483,0.0,0.0,3.031219290951697,0.62
+dev2,dev2_85,"Dev, 2 sites (4 and 8 servers): load 85%",base,ours_v61,102,95.84179261598617,0.0,0.030077449432288142,4.128129934581548,0.47
+dev2,dev2_85,"Dev, 2 sites (4 and 8 servers): load 85%",base,ours_v61,103,94.96294055362276,0.07563152321887763,0.04537891393132657,4.916049009227046,0.55
+dev2,dev2_85,"Dev, 2 sites (4 and 8 servers): load 85%",base,ours_v61,104,97.11791707427196,0.0,0.0,2.882082925728046,0.45
+dev2,dev2_85,"Dev, 2 sites (4 and 8 servers): load 85%",base,ours_v61,105,94.33155882132414,0.0449876284021894,0.059983504536252535,5.563470045737422,0.68
+dev2,dev2_85,"Dev, 2 sites (4 and 8 servers): load 85%",best plan on the grid,ours_v61_gridopt,101,96.9687807090483,0.0,0.0,3.031219290951697,0.54
+dev2,dev2_85,"Dev, 2 sites (4 and 8 servers): load 85%",best plan on the grid,ours_v61_gridopt,102,95.84179261598617,0.0,0.030077449432288142,4.128129934581548,0.63
+dev2,dev2_85,"Dev, 2 sites (4 and 8 servers): load 85%",best plan on the grid,ours_v61_gridopt,103,94.96294055362276,0.07563152321887763,0.04537891393132657,4.916049009227046,0.69
+dev2,dev2_85,"Dev, 2 sites (4 and 8 servers): load 85%",best plan on the grid,ours_v61_gridopt,104,97.11791707427196,0.0,0.0,2.882082925728046,0.65
+dev2,dev2_85,"Dev, 2 sites (4 and 8 servers): load 85%",best plan on the grid,ours_v61_gridopt,105,94.33155882132414,0.0449876284021894,0.059983504536252535,5.563470045737422,0.71
+pilot,O_130,Load 130%,best plan on the grid,ours_v61_gridopt,101,61.98961280243213,30.650677701304733,0.22378921589325676,7.135920280369885,0.77
+pilot,O_130,Load 130%,best plan on the grid,ours_v61_gridopt,102,61.74835775644265,30.64679130874179,0.1305373084049183,7.474313626410645,0.99
+pilot,O_130,Load 130%,best plan on the grid,ours_v61_gridopt,103,64.11937788986968,29.714165615804962,0.0546448087431694,6.111811685582177,0.84
+pilot,O_130,Load 130%,best plan on the grid,ours_v61_gridopt,104,65.16008333687657,28.615162209277607,0.11480079935371401,6.109953654492113,0.82
+pilot,O_130,Load 130%,best plan on the grid,ours_v61_gridopt,105,64.72316865417376,29.40800681431005,0.1362862010221465,5.732538330494037,0.82
+pilot,O_burst,"Burst: 85% load, 140% from 60 s to 80 s",best plan on the grid,ours_v61_gridopt,101,81.99566160520607,11.420531160227473,0.416251392390221,6.167555842176233,0.92
+pilot,O_burst,"Burst: 85% load, 140% from 60 s to 80 s",best plan on the grid,ours_v61_gridopt,102,81.29722189933743,12.58281994653028,0.6741834243868418,5.4457747297454375,0.79
+pilot,O_burst,"Burst: 85% load, 140% from 60 s to 80 s",best plan on the grid,ours_v61_gridopt,103,82.85896840148699,11.541589219330856,0.5285780669144982,5.070864312267658,0.72
+pilot,O_burst,"Burst: 85% load, 140% from 60 s to 80 s",best plan on the grid,ours_v61_gridopt,104,81.82456962173556,11.406487879142757,0.9427333411406489,5.826209157981029,0.86
+pilot,O_burst,"Burst: 85% load, 140% from 60 s to 80 s",best plan on the grid,ours_v61_gridopt,105,83.93902509708457,10.148959601228771,0.6897351185301107,5.222280183156553,0.73
+pilot,deadline=200,Deadline (ms): 200,best plan on the grid,ours_v61_gridopt,101,73.01962790102935,0.0,0.0,26.980372098970655,0.73
+pilot,deadline=200,Deadline (ms): 200,best plan on the grid,ours_v61_gridopt,102,69.83852364475202,0.0,0.0,30.16147635524798,0.79
+pilot,deadline=200,Deadline (ms): 200,best plan on the grid,ours_v61_gridopt,103,72.17121427647743,0.0,0.0,27.828785723522564,0.76
+pilot,deadline=200,Deadline (ms): 200,best plan on the grid,ours_v61_gridopt,104,74.51220297507889,0.0,0.0,25.487797024921115,0.81
+pilot,deadline=200,Deadline (ms): 200,best plan on the grid,ours_v61_gridopt,105,69.50214098549242,0.0,0.0,30.497859014507572,0.77
+pilot,ingresses=2,Number of ingresses: 2,best plan on the grid,ours_v61_gridopt,101,96.64833056159652,0.0,0.0,3.3516694384034795,0.46
+pilot,ingresses=2,Number of ingresses: 2,best plan on the grid,ours_v61_gridopt,102,94.90110454662214,0.0,0.0,5.098895453377858,0.41
+pilot,ingresses=2,Number of ingresses: 2,best plan on the grid,ours_v61_gridopt,103,95.11771516788885,0.0,0.0,4.8822848321111545,0.4
+pilot,ingresses=2,Number of ingresses: 2,best plan on the grid,ours_v61_gridopt,104,96.95467422096317,0.0,0.0,3.045325779036827,0.49
+pilot,ingresses=2,Number of ingresses: 2,best plan on the grid,ours_v61_gridopt,105,94.84981307206394,0.0,0.0,5.1501869279360575,0.47
+pilot,load=95,Load (%): 95,best plan on the grid,ours_v61_gridopt,101,82.76837789455448,3.2742391869261422,0.0,13.957382918519373,0.78
+pilot,load=95,Load (%): 95,best plan on the grid,ours_v61_gridopt,102,77.82905982905983,7.612535612535612,0.0,14.558404558404558,0.8
+pilot,load=95,Load (%): 95,best plan on the grid,ours_v61_gridopt,103,80.79109018887422,5.298811642459383,0.0,13.9100981686664,0.76
+pilot,load=95,Load (%): 95,best plan on the grid,ours_v61_gridopt,104,83.6870026525199,3.2579863914196747,0.0,13.055010956060432,0.86
+pilot,load=95,Load (%): 95,best plan on the grid,ours_v61_gridopt,105,74.18327154772938,6.047265987025023,0.0,19.7694624652456,0.76
+pilot,main,Main scenario (Beirut),best plan on the grid,ours_v61_gridopt,101,95.831468576178,0.0,0.0,4.168531423822007,0.8
+pilot,main,Main scenario (Beirut),best plan on the grid,ours_v61_gridopt,102,94.90580545943868,0.0,0.0,5.094194540561323,1.06
+pilot,main,Main scenario (Beirut),best plan on the grid,ours_v61_gridopt,103,95.8618905987327,0.0,0.0,4.138109401267296,0.71
+pilot,main,Main scenario (Beirut),best plan on the grid,ours_v61_gridopt,104,96.41316247021702,0.0,0.0,3.5868375297829864,0.86
+pilot,main,Main scenario (Beirut),best plan on the grid,ours_v61_gridopt,105,94.78494280053684,0.0,0.0,5.215057199463156,0.71
+pilot,report_interval=0.2,Report interval W (s): 0.2,best plan on the grid,ours_v61_gridopt,101,96.24064957483537,0.6521322166101912,0.0,3.10721820855444,7.23
+pilot,report_interval=0.2,Report interval W (s): 0.2,best plan on the grid,ours_v61_gridopt,102,95.21978726130975,0.9419454056132257,0.0,3.8382673330770216,8.51
+pilot,report_interval=0.2,Report interval W (s): 0.2,best plan on the grid,ours_v61_gridopt,103,95.77783525151946,0.9052114315272209,0.0,3.3169533169533167,7.3
+pilot,report_interval=0.2,Report interval W (s): 0.2,best plan on the grid,ours_v61_gridopt,104,96.69006375169037,0.43145083392362676,0.0,2.8784854143859873,7.19
+pilot,report_interval=0.2,Report interval W (s): 0.2,best plan on the grid,ours_v61_gridopt,105,95.20035789608232,0.94586821754969,0.0,3.853773886367994,7.56
+pilot,report_interval=30,Report interval W (s): 30,best plan on the grid,ours_v61_gridopt,101,96.20050001543258,0.0,0.0,3.799499984567425,2.11
+pilot,report_interval=30,Report interval W (s): 30,best plan on the grid,ours_v61_gridopt,102,95.76022255723234,0.0,0.0,4.239777442767667,1.96
+pilot,report_interval=30,Report interval W (s): 30,best plan on the grid,ours_v61_gridopt,103,95.74520986464857,0.0,0.0,4.254790135351432,2.01
+pilot,report_interval=30,Report interval W (s): 30,best plan on the grid,ours_v61_gridopt,104,95.28472525416328,0.0,0.0,4.7152747458367115,1.94
+pilot,report_interval=30,Report interval W (s): 30,best plan on the grid,ours_v61_gridopt,105,96.10330836454432,0.0,0.0,3.8966916354556806,1.9
+pilot,server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",best plan on the grid,ours_v61_gridopt,101,90.21801675084713,0.0,0.0,9.781983249152868,0.86
+pilot,server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",best plan on the grid,ours_v61_gridopt,102,86.37703447392029,1.7749583493528132,0.0,11.8480071767269,0.85
+pilot,server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",best plan on the grid,ours_v61_gridopt,103,87.84430363377732,0.0,0.0,12.155696366222681,0.76
+pilot,server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",best plan on the grid,ours_v61_gridopt,104,89.62586129177667,0.5409234335758903,0.0,9.833215274647433,0.65
+pilot,server_fail_recover,"Server failure: Hamra loses 1 of its 2 servers at 50 s, gets it back at 100 s",best plan on the grid,ours_v61_gridopt,105,85.71611171470569,0.0,0.0,14.283888285294305,0.82
+pilot,shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",best plan on the grid,ours_v61_gridopt,101,79.170129787098,9.3152611725593,0.0,11.51460904034269,0.69
+pilot,shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",best plan on the grid,ours_v61_gridopt,102,76.87427912341407,11.23926694860951,0.0,11.886453927976419,0.88
+pilot,shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",best plan on the grid,ours_v61_gridopt,103,80.86124401913875,9.168498642182852,0.0,9.970257338678392,0.6
+pilot,shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",best plan on the grid,ours_v61_gridopt,104,80.73282246120162,9.028269688969026,0.0,10.238907849829351,0.78
+pilot,shared_gpus,"Shared GPUs: another app takes 2 of Jdeideh's 4 GPUs, 20 s on, 20 s off",best plan on the grid,ours_v61_gridopt,105,77.01156771266058,11.273726592957116,0.0,11.71470569438231,0.97
+pilot,wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",best plan on the grid,ours_v61_gridopt,101,86.68833623100764,0.0,0.0,13.311663768992366,0.77
+pilot,wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",best plan on the grid,ours_v61_gridopt,102,76.41927964508609,0.0,0.0,23.580720354913904,0.89
+pilot,wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",best plan on the grid,ours_v61_gridopt,103,87.7552563908637,0.0,0.0,12.244743609136288,0.65
+pilot,wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",best plan on the grid,ours_v61_gridopt,104,92.65557980284446,0.0,0.0,7.344420197155542,0.79
+pilot,wrong_weights,"Wrong weights: rules are told the DC has 8 servers, only 6 work",best plan on the grid,ours_v61_gridopt,105,88.17575166829123,0.0,0.0,11.82424833170878,0.76

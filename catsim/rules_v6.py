@@ -47,6 +47,10 @@ class SplitV6(SplitDrop):
     no_age = False            # ablation: treat every report as fresh (no staleness awareness)
     allow_drop = True         # ablation: False = never drop (no admission control)
     TIE_TOL = 1e-9            # "exactly one miss": equal up to floating-point noise (relative)
+    # hooks added for v6.1 (Nov 2026); at these defaults ours v6 is unchanged
+    DROP_FROM = None          # dropping is allowed above this share of the measured capacity (None = U_LIMIT, as v6)
+    trace = None              # diagnostics only: called with the cost curves and the greedy result of each plan
+                              # (see _after_greedy)
 
     def __init__(self, ctx, i):
         super().__init__(ctx, i)
@@ -113,6 +117,17 @@ class SplitV6(SplitDrop):
             return (max(n, 0.5) / self.BURST_WIN) / (b / self.W)
         return 1.0
 
+    def _after_greedy(self, info):
+        """Hook for diagnostics: sees the cost curves and the greedy result of a plan and returns the allocation to
+        use. Ours v6 and v6.1 return the greedy result unchanged."""
+        if self.trace is not None:
+            self.trace(info)
+        return info["lam"], info["drop"]
+
+    def _kappa(self, rho):
+        """Late frames charged per frame left in a queue above its safe level (rho is already capped at RHO_MAX)."""
+        return rho / (1.0 - rho)
+
     # ---- the plan: v5's, with A, B and C
     def _plan(self, now):
         if not self.seen.all():
@@ -129,12 +144,13 @@ class SplitV6(SplitDrop):
             self.useless[:] = False
         cap = usable_capacity(self.meter, mu, total, self.U_MAX)
         rho = min(self.RHO_MAX, total / cap.sum())
-        kappa = rho / (1.0 - rho)
+        kappa = self._kappa(rho)
         ready = self.calibrated and self.n_cal >= self.CAL_MIN
         kc = self.kcal if self.calibrated else 1.0                 # send-or-drop test (as v5)
         ks = self.kcal if (self.cal_split and ready) else 1.0      # C: which site gets the traffic
         kq = self.kcal if ready else 1.0                           # A: plan vs balanced comparison
-        overload = total > self.U_LIMIT * float((self.meter.c * mu).sum())
+        drop_from = self.U_LIMIT if self.DROP_FROM is None else self.DROP_FROM
+        overload = total > drop_from * float((self.meter.c * mu).sum())
         may_drop = overload and (self.n_cal >= self.CAL_MIN or not self.calibrated) and self.allow_drop
         sel_c, cal_c, cmp_c, risks = [], [], [], []
         for s, (c, lv, ga, late, n_safe) in enumerate(models):
@@ -199,6 +215,9 @@ class SplitV6(SplitDrop):
             else:
                 self.t_full += 1
             drop += step
+        lam, drop = self._after_greedy(dict(now=now, total=total, step=step, limit=limit, may_drop=may_drop,
+                                            kappa=kappa, slope=slope, ks=ks, levels=[m[1] for m in models],
+                                            sel_c=sel_c, cal_c=cal_c, risks=risks, lam=lam, drop=drop, cap=cap))
         ok = np.where(self.useless, 0.0, cap)
         # ---- A: balance unless the plan clearly wins (only when there is no overload)
         if self.use_balance and not overload and drop == 0.0:

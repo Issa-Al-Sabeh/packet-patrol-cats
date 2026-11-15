@@ -59,6 +59,7 @@ class SplitV61(SplitV6):
     uses_drop_echo = True
     ECHO_FRAC = 0.25          # a drop count travels at most every ECHO_FRAC x W seconds
     like_rise = True          # change 2 (False = v6's test, for the ablation)
+    KAPPA = None              # sensitivity checks only: a constant backlog penalty (None = v6's rho / (1 - rho))
 
     def __init__(self, ctx, i):
         super().__init__(ctx, i)
@@ -114,6 +115,9 @@ class SplitV61(SplitV6):
     def _plan(self, now):
         self._update_offered()
         super()._plan(now)
+
+    def _kappa(self, rho):
+        return super()._kappa(rho) if self.KAPPA is None else float(self.KAPPA)
 
     # ---- the drop counter
     def on_send(self, now, s):
