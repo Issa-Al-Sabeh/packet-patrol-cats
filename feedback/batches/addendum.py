@@ -1,7 +1,8 @@
 """Two baselines questioned by Batch A, settled on pilot seeds. ADDED AFTER THE FREEZE of 15 Nov 2026.
 
     python3 feedback/batches/addendum.py pilot     seeds 101-105 -> addendum_pilot.csv, addendum_settings.json
-    python3 feedback/batches/addendum.py eval      seeds 301-305, only what the pilot chose -> batch_A_added.csv
+    python3 feedback/batches/addendum.py pilot2    seeds 101-105, second step (rule E) -> addendum_pilot2.csv
+    python3 feedback/batches/addendum.py eval      seeds 301-305, only what the pilots chose -> batch_A_added.csv
 
 Why (feedback/batches.md, first pass of Batch A):
   1. "Round-robin + matched admission" admits 95% of the configured capacity. Ours v6.1 admitted about 91% in steady
@@ -27,6 +28,17 @@ Rules of the choice, WRITTEN BEFORE ANY OF THESE RUNS:
   D. Whatever is chosen is then run once on seeds 301 to 305, on all its scenarios, and reported next to the frozen
      baselines, marked "added after the freeze". Nothing is removed. The frozen comparison stays the primary one in
      the sense of the freeze; the report shows both.
+
+Second step, WRITTEN ON 16 NOV 2026 AFTER RULES A TO D WERE APPLIED (level 0.90 chosen and run on seeds 301 to 305),
+AND BEFORE ANY RUN WITH ANOTHER SMOOTHING:
+  Why: with the level settled, v6.1 stays ahead in bursts and surges. But the wrapper smooths its estimate slowly
+  (the newest report weighs EWMA = 0.3) and v6.1 follows a clear rise at once and checks for bursts between reports.
+  So the lead in bursts could be the wrapper's slow smoothing, the same kind of doubt as the admission level.
+  E. Smoothing of the wrapper. With the admission level fixed by rule A, the weight of the newest report among 0.3
+     (the frozen one), 0.6 and 1.0 (no smoothing): the one with the highest mean pilot success over the 22 scenarios.
+     If it is not 0.3, "round-robin + admission at that level and that smoothing" is added too and run once on seeds
+     301 to 305 (rule D). Ties: rule C.
+  This is the last parameter of the wrapper that bears on how much and how fast it drops. Nothing else is tuned.
 """
 import argparse
 import csv
@@ -46,12 +58,20 @@ import run_batches as rb                                                # noqa: 
 PILOT_SEEDS = (101, 102, 103, 104, 105)
 U_LEVELS = (0.80, 0.85, 0.90, 0.95)
 DESIGN_LOADS = (0.70, 0.85, 0.90, 0.95)
-FROZEN_U, FROZEN_LOAD = 0.95, 0.95
+EWMAS = (0.3, 0.6, 1.0)
+FROZEN_U, FROZEN_LOAD, FROZEN_EWMA = 0.95, 0.95, 0.3
 SETTINGS = os.path.join(HERE, "addendum_settings.json")
 
 
 def u_rule(u):
     return "wrr+adm61" if u == FROZEN_U else f"wrr+adm61@U={u:g}"
+
+
+def ue_rule(u, e):
+    """Round-robin + admission at level u, the newest report weighing e."""
+    if e == FROZEN_EWMA:
+        return u_rule(u)
+    return f"wrr+adm61@EWMA={e:g}" if u == FROZEN_U else f"wrr+adm61@U={u:g},EWMA={e:g}"
 
 
 def static_rule(x):
@@ -156,6 +176,37 @@ def pilot(workers):
     print(json.dumps(settings, indent=1))
 
 
+def pilot2(workers):
+    """Rule E: the smoothing of the wrapper, at the admission level already chosen by rule A."""
+    import pandas as pd
+    from catsim import v61
+    n, changed, _ = rb.check_frozen()
+    if changed:
+        raise SystemExit("frozen files differ from FREEZE_v6.1.md: " + ", ".join(changed))
+    with open(SETTINGS, encoding="utf-8") as f:
+        st = json.load(f)
+    u = st["admission"]["chosen"]
+    rules = [ue_rule(u, e) for e in EWMAS if e != FROZEN_EWMA]
+    jobs = [("P", net, sc, rule, sd) for net, sc in v61.batch_a() for rule in rules for sd in PILOT_SEEDS]
+    rows, _ = run_jobs("pilot2", jobs, workers)
+    write_csv(os.path.join(HERE, "addendum_pilot2.csv"), rows)
+    first = pd.read_csv(os.path.join(HERE, "addendum_pilot.csv"), float_precision="round_trip")
+    df = pd.concat([first[first.rule == u_rule(u)], pd.DataFrame(rows)], ignore_index=True)
+    sc_mean = df.groupby(["net", "scenario", "rule"]).success.mean()
+    nets = list(dict.fromkeys(df.net))
+    means = {e: float(sc_mean.xs(ue_rule(u, e), level="rule").mean()) for e in EWMAS}
+    e_best = _pick(means, FROZEN_EWMA)
+    st["smoothing"] = dict(
+        at_level=u, weights={f"{e:g}": means[e] for e in EWMAS},
+        by_network={n: {f"{e:g}": float(sc_mean.xs(ue_rule(u, e), level="rule").xs(n, level="net").mean())
+                        for e in EWMAS} for n in nets},
+        chosen=e_best, rule=ue_rule(u, e_best), added=e_best != FROZEN_EWMA,
+        chosen_at=time.strftime("%Y-%m-%d %H:%M:%S"))
+    with open(SETTINGS, "w", encoding="utf-8") as f:
+        json.dump(st, f, indent=1)
+    print(json.dumps(st["smoothing"], indent=1))
+
+
 def evaluate(workers, seeds):
     from catsim import v61
     n, changed, _ = rb.check_frozen()
@@ -174,6 +225,8 @@ def evaluate(workers, seeds):
             jobs += [("A+", net, sc, st["admission"]["rule"], sd) for sd in seeds]
         if st["static"][net]["added"]:
             jobs += [("A+", net, sc, st["static"][net]["rule"], sd) for sd in seeds]
+        if st.get("smoothing", {}).get("added"):
+            jobs += [("A+", net, sc, st["smoothing"]["rule"], sd) for sd in seeds]
     if not jobs:
         print("the pilot chose the frozen values everywhere: nothing to run")
         return
@@ -188,12 +241,14 @@ def evaluate(workers, seeds):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("what", choices=["pilot", "eval"])
+    ap.add_argument("what", choices=["pilot", "pilot2", "eval"])
     ap.add_argument("--workers", type=int, default=os.cpu_count() or 2)
     ap.add_argument("--seeds", default="301-305")
     a = ap.parse_args()
     if a.what == "pilot":
         pilot(a.workers)
+    elif a.what == "pilot2":
+        pilot2(a.workers)
     else:
         evaluate(a.workers, rb.parse_seeds(a.seeds))
 
