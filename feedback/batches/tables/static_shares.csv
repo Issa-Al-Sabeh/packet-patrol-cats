@@ -1,0 +1,4 @@
+net,sites,ingresses,design_load,site_limit,capacity_shares,static_shares,every_ingress_uses_capacity_shares,pieces_needed,pieces_that_fit
+beirut,3,4,0.95,0.95,0.1429 0.2857 0.5714,0.1429 0.2857 0.5714,1,100,99
+eight,8,4,0.95,0.95,0.0312 0.0625 0.0625 0.0938 0.1250 0.1562 0.2188 0.2500,0.0312 0.0625 0.0625 0.0938 0.1250 0.1562 0.2188 0.2500,1,100,97
+new,5,6,0.95,0.95,0.0833 0.1250 0.2083 0.2500 0.3333,0.0833 0.1250 0.2083 0.2500 0.3333,1,100,98
