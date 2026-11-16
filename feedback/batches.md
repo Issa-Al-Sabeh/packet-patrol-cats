@@ -30,6 +30,9 @@
 | Batch B: no missing value | pass |  |
 | Batch B: run on the frozen code | pass | 31 frozen files match FREEZE_v6.1.md; Python 3.13.18, numpy 2.5.3, scipy 1.18.1; finished 2026-11-16 15:28:59 |
 | Runs that Batch A and Batch B share give the same numbers (the recorder of Batch B changes nothing) | pass | 75 shared runs |
+| Added runs: every scenario and seed is there | pass | 220 runs: `wrr+adm61@U=0.9`, `wrr+adm61@U=0.9,EWMA=1` |
+| Added runs: the same frames as Batch A (same scenario, same seed) | pass |  |
+| Added runs: every frame ends once | pass |  |
 
 ## Batch A: where does the gain come from?
 
@@ -213,6 +216,128 @@
 - Caution: Table A2 holds 120 intervals at 95%. About 6 of them would leave out 0 by chance alone, so a single bold cell is weak evidence. No correction was fixed at the freeze; none is applied.
 - Five seeds give wide intervals. Seeds 306 to 310 are still unused.
 
+## Added after the freeze: is the gain steering, or the way the baseline drops?
+
+- **Everything in this section was added after the freeze of 15 Nov 2026 and after the first results of Batch A.** The frozen comparisons above are unchanged.
+- Why: "RR + matched admission" admits 95% of the configured capacity and smooths its estimate slowly. v6.1 admitted about 91% in steady overload, follows a clear rise at once and checks for bursts. So v6.1's lead could come from how the baseline drops, not from steering.
+- What was added: the same wrapper with two of its own parameters changed (`wrr+adm61@U=u,EWMA=e`), and the static split at other design loads. The frozen code already has these parameters. No frozen file changed.
+- How the settings were chosen: on pilot seeds 101 to 105 only, on the 22 scenarios of Batch A, by rules written (and committed) before the runs they decide (`feedback/batches/addendum.py`). v6.1 was not run and not looked at: each baseline was tuned for its own best result.
+- Each chosen setting was then run once on seeds 301 to 305.
+
+**Table F1. Pilot seeds: mean deadline success of round-robin + admission, %, by admission level (smoothing as frozen).**
+
+| Admission level | All 22 scenarios | Beirut | 8 sites | New |
+|---|---|---|---|---|
+| 0.80 | 70.2 | 72.1 | 63.2 | 74.1 |
+| 0.85 | 72.8 | 74.5 | 66.2 | 76.6 |
+| 0.90 **(chosen)** | 73.8 | 75.0 | 68.4 | 77.3 |
+| 0.95 (frozen) | 71.8 | 72.2 | 68.5 | 74.4 |
+
+- Rule: one level for all networks, the one with the highest mean over the 22 scenarios.
+
+**Table F2. Pilot seeds: the same at level 0.90, by the weight of the newest report in the wrapper's estimate.**
+
+| Weight of the newest report | All 22 scenarios | Beirut | 8 sites | New |
+|---|---|---|---|---|
+| 0.3 (frozen) | 73.8 | 75.0 | 68.4 | 77.3 |
+| 0.6 | 74.7 | 75.9 | 69.5 | 77.9 |
+| 1.0 **(chosen)** | 75.4 | 76.1 | 71.8 | 77.8 |
+
+- Weight 1.0 = no smoothing: the wrapper follows each round of reports as it is.
+- This second step was decided after the level 0.90 had been run on seeds 301 to 305, and before any run with another smoothing.
+- The baseline was tuned on all three networks, v6.1 on Beirut only. Tuned on Beirut alone, the same two settings win.
+
+**Table F3. Pilot seeds: mean deadline success of the static split + matched admission, %, by design load.**
+
+| Design load | Beirut | 8 sites | New |
+|---|---|---|---|
+| 0.70 | 59.4 | 57.9 | 69.3 |
+| 0.85 | 70.3 | 66.5 | 73.0 |
+| 0.90 | 70.2 | 67.7 | 73.0 |
+| 0.95 (frozen = capacity shares) | 72.2 | 68.5 | 74.3 |
+
+- On all three networks the capacity shares are the best static split of this family. Nothing is added. The frozen static baseline stays, and it is round-robin (see above).
+
+**Table F4. Seeds 301 to 305: deadline success, % (rejected, %). Mean of 5 seeds.**
+
+| Network | Scenario | v6.1 | RR + adm. at 0.95 (frozen) | RR + adm. at 0.90 (added) | RR + adm. at 0.90, no smoothing (added) |
+|---|---|---|---|---|---|
+| Beirut | Main scenario (load 85%) * | 96.6 (0.0) | 96.6 (0.0) | 96.6 (0.0) | 96.6 (0.0) |
+| Beirut | Load 95% * | 85.7 (4.1) | 79.5 (0.5) | 87.2 (5.0) | 86.6 (5.2) |
+| Beirut | Load 110% | 76.3 (16.6) | 72.4 (13.4) | 76.7 (17.9) | 76.6 (18.0) |
+| Beirut | Load 130% * | 63.9 (29.8) | 61.9 (26.9) | 65.4 (30.8) | 64.8 (30.9) |
+| Beirut | Load 150% | 56.6 (38.7) | 53.7 (36.5) | 56.8 (39.8) | 56.7 (40.0) |
+| Beirut | Burst: 85%, then 140% for 20 s * | 82.6 (11.7) | 74.3 (4.4) | 74.5 (6.1) | 83.2 (7.3) |
+| Beirut | Ingress A doubles for 50 s | 81.7 (12.9) | 69.5 (6.6) | 73.9 (9.2) | 81.2 (10.6) |
+| Beirut | Hamra loses 1 of 2 servers for 50 s * | 92.1 (1.1) | 86.2 (0.0) | 86.2 (0.0) | 86.2 (0.0) |
+| Beirut | DC loses 4 of 8 servers for 60 s | 72.9 (18.1) | 71.2 (0.0) | 71.2 (0.0) | 71.2 (0.0) |
+| Beirut | Wrong weights (DC has 6, rules told 8) * | 88.8 (0.0) | 74.1 (0.0) | 74.1 (0.0) | 74.1 (0.0) |
+| 8 sites | Load 90%, steady | 94.7 (0.4) | 95.1 (0.0) | 94.9 (0.8) | 94.3 (1.7) |
+| 8 sites | Load 110%, steady | 78.1 (17.8) | 75.5 (13.6) | 78.3 (18.1) | 77.9 (18.0) |
+| 8 sites | Load 130%, steady | 65.7 (30.9) | 63.5 (27.0) | 66.3 (30.8) | 66.1 (30.7) |
+| 8 sites | Load 90%, bursty | 73.8 (19.4) | 67.3 (3.6) | 66.5 (5.3) | 72.9 (9.9) |
+| 8 sites | Load 110%, bursty | 62.8 (28.8) | 58.8 (12.5) | 57.2 (16.6) | 65.4 (16.1) |
+| 8 sites | Load 130%, bursty | 53.3 (40.0) | 49.8 (25.6) | 48.5 (29.5) | 55.6 (28.9) |
+| New | Load 85% | 94.2 (0.0) | 94.1 (0.0) | 94.1 (0.0) | 94.1 (0.1) |
+| New | Load 95% | 84.1 (4.2) | 78.3 (0.6) | 85.3 (5.2) | 84.1 (5.2) |
+| New | Load 115% | 70.0 (21.0) | 66.5 (17.2) | 71.6 (21.5) | 70.6 (21.5) |
+| New | Load 130% | 62.4 (29.6) | 59.7 (26.9) | 63.3 (30.7) | 62.7 (30.7) |
+| New | Burst: 85%, then 140% for 20 s | 82.1 (10.5) | 73.9 (5.4) | 75.7 (6.8) | 82.8 (7.8) |
+| New | Regional DC loses 2 of 6 servers for 50 s | 87.2 (1.8) | 75.3 (0.0) | 75.3 (0.0) | 75.3 (0.1) |
+
+**Table F5. v6.1 minus each of them: difference in success, points, paired by seed, 95% interval. Bold = the interval does not contain 0.**
+
+| Network | Scenario | − RR + adm. at 0.95 (frozen) | − RR + adm. at 0.90 (added) | − RR + adm. at 0.90, no smoothing (added) |
+|---|---|---|---|---|
+| Beirut | Main scenario (load 85%) * | same runs | same runs | -0.0 ± 0.2 |
+| Beirut | Load 95% * | **+6.3 ± 1.7** | -1.5 ± 3.0 | -0.9 ± 1.9 |
+| Beirut | Load 110% | **+3.9 ± 1.5** | -0.4 ± 0.9 | -0.3 ± 1.0 |
+| Beirut | Load 130% * | **+2.0 ± 1.5** | **-1.5 ± 1.3** | -0.9 ± 1.0 |
+| Beirut | Load 150% | **+2.9 ± 1.6** | -0.2 ± 1.1 | -0.0 ± 1.2 |
+| Beirut | Burst: 85%, then 140% for 20 s * | **+8.2 ± 1.8** | **+8.0 ± 1.1** | -0.6 ± 1.9 |
+| Beirut | Ingress A doubles for 50 s | **+12.1 ± 3.1** | **+7.8 ± 2.6** | +0.5 ± 2.5 |
+| Beirut | Hamra loses 1 of 2 servers for 50 s * | **+5.9 ± 0.6** | **+5.9 ± 0.6** | **+5.9 ± 0.7** |
+| Beirut | DC loses 4 of 8 servers for 60 s | **+1.8 ± 1.2** | **+1.8 ± 1.2** | **+1.7 ± 1.3** |
+| Beirut | Wrong weights (DC has 6, rules told 8) * | **+14.7 ± 9.8** | **+14.7 ± 9.8** | **+14.7 ± 9.8** |
+| 8 sites | Load 90%, steady | -0.4 ± 0.5 | -0.2 ± 0.3 | **+0.4 ± 0.3** |
+| 8 sites | Load 110%, steady | **+2.5 ± 2.0** | -0.2 ± 0.5 | +0.1 ± 0.7 |
+| 8 sites | Load 130%, steady | **+2.2 ± 1.0** | **-0.7 ± 0.5** | -0.4 ± 0.5 |
+| 8 sites | Load 90%, bursty | **+6.5 ± 1.3** | **+7.3 ± 1.5** | +0.9 ± 2.2 |
+| 8 sites | Load 110%, bursty | **+4.0 ± 1.5** | **+5.6 ± 1.6** | **-2.7 ± 1.7** |
+| 8 sites | Load 130%, bursty | **+3.5 ± 0.4** | **+4.7 ± 0.3** | **-2.3 ± 1.0** |
+| New | Load 85% | +0.1 ± 0.2 | +0.1 ± 0.2 | +0.1 ± 0.3 |
+| New | Load 95% | **+5.7 ± 2.0** | -1.2 ± 1.5 | +0.0 ± 0.6 |
+| New | Load 115% | **+3.5 ± 0.9** | **-1.6 ± 1.5** | -0.6 ± 0.7 |
+| New | Load 130% | **+2.7 ± 1.8** | **-1.0 ± 0.7** | -0.4 ± 0.8 |
+| New | Burst: 85%, then 140% for 20 s | **+8.2 ± 1.2** | **+6.4 ± 1.3** | **-0.7 ± 0.6** |
+| New | Regional DC loses 2 of 6 servers for 50 s | **+11.9 ± 1.5** | **+11.9 ± 1.5** | **+11.9 ± 1.4** |
+
+**Table F6. Mean differences in success, points, by group of scenarios. The counts are against RR + adm. at 0.90, no smoothing.**
+
+| Scenarios | How many | v6.1 − RR + adm. at 0.90, no smoothing (added) | v6.1 clearly ahead | v6.1 clearly behind | Not clear or same | v6.1 − RR + adm. at 0.90 (added) | v6.1 − RR + adm. at 0.95 (frozen) |
+|---|---|---|---|---|---|---|---|
+| All scenarios | 22 | +1.2 ± 0.4 | 5 | 3 | 14 | +3.0 ± 0.6 | +4.9 ± 0.4 |
+| Pilot scenarios | 6 | +3.0 ± 1.4 | 2 | 0 | 4 | +4.3 ± 1.6 | +6.2 ± 1.5 |
+| Other scenarios | 16 | +0.5 ± 0.4 | 3 | 3 | 10 | +2.5 ± 0.5 | +4.4 ± 0.4 |
+| Beirut | 10 | +2.0 ± 1.0 | 3 | 0 | 7 | +3.5 ± 1.1 | +5.8 ± 1.0 |
+| 8 sites | 6 | -0.7 ± 0.8 | 1 | 2 | 3 | +2.7 ± 0.5 | +3.1 ± 0.7 |
+| New | 6 | +1.7 ± 0.3 | 1 | 1 | 4 | +2.5 ± 0.8 | +5.3 ± 0.4 |
+
+**Table F7. The same, by kind of scenario. The kinds were defined after the results: this table describes, it was not planned.**
+
+| Scenarios | How many | v6.1 − RR + adm. at 0.90, no smoothing (added) | v6.1 clearly ahead | v6.1 clearly behind | Not clear or same | v6.1 − RR + adm. at 0.90 (added) | v6.1 − RR + adm. at 0.95 (frozen) |
+|---|---|---|---|---|---|---|---|
+| Capacity is not what was configured (failures, wrong weights) | 4 | +8.6 ± 2.5 | 4 | 0 | 0 | +8.6 ± 2.4 | +8.6 ± 2.4 |
+| Bursts and a surge | 6 | -0.8 ± 0.8 | 0 | 3 | 3 | +6.6 ± 0.7 | +7.1 ± 0.8 |
+| Steady load, 95% and above | 9 | -0.4 ± 0.3 | 0 | 0 | 9 | -0.9 ± 0.6 | +3.5 ± 0.7 |
+| Steady load below capacity (85% to 90%) | 3 | +0.1 ± 0.1 | 1 | 0 | 2 | -0.1 ± 0.1 | -0.1 ± 0.1 |
+
+- Mean success over the 22 scenarios: v6.1 77.5%; RR + adm. at 0.90, no smoothing (added) 76.3%; RR + adm. at 0.90 (added) 74.5%; RR + adm. at 0.95 (frozen) 72.6%; round-robin 52.3%.
+- v6.1 is clearly behind RR + adm. at 0.90, no smoothing on 8 sites, Load 110%, bursty: -2.7 ± 1.7 points.
+- v6.1 is clearly behind RR + adm. at 0.90, no smoothing on 8 sites, Load 130%, bursty: -2.3 ± 1.0 points.
+- v6.1 is clearly behind RR + adm. at 0.90, no smoothing on New, Burst: 85%, then 140% for 20 s: -0.7 ± 0.6 points.
+- Telemetry, bytes per second per ingress (v6.1 / RR + adm. at 0.90, no smoothing): Beirut 40.2 / 40.1, 8 sites 269.2 / 269.3, New 112.3 / 112.3.
+
 ## Batch B: does the estimate hold when ingresses differ?
 
 - 14 scenarios × 4 rules × 5 seeds = 280 runs.
@@ -342,6 +467,8 @@
 python3 feedback/batches/run_batches.py check
 python3 feedback/batches/run_batches.py A --workers 2      # 770 runs
 python3 feedback/batches/run_batches.py B --workers 2      # 280 runs
+python3 feedback/batches/addendum.py pilot                 # added after the freeze: 880 pilot runs
+python3 feedback/batches/addendum.py eval                  # the baseline the pilot chose, 110 runs
 python3 feedback/batches/analyze_batches.py                # tables/*.csv and this file
 python3 -m pytest feedback/batches/test_batches.py -q      # checks of the runner (pilot seed only)
 ```

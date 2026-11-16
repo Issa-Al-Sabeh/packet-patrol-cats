@@ -55,6 +55,27 @@ SHORT = {
     "B_130_loss": "Load 130%, 30% of reports lost", "O_130_W1": "Load 130%, reports every 1 s",
 }
 B_SHORT = {"O_130": "Load 130%, shares 40/30/20/10%"}
+# Kind of scenario. This grouping was made AFTER the first results (it is descriptive, not part of the freeze).
+KINDS = [
+    ("Capacity is not what was configured (failures, wrong weights)",
+     {"server_fail_recover", "O_dc_half", "wrong_weights", "N_fail"}),
+    ("Bursts and a surge", {"O_burst", "O_surge", "N_burst"}),                      # + the bursty 8-site scenarios
+    ("Steady load, 95% and above", {"load=95", "O_110", "O_130", "O_150", "N_95", "N_115", "N_130"}),
+    ("Steady load below capacity (85% to 90%)", {"main", "N_85"}),
+]
+
+
+def kind_of(net, key):
+    if net == "eight":
+        m = key.split("_")                                     # L<load>_d50_<pattern>_...
+        load, pattern = int(m[0][1:]), m[2]
+        if pattern == "bursty":
+            return KINDS[1][0]
+        return KINDS[2][0] if load >= 95 else KINDS[3][0]
+    for name, keys in KINDS:
+        if key in keys:
+            return name
+    raise KeyError((net, key))
 
 
 # ------------------------------------------------------------------------------------------- helpers
@@ -354,6 +375,172 @@ def batch_a(A):
     return L, P, summ, mean
 
 
+# ------------------------------------------------------------------------------------------- added after the freeze
+def addendum(A):
+    """Round-robin + admission with the settings chosen on pilot seeds (feedback/batches/addendum.py), against v6.1."""
+    xp, sp = os.path.join(HERE, "batch_A_added.csv"), os.path.join(HERE, "addendum_settings.json")
+    if not (os.path.exists(xp) and os.path.exists(sp)):
+        return [], []
+    X = pd.read_csv(xp, float_precision="round_trip")
+    X["lost"] = X["expired"] + X["late"]
+    st = json.load(open(sp, encoding="utf-8"))
+    u = st["admission"]["chosen"]
+    sm = st.get("smoothing", {})
+    added = [(st["admission"]["rule"], f"RR + adm. at {u:.2f}")]
+    if sm.get("added"):
+        added.append((sm["rule"], f"RR + adm. at {u:.2f}, no smoothing" if sm["chosen"] == 1.0 else
+                      f"RR + adm. at {u:.2f}, weight {sm['chosen']:g}"))
+    final, final_name = added[-1]
+    old = RRADM
+    scs = scenarios_of(A)
+    n_seeds = A.seed.nunique()
+    ck = []
+    ok = all(len(X[X.rule == r]) == len(scs) * n_seeds and set(X[X.rule == r].seed) == set(A.seed) for r, _ in added)
+    ck.append(("Added runs: every scenario and seed is there", ok and set(X.rule) == {r for r, _ in added},
+               f"{len(X)} runs: " + ", ".join(f"`{r}`" for r, _ in added)))
+    fa = A[A.rule == OURS].set_index(["net", "scenario", "seed"]).frames.sort_index()
+    same = all((fa == X[X.rule == r].set_index(["net", "scenario", "seed"]).frames.sort_index()).all() for r, _ in added)
+    ck.append(("Added runs: the same frames as Batch A (same scenario, same seed)", bool(same), ""))
+    ck.append(("Added runs: every frame ends once", bool(
+        (X.n_success + X.n_late + X.n_expired + X.n_rejected == X.frames).all()), ""))
+    D = pd.concat([A, X], ignore_index=True)
+    mean = D.groupby(["net", "scenario", "rule"], sort=False)[
+        ["success", "rejected", "lost", "bytes_per_s_per_ingress"]].mean()
+    P = {r: paired(D, OURS, r) for r in [old] + [r for r, _ in added]}
+    pd.concat(list(P.values()) + [paired(D, OURS, final, "rejected"), paired(D, OURS, final, "lost"),
+                                  paired(D, final, old)]).to_csv(os.path.join(TABLES, "A_added_paired.csv"), index=False)
+    nets = [n for n in NET if n in st["admission"]["by_network"]]
+
+    L = ["## Added after the freeze: is the gain steering, or the way the baseline drops?\n"]
+    L.append("- **Everything in this section was added after the freeze of 15 Nov 2026 and after the first results "
+             "of Batch A.** The frozen comparisons above are unchanged.")
+    L.append("- Why: \"RR + matched admission\" admits 95% of the configured capacity and smooths its estimate "
+             "slowly. v6.1 admitted about 91% in steady overload, follows a clear rise at once and checks for bursts. "
+             "So v6.1's lead could come from how the baseline drops, not from steering.")
+    L.append("- What was added: the same wrapper with two of its own parameters changed (`wrr+adm61@U=u,EWMA=e`), "
+             "and the static split at other design loads. The frozen code already has these parameters. No frozen "
+             "file changed.")
+    L.append("- How the settings were chosen: on pilot seeds 101 to 105 only, on the 22 scenarios of Batch A, by "
+             "rules written (and committed) before the runs they decide (`feedback/batches/addendum.py`). v6.1 was "
+             "not run and not looked at: each baseline was tuned for its own best result.")
+    L.append("- Each chosen setting was then run once on seeds 301 to 305.\n")
+
+    L.append("**Table F1. Pilot seeds: mean deadline success of round-robin + admission, %, by admission level "
+             "(smoothing as frozen).**\n")
+    rows = []
+    for lev in st["admission"]["levels"]:
+        mark = " (frozen)" if float(lev) == 0.95 else (" **(chosen)**" if float(lev) == u else "")
+        rows.append([f"{float(lev):.2f}{mark}", f"{st['admission']['levels'][lev]:.1f}"] +
+                    [f"{st['admission']['by_network'][n][lev]:.1f}" for n in nets])
+    L.append(md_table(["Admission level", "All 22 scenarios"] + [NET[n] for n in nets], rows))
+    L.append("\n- Rule: one level for all networks, the one with the highest mean over the 22 scenarios.\n")
+    if sm:
+        L.append(f"**Table F2. Pilot seeds: the same at level {u:.2f}, by the weight of the newest report in the "
+                 "wrapper's estimate.**\n")
+        rows = []
+        for w in sm["weights"]:
+            mark = " (frozen)" if float(w) == 0.3 else ""
+            mark += " **(chosen)**" if float(w) == sm["chosen"] else ""
+            rows.append([f"{float(w):.1f}{mark}", f"{sm['weights'][w]:.1f}"] +
+                        [f"{sm['by_network'][n][w]:.1f}" for n in nets])
+        L.append(md_table(["Weight of the newest report", "All 22 scenarios"] + [NET[n] for n in nets], rows))
+        L.append("\n- Weight 1.0 = no smoothing: the wrapper follows each round of reports as it is.")
+        L.append("- This second step was decided after the level 0.90 had been run on seeds 301 to 305, and before "
+                 "any run with another smoothing.")
+        b = "beirut"
+        if b in nets and max(st["admission"]["by_network"][b], key=st["admission"]["by_network"][b].get) == f"{u:g}" \
+                and max(sm["by_network"][b], key=sm["by_network"][b].get) == f"{sm['chosen']:g}":
+            L.append("- The baseline was tuned on all three networks, v6.1 on Beirut only. Tuned on Beirut alone, "
+                     "the same two settings win.")
+        L.append("")
+    L.append("**Table F3. Pilot seeds: mean deadline success of the static split + matched admission, %, by design "
+             "load.**\n")
+    loads = list(next(iter(st["static"].values()))["loads"])
+    rows = [[f"{float(x):.2f}" + (" (frozen = capacity shares)" if float(x) == 0.95 else "")] +
+            [f"{st['static'][n]['loads'][x]:.1f}" for n in nets] for x in loads]
+    L.append(md_table(["Design load"] + [NET[n] for n in nets], rows))
+    if all(not st["static"][n]["added"] for n in nets):
+        L.append("\n- On all three networks the capacity shares are the best static split of this family. Nothing is "
+                 "added. The frozen static baseline stays, and it is round-robin (see above).\n")
+    else:
+        L.append("\n- Chosen per network: " + ", ".join(f"{NET[n]} {st['static'][n]['chosen']:.2f}" for n in nets)
+                 + ".\n")
+
+    cols = [(old, "RR + adm. at 0.95 (frozen)")] + [(r, t + " (added)") for r, t in added]
+    L.append(f"**Table F4. Seeds {A.seed.min()} to {A.seed.max()}: deadline success, % (rejected, %). Mean of "
+             f"{n_seeds} seeds.**\n")
+    rows = []
+    for net, key in scs:
+        rows.append([NET[net], name_of(A, net, key, "A")] +
+                    [f"{mean.loc[(net, key, r)].success:.1f} ({mean.loc[(net, key, r)].rejected:.1f})"
+                     for r in [OURS] + [c for c, _ in cols]])
+    L.append(md_table(["Network", "Scenario", "v6.1"] + [t for _, t in cols], rows))
+    L.append("")
+    L.append("**Table F5. v6.1 minus each of them: difference in success, points, paired by seed, 95% interval. "
+             "Bold = the interval does not contain 0.**\n")
+    rows = []
+    for net, key in scs:
+        row = [NET[net], name_of(A, net, key, "A")]
+        for r, _ in cols:
+            g = P[r][(P[r].net == net) & (P[r].scenario == key)].iloc[0]
+            row.append(fmt_diff(g["diff"], g["half"], g["verdict"]))
+        rows.append(row)
+    L.append(md_table(["Network", "Scenario"] + ["− " + t for _, t in cols], rows))
+    L.append("")
+
+    pil = lambda k: int(A[(A.net == k[0]) & (A.scenario == k[1])].pilot_scenario.iloc[0])
+    groups = [("All scenarios", scs), ("Pilot scenarios", [k for k in scs if pil(k)]),
+              ("Other scenarios", [k for k in scs if not pil(k)])]
+    groups += [(NET[n], [k for k in scs if k[0] == n]) for n in NET if any(k[0] == n for k in scs)]
+    kinds = [(name, [k for k in scs if kind_of(*k) == name]) for name, _ in KINDS]
+    Pf = P[final]
+
+    def table(gs, title):
+        rows, out = [], []
+        for gname, keys in gs:
+            ks = set(keys)
+            c = Pf[[k in ks for k in zip(Pf.net, Pf.scenario)]].verdict.value_counts()
+            row = [gname, len(keys)]
+            rec = dict(group=gname, scenarios=len(keys))
+            for r, t in reversed(cols):
+                m, h, _ = pooled(D, OURS, r, ks)
+                row.append(f"{m:+.1f} ± {h:.1f}")
+                rec[f"v61_minus[{r}]"], rec[f"half[{r}]"] = m, h
+                if r == final:
+                    row += [int(c.get("ahead", 0)), int(c.get("behind", 0)),
+                            int(c.get("unclear", 0)) + int(c.get("same", 0))]
+                    rec.update(ahead=int(c.get("ahead", 0)), behind=int(c.get("behind", 0)),
+                               unclear_or_same=int(c.get("unclear", 0)) + int(c.get("same", 0)))
+            rows.append(row)
+            out.append(rec)
+        head = ["Scenarios", "How many"]
+        for r, t in reversed(cols):
+            head.append("v6.1 − " + t)
+            if r == final:
+                head += ["v6.1 clearly ahead", "v6.1 clearly behind", "Not clear or same"]
+        L.append(title + "\n")
+        L.append(md_table(head, rows))
+        L.append("")
+        return out
+
+    s1 = table(groups, "**Table F6. Mean differences in success, points, by group of scenarios. The counts are "
+                       f"against {final_name}.**")
+    s2 = table(kinds, "**Table F7. The same, by kind of scenario. The kinds were defined after the results: this "
+                      "table describes, it was not planned.**")
+    pd.DataFrame(s1 + s2).to_csv(os.path.join(TABLES, "A_added_summary.csv"), index=False)
+    ms = lambda r: np.mean([mean.loc[(n, k, r)].success for n, k in scs])
+    L.append(f"- Mean success over the {len(scs)} scenarios: v6.1 {ms(OURS):.1f}%; " +
+             "; ".join(f"{t} {ms(r):.1f}%" for r, t in reversed(cols)) + f"; round-robin {ms(RR):.1f}%.")
+    for _, p in Pf[Pf.verdict == "behind"].iterrows():
+        L.append(f"- v6.1 is clearly behind {final_name} on {NET[p['net']]}, "
+                 f"{name_of(A, p['net'], p['scenario'], 'A')}: {p['diff']:+.1f} ± {p['half']:.1f} points.")
+    by = lambda r, n: np.mean([mean.loc[(nn, k, r)].bytes_per_s_per_ingress for nn, k in scs if nn == n])
+    L.append("- Telemetry, bytes per second per ingress (v6.1 / " + final_name + "): " +
+             ", ".join(f"{NET[n]} {by(OURS, n):.1f} / {by(final, n):.1f}" for n in nets) + ".")
+    L.append("")
+    return L, ck
+
+
 # ------------------------------------------------------------------------------------------- Batch B
 def _ing_values(df, col):
     """Every per-ingress value of a JSON list column, as one flat array."""
@@ -502,8 +689,15 @@ def main():
     L.append("## Checks\n")
     L.append(md_table(["Check", "Result", "Detail"], [[w, "pass" if ok else "**FAIL**", d] for w, ok, d in ck]))
     L.append("")
+    add_lines, add_checks = addendum(A) if A is not None else ([], [])
+    if add_checks:                                              # the checks table is written above: insert the rows
+        i = next(k for k, x in enumerate(L) if x.startswith("| Check | Result | Detail |"))
+        extra = "\n".join("| " + " | ".join([w, "pass" if ok else "**FAIL**", d]) + " |" for w, ok, d in add_checks)
+        L[i] = L[i] + "\n" + extra
+        ck += add_checks
     if A is not None:
         L += batch_a(A)[0]
+    L += add_lines
     if B is not None:
         L += batch_b(B)[0]
     L.append("## Reproduce\n")
@@ -511,6 +705,8 @@ def main():
     L.append("python3 feedback/batches/run_batches.py check")
     L.append("python3 feedback/batches/run_batches.py A --workers 2      # 770 runs")
     L.append("python3 feedback/batches/run_batches.py B --workers 2      # 280 runs")
+    L.append("python3 feedback/batches/addendum.py pilot                 # added after the freeze: 880 pilot runs")
+    L.append("python3 feedback/batches/addendum.py eval                  # the baseline the pilot chose, 110 runs")
     L.append("python3 feedback/batches/analyze_batches.py                # tables/*.csv and this file")
     L.append("python3 -m pytest feedback/batches/test_batches.py -q      # checks of the runner (pilot seed only)")
     L.append("```")
