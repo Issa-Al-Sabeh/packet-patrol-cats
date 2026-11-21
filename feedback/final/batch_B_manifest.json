@@ -1,0 +1,42 @@
+{
+ "batch": "B",
+ "runs": 1680,
+ "reused": 280,
+ "seeds": [
+  301,
+  302,
+  303,
+  304,
+  305,
+  306,
+  307,
+  308,
+  309,
+  310,
+  311,
+  312,
+  313,
+  314,
+  315,
+  316,
+  317,
+  318,
+  319,
+  320
+ ],
+ "rules": [
+  "ours_v6",
+  "ours_v61",
+  "ours_v62",
+  "wrr+adm",
+  "wrr+adm61",
+  "wrr+adm61@U=0.9,EWMA=1"
+ ],
+ "frozen_files_checked": 37,
+ "frozen_files_changed": [],
+ "git_head": "1bb5eded4dc591e469b73006d7301b1acbcabac9",
+ "python": "3.13.18",
+ "numpy": "2.5.3",
+ "scipy": "1.18.1",
+ "finished": "2026-11-21 15:44:40"
+}
