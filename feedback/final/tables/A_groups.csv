@@ -1,0 +1,41 @@
+group,comparison,mean,half,ahead,behind,neither
+All 22 scenarios,"ours_v62 - wrr+adm61@U=0.9,EWMA=1",2.1169052374007484,0.2012982022563241,11,3,8
+All 22 scenarios,"ours_v61 - wrr+adm61@U=0.9,EWMA=1",1.3437518282378014,0.2139132123269268,6,6,10
+All 22 scenarios,ours_v62 - ours_v61,0.7731534091629476,0.08638001080727085,6,0,16
+All 22 scenarios,ours_v61 - wrr+adm61,5.044965539951385,0.2755031092676062,19,0,3
+All 22 scenarios,ours_v62 - wrr+adm61,5.818118949114332,0.25669140711068605,19,0,3
+Beirut,"ours_v62 - wrr+adm61@U=0.9,EWMA=1",2.5708807666887616,0.42924415297344337,5,2,3
+Beirut,"ours_v61 - wrr+adm61@U=0.9,EWMA=1",2.318933826294531,0.4182674521738454,4,2,4
+Beirut,ours_v62 - ours_v61,0.25194694039423077,0.1490663048661392,2,0,8
+Beirut,ours_v61 - wrr+adm61,6.190692660197945,0.5031815534754512,9,0,1
+Beirut,ours_v62 - wrr+adm61,6.442639600592175,0.4821171194220922,9,0,1
+8 sites,"ours_v62 - wrr+adm61@U=0.9,EWMA=1",1.489142752473379,0.20284711175726128,4,0,2
+8 sites,"ours_v61 - wrr+adm61@U=0.9,EWMA=1",-0.733051393966786,0.20348861081128303,1,2,3
+8 sites,ours_v62 - ours_v61,2.222194146440165,0.10953431735401911,3,0,3
+8 sites,ours_v61 - wrr+adm61,2.790428553361884,0.18372237329867197,5,0,1
+8 sites,ours_v62 - wrr+adm61,5.0126226998020496,0.20282170517891743,5,0,1
+New,"ours_v62 - wrr+adm61@U=0.9,EWMA=1",1.9880418401814315,0.1511777598803856,2,1,3
+New,"ours_v61 - wrr+adm61@U=0.9,EWMA=1",1.7952517203478398,0.16326052750595846,1,2,3
+New,ours_v62 - ours_v61,0.19279011983359157,0.10216608686869835,1,0,5
+New,ours_v61 - wrr+adm61,5.389957326129954,0.2667594900127836,5,0,1
+New,ours_v62 - wrr+adm61,5.5827474459635456,0.2881490361980959,5,0,1
+"Capacity is not what was configured (failures, wrong weights)","ours_v62 - wrr+adm61@U=0.9,EWMA=1",9.435443354342182,1.0383047393668001,4,0,0
+"Capacity is not what was configured (failures, wrong weights)","ours_v61 - wrr+adm61@U=0.9,EWMA=1",9.330940606127989,0.9718819720370313,4,0,0
+"Capacity is not what was configured (failures, wrong weights)",ours_v62 - ours_v61,0.10450274821419417,0.42978691860631474,0,0,4
+"Capacity is not what was configured (failures, wrong weights)",ours_v61 - wrr+adm61,9.328739174272057,0.9567713448436043,4,0,0
+"Capacity is not what was configured (failures, wrong weights)",ours_v62 - wrr+adm61,9.43324192248625,1.021084624378783,4,0,0
+Bursts and a surge,"ours_v62 - wrr+adm61@U=0.9,EWMA=1",2.00839334294708,0.1963189072704682,6,0,0
+Bursts and a surge,"ours_v61 - wrr+adm61@U=0.9,EWMA=1",-0.7685876354704573,0.20502854608733256,1,3,2
+Bursts and a surge,ours_v62 - ours_v61,2.7769809784175368,0.11321337706832332,6,0,0
+Bursts and a surge,ours_v61 - wrr+adm61,7.09961073807856,0.19031038199876446,6,0,0
+Bursts and a surge,ours_v62 - wrr+adm61,9.8765917164961,0.1783538160885415,6,0,0
+"Steady load, 95% and above","ours_v62 - wrr+adm61@U=0.9,EWMA=1",-0.4028003709196491,0.1790754138994203,0,3,6
+"Steady load, 95% and above","ours_v61 - wrr+adm61@U=0.9,EWMA=1",-0.39496460849996573,0.17073324788645375,0,3,6
+"Steady load, 95% and above",ours_v62 - ours_v61,-0.007835762419683413,0.016400439229026037,0,0,9
+"Steady load, 95% and above",ours_v61 - wrr+adm61,3.470284536603445,0.437878968576551,9,0,0
+"Steady load, 95% and above",ours_v62 - wrr+adm61,3.4624487741837626,0.44160076179472896,9,0,0
+Steady load below capacity (85% to 90%),"ours_v62 - wrr+adm61@U=0.9,EWMA=1",0.13499502868070648,0.09449656205790068,1,0,2
+Steady load below capacity (85% to 90%),"ours_v61 - wrr+adm61@U=0.9,EWMA=1",0.13499502868070648,0.09449656205790068,1,0,2
+Steady load below capacity (85% to 90%),ours_v62 - ours_v61,0.0,0.0,0,0,3
+Steady load below capacity (85% to 90%),ours_v61 - wrr+adm61,-0.05198002535337807,0.08014553305482322,0,0,3
+Steady load below capacity (85% to 90%),ours_v62 - wrr+adm61,-0.05198002535337807,0.08014553305482322,0,0,3
