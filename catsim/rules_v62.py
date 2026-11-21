@@ -59,10 +59,15 @@ class SplitV62W10(SplitV62):
 V62_CANDIDATES = {"v62c_same": SplitV62, "v62c_fall": SplitV62Fall, "v62c_w06": SplitV62W06,
                   "v62c_w10": SplitV62W10}
 
+# Chosen on pilot seeds by feedback/batchC/design.py (rules A-E; feedback/batchC/choice.json): the clear-fall test.
+# Frozen as ours v6.2 (FREEZE_v6.2.md).
+V62_RULE_CLASSES = {"ours_v62": SplitV62Fall}
+
 
 def register():
     from .rules import RULE_CLASSES
     RULE_CLASSES.update(V62_CANDIDATES)
+    RULE_CLASSES.update(V62_RULE_CLASSES)
 
 
 register()
