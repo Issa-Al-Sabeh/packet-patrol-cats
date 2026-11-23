@@ -4,6 +4,9 @@ O_burst ours_v61 seed 101: success 82.1364% (stored 82.1364: identical) -> trace
 $ python3 feedback/revision/trace.py A O_burst ours_v62 101
 O_burst ours_v62 seed 101: success 83.9421% (stored 83.9421: identical) -> traces/trace_A_O_burst_ours_v62_101.json
 
+$ python3 feedback/revision/trace.py A O_dc_half ours_v61 101
+O_dc_half ours_v61 seed 101: success 73.1283% (stored 73.1283: identical) -> traces/trace_A_O_dc_half_ours_v61_101.json
+
 $ python3 feedback/revision/trace.py A O_dc_half ours_v62 101
 O_dc_half ours_v62 seed 101: success 73.2050% (stored 73.2050: identical) -> traces/trace_A_O_dc_half_ours_v62_101.json
 
@@ -48,6 +51,26 @@ trace_A_O_burst_ours_v62_101.json servers [2, 4, 8] success 83.9
  t=  125 est= 119.2 true= 121.6 r=0.98 drop=0.00 admitted=1.00 kcal=0.410 meter=[2, 4, 8] util(nominal)=[0.86 0.88 0.87]
  t=  130 est= 119.9 true= 120.2 r=1.00 drop=0.00 admitted=1.00 kcal=0.074 meter=[2, 4, 8] util(nominal)=[0.86 0.86 0.86]
  t=  135 est= 120.1 true= 124.2 r=0.97 drop=0.00 admitted=1.00 kcal=0.196 meter=[2, 4, 8] util(nominal)=[0.88 0.88 0.89]
+trace_A_O_dc_half_ours_v61_101.json servers [2, 4, 8] success 73.1
+ t=   45 est= 122.7 true= 122.0 r=1.01 drop=0.00 admitted=1.00 kcal=0.275 meter=[2, 4, 8] util(nominal)=[0.87 0.88 0.87]
+ t=   50 est= 122.6 true= 117.0 r=1.05 drop=0.00 admitted=1.00 kcal=0.084 meter=[2, 4, 8] util(nominal)=[0.83 0.84 0.84]
+ t=   55 est= 121.0 true= 122.2 r=0.99 drop=0.00 admitted=1.00 kcal=2.466 meter=[2, 4, 8] util(nominal)=[0.87 0.87 0.88]
+ t=   60 est= 121.2 true= 116.4 r=1.04 drop=0.51 admitted=0.52 kcal=1.491 meter=[2, 4, 4] util(nominal)=[0.61 0.68 0.26]
+ t=   65 est= 125.8 true= 115.0 r=1.09 drop=0.42 admitted=0.58 kcal=0.617 meter=[2, 4, 4] util(nominal)=[0.63 0.72 0.32]
+ t=   70 est= 123.6 true= 115.8 r=1.07 drop=0.31 admitted=0.68 kcal=0.089 meter=[2, 4, 4] util(nominal)=[0.78 0.82 0.38]
+ t=   75 est= 122.0 true= 122.8 r=0.99 drop=0.22 admitted=0.77 kcal=0.410 meter=[2, 4, 4] util(nominal)=[0.9  0.94 0.48]
+ t=   80 est= 122.2 true= 112.4 r=1.09 drop=0.26 admitted=0.75 kcal=0.150 meter=[2, 4, 4] util(nominal)=[0.84 0.86 0.41]
+ t=   85 est= 119.9 true= 110.4 r=1.09 drop=0.21 admitted=0.79 kcal=0.253 meter=[2, 4, 4] util(nominal)=[0.84 0.86 0.45]
+ t=   90 est= 117.1 true= 127.2 r=0.92 drop=0.21 admitted=0.79 kcal=0.512 meter=[2, 4, 4] util(nominal)=[1.02 1.01 0.5 ]
+ t=   95 est= 120.1 true= 121.4 r=0.99 drop=0.33 admitted=0.70 kcal=0.415 meter=[2, 4, 4] util(nominal)=[0.82 0.85 0.42]
+ t=  100 est= 119.8 true= 121.6 r=0.99 drop=0.21 admitted=0.78 kcal=0.477 meter=[2, 4, 4] util(nominal)=[0.91 0.94 0.49]
+ t=  105 est= 117.3 true= 111.0 r=1.06 drop=0.18 admitted=0.74 kcal=0.160 meter=[2, 4, 4] util(nominal)=[0.81 0.83 0.41]
+ t=  110 est= 117.3 true= 123.4 r=0.95 drop=0.18 admitted=0.82 kcal=0.626 meter=[2, 4, 4] util(nominal)=[1.   0.98 0.52]
+ t=  115 est= 119.4 true= 118.8 r=1.01 drop=0.32 admitted=0.70 kcal=0.480 meter=[2, 4, 4] util(nominal)=[0.85 0.84 0.42]
+ t=  120 est= 118.7 true= 117.0 r=1.01 drop=0.23 admitted=0.78 kcal=0.105 meter=[2, 4, 4] util(nominal)=[0.94 0.9  0.46]
+ t=  125 est= 119.0 true= 120.0 r=0.99 drop=0.21 admitted=0.79 kcal=0.121 meter=[2, 4, 4] util(nominal)=[0.89 0.94 0.5 ]
+ t=  130 est= 119.5 true= 120.8 r=0.99 drop=0.21 admitted=0.79 kcal=0.091 meter=[2, 4, 4] util(nominal)=[0.91 0.94 0.5 ]
+ t=  135 est= 119.4 true= 123.2 r=0.97 drop=0.21 admitted=0.79 kcal=0.468 meter=[2, 4, 4] util(nominal)=[0.92 0.95 0.51]
 trace_A_O_dc_half_ours_v62_101.json servers [2, 4, 8] success 73.2
  t=   45 est= 122.7 true= 122.0 r=1.01 drop=0.00 admitted=1.00 kcal=0.275 meter=[2, 4, 8] util(nominal)=[0.87 0.88 0.87]
  t=   50 est= 122.6 true= 117.0 r=1.05 drop=0.00 admitted=1.00 kcal=0.084 meter=[2, 4, 8] util(nominal)=[0.83 0.84 0.84]

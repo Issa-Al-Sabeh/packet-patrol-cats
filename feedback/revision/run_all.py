@@ -19,6 +19,7 @@ STEPS = [
     ("breakdown", [["breakdown.py"]]),
     ("batchC_traces", [["trace.py", "A", "O_burst", "ours_v61", "101"],
                        ["trace.py", "A", "O_burst", "ours_v62", "101"],
+                       ["trace.py", "A", "O_dc_half", "ours_v61", "101"],
                        ["trace.py", "A", "O_dc_half", "ours_v62", "101"],
                        ["an_c.py"]]),
     ("batchB_planned_vs_realised", [["trace.py", "B", sc, rule, "301"] for sc in BATCH_B for rule in ("ours_v62", "ours_v6")]
