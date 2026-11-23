@@ -8,6 +8,7 @@ admission, 7,280 runs on seeds 301-320, three networks. Submitted version: tag `
 
 | What | Where |
 |---|---|
+| The paper (LaTeX and PDF) | [`paper/`](paper/README.md) |
 | Every table of the final evaluation (Batches A, B, D) | [`feedback/final.md`](feedback/final.md) |
 | What was frozen before the runs (rules, parameters, scenarios, seeds, SHA-256 fingerprints) | [`FREEZE_v6.1.md`](FREEZE_v6.1.md), [`FREEZE_v6.2.md`](FREEZE_v6.2.md); tags `v6.1-frozen`, `v6.2-frozen` |
 | Numbers added in the paper revision (outcome breakdown, traces, planned vs realised rates, Erlang C, telemetry by field) | [`feedback/revision/`](feedback/revision/README.md) |
