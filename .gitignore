@@ -6,3 +6,5 @@ results*/runs/
 results*/pilot/runs/
 study_results/runs/
 study_results/pilot_runs/
+# revision traces are re-created by feedback/revision/run_all.py
+feedback/revision/traces/

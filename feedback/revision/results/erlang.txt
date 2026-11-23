@@ -1,0 +1,7 @@
+$ python3 feedback/revision/erlang.py
+    M/M/2: mean time (ms)         theory  360.360  simulated  366.214 +/- 28.129  OK
+    M/M/2: P(time > 300 ms) (%)   theory   44.790  simulated   45.127 +/- 2.446  OK
+    M/M/4: mean time (ms)         theory  214.886  simulated  211.242 +/- 5.688  OK
+    M/M/4: P(time > 300 ms) (%)   theory   24.885  simulated   24.221 +/- 1.285  OK
+    M/M/8: mean time (ms)         theory  147.714  simulated  147.880 +/- 1.830  OK
+    M/M/8: P(time > 300 ms) (%)   theory   11.410  simulated   11.530 +/- 0.415  OK

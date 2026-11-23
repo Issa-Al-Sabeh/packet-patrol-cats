@@ -1,0 +1,70 @@
+$ python3 feedback/revision/trace.py A O_burst ours_v61 101
+O_burst ours_v61 seed 101: success 82.1364% (stored 82.1364: identical) -> traces/trace_A_O_burst_ours_v61_101.json
+
+$ python3 feedback/revision/trace.py A O_burst ours_v62 101
+O_burst ours_v62 seed 101: success 83.9421% (stored 83.9421: identical) -> traces/trace_A_O_burst_ours_v62_101.json
+
+$ python3 feedback/revision/trace.py A O_dc_half ours_v62 101
+O_dc_half ours_v62 seed 101: success 73.2050% (stored 73.2050: identical) -> traces/trace_A_O_dc_half_ours_v62_101.json
+
+$ python3 feedback/revision/an_c.py
+trace_A_O_burst_ours_v61_101.json servers [2, 4, 8] success 82.1
+ t=   45 est= 118.4 true= 118.4 r=1.00 drop=0.00 admitted=1.00 kcal=0.220 meter=[2, 4, 8] util(nominal)=[0.85 0.84 0.85]
+ t=   50 est= 118.8 true= 115.4 r=1.03 drop=0.00 admitted=1.00 kcal=0.306 meter=[2, 4, 8] util(nominal)=[0.82 0.83 0.82]
+ t=   55 est= 117.6 true= 125.6 r=0.94 drop=0.00 admitted=1.00 kcal=0.633 meter=[2, 4, 8] util(nominal)=[0.89 0.89 0.9 ]
+ t=   60 est= 120.0 true= 115.8 r=1.04 drop=0.00 admitted=1.00 kcal=0.210 meter=[2, 4, 8] util(nominal)=[0.83 0.83 0.82]
+ t=   65 est= 118.8 true= 180.8 r=0.66 drop=0.62 admitted=0.86 kcal=3.927 meter=[2, 4, 8] util(nominal)=[1.08 1.1  1.12]
+ t=   70 est= 180.4 true= 195.6 r=0.92 drop=0.55 admitted=0.45 kcal=2.432 meter=[2, 4, 8] util(nominal)=[0.51 0.64 0.66]
+ t=   75 est= 178.4 true= 191.4 r=0.93 drop=0.42 admitted=0.57 kcal=0.437 meter=[2, 4, 8] util(nominal)=[0.61 0.76 0.84]
+ t=   80 est= 183.9 true= 192.0 r=0.96 drop=0.31 admitted=0.62 kcal=0.154 meter=[2, 4, 8] util(nominal)=[0.82 0.84 0.87]
+ t=   85 est= 187.2 true= 121.4 r=1.54 drop=0.00 admitted=0.76 kcal=0.128 meter=[2, 4, 8] util(nominal)=[0.65 0.66 0.66]
+ t=   90 est= 171.1 true= 126.6 r=1.35 drop=0.23 admitted=0.76 kcal=0.050 meter=[2, 4, 8] util(nominal)=[0.68 0.68 0.7 ]
+ t=   95 est= 156.7 true= 120.4 r=1.30 drop=0.16 admitted=0.84 kcal=0.082 meter=[2, 4, 8] util(nominal)=[0.74 0.72 0.72]
+ t=  100 est= 147.0 true= 129.4 r=1.14 drop=0.12 admitted=0.88 kcal=0.132 meter=[2, 4, 8] util(nominal)=[0.76 0.8  0.82]
+ t=  105 est= 131.4 true= 107.4 r=1.22 drop=0.01 admitted=0.92 kcal=0.050 meter=[2, 4, 8] util(nominal)=[0.7  0.7  0.71]
+ t=  110 est= 131.4 true= 116.0 r=1.13 drop=0.01 admitted=0.99 kcal=0.050 meter=[2, 4, 8] util(nominal)=[0.82 0.82 0.82]
+ t=  115 est= 127.3 true= 125.8 r=1.01 drop=0.00 admitted=1.00 kcal=0.070 meter=[2, 4, 8] util(nominal)=[0.86 0.91 0.9 ]
+ t=  120 est= 126.6 true= 122.0 r=1.04 drop=0.00 admitted=1.00 kcal=0.141 meter=[2, 4, 8] util(nominal)=[0.91 0.86 0.87]
+ t=  125 est= 125.3 true= 121.6 r=1.03 drop=0.00 admitted=1.00 kcal=0.379 meter=[2, 4, 8] util(nominal)=[0.89 0.86 0.86]
+ t=  130 est= 124.2 true= 120.2 r=1.03 drop=0.00 admitted=1.00 kcal=0.080 meter=[2, 4, 8] util(nominal)=[0.85 0.86 0.86]
+ t=  135 est= 123.1 true= 124.2 r=0.99 drop=0.00 admitted=1.00 kcal=0.283 meter=[2, 4, 8] util(nominal)=[0.9  0.89 0.88]
+trace_A_O_burst_ours_v62_101.json servers [2, 4, 8] success 83.9
+ t=   45 est= 118.4 true= 118.4 r=1.00 drop=0.00 admitted=1.00 kcal=0.220 meter=[2, 4, 8] util(nominal)=[0.85 0.84 0.85]
+ t=   50 est= 118.8 true= 115.4 r=1.03 drop=0.00 admitted=1.00 kcal=0.306 meter=[2, 4, 8] util(nominal)=[0.82 0.83 0.82]
+ t=   55 est= 117.6 true= 125.6 r=0.94 drop=0.00 admitted=1.00 kcal=0.633 meter=[2, 4, 8] util(nominal)=[0.89 0.89 0.9 ]
+ t=   60 est= 120.0 true= 115.8 r=1.04 drop=0.00 admitted=1.00 kcal=0.210 meter=[2, 4, 8] util(nominal)=[0.83 0.83 0.82]
+ t=   65 est= 118.8 true= 180.8 r=0.66 drop=0.62 admitted=0.86 kcal=3.927 meter=[2, 4, 8] util(nominal)=[1.08 1.1  1.12]
+ t=   70 est= 180.4 true= 195.6 r=0.92 drop=0.55 admitted=0.45 kcal=2.432 meter=[2, 4, 8] util(nominal)=[0.51 0.64 0.66]
+ t=   75 est= 178.4 true= 191.4 r=0.93 drop=0.42 admitted=0.57 kcal=0.437 meter=[2, 4, 8] util(nominal)=[0.61 0.76 0.84]
+ t=   80 est= 183.9 true= 192.0 r=0.96 drop=0.31 admitted=0.62 kcal=0.154 meter=[2, 4, 8] util(nominal)=[0.82 0.84 0.87]
+ t=   85 est= 187.2 true= 121.4 r=1.54 drop=0.00 admitted=0.76 kcal=0.128 meter=[2, 4, 8] util(nominal)=[0.65 0.66 0.66]
+ t=   90 est= 137.2 true= 126.6 r=1.08 drop=0.05 admitted=0.94 kcal=0.070 meter=[2, 4, 8] util(nominal)=[0.82 0.84 0.87]
+ t=   95 est= 134.2 true= 120.4 r=1.12 drop=0.02 admitted=0.98 kcal=0.071 meter=[2, 4, 8] util(nominal)=[0.85 0.84 0.84]
+ t=  100 est= 130.5 true= 129.4 r=1.01 drop=0.00 admitted=1.00 kcal=0.135 meter=[2, 4, 8] util(nominal)=[0.9  0.94 0.92]
+ t=  105 est= 113.9 true= 107.4 r=1.06 drop=0.00 admitted=1.00 kcal=0.050 meter=[2, 4, 8] util(nominal)=[0.75 0.78 0.77]
+ t=  110 est= 113.9 true= 116.0 r=0.98 drop=0.00 admitted=1.00 kcal=0.202 meter=[2, 4, 8] util(nominal)=[0.83 0.83 0.83]
+ t=  115 est= 114.7 true= 125.8 r=0.91 drop=0.00 admitted=1.00 kcal=0.164 meter=[2, 4, 8] util(nominal)=[0.89 0.9  0.9 ]
+ t=  120 est= 117.8 true= 122.0 r=0.97 drop=0.00 admitted=1.00 kcal=0.212 meter=[2, 4, 8] util(nominal)=[0.88 0.86 0.87]
+ t=  125 est= 119.2 true= 121.6 r=0.98 drop=0.00 admitted=1.00 kcal=0.410 meter=[2, 4, 8] util(nominal)=[0.86 0.88 0.87]
+ t=  130 est= 119.9 true= 120.2 r=1.00 drop=0.00 admitted=1.00 kcal=0.074 meter=[2, 4, 8] util(nominal)=[0.86 0.86 0.86]
+ t=  135 est= 120.1 true= 124.2 r=0.97 drop=0.00 admitted=1.00 kcal=0.196 meter=[2, 4, 8] util(nominal)=[0.88 0.88 0.89]
+trace_A_O_dc_half_ours_v62_101.json servers [2, 4, 8] success 73.2
+ t=   45 est= 122.7 true= 122.0 r=1.01 drop=0.00 admitted=1.00 kcal=0.275 meter=[2, 4, 8] util(nominal)=[0.87 0.88 0.87]
+ t=   50 est= 122.6 true= 117.0 r=1.05 drop=0.00 admitted=1.00 kcal=0.084 meter=[2, 4, 8] util(nominal)=[0.83 0.84 0.84]
+ t=   55 est= 121.0 true= 122.2 r=0.99 drop=0.00 admitted=1.00 kcal=2.466 meter=[2, 4, 8] util(nominal)=[0.87 0.87 0.88]
+ t=   60 est= 121.2 true= 116.4 r=1.04 drop=0.51 admitted=0.52 kcal=1.491 meter=[2, 4, 4] util(nominal)=[0.61 0.68 0.26]
+ t=   65 est= 103.4 true= 115.0 r=0.90 drop=0.29 admitted=0.71 kcal=0.596 meter=[2, 4, 4] util(nominal)=[0.75 0.89 0.39]
+ t=   70 est= 108.5 true= 115.8 r=0.94 drop=0.18 admitted=0.78 kcal=0.242 meter=[2, 4, 4] util(nominal)=[0.89 0.93 0.45]
+ t=   75 est= 111.4 true= 122.8 r=0.91 drop=0.15 admitted=0.83 kcal=0.817 meter=[2, 4, 4] util(nominal)=[0.98 1.02 0.52]
+ t=   80 est= 114.8 true= 112.4 r=1.02 drop=0.35 admitted=0.67 kcal=0.445 meter=[2, 4, 4] util(nominal)=[0.72 0.78 0.37]
+ t=   85 est= 113.9 true= 110.4 r=1.03 drop=0.20 admitted=0.79 kcal=0.166 meter=[2, 4, 4] util(nominal)=[0.87 0.88 0.43]
+ t=   90 est= 113.1 true= 127.2 r=0.89 drop=0.16 admitted=0.84 kcal=1.051 meter=[2, 4, 4] util(nominal)=[1.02 1.04 0.56]
+ t=   95 est= 117.3 true= 121.4 r=0.97 drop=0.41 admitted=0.62 kcal=0.736 meter=[2, 4, 4] util(nominal)=[0.72 0.76 0.37]
+ t=  100 est= 117.3 true= 121.6 r=0.97 drop=0.31 admitted=0.72 kcal=0.604 meter=[2, 4, 4] util(nominal)=[0.9  0.89 0.42]
+ t=  105 est= 116.9 true= 111.0 r=1.05 drop=0.18 admitted=0.75 kcal=0.179 meter=[2, 4, 4] util(nominal)=[0.83 0.84 0.42]
+ t=  110 est= 116.9 true= 123.4 r=0.95 drop=0.18 admitted=0.82 kcal=0.578 meter=[2, 4, 4] util(nominal)=[0.99 0.98 0.52]
+ t=  115 est= 119.2 true= 118.8 r=1.00 drop=0.28 admitted=0.73 kcal=0.265 meter=[2, 4, 4] util(nominal)=[0.89 0.89 0.41]
+ t=  120 est= 117.9 true= 117.0 r=1.01 drop=0.19 admitted=0.81 kcal=0.088 meter=[2, 4, 4] util(nominal)=[0.94 0.94 0.48]
+ t=  125 est= 118.6 true= 120.0 r=0.99 drop=0.19 admitted=0.81 kcal=0.215 meter=[2, 4, 4] util(nominal)=[0.97 0.96 0.5 ]
+ t=  130 est= 119.1 true= 120.8 r=0.99 drop=0.22 admitted=0.78 kcal=0.149 meter=[2, 4, 4] util(nominal)=[0.9  0.91 0.5 ]
+ t=  135 est= 119.0 true= 123.2 r=0.97 drop=0.21 admitted=0.79 kcal=0.317 meter=[2, 4, 4] util(nominal)=[0.91 0.95 0.51]

@@ -1,0 +1,47 @@
+$ python3 feedback/revision/breakdown.py
+rows not adding up: 0
+Capacity differs (4)
+  v6.2    on-time  85.0  dropped   5.2  discarded   0.4  late   9.4  late+disc   9.8
+  v6.1    on-time  84.9  dropped   5.4  discarded   0.4  late   9.2  late+disc   9.6
+  Tuned   on-time  75.6  dropped   0.1  discarded   2.7  late  21.6  late+disc  24.3
+  Frozen  on-time  75.6  dropped   0.0  discarded   2.7  late  21.7  late+disc  24.4
+  RR      on-time  75.6  dropped   0.0  discarded   2.7  late  21.7  late+disc  24.4
+  v6.2-Tuned +9.4±1.0 +5.1±0.2 -2.3±0.0 -12.3±1.0
+  v6.2 admitted 94.8%, of which missed 10.3%
+  Tuned admitted 99.9%, of which missed 24.3%
+Bursts and a surge (6)
+  v6.2    on-time  75.5  dropped  17.3  discarded   1.1  late   6.1  late+disc   7.2
+  v6.1    on-time  72.8  dropped  20.5  discarded   1.0  late   5.7  late+disc   6.7
+  Tuned   on-time  73.5  dropped  13.4  discarded   2.6  late  10.4  late+disc  13.0
+  Frozen  on-time  65.7  dropped   9.7  discarded   5.9  late  18.8  late+disc  24.7
+  RR      on-time  57.6  dropped   0.0  discarded  11.2  late  31.2  late+disc  42.4
+  v6.2-Tuned +2.0±0.2 +3.9±0.1 -1.6±0.1 -4.3±0.1
+  v6.2 admitted 82.7%, of which missed 8.7%
+  Tuned admitted 86.6%, of which missed 15.1%
+Steady >=95% (9)
+  v6.2    on-time  71.2  dropped  21.7  discarded   0.1  late   7.0  late+disc   7.1
+  v6.1    on-time  71.2  dropped  21.7  discarded   0.1  late   7.0  late+disc   7.1
+  Tuned   on-time  71.6  dropped  22.3  discarded   0.1  late   6.0  late+disc   6.1
+  Frozen  on-time  67.7  dropped  18.1  discarded   0.2  late  13.9  late+disc  14.1
+  RR      on-time  23.0  dropped   0.0  discarded  15.0  late  62.0  late+disc  77.0
+  v6.2-Tuned -0.4±0.2 -0.6±0.1 +0.0±0.0 +1.0±0.2
+  v6.2 admitted 78.3%, of which missed 9.1%
+  Tuned admitted 77.7%, of which missed 7.8%
+Steady 85-90% (3)
+  v6.2    on-time  95.0  dropped   0.1  discarded   0.0  late   4.9  late+disc   4.9
+  v6.1    on-time  95.0  dropped   0.1  discarded   0.0  late   4.9  late+disc   4.9
+  Tuned   on-time  94.8  dropped   0.6  discarded   0.0  late   4.5  late+disc   4.5
+  Frozen  on-time  95.0  dropped   0.0  discarded   0.1  late   4.9  late+disc   5.0
+  RR      on-time  95.0  dropped   0.0  discarded   0.1  late   4.9  late+disc   5.0
+  v6.2-Tuned +0.1±0.1 -0.5±0.0 +0.0±0.0 +0.4±0.1
+  v6.2 admitted 99.9%, of which missed 4.9%
+  Tuned admitted 99.4%, of which missed 4.6%
+All (22)
+  v6.2    on-time  78.1  dropped  14.6  discarded   0.4  late   6.9  late+disc   7.3
+  v6.1    on-time  77.4  dropped  15.5  discarded   0.4  late   6.8  late+disc   7.2
+  Tuned   on-time  76.0  dropped  12.9  discarded   1.2  late   9.8  late+disc  11.1
+  Frozen  on-time  72.3  dropped  10.1  discarded   2.2  late  15.4  late+disc  17.6
+  RR      on-time  51.8  dropped   0.0  discarded   9.7  late  38.5  late+disc  48.2
+  v6.2-Tuned +2.1±0.2 +1.7±0.1 -0.8±0.0 -2.9±0.2
+  v6.2 admitted 85.4%, of which missed 8.5%
+  Tuned admitted 87.1%, of which missed 12.7%

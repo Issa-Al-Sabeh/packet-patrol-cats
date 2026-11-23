@@ -1,10 +1,31 @@
 # CATS site-selection study (Packet Patrol, CMPS 342)
 
-> **Revision in progress (v6.1), after the feedback of 11 Nov 2026.**
-> - `FREEZE_v6.1.md`: what v6.1 is, its parameters, and the evaluation set fixed before any result (seeds 301 to 310).
-> - `CHANGES_v6.1.md`: every change since the v6 freeze (tag `v6-frozen`).
-> - `feedback/audit.md`, `estimator.md`, `cost.md`, `baselines.md`: the checks, one note per question of the feedback.
-> - Everything below describes the frozen v6 study and is unchanged.
+## Start here: the paper and its final evaluation
+
+The paper *Counting the Drops: Joint Admission and Site Selection for Computing-Aware Traffic Steering under Stale
+Shared Telemetry* reports the final evaluation of 21 Nov 2026: ours v6.1 and v6.2 against round-robin with tuned
+admission, 7,280 runs on seeds 301-320, three networks. Submitted version: tag `paper-submitted`.
+
+| What | Where |
+|---|---|
+| Every table of the final evaluation (Batches A, B, D) | [`feedback/final.md`](feedback/final.md) |
+| What was frozen before the runs (rules, parameters, scenarios, seeds, SHA-256 fingerprints) | [`FREEZE_v6.1.md`](FREEZE_v6.1.md), [`FREEZE_v6.2.md`](FREEZE_v6.2.md); tags `v6.1-frozen`, `v6.2-frozen` |
+| Numbers added in the paper revision (outcome breakdown, traces, planned vs realised rates, Erlang C, telemetry by field) | [`feedback/revision/`](feedback/revision/README.md) |
+| Answers to the feedback of 11 Nov 2026, one note per question | `feedback/audit.md`, `estimator.md`, `cost.md`, `baselines.md`, `batches.md`, `batchC/diagnosis.md`, `positioning.md` |
+| Every change since v6 | [`CHANGES_v6.1.md`](CHANGES_v6.1.md), `FREEZE_v6.2.md` |
+
+Check and reproduce (Python 3.9+, `pip install -r requirements.txt`):
+
+```
+python3 feedback/final/check_final.py          # results complete and consistent; re-runs a random sample of 18 runs
+python3 feedback/final/analyze_final.py        # rebuilds every table and figure of feedback/final.md
+python3 feedback/revision/run_all.py           # the numbers added in the revision (about 1-2 minutes)
+python3 feedback/final/run_final.py A|B|D      # re-runs a whole batch (resumable; A, B, D: about 1.3, 0.8, 0.4 CPU-hours)
+```
+
+---
+
+**Everything below describes the earlier v6 study (tag `v6-frozen`) and is unchanged.**
 
 One command runs every test of the study, in order, and writes one final report.
 

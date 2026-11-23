@@ -1,0 +1,62 @@
+[
+ {
+  "check": "1. simulator vs Erlang C",
+  "case": "M/M/2 at 85% load",
+  "quantity": "mean time (ms)",
+  "model": 360.36,
+  "simulated": 366.214,
+  "ci95": 28.129,
+  "error": 5.853,
+  "verdict": "OK"
+ },
+ {
+  "check": "1. simulator vs Erlang C",
+  "case": "M/M/2 at 85% load",
+  "quantity": "P(time > 300 ms) (%)",
+  "model": 44.79,
+  "simulated": 45.127,
+  "ci95": 2.446,
+  "error": 0.337,
+  "verdict": "OK"
+ },
+ {
+  "check": "1. simulator vs Erlang C",
+  "case": "M/M/4 at 85% load",
+  "quantity": "mean time (ms)",
+  "model": 214.886,
+  "simulated": 211.242,
+  "ci95": 5.688,
+  "error": -3.644,
+  "verdict": "OK"
+ },
+ {
+  "check": "1. simulator vs Erlang C",
+  "case": "M/M/4 at 85% load",
+  "quantity": "P(time > 300 ms) (%)",
+  "model": 24.885,
+  "simulated": 24.221,
+  "ci95": 1.285,
+  "error": -0.664,
+  "verdict": "OK"
+ },
+ {
+  "check": "1. simulator vs Erlang C",
+  "case": "M/M/8 at 85% load",
+  "quantity": "mean time (ms)",
+  "model": 147.714,
+  "simulated": 147.88,
+  "ci95": 1.83,
+  "error": 0.166,
+  "verdict": "OK"
+ },
+ {
+  "check": "1. simulator vs Erlang C",
+  "case": "M/M/8 at 85% load",
+  "quantity": "P(time > 300 ms) (%)",
+  "model": 11.41,
+  "simulated": 11.53,
+  "ci95": 0.415,
+  "error": 0.12,
+  "verdict": "OK"
+ }
+]

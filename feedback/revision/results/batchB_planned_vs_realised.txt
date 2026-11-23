@@ -1,0 +1,49 @@
+$ python3 feedback/revision/trace.py B O_130 ours_v62 301
+O_130 ours_v62 seed 301: success 64.8046% (stored 64.8046: identical) -> traces/trace_B_O_130_ours_v62_301.json
+
+$ python3 feedback/revision/trace.py B O_130 ours_v6 301
+O_130 ours_v6 seed 301: success 64.7194% (stored 64.7194: identical) -> traces/trace_B_O_130_ours_v6_301.json
+
+$ python3 feedback/revision/trace.py B B_130_stagger ours_v62 301
+B_130_stagger ours_v62 seed 301: success 65.9201% (stored 65.9201: identical) -> traces/trace_B_B_130_stagger_ours_v62_301.json
+
+$ python3 feedback/revision/trace.py B B_130_stagger ours_v6 301
+B_130_stagger ours_v6 seed 301: success 64.9962% (stored 64.9962: identical) -> traces/trace_B_B_130_stagger_ours_v6_301.json
+
+$ python3 feedback/revision/trace.py B O_130_W1 ours_v62 301
+O_130_W1 ours_v62 seed 301: success 66.4098% (stored 66.4098: identical) -> traces/trace_B_O_130_W1_ours_v62_301.json
+
+$ python3 feedback/revision/trace.py B O_130_W1 ours_v6 301
+O_130_W1 ours_v6 seed 301: success 65.6902% (stored 65.6902: identical) -> traces/trace_B_O_130_W1_ours_v6_301.json
+
+$ python3 feedback/revision/trace.py B L130_d50_steady_W0.5_R4_het_D300 ours_v62 301
+L130_d50_steady_W0.5_R4_het_D300 ours_v62 seed 301: success 66.2954% (stored 66.2954: identical) -> traces/trace_B_L130_d50_steady_W0.5_R4_het_D300_ours_v62_301.json
+
+$ python3 feedback/revision/trace.py B L130_d50_steady_W0.5_R4_het_D300 ours_v6 301
+L130_d50_steady_W0.5_R4_het_D300 ours_v6 seed 301: success 65.7567% (stored 65.7567: identical) -> traces/trace_B_L130_d50_steady_W0.5_R4_het_D300_ours_v6_301.json
+
+$ python3 feedback/revision/trace.py B N_130 ours_v62 301
+N_130 ours_v62 seed 301: success 62.5705% (stored 62.5705: identical) -> traces/trace_B_N_130_ours_v62_301.json
+
+$ python3 feedback/revision/trace.py B N_130 ours_v6 301
+N_130 ours_v6 seed 301: success 62.7387% (stored 62.7387: identical) -> traces/trace_B_N_130_ours_v6_301.json
+
+$ python3 feedback/revision/trace.py B O_surge ours_v62 301
+O_surge ours_v62 seed 301: success 83.9089% (stored 83.9089: identical) -> traces/trace_B_O_surge_ours_v62_301.json
+
+$ python3 feedback/revision/trace.py B O_surge ours_v6 301
+O_surge ours_v6 seed 301: success 81.9721% (stored 81.9721: identical) -> traces/trace_B_O_surge_ours_v6_301.json
+
+$ python3 feedback/revision/an_b.py
+B_130_stagger                      ours_v62  success  65.9 (stored  65.9)  planned/realised, all ingresses and sites: 1.00-1.01; median 1.00
+B_130_stagger                      ours_v6   success  65.0 (stored  65.0)  planned/realised, all ingresses and sites: 1.01-1.04; median 1.03
+L130_d50_steady_W0.5_R4_het_D300   ours_v62  success  66.3 (stored  66.3)  planned/realised, all ingresses and sites: 0.92-1.04; median 1.00
+L130_d50_steady_W0.5_R4_het_D300   ours_v6   success  65.8 (stored  65.8)  planned/realised, all ingresses and sites: 0.44-1.09; median 1.00
+N_130                              ours_v62  success  62.6 (stored  62.6)  planned/realised, all ingresses and sites: 0.98-1.02; median 1.00
+N_130                              ours_v6   success  62.7 (stored  62.7)  planned/realised, all ingresses and sites: 0.97-1.04; median 1.00
+O_130_W1                           ours_v62  success  66.4 (stored  66.4)  planned/realised, all ingresses and sites: 0.99-1.00; median 1.00
+O_130_W1                           ours_v6   success  65.7 (stored  65.7)  planned/realised, all ingresses and sites: 0.98-1.02; median 1.00
+O_130                              ours_v62  success  64.8 (stored  64.8)  planned/realised, all ingresses and sites: 0.99-1.01; median 1.00
+O_130                              ours_v6   success  64.7 (stored  64.7)  planned/realised, all ingresses and sites: 0.99-1.02; median 1.00
+O_surge                            ours_v62  success  83.9 (stored  83.9)  planned/realised, all ingresses and sites: 1.00-1.02; median 1.00
+O_surge                            ours_v6   success  82.0 (stored  82.0)  planned/realised, all ingresses and sites: 1.01-1.04; median 1.01
